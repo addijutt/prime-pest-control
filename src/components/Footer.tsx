@@ -37,7 +37,7 @@ const Footer: React.FC = () => (
       </nav>
       <div className="footer-social">
         <a
-          href="https://www.instagram.com/primepestcontroldubai"
+          href="https://www.instagram.com/primepestdubai/"
           className="footer-social__btn footer-social__btn--instagram"
           target="_blank"
           rel="noopener noreferrer"
@@ -47,7 +47,7 @@ const Footer: React.FC = () => (
           <span>Instagram</span>
         </a>
         <a
-          href="https://www.facebook.com/primepestcontroldubai"
+          href="https://www.facebook.com/profile.php?id=61595101124439"
           className="footer-social__btn footer-social__btn--facebook"
           target="_blank"
           rel="noopener noreferrer"
