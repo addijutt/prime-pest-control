@@ -24,7 +24,7 @@ const Footer: React.FC = () => (
       <p style={{color: 'white', fontSize: '14px', maxWidth: '700px', margin: '0 auto'}}>Prime Pest Control is a professional pest and bird control company serving all communities across Dubai. We provide direct pest control services for homes, villas, apartments, restaurants, hotels, and commercial properties. We serve Dubai Marina, Downtown Dubai, JBR, Business Bay, Jumeirah, DIFC, Palm Jumeirah, Al Barsha, Mirdif, and all Dubai communities. Contact us at 055 304 5256.</p>
       <small className="color-white">
         COPYRIGHT&copy;{' '}
-        <span id="copy-year">2025</span>.
+        <span id="copy-year">2026</span>.
       </small>
     </div>
   </footer>
