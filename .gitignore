@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Binary assets — images/fonts served from hosting, not stored in git
+/public/assets/img/
+/public/assets/coupons/
+/public/assets/fonts/
