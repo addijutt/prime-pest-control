@@ -5326,7 +5326,7 @@ button:active {
   }
 }
 
-/* â”€â”€ Floating call + WhatsApp buttons (desktop only) â”€â”€ */
+/* Floating call + WhatsApp buttons (desktop only) */
 .floating-btns {
   position: fixed;
   bottom: 32px;
@@ -5335,10 +5335,11 @@ button:active {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .floating-btns__btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5348,42 +5349,86 @@ button:active {
   color: #fff;
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+/* Slide-in label */
+.floating-btns__label {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  white-space: nowrap;
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 7px 14px;
+  border-radius: 8px;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .floating-btns__btn--call {
   background: #1a1a1a;
 }
 
+.floating-btns__btn--call .floating-btns__label {
+  background: #2563eb;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
 .floating-btns__btn--whatsapp {
   background: #25d366;
 }
 
+.floating-btns__btn--whatsapp .floating-btns__label {
+  background: #25d366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+/* Hover: reveal label */
+.floating-btns__btn:hover .floating-btns__label,
+.floating-btns__btn:focus .floating-btns__label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Hover: button color + glow */
 .floating-btns__btn:hover,
 .floating-btns__btn:focus {
-  transform: scale(1.08);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+  transform: scale(1.1);
   text-decoration: none;
   color: #fff;
 }
 
 .floating-btns__btn--call:hover,
 .floating-btns__btn--call:focus {
-  background: #333;
+  background: #2563eb;
+  box-shadow: 0 6px 28px rgba(37, 99, 235, 0.55);
 }
 
 .floating-btns__btn--whatsapp:hover,
 .floating-btns__btn--whatsapp:focus {
-  background: #1da851;
+  background: #1ebe5d;
+  box-shadow: 0 6px 28px rgba(30, 190, 93, 0.55);
 }
 
 .floating-btns__btn:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
   color: #fff;
 }
 
 .floating-btns__btn--call:active {
-  background: #111;
+  background: #1d4ed8;
 }
 
 .floating-btns__btn--whatsapp:active {
