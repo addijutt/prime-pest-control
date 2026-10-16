@@ -5329,12 +5329,21 @@ button:active {
     gap: 32px;
   }
   .faq-section-v2__left {
-    width: 100%;
-    position: static;
+    display: contents;
+  }
+  .faq-section-v2__badge {
+    order: 1;
+  }
+  .faq-section-v2__title {
     order: 2;
+    margin-bottom: 4px;
   }
   .faq-section-v2__right {
-    order: 1;
+    order: 3;
+  }
+  .faq-section-v2__contact-card {
+    order: 4;
+    width: 100%;
   }
   .faq-section-v2__title {
     font-size: 1.6rem;
