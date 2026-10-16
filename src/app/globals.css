@@ -5333,10 +5333,11 @@ button:active {
   }
   .faq-section-v2__badge {
     order: 1;
+    margin-bottom: 6px;
   }
   .faq-section-v2__title {
     order: 2;
-    margin-bottom: 4px;
+    margin-bottom: 16px;
   }
   .faq-section-v2__right {
     order: 3;
