@@ -23,97 +23,44 @@ interface FormData {
   Problem: string;
   Consent: boolean;
 }
-type FormErrors = {
-  [K in keyof FormData]?: string;
-};
+type FormErrors = { [K in keyof FormData]?: string };
 
 export default function ContactUsClient() {
-  const [showFullConsent, setShowFullConsent] = useState(false);
-
-  const ConsentTextWithLink = () => (
-    <>
-      By clicking the button below, you consent for us to use automated technology, including calls, texts and prerecorded messages, to contact you at the number and email provided about our offers. This consent is not required to make a purchase. Up to 10msg/month. Reply &apos;STOP&apos; to opt-out at any time. Clicking the Submit button constitutes your electronic signature.{' '}
-      <a href="/privacy-policy" className="text-dark inline-block">
-        Privacy Policy
-      </a>
-      .
-    </>
-  );
-
-  const [formData, setFormData] = useState<FormData>({
-    Name: '',
-    Phone: '',
-    Email: '',
-    Problem: '',
-    Consent: false,
-  });
+  const [formData, setFormData] = useState<FormData>({ Name: '', Phone: '', Email: '', Problem: '', Consent: false });
   const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, type, value, checked } = e.target as HTMLInputElement;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
   const validate = () => {
-    const newErrors: FormErrors = {};
-    if (!formData.Name.trim()) newErrors.Name = 'Name is required';
-    if (!formData.Phone.trim()) newErrors.Phone = 'Phone is required';
-    if (formData.Phone && !/^\+?\d{7,15}$/.test(formData.Phone))
-      newErrors.Phone = 'Enter a valid phone number';
-    if (formData.Email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.Email))
-      newErrors.Email = 'Enter a valid email';
-    if (!formData.Consent) newErrors.Consent = 'Consent is required';
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    const e: FormErrors = {};
+    if (!formData.Name.trim()) e.Name = 'Name is required';
+    if (!formData.Phone.trim()) e.Phone = 'Phone is required';
+    if (formData.Email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.Email)) e.Email = 'Enter a valid email';
+    if (!formData.Consent) e.Consent = 'You must agree to continue';
+    setErrors(e);
+    return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
-    setIsSubmitting(true);
+    const lines = [
+      'Hi, I found you on your website and would like a free quote.',
+      '',
+      `*Name:* ${formData.Name}`,
+      `*Phone:* ${formData.Phone}`,
+      formData.Email   ? `*Email:* ${formData.Email}`     : null,
+      formData.Problem ? `*Problem:* ${formData.Problem}` : null,
+    ].filter(Boolean).join('\n');
 
-    try {
-      const params = new URLSearchParams();
-      params.append('Name', formData.Name);
-      params.append('Phone', formData.Phone);
-      if (formData.Email) params.append('Email', formData.Email);
-      if (formData.Problem) params.append('Problem', formData.Problem);
-      params.append('Consent', String(formData.Consent));
-
-      const apiUrl = process.env.NODE_ENV === 'production'
-        ? 'https://submissions.green-nest-pc.com/submit-green-nest-pc-form'
-        : '/api/submit-green-nest-pc-form';
-
-      const res = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          Accept: 'application/json',
-        },
-        body: params.toString(),
-      });
-
-      const data = await res.json();
-
-      if (data.status === 'success') {
-        setShowPopup(true);
-        setFormData({ Name: '', Phone: '', Email: '', Problem: '', Consent: false });
-        setErrors({});
-      } else {
-        alert('Failed to submit form. Please try again.');
-      }
-    } catch (err) {
-      alert('Failed to submit form. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.open(`https://wa.me/971553045256?text=${encodeURIComponent(lines)}`, '_blank', 'noopener,noreferrer');
+    setFormData({ Name: '', Phone: '', Email: '', Problem: '', Consent: false });
+    setErrors({});
   };
 
   return (
@@ -216,9 +163,8 @@ export default function ContactUsClient() {
                 </div>
 
                 <div className="contact-form-v2__field">
-                  <label className="contact-form-v2__label" htmlFor="cf-problem">Describe Your Pest or Bird Problem*</label>
-                  <textarea id="cf-problem" name="Problem" value={formData.Problem} onChange={handleChange} className="contact-form-v2__textarea" />
-                  {errors.Problem && <span className="contact-form-v2__error">{errors.Problem}</span>}
+                  <label className="contact-form-v2__label" htmlFor="cf-problem">Describe Your Pest or Bird Problem</label>
+                  <textarea id="cf-problem" name="Problem" value={formData.Problem} onChange={handleChange} className="contact-form-v2__textarea" rows={4} />
                 </div>
 
                 <div className="contact-form-v2__consent">
@@ -226,24 +172,15 @@ export default function ContactUsClient() {
                     <input type="checkbox" name="Consent" checked={formData.Consent} onChange={handleChange} />
                     <span>yes</span>
                   </label>
-                  <div className="contact-form-v2__consent-text tcpa" data-tf-element="consent">
-                    {showFullConsent ? (
-                      <ConsentTextWithLink />
-                    ) : (
-                      <>
-                        By clicking the button below, you consent for us to use automated technology, including calls, texts and prerecorded messages, to contact you at the number and email provided about our offers. This consent is not required to make a purchase.{' '}
-                        <a onClick={() => setShowFullConsent(true)} className="contact-form-v2__consent-link">Read more</a>
-                      </>
-                    )}
-                    {showFullConsent && (
-                      <a onClick={() => setShowFullConsent(false)} className="contact-form-v2__consent-link"> Read less</a>
-                    )}
+                  <div className="contact-form-v2__consent-text">
+                    By submitting this form you agree to be contacted by our team regarding your pest control enquiry.{' '}
+                    <a href="/privacy-policy" className="contact-form-v2__consent-link">Privacy Policy</a>.
                     {errors.Consent && <span className="contact-form-v2__error">{errors.Consent}</span>}
                   </div>
                 </div>
 
-                <button type="submit" className="contact-form-v2__submit" disabled={isSubmitting}>
-                  {isSubmitting ? 'Submitting…' : 'Submit'}
+                <button type="submit" className="contact-form-v2__submit">
+                  Send via WhatsApp
                 </button>
               </form>
 
@@ -264,15 +201,6 @@ export default function ContactUsClient() {
       <ServiceAreaSection />
       <FreeQuoteSection />
       <SatisfactionGuaranteeSection />
-
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <p>Your request has been submitted! We&apos;ll WhatsApp you shortly.</p>
-            <button onClick={() => setShowPopup(false)}>Close</button>
-          </div>
-        </div>
-      )}
     </>
   );
 }

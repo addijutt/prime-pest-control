@@ -772,8 +772,8 @@ button:active {
    strictly higher specificity (2,1,0) than every legacy rule (max 1,1,2),
    and every property is marked !important so we also win importance ties
    regardless of which stylesheet loads last. */
-#root #hero.contact-hero,
-#root #hero.about-hero {
+#hero.contact-hero,
+#hero.about-hero {
   box-sizing: border-box !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -788,15 +788,15 @@ button:active {
 }
 
 @media (max-width: 991px) {
-  #root #hero.contact-hero,
-  #root #hero.about-hero {
+  #hero.contact-hero,
+  #hero.about-hero {
     margin-top: calc(var(--header-height, 168px)) !important;
   }
 }
 
 @media (max-width: 767px) {
-  #root #hero.contact-hero,
-  #root #hero.about-hero {
+  #hero.contact-hero,
+  #hero.about-hero {
     height: auto !important;
     aspect-ratio: 1440 / 350;
     margin-top: calc(var(--header-height, 140px)) !important;
@@ -804,8 +804,8 @@ button:active {
 }
 
 @media (max-width: 480px) {
-  #root #hero.contact-hero,
-  #root #hero.about-hero {
+  #hero.contact-hero,
+  #hero.about-hero {
     height: auto !important;
     background-size: cover !important;
     background-position: center center !important;
