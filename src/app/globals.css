@@ -1284,7 +1284,7 @@ button:active {
   }
 
   .about-us-intro-section__pest-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
   }
 }
@@ -5382,8 +5382,8 @@ button:active {
 }
 
 .floating-btns__btn--call .floating-btns__label {
-  background: #2563eb;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  background: #040404;
+  box-shadow: 0 4px 14px rgba(9, 9, 9, 0.35);
 }
 
 .floating-btns__btn--whatsapp {
@@ -5405,15 +5405,15 @@ button:active {
 /* Hover: button color + glow */
 .floating-btns__btn:hover,
 .floating-btns__btn:focus {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
   text-decoration: none;
   color: #fff;
 }
 
 .floating-btns__btn--call:hover,
 .floating-btns__btn--call:focus {
-  background: #2563eb;
-  box-shadow: 0 6px 28px rgba(37, 99, 235, 0.55);
+  /* background: #2563eb; */
+  box-shadow: 0 6px 28px rgba(14, 14, 14, 0.55);
 }
 
 .floating-btns__btn--whatsapp:hover,
@@ -5428,7 +5428,7 @@ button:active {
 }
 
 .floating-btns__btn--call:active {
-  background: #1d4ed8;
+  background: #040404;
 }
 
 .floating-btns__btn--whatsapp:active {
