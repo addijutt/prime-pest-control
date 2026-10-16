@@ -731,13 +731,17 @@ button:active {
   }
 
   .contact-main-layout {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .contact-main-layout__left {
     flex: none;
     max-width: 100%;
     width: 100%;
+  }
+
+  .contact-main-layout__team-photo {
+    display: none;
   }
 
   .contact-main-layout__heading {
@@ -1275,8 +1279,16 @@ button:active {
     gap: 32px;
   }
 
+  .about-us-intro-section__left {
+    order: 2;
+  }
+
+  .about-us-intro-section__right {
+    order: 1;
+  }
+
   .about-us-intro-section__team-photo {
-    aspect-ratio: 16 / 7;
+    display: none;
   }
 
   .about-us-intro-section__why-label {
