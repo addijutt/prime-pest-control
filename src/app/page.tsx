@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const pageContent = getPageContent('/');
-  const heroTitle = pageContent?.hero.headline ?? 'Affordable Pest Control';
+  const heroTitle = pageContent?.hero.headline ?? 'Expert Pest & Bird Control in Dubai';
 
   return (
     <>
