@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { NewLogo, NewMobileLogo } from '../utils/images';
 import { noBreakPhone } from '../utils/formatPhone';
+import { useVisitorLocation } from '../hooks/useVisitorLocation';
 
 const PHONE = '055 304 5256';
 const PHONE_RAW = '+971553045256';
@@ -53,37 +54,40 @@ const dropdownUlStyle = (open: boolean): React.CSSProperties => ({
   margin: 0,
 });
 
-const ChevronIcon: React.FC = () => (
+const ChevronIcon: React.FC<{ open?: boolean }> = ({ open }) => (
   <svg
-    width="10" height="6" viewBox="0 0 10 6" fill="none"
-    style={{ marginLeft: '5px', verticalAlign: 'middle', display: 'inline-block' }}
+    width="12" height="7" viewBox="0 0 12 7" fill="none"
+    style={{
+      display: 'inline-block',
+      flexShrink: 0,
+      transition: 'transform 0.25s ease',
+      transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
+    }}
     aria-hidden="true"
   >
-    <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
-const dropdownLinkStyle: React.CSSProperties = {
-  display: 'block',
-  padding: '10px 20px',
-  color: '#222',
-  textDecoration: 'none',
-  fontSize: '14px',
-  whiteSpace: 'nowrap',
-};
-
 const Header: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [pestMenuOpen, setPestMenuOpen] = useState(false);
   const [birdMenuOpen, setBirdMenuOpen] = useState(false);
+  const [desktopPestOpen, setDesktopPestOpen] = useState(false);
+  const [desktopBirdOpen, setDesktopBirdOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const { city } = useVisitorLocation();
 
-  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
+  const closeDrawer = () => {
+    setDrawerOpen(false);
     setPestMenuOpen(false);
     setBirdMenuOpen(false);
   };
+
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [drawerOpen]);
 
   useEffect(() => {
     const el = headerRef.current;
@@ -98,159 +102,228 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header ref={headerRef} style={{ position: 'fixed', top: 0, width: '100%', zIndex: 999 }}>
-      <div className="header-emergency-banner">
-        Emergency service appointments available.{' '}
-        <a href={`tel:${PHONE_RAW}`} className="header-emergency-banner__phone">
-          Call: {noBreakPhone(PHONE)}
-        </a>
-      </div>
-
-      <nav className="navbar navbar-default" role="navigation" style={{ marginBottom: 0, borderRadius: 0 }}>
-        <div className="container" style={{ maxWidth: '1440px', width: '100%' }}>
-          <div className="header-mobile">
-            <a href="/" className="header-mobile__logo">
-              <img src={NewMobileLogo} alt="Prime Pest Control Dubai" loading="eager" />
-            </a>
-            <div className="header-mobile__tagline">
-              <p className="header-mobile__location">Serving Dubai, UAE</p>
-              <p className="header-mobile__call">
-                <i className="fa fa-phone" aria-hidden="true"></i> Call Now
-              </p>
-            </div>
-            <button
-              type="button"
-              className="header-mobile__toggle navbar-toggle"
-              onClick={toggleMobileMenu}
-              aria-expanded={mobileMenuOpen}
-              aria-label="Toggle navigation"
-            >
-              <span className="sr-only">Toggle navigation</span>
-              <i className="fa fa-bars" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div className="header-top-row hidden-xs">
-            <div className="header-logo">
-              <a href="/" className="navbar-brand text-hide">
-                <img src={NewLogo} alt="Prime Pest Control Dubai Logo" loading="eager" /> Prime Pest Control Dubai
-              </a>
-            </div>
-            <div className="header-tagline">
-              <p>Pest &amp; Bird Control. Serving All Dubai Communities!</p>
-            </div>
-            <div className="header-cta-buttons">
-              <a href={`tel:${PHONE_RAW}`} className="header-cta-btn header-cta-btn--call">
-                Call: {noBreakPhone(PHONE)}
-              </a>
-              <a href="/free-quote" className="header-cta-btn header-cta-btn--quote">
-                Free Instant Quote
-              </a>
-            </div>
-          </div>
-
-          <div className={`collapse navbar-collapse ${mobileMenuOpen ? 'in' : ''}`} id="header-nav">
-            <ul className="nav navbar-nav navbar-right">
-              <li onClick={closeMobileMenu}><a href="/">Home</a></li>
-              <li onClick={closeMobileMenu}><a href="/about-us">About Us</a></li>
-
-              <li
-                style={{ position: 'relative' }}
-                onMouseEnter={() => { if (!mobileMenuOpen) setPestMenuOpen(true); }}
-                onMouseLeave={() => { if (!mobileMenuOpen) setPestMenuOpen(false); }}
-              >
-                <a
-                  href="/residential-pest-control"
-                  onClick={(e) => {
-                    if (mobileMenuOpen) {
-                      e.preventDefault();
-                      setPestMenuOpen(!pestMenuOpen);
-                    }
-                  }}
-                  style={{ cursor: 'pointer' }}
-                >
-                  Pest Control <ChevronIcon />
-                </a>
-                {!mobileMenuOpen && (
-                  <ul style={dropdownUlStyle(pestMenuOpen)}>
-                    {pestControlItems.map((item) => (
-                      <li key={item.href}>
-                        <a
-                          href={item.href}
-                          className="nav-dropdown-link"
-                          style={dropdownLinkStyle}
-                        >
-                          {item.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {mobileMenuOpen && pestMenuOpen && (
-                  <ul style={{ listStyle: 'none', margin: 0, padding: '0 0 0 16px' }}>
-                    {pestControlItems.map((item) => (
-                      <li key={item.href} onClick={closeMobileMenu}>
-                        <a href={item.href} style={{ display: 'block', padding: '8px 0', color: '#222', textDecoration: 'none', fontSize: '14px' }}>
-                          {item.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-
-              <li
-                style={{ position: 'relative' }}
-                onMouseEnter={() => { if (!mobileMenuOpen) setBirdMenuOpen(true); }}
-                onMouseLeave={() => { if (!mobileMenuOpen) setBirdMenuOpen(false); }}
-              >
-                <a
-                  href="/bird-control-dubai"
-                  onClick={(e) => {
-                    if (mobileMenuOpen) {
-                      e.preventDefault();
-                      setBirdMenuOpen(!birdMenuOpen);
-                    }
-                  }}
-                  style={{ cursor: 'pointer' }}
-                >
-                  Bird Control <ChevronIcon />
-                </a>
-                {!mobileMenuOpen && (
-                  <ul style={dropdownUlStyle(birdMenuOpen)}>
-                    {birdControlItems.map((item) => (
-                      <li key={item.href}>
-                        <a
-                          href={item.href}
-                          className="nav-dropdown-link"
-                          style={dropdownLinkStyle}
-                        >
-                          {item.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {mobileMenuOpen && birdMenuOpen && (
-                  <ul style={{ listStyle: 'none', margin: 0, padding: '0 0 0 16px' }}>
-                    {birdControlItems.map((item) => (
-                      <li key={item.href} onClick={closeMobileMenu}>
-                        <a href={item.href} style={{ display: 'block', padding: '8px 0', color: '#222', textDecoration: 'none', fontSize: '14px' }}>
-                          {item.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-
-              <li onClick={closeMobileMenu}><a href="/residential-pest-control">Residential Pest Control</a></li>
-              <li onClick={closeMobileMenu}><a href="/contact-us">Contact Us</a></li>
-            </ul>
-          </div>
+    <>
+      <header ref={headerRef} style={{ position: 'fixed', top: 0, width: '100%', zIndex: 999 }}>
+        <div className="header-emergency-banner">
+          Emergency service appointments available.{' '}
+          <a href={`tel:${PHONE_RAW}`} className="header-emergency-banner__phone">
+            Call: {noBreakPhone(PHONE)}
+          </a>
         </div>
-      </nav>
-    </header>
+
+        <nav className="site-navbar" role="navigation">
+          <div className="container" style={{ maxWidth: '1440px' }}>
+
+            {/* Mobile top bar */}
+            <div className="header-mobile">
+              <a href="/" className="header-mobile__logo">
+                <img src={NewMobileLogo} alt="Prime Pest Control Dubai" loading="eager" />
+              </a>
+              <a href={`tel:${PHONE_RAW}`} className="header-mobile__tagline">
+                <p className="header-mobile__location">Serving Dubai, UAE</p>
+                <p className="header-mobile__call">
+                  <i className="fa fa-phone" aria-hidden="true"></i> Call Now
+                </p>
+              </a>
+              <button
+                type="button"
+                className="header-mobile__toggle"
+                onClick={() => setDrawerOpen(true)}
+                aria-label="Open navigation menu"
+              >
+                <i className="fa fa-bars" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            {/* Desktop top row */}
+            <div className="header-top-row hidden-xs">
+              <div className="header-logo">
+                <a href="/" className="site-logo">
+                  <img src={NewLogo} alt="Prime Pest Control Dubai Logo" loading="eager" />
+                  <span className="sr-only">Prime Pest Control Dubai</span>
+                </a>
+              </div>
+              <div className="header-tagline">
+                <p>Pest &amp; Bird Control. Serving All Dubai Communities!</p>
+              </div>
+              <div className="header-cta-buttons">
+                <a href={`tel:${PHONE_RAW}`} className="header-cta-btn header-cta-btn--call">
+                  Call: {noBreakPhone(PHONE)}
+                </a>
+                <a href="/free-quote" className="header-cta-btn header-cta-btn--quote">
+                  Free Instant Quote
+                </a>
+              </div>
+            </div>
+
+            {/* Desktop nav — hidden on mobile via CSS */}
+            <div className="site-nav__collapse" id="header-nav">
+              <ul className="site-nav__list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-us">About Us</a></li>
+
+                <li
+                  style={{ position: 'relative' }}
+                  onMouseEnter={() => setDesktopPestOpen(true)}
+                  onMouseLeave={() => setDesktopPestOpen(false)}
+                >
+                  <a href="/residential-pest-control" style={{ cursor: 'pointer' }}>
+                    Pest Control <ChevronIcon open={desktopPestOpen} />
+                  </a>
+                  <ul style={dropdownUlStyle(desktopPestOpen)}>
+                    {pestControlItems.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          className="nav-dropdown-link"
+                          style={{ display: 'block', padding: '10px 20px', color: '#222', textDecoration: 'none', fontSize: '14px', whiteSpace: 'nowrap' }}
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+
+                <li
+                  style={{ position: 'relative' }}
+                  onMouseEnter={() => setDesktopBirdOpen(true)}
+                  onMouseLeave={() => setDesktopBirdOpen(false)}
+                >
+                  <a href="/bird-control-dubai" style={{ cursor: 'pointer' }}>
+                    Bird Control <ChevronIcon open={desktopBirdOpen} />
+                  </a>
+                  <ul style={dropdownUlStyle(desktopBirdOpen)}>
+                    {birdControlItems.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          className="nav-dropdown-link"
+                          style={{ display: 'block', padding: '10px 20px', color: '#222', textDecoration: 'none', fontSize: '14px', whiteSpace: 'nowrap' }}
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+
+                <li><a href="/residential-pest-control">Residential Pest Control</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </nav>
+      </header>
+
+      {/* Overlay backdrop */}
+      <div
+        className={`mobile-drawer-overlay${drawerOpen ? ' mobile-drawer-overlay--open' : ''}`}
+        onClick={closeDrawer}
+        aria-hidden="true"
+      />
+
+      {/* Right-side drawer */}
+      <div
+        className={`mobile-drawer${drawerOpen ? ' mobile-drawer--open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+      >
+        {/* Drawer header */}
+        <div className="mobile-drawer__head">
+          <a href="/" className="mobile-drawer__logo-link" onClick={closeDrawer}>
+            <img src={NewMobileLogo} alt="Prime Pest Control Dubai" />
+          </a>
+          <button className="mobile-drawer__close" onClick={closeDrawer} aria-label="Close menu">
+            <i className="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        {/* Scrollable nav body */}
+        <div className="mobile-drawer__body">
+          <ul className="mobile-drawer__list">
+
+            <li className="mobile-drawer__item">
+              <a href="/" className="mobile-drawer__link" onClick={closeDrawer}>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li className="mobile-drawer__item">
+              <a href="/about-us" className="mobile-drawer__link" onClick={closeDrawer}>
+                <span>About Us</span>
+              </a>
+            </li>
+
+            <li className="mobile-drawer__item">
+              <button
+                className={`mobile-drawer__link mobile-drawer__link--btn${pestMenuOpen ? ' is-active' : ''}`}
+                onClick={() => setPestMenuOpen(!pestMenuOpen)}
+                aria-expanded={pestMenuOpen}
+              >
+                <span>Pest Control</span>
+                <ChevronIcon open={pestMenuOpen} />
+              </button>
+              <ul className={`mobile-drawer__sub${pestMenuOpen ? ' mobile-drawer__sub--open' : ''}`}>
+                {pestControlItems.map((item) => (
+                  <li key={item.href}>
+                    <a href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            <li className="mobile-drawer__item">
+              <button
+                className={`mobile-drawer__link mobile-drawer__link--btn${birdMenuOpen ? ' is-active' : ''}`}
+                onClick={() => setBirdMenuOpen(!birdMenuOpen)}
+                aria-expanded={birdMenuOpen}
+              >
+                <span>Bird Control</span>
+                <ChevronIcon open={birdMenuOpen} />
+              </button>
+              <ul className={`mobile-drawer__sub${birdMenuOpen ? ' mobile-drawer__sub--open' : ''}`}>
+                {birdControlItems.map((item) => (
+                  <li key={item.href}>
+                    <a href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            <li className="mobile-drawer__item">
+              <a href="/residential-pest-control" className="mobile-drawer__link" onClick={closeDrawer}>
+                <span>Residential Pest Control</span>
+              </a>
+            </li>
+
+            <li className="mobile-drawer__item">
+              <a href="/contact-us" className="mobile-drawer__link" onClick={closeDrawer}>
+                <span>Contact Us</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        {/* CTA footer */}
+        <div className="mobile-drawer__cta">
+          <a href={`tel:${PHONE_RAW}`} className="mobile-drawer__cta-call">
+            <i className="fa fa-phone" aria-hidden="true"></i>
+            Call: {noBreakPhone(PHONE)}
+          </a>
+          <a href="/free-quote" className="mobile-drawer__cta-quote" onClick={closeDrawer}>
+            Free Instant Quote
+          </a>
+        </div>
+      </div>
+    </>
   );
 };
 

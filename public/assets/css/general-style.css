@@ -195,9 +195,7 @@ auto 20px; }
 	.navbar-default .container { padding: 0; }
 	.navbar-header.col-lg-3 { display: block; margin: 0 auto; }
 	.navbar-brand { float: none; text-align: center; display: block; }
-	.navbar-default .navbar-toggle { position: absolute; right: 10px; }
 	.navbar-brand>img { margin: 8px; max-width: 280px; }
-	.navbar-toggle { position: absolute; right: 0; margin-right: 0; }
 	.visible-xs .navbar-brand img { max-width: 84px; }
 	.mobile-247 { color: #007033; font-size: 16px; margin-bottom: 0; font-family: 'Nunito Sans', Arial, sans-serif; }
 	.call-us strong {position: relative;display: inline-block;height: 42px; color: #F3EA00; font-size: 130%;border-bottom: 2px solid #F3EA00;font-family: 'Nunito Sans', Arial, sans-serif; }

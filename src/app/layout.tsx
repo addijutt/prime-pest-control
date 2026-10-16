@@ -3,7 +3,6 @@ import Script from 'next/script';
 import './globals.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BackToTopButton from '../components/BackToTopButton';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import FooterCall from '../components/FooterCall';
 
@@ -115,7 +114,7 @@ const aggregateRatingSchema = {
   ratingCount: '127',
 };
 
-const CRITICAL_CSS = `.call-company{font-size:1.2rem}.call-us a{color:#fff}#hero.home-hero{background:none;padding-top:0;margin-top:188px}#hero:not(.home-hero){background:url(/assets/img/hero-bg-v2.webp) no-repeat center top/1440px auto;padding-top:10px;margin-top:0}#hero:not(.home-hero) h1{text-align:center;display:block}.panel{margin-bottom:20px;background:#fff;border:1px solid transparent;border-radius:4px;box-shadow:0 1px 1px #0000000d}.no-bm{margin-bottom:0}.family-roboto{font-family:'Nunito Sans',Arial,sans-serif}.text-center{text-align:center}.panel p span{font-size:1.3125rem;line-height:1.5rem;display:inline-block}.color-dark-grey{color:#504c4c}.visible-lg,.visible-md,.visible-sm,.visible-xs{display:none!important}.panel .img-responsive{text-align:center;display:inline-block;margin:0 auto}.nopad{padding:0}.special-list{padding-left:0;list-style:none;width:100%;max-width:100%;margin:0 auto 20px}.text-left{text-align:left}.special-list li{font-family:'Nunito Sans';padding:5px 0;font-size:1rem;color:#505050}@media (max-width:75rem){#hero.home-hero{margin-top:188px}#hero:not(.home-hero){margin-top:121px}.special-list li{font-size:.75rem;line-height:1.5rem}}@media (max-width:61.9375rem){#hero:not(.home-hero){margin-top:0!important}}@media (max-width:47.9375rem){.visible-xs{display:block!important}.hidden-xs{display:none!important}}@media (max-width:48rem){.special-list li{font-size:1rem}}@media (max-width:30rem){.block-in-mobile{display:block;clear:both;margin:10px 0}.call-us .block-in-mobile{margin:0}#hero:not(.home-hero)>.container{padding:0 5px}.panel{padding:10px 25px;border-radius:2px;box-shadow:1px 0 9px 2px #00000066}.home h1{font-size:1.75rem;line-height:2.25rem}.home .panel p.size-22{line-height:1.5rem;font-size:1.125rem}.panel p,.special-list li{text-align:center}.online-only{font-size:1rem!important}#hero .panel .col-sm-6{padding:0}}`;
+const CRITICAL_CSS = `.call-company{font-size:1.2rem}.call-us a{color:#fff}#hero.home-hero{background:none;padding-top:0;margin-top:188px}#hero:not(.home-hero){background:url(/assets/img/hero-bg-v2.webp) no-repeat center top/1440px auto;padding-top:10px;margin-top:0}#hero:not(.home-hero) h1{text-align:center;display:block}.no-bm{margin-bottom:0}.family-roboto{font-family:'Nunito Sans',Arial,sans-serif}.text-center{text-align:center}.panel p span{font-size:1.3125rem;line-height:1.5rem;display:inline-block}.color-dark-grey{color:#504c4c}.visible-lg,.visible-md,.visible-sm,.visible-xs{display:none!important}.panel .img-responsive{text-align:center;display:inline-block;margin:0 auto}.nopad{padding:0}.special-list{padding-left:0;list-style:none;width:100%;max-width:100%;margin:0 auto 20px}.text-left{text-align:left}.special-list li{font-family:'Nunito Sans';padding:5px 0;font-size:1rem;color:#505050}@media (max-width:75rem){#hero.home-hero{margin-top:188px}#hero:not(.home-hero){margin-top:121px}.special-list li{font-size:.75rem;line-height:1.5rem}}@media (max-width:61.9375rem){#hero:not(.home-hero){margin-top:0!important}}@media (max-width:47.9375rem){.visible-xs{display:block!important}.hidden-xs{display:none!important}}@media (max-width:48rem){.special-list li{font-size:1rem}}@media (max-width:30rem){.block-in-mobile{display:block;clear:both;margin:10px 0}.call-us .block-in-mobile{margin:0}#hero:not(.home-hero)>.container{padding:0 5px}.home h1{font-size:1.75rem;line-height:2.25rem}.home .panel p.size-22{line-height:1.5rem;font-size:1.125rem}.panel p,.special-list li{text-align:center}.online-only{font-size:1rem!important}}`;
 
 export default function RootLayout({
   children,
@@ -132,10 +131,6 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200;700&family=Roboto:wght@700&display=swap"
         />
-
-        {/* Bootstrap */}
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/assets/css/general-style.css" />
 
         {/* Font Awesome */}
         <link
@@ -212,7 +207,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <BackToTopButton />
         <FloatingWhatsApp />
         <FooterCall />
       </body>

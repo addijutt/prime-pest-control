@@ -22,7 +22,7 @@ const Footer: React.FC = () => (
         <img src={FooterLogo} alt="Prime Pest Control Dubai Logo" loading="eager" />
       </div>
       <nav role="navigation">
-        <ul id="footer-nav" className="list-inline">
+        <ul id="footer-nav">
           <li><a href="/">Home</a></li>
           <li><a href="/about-us">About Us</a></li>
           <li><a href="/residential-pest-control">Residential Pest Control</a></li>

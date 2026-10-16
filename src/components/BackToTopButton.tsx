@@ -6,26 +6,21 @@ const BackToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
+    const toggleVisibility = () => setIsVisible(window.pageYOffset > 300);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <div className={`back-to-top ${isVisible ? 'opacity-100' : 'opacity-0'}`} onClick={scrollToTop}>
-      <i className="fa fa-angle-up fa-3x"></i>
-    </div>
+    <button
+      className={`back-to-top${isVisible ? ' back-to-top--visible' : ''}`}
+      onClick={scrollToTop}
+      aria-label="Back to top"
+    >
+      <i className="fa-solid fa-chevron-up" aria-hidden="true"></i>
+    </button>
   );
 };
 
