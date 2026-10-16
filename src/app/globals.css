@@ -801,18 +801,17 @@ button:active {
 @media (max-width: 767px) {
   #hero.contact-hero,
   #hero.about-hero {
-    height: auto !important;
-    aspect-ratio: 1440 / 350;
-    margin-top: calc(var(--header-height, 140px)) !important;
+    height: 180px !important;
+    margin-top: calc(var(--header-height, 64px)) !important;
+    background-size: cover !important;
+    background-position: center center !important;
   }
 }
 
 @media (max-width: 480px) {
   #hero.contact-hero,
   #hero.about-hero {
-    height: auto !important;
-    background-size: cover !important;
-    background-position: center center !important;
+    height: 140px !important;
   }
 }
 
@@ -5332,6 +5331,10 @@ button:active {
   .faq-section-v2__left {
     width: 100%;
     position: static;
+    order: 2;
+  }
+  .faq-section-v2__right {
+    order: 1;
   }
   .faq-section-v2__title {
     font-size: 1.6rem;
