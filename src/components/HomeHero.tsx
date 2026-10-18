@@ -85,7 +85,7 @@ const MOBILE_HERO_PESTS: MobileHeroPestItem[] = [
 
 const MOBILE_HERO_BENEFITS = [
   'Serving All Dubai Communities & Free Zones',
-  'Same or Next Day Service Available',
+  '24/7 Service. Same-Day Bookings Available.',
   'Free, No-Obligation Estimates',
   'Licensed & Insured Technicians',
   'Results 100% Guaranteed',
@@ -151,7 +151,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
               </li>
               <li className="home-hero__highlight">
                 <HeroCheckIcon className="home-hero__highlight-icon" />
-                <span>Free, No-Obligation Quote in 60 Seconds</span>
+                <span>24/7 Service. Free Quote in 60 Seconds.</span>
               </li>
             </ul>
           </div>
@@ -217,7 +217,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
               </li>
               <li className="home-hero-mobile__highlight">
                 <HeroCheckIcon className="home-hero-mobile__highlight-icon" />
-                <span>Free, No-Obligation Quote in 60 Seconds</span>
+                <span>24/7 Service. Free Quote in 60 Seconds.</span>
               </li>
             </ul>
           </div>

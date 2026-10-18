@@ -16,7 +16,7 @@ const WHY_CALL_US_FEATURES = [
     id: 'same-day',
     iconSrc: '/assets/img/why-call-us-section/why-call-us-same-day.png',
     title: 'Same-day and next-day service across Dubai',
-    description: "Pest problems don't wait. Technicians across Dubai communities are often available the same day you contact us.",
+    description: "We're available 24/7. Technicians across Dubai are often available the same day you contact us.",
   },
   {
     id: 'bird-and-pest',

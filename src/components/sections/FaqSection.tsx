@@ -5,7 +5,7 @@ import type { FaqItem } from '../../config/pageContentHelpers';
 
 const DEFAULT_FAQS: FaqItem[] = [
   { question: 'Do I need to know what pest I have?', answer: "No. Just describe what you're seeing. Our Dubai experts will identify the pest, explain what's causing the problem, and recommend the right treatment for your home or business." },
-  { question: 'How quickly can you respond in Dubai?', answer: 'We offer same-day and next-day appointments across all Dubai communities. WhatsApp us for the fastest response. We typically reply within minutes.' },
+  { question: 'How quickly can you respond in Dubai?', answer: 'We are available 24/7 and offer same-day and next-day appointments across Dubai. WhatsApp us any time — we typically reply within minutes.' },
   { question: 'Are your treatments safe for children and pets?', answer: 'Yes. We use products and application methods that are safe for families and pets when used as directed. Our technicians will advise you on any precautions needed before and after treatment.' },
   { question: 'Do you offer a satisfaction guarantee?', answer: 'Yes. We offer a 100% satisfaction guarantee on all our pest and bird control services in Dubai. If the problem persists after treatment, we will return and re-treat at no additional cost.' },
   { question: 'How much does pest control cost in Dubai?', answer: 'Prices vary depending on the type of pest, size of the property, and severity of the infestation. WhatsApp or call us for a free, no-obligation quote with upfront pricing in AED and no hidden fees.' },

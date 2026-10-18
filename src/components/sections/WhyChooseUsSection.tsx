@@ -4,13 +4,13 @@ import WhatsAppIcon from '../WhatsAppIcon';
 
 const FEATURES = [
   { id: 'free-estimates', title: 'Free Pest & Bird Control Estimates', iconSrc: '/assets/img/why-choose-us-section/why-choose-us-free-estimates.png' },
-  { id: 'prompt-service', title: 'Prompt Same-Day Service in Dubai', iconSrc: '/assets/img/why-choose-us-section/why-choose-us-prompt-service.png' },
+  { id: 'prompt-service', title: '24/7 Same-Day Service in Dubai', iconSrc: '/assets/img/why-choose-us-section/why-choose-us-prompt-service.png' },
   { id: 'guaranteed', title: 'Results 100% Guaranteed', iconSrc: '/assets/img/why-choose-us-section/why-choose-us-results-guarantee.png' },
   { id: 'dubai-specialists', title: 'Dubai Pest & Bird Specialists', iconSrc: '/assets/img/why-choose-us-section/why-choose-us-locally-owned.png' },
 ] as const;
 
 const PROCESS_STEPS = [
-  { id: 'step-01', number: '01', title: 'WhatsApp Us', description: 'Message us any time. We respond fast and offer same-day bookings across Dubai.' },
+  { id: 'step-01', number: '01', title: 'WhatsApp Us', description: 'Message us any time, day or night. We respond fast and offer same-day bookings across Dubai.' },
   { id: 'step-02', number: '02', title: 'Free Site Assessment', description: 'Our specialist visits your property, identifies every pest or bird problem, and explains the plan.' },
   { id: 'step-03', number: '03', title: 'Targeted Treatment', description: 'We apply the right solution for your specific pest or bird problem. It is safe, effective, and eco-responsible.' },
   { id: 'step-04', number: '04', title: 'Guaranteed Results', description: "If pests return between treatments, we come back at no extra charge. That's our promise." },
