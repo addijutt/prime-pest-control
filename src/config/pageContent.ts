@@ -4,7 +4,7 @@ import { pest } from './pageContentHelpers';
 export const PAGE_CONTENT: Record<string, PageContent> = {
   '/24-7-service': {
     hero: {
-      headline: 'Fast Response Pest & Bird Control in Dubai',
+      headline: '24/7 Pest Control in Dubai. Always Available.',
       pestIcons: [
         pest('Ants', '/ant-exterminator-near-me', 'black-ant'),
         pest('Mice', '/mice-exterminator-near-me', 'white-mouse'),
@@ -36,7 +36,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/ant-exterminator-near-me': {
     hero: {
-      headline: 'Professional Ant Control in Dubai',
+      headline: 'Get Rid of Ants in Dubai. Same-Day Service Available.',
       pestIcons: [pest('Carpenter Ant'), pest('Odorous House Ant'), pest('Argentine Ant'), pest('Red Imported Fire Ant')],
     },
     expertise: {
@@ -71,7 +71,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/bed-bug-exterminator-near-me': {
     hero: {
-      headline: 'Professional Bed Bug Exterminator in Dubai',
+      headline: 'Bed Bug Exterminator in Dubai. Sleep Easy Again.',
       pestIcons: [pest('Common Bed Bug'), pest('Tropical Bed Bug'), pest('Adult Bed Bug'), pest('Bed Bug Nymph')],
     },
     expertise: {
@@ -106,7 +106,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/bee-removal': {
     hero: {
-      headline: 'Professional Bee Removal in Dubai',
+      headline: 'Bee Removal in Dubai. Safe & Guaranteed.',
       pestIcons: [pest('Western Honey Bee'), pest('Eastern Honey Bee'), pest('Eastern Carpenter Bee'), pest('Mason Bee')],
     },
     expertise: {
@@ -141,7 +141,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/carpenter-bee-exterminator-near-me': {
     hero: {
-      headline: 'Professional Carpenter Bee Exterminator in Dubai',
+      headline: 'Carpenter Bee Removal in Dubai. Guaranteed.',
       pestIcons: [pest('Eastern Carpenter Bee'), pest('Arab Carpenter Bee'), pest('Large Carpenter Bee'), pest('Small Carpenter Bee')],
     },
     expertise: {
@@ -168,7 +168,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/cockroach-exterminator-near-me': {
     hero: {
-      headline: 'Professional Cockroach Exterminator in Dubai',
+      headline: 'Cockroach Exterminator in Dubai. Eliminated for Good.',
       pestIcons: [pest('German Cockroach'), pest('American Cockroach'), pest('Oriental Cockroach'), pest('Brown-Banded Cockroach')],
     },
     expertise: {
@@ -203,7 +203,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/critter-control': {
     hero: {
-      headline: 'Professional Scorpion Control in Dubai',
+      headline: 'Scorpion Exterminator in Dubai. Guaranteed.',
       pestIcons: [pest('Arabian Fat-tailed Scorpion'), pest('Deathstalker Scorpion'), pest('Yellow Scorpion'), pest('Black Scorpion')],
     },
     expertise: {
@@ -238,7 +238,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/exterminator-for-house-centipedes': {
     hero: {
-      headline: 'Professional House Centipede Exterminator in Dubai',
+      headline: 'Centipede Control in Dubai. Guaranteed.',
       pestIcons: [pest('Common House Centipede'), pest('Stone Centipede'), pest('Arabian Desert Centipede'), pest('Bark Centipede')],
     },
     expertise: {
@@ -265,7 +265,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/exterminator-near-me': {
     hero: {
-      headline: 'Pest & Bird Control Exterminator in Dubai',
+      headline: 'Dubai Pest & Bird Control. Same-Day.',
       pestIcons: [
         pest('Ants', '/ant-exterminator-near-me', 'black-ant'),
         pest('Mice', '/mice-exterminator-near-me', 'white-mouse'),
@@ -331,7 +331,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/hornet-nest-removal': {
     hero: {
-      headline: 'Professional Hornet Nest Removal in Dubai',
+      headline: 'Hornet Nest Removal in Dubai. Safe, Fast & Guaranteed.',
       pestIcons: [pest('Oriental Hornet'), pest('European Hornet'), pest('Asian Hornet'), pest('Hornet Queen')],
     },
     expertise: {
@@ -366,7 +366,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/insect-control': {
     hero: {
-      headline: 'Professional Insect Control in Dubai',
+      headline: 'Dubai Insect Exterminator. Same-Day.',
       pestIcons: [pest('Carpenter Ant'), pest('German Cockroach'), pest('Common Bed Bug'), pest('Eastern Subterranean Termite')],
     },
     expertise: {
@@ -393,7 +393,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/local-pest-control': {
     hero: {
-      headline: 'Your Local Pest & Bird Control Experts in Dubai',
+      headline: 'Local Pest & Bird Control in Dubai. Guaranteed.',
       pestIcons: [
         pest('Ants', '/ant-exterminator-near-me', 'black-ant'),
         pest('Mice', '/mice-exterminator-near-me', 'white-mouse'),
@@ -457,7 +457,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/mice-exterminator-near-me': {
     hero: {
-      headline: 'Professional Mice Exterminator in Dubai',
+      headline: 'Dubai Mice Exterminator. One Call. Problem Solved.',
       pestIcons: [pest('House Mouse'), pest('Cairo Spiny Mouse'), pest('Field Mouse'), pest('Sand Rat')],
     },
     expertise: {
@@ -482,7 +482,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/mosquito-spraying-near-me': {
     hero: {
-      headline: 'Professional Mosquito Control in Dubai',
+      headline: 'Dubai Mosquito Control. Same-Day. Safe for Families & Pets.',
       pestIcons: [pest('Asian Tiger Mosquito'), pest('Yellow Fever Mosquito'), pest('Malaria Mosquito'), pest('Southern House Mosquito')],
     },
     expertise: {
@@ -544,7 +544,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/pest-control-for-fleas': {
     hero: {
-      headline: 'Professional Flea Control in Dubai',
+      headline: 'Flea Treatment in Dubai. Same-Day.',
       pestIcons: [pest('Cat Flea'), pest('Dog Flea'), pest('Human Flea'), pest('Oriental Rat Flea')],
     },
     expertise: {
@@ -579,7 +579,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/professional-flea-control': {
     hero: {
-      headline: 'Professional Flea Control in Dubai',
+      headline: 'Flea Treatment in Dubai. Same-Day.',
       pestIcons: [pest('Cat Flea'), pest('Dog Flea'), pest('Human Flea'), pest('Oriental Rat Flea')],
     },
     expertise: {
@@ -614,7 +614,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/pest-control-near-me': {
     hero: {
-      headline: 'Pest & Bird Control in Dubai',
+      headline: 'Pest & Bird Experts in Dubai. Fast & Trusted.',
       pestIcons: [
         pest('Ants', '/ant-exterminator-near-me', 'black-ant'),
         pest('Mice', '/mice-exterminator-near-me', 'white-mouse'),
@@ -646,7 +646,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/rat-exterminator-near-me': {
     hero: {
-      headline: 'Professional Rat Exterminator in Dubai',
+      headline: 'Get Rid of Rats in Dubai. Same-Day. Guaranteed.',
       pestIcons: [pest('Norway Rat'), pest('Roof Rat'), pest('Sand Rat'), pest('House Mouse')],
     },
     expertise: {
@@ -671,7 +671,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/residential-pest-control': {
     hero: {
-      headline: 'Professional Residential Pest Control in Dubai',
+      headline: 'Pest Control for Dubai Homes. Done Right.',
       pestIcons: [pest('Carpenter Ant'), pest('House Mouse'), pest('German Cockroach'), pest('Eastern Subterranean Termite')],
     },
     expertise: {
@@ -699,7 +699,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/residential-pest-control-service': {
     hero: {
-      headline: 'Reliable Residential Pest Control Services in Dubai',
+      headline: 'Pest Control for Dubai Homes. Done Right.',
       pestIcons: [pest('Carpenter Ant'), pest('House Mouse'), pest('German Cockroach'), pest('Eastern Subterranean Termite')],
     },
     expertise: {
@@ -761,7 +761,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/rodent-control': {
     hero: {
-      headline: 'Professional Rodent Control in Dubai',
+      headline: 'Rodent Control in Dubai. No More Rats or Mice. Guaranteed.',
       pestIcons: [pest('House Mouse'), pest('Norway Rat'), pest('Roof Rat'), pest('Sand Rat')],
     },
     expertise: {
@@ -794,7 +794,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/rodent-control-near-me': {
     hero: {
-      headline: 'Professional Rodent Control in Dubai',
+      headline: 'Rodent Control in Dubai. No More Rats or Mice. Guaranteed.',
       pestIcons: [pest('House Mouse'), pest('Norway Rat'), pest('Roof Rat'), pest('Sand Rat')],
     },
     expertise: {
@@ -827,7 +827,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/same-day-appointment': {
     hero: {
-      headline: 'Same-Day Pest & Bird Control in Dubai',
+      headline: 'Dubai Same-Day Pest Control. Call Now.',
       pestIcons: [
         pest('Ants', '/ant-exterminator-near-me', 'black-ant'),
         pest('Mice', '/mice-exterminator-near-me', 'white-mouse'),
@@ -859,7 +859,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/spider-exterminator-near-me': {
     hero: {
-      headline: 'Professional Spider Exterminator in Dubai',
+      headline: 'Dubai Spider Exterminator. Same-Day.',
       pestIcons: [pest('Common House Spider'), pest('Wolf Spider'), pest('Yellow Sac Spider'), pest('Camel Spider')],
     },
     expertise: {
@@ -894,7 +894,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/termite-control': {
     hero: {
-      headline: 'Professional Termite Control in Dubai',
+      headline: 'Termite Control in Dubai. Stop the Damage Before It Spreads.',
       pestIcons: [pest('Eastern Subterranean Termite'), pest('Formosan Termite'), pest('Drywood Termite'), pest('Dampwood Termite')],
     },
     expertise: {
@@ -929,7 +929,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/tick-control-near-me': {
     hero: {
-      headline: 'Professional Tick Control in Dubai',
+      headline: 'Dubai Tick Exterminator. Same-Day.',
       pestIcons: [pest('Brown Dog Tick'), pest('Hyalomma Tick'), pest('Camel Tick'), pest('Asian Longhorned Tick')],
     },
     expertise: {
@@ -964,7 +964,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/wasp-nest-removal': {
     hero: {
-      headline: 'Professional Wasp Nest Removal in Dubai',
+      headline: 'Wasp Nest Removal in Dubai. Safe, Fast & Guaranteed.',
       pestIcons: [pest('Paper Wasp'), pest('Red Paper Wasp'), pest('Mud Dauber'), pest('Oriental Hornet')],
     },
     expertise: {
@@ -999,7 +999,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/yellow-jacket-nest-removal': {
     hero: {
-      headline: 'Professional Wasp & Hornet Control in Dubai',
+      headline: 'Dubai Wasp & Hornet Removal. Same-Day.',
       pestIcons: [pest('Oriental Hornet'), pest('Paper Wasp'), pest('Potter Wasp'), pest('Mud Dauber')],
     },
     expertise: {
@@ -1026,7 +1026,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/bird-control-dubai': {
     hero: {
-      headline: 'Professional Bird Control in Dubai',
+      headline: 'Bird Control in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
         { label: 'Mynah Control', href: '/mynah-bird-control', imageKey: 'bird' },
@@ -1057,7 +1057,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/pigeon-control-dubai': {
     hero: {
-      headline: 'Pigeon Control & Removal in Dubai',
+      headline: 'Pigeon Control in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Pigeon Removal', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
         { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
@@ -1088,7 +1088,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/mynah-bird-control': {
     hero: {
-      headline: 'Mynah Bird Control in Dubai',
+      headline: 'Mynah Bird Control in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Mynah Removal', href: '/mynah-bird-control', imageKey: 'bird' },
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
@@ -1111,7 +1111,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/bird-netting-dubai': {
     hero: {
-      headline: 'Bird Netting Installation in Dubai',
+      headline: 'Dubai Bird Netting. Installed Same-Day.',
       pestIcons: [
         { label: 'Anti-Bird Nets', href: '/bird-netting-dubai', imageKey: 'bird' },
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
@@ -1134,7 +1134,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/bird-proofing-dubai': {
     hero: {
-      headline: 'Bird Proofing Solutions in Dubai',
+      headline: 'Bird Proofing in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Bird Proofing', href: '/bird-proofing-dubai', imageKey: 'bird' },
         { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
@@ -1157,7 +1157,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/scorpion-control-dubai': {
     hero: {
-      headline: 'Scorpion Control & Removal in Dubai',
+      headline: 'Scorpion Exterminator in Dubai. Guaranteed.',
       pestIcons: [pest('Arabian Fat-tailed Scorpion'), pest('Deathstalker Scorpion'), pest('Yellow Scorpion'), pest('Black Scorpion')],
     },
     expertise: {
@@ -1184,7 +1184,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/camel-spider-control-dubai': {
     hero: {
-      headline: 'Camel Spider Removal in Dubai',
+      headline: 'Camel Spider Exterminator in Dubai. Fast & Safe.',
       pestIcons: [pest('Camel Spider'), pest('Wolf Spider'), pest('Common House Spider'), pest('Yellow Sac Spider')],
     },
     expertise: {
@@ -1211,7 +1211,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/drain-fly-control-dubai': {
     hero: {
-      headline: 'Drain Fly Control in Dubai',
+      headline: 'Dubai Drain Fly Treatment. Same-Day.',
       pestIcons: [pest('Drain Fly'), pest('House Fly'), pest('Fruit Fly'), pest('Moth Fly')],
     },
     expertise: {
@@ -1246,7 +1246,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/silverfish-control-dubai': {
     hero: {
-      headline: 'Silverfish Control in Dubai',
+      headline: 'Dubai Silverfish Treatment. Same-Day.',
       pestIcons: [pest('Silverfish'), pest('Carpet Beetle'), pest('Common House Spider'), pest('Common House Centipede')],
     },
     expertise: {
@@ -1281,7 +1281,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/commercial-pest-control-dubai': {
     hero: {
-      headline: 'Commercial Pest Control in Dubai',
+      headline: 'Commercial Pest Control in Dubai. Guaranteed.',
       pestIcons: [
         pest('Cockroaches', '/roach-exterminator-near-me', 'roach'),
         pest('Ants', '/ant-exterminator-near-me', 'black-ant'),
@@ -1321,7 +1321,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/crow-control-dubai': {
     hero: {
-      headline: 'Crow Control in Dubai',
+      headline: 'Crow Control in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Crow Control', href: '/crow-control-dubai', imageKey: 'house-crow' },
         { label: 'Sparrow Control', href: '/sparrow-control-dubai', imageKey: 'house-sparrow' },
@@ -1344,7 +1344,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/sparrow-control-dubai': {
     hero: {
-      headline: 'Sparrow Control in Dubai',
+      headline: 'Sparrow Control in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Sparrow Control', href: '/sparrow-control-dubai', imageKey: 'house-sparrow' },
         { label: 'Crow Control', href: '/crow-control-dubai', imageKey: 'house-crow' },
@@ -1367,7 +1367,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   },
   '/solar-panel-bird-proofing-dubai': {
     hero: {
-      headline: 'Solar Panel Bird Proofing in Dubai',
+      headline: 'Dubai Solar Panel Bird Proofing. Same-Day.',
       pestIcons: [
         { label: 'Solar Bird Proofing', href: '/solar-panel-bird-proofing-dubai', imageKey: 'bird' },
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
