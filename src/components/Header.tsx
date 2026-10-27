@@ -107,7 +107,7 @@ const Header: React.FC = () => {
         <div className="header-emergency-banner">
           Emergency service appointments available.{' '}
           <a href={`tel:${PHONE_RAW}`} className="header-emergency-banner__phone">
-            Call: {noBreakPhone(PHONE)}
+            Call 24/7: {noBreakPhone(PHONE)}
           </a>
         </div>
 
@@ -148,7 +148,7 @@ const Header: React.FC = () => {
               </div>
               <div className="header-cta-buttons">
                 <a href={`tel:${PHONE_RAW}`} className="header-cta-btn header-cta-btn--call">
-                  Call: {noBreakPhone(PHONE)}
+                  Call 24/7: {noBreakPhone(PHONE)}
                 </a>
                 <a href="/free-quote" className="header-cta-btn header-cta-btn--quote">
                   Free Instant Quote
@@ -316,7 +316,7 @@ const Header: React.FC = () => {
         <div className="mobile-drawer__cta">
           <a href={`tel:${PHONE_RAW}`} className="mobile-drawer__cta-call">
             <i className="fa fa-phone" aria-hidden="true"></i>
-            Call: {noBreakPhone(PHONE)}
+            Call 24/7: {noBreakPhone(PHONE)}
           </a>
           <a href="/free-quote" className="mobile-drawer__cta-quote" onClick={closeDrawer}>
             Free Instant Quote
