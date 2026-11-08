@@ -39,11 +39,11 @@ async function ipGeolocate(): Promise<VisitorLocation> {
 }
 
 export function useVisitorLocation(): VisitorLocation {
-  const [loc, setLoc] = useState<VisitorLocation>(() => getCache() ?? DEFAULT);
+  const [loc, setLoc] = useState<VisitorLocation>(DEFAULT);
 
   useEffect(() => {
     const cached = getCache();
-    if (cached) return;
+    if (cached) { setLoc(cached); return; }
 
     let cancelled = false;
     ipGeolocate().then((result) => {
