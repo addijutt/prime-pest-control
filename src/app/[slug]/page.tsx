@@ -233,8 +233,31 @@ export default async function SlugPage({
   const heroTitle = pageContent?.hero.headline ?? 'Affordable Pest Control';
   const isOverlay = slug === 'professional-flea-control';
 
+  const pageMeta = SEO_META[slug];
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `https://www.primepestcontrol.ae/${slug}#service`,
+    name: pageMeta.title.split('|')[0].trim(),
+    description: pageMeta.description,
+    provider: { '@id': 'https://www.primepestcontrol.ae/#business' },
+    areaServed: { '@type': 'City', name: 'Dubai' },
+    url: `https://www.primepestcontrol.ae/${slug}`,
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.primepestcontrol.ae' },
+      { '@type': 'ListItem', position: 2, name: pageMeta.title.split('|')[0].trim(), item: `https://www.primepestcontrol.ae/${slug}` },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <HomeHero
         title={heroTitle}
         desktopPestIcons={pageContent?.hero.pestIcons}

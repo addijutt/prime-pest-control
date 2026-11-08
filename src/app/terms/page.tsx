@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import WhyChooseUsSidebar from '../../components/sections/WhyChooseUsSidebar';
 import PillCta from '../../components/ui/PillCta';
 import { noBreakPhone } from '../../utils/formatPhone';
@@ -53,7 +54,7 @@ export default function TermsPage() {
 
               <h3>3. Privacy Policy</h3>
               <p>
-                Please review our <a href="/privacy-policy" className="privacy-policy-link">Privacy Policy</a>, which explains how we collect, use, and disclose your personal information. Your use of this Site signifies your consent to the collection and use of data as described in our Privacy Policy.
+                Please review our <Link href="/privacy-policy" className="privacy-policy-link">Privacy Policy</Link>, which explains how we collect, use, and disclose your personal information. Your use of this Site signifies your consent to the collection and use of data as described in our Privacy Policy.
               </p>
 
               <h3>4. Electronic Communications</h3>
@@ -181,7 +182,7 @@ export default function TermsPage() {
                   <span className="theme-pill-cta__arrow" aria-hidden="true">→</span>
                 </PillCta>
                 <p>
-                  <a href="/contact-us">Call Us for a Free Estimate</a>
+                  <Link href="/contact-us">Call Us for a Free Estimate</Link>
                 </p>
               </div>
             </div>

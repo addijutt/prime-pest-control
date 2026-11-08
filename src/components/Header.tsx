@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { NewLogo, NewMobileLogo } from '../utils/images';
 import { noBreakPhone } from '../utils/formatPhone';
-import { useVisitorLocation } from '../hooks/useVisitorLocation';
 
 const PHONE = '055 304 5256';
 const PHONE_RAW = '+971553045256';
@@ -76,7 +76,6 @@ const Header: React.FC = () => {
   const [desktopPestOpen, setDesktopPestOpen] = useState(false);
   const [desktopBirdOpen, setDesktopBirdOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
-  const { city } = useVisitorLocation();
 
   const closeDrawer = () => {
     setDrawerOpen(false);
@@ -116,9 +115,9 @@ const Header: React.FC = () => {
 
             {/* Mobile top bar */}
             <div className="header-mobile">
-              <a href="/" className="header-mobile__logo">
+              <Link href="/" className="header-mobile__logo">
                 <img src={NewMobileLogo} alt="Prime Pest Control Dubai" loading="eager" />
-              </a>
+              </Link>
               <a href={`tel:${PHONE_RAW}`} className="header-mobile__tagline">
                 <p className="header-mobile__location">Serving Dubai, UAE</p>
                 <p className="header-mobile__call">
@@ -138,10 +137,10 @@ const Header: React.FC = () => {
             {/* Desktop top row */}
             <div className="header-top-row hidden-xs">
               <div className="header-logo">
-                <a href="/" className="site-logo">
+                <Link href="/" className="site-logo">
                   <img src={NewLogo} alt="Prime Pest Control Dubai Logo" loading="eager" />
                   <span className="sr-only">Prime Pest Control Dubai</span>
-                </a>
+                </Link>
               </div>
               <div className="header-tagline">
                 <p>Pest &amp; Bird Control. Serving All Dubai Communities!</p>
@@ -150,36 +149,36 @@ const Header: React.FC = () => {
                 <a href={`tel:${PHONE_RAW}`} className="header-cta-btn header-cta-btn--call">
                   Call 24/7: {noBreakPhone(PHONE)}
                 </a>
-                <a href="/free-quote" className="header-cta-btn header-cta-btn--quote">
+                <Link href="/free-quote" className="header-cta-btn header-cta-btn--quote">
                   Free Instant Quote
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* Desktop nav — hidden on mobile via CSS */}
             <div className="site-nav__collapse" id="header-nav">
               <ul className="site-nav__list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about-us">About Us</a></li>
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/about-us">About Us</Link></li>
 
                 <li
                   style={{ position: 'relative' }}
                   onMouseEnter={() => setDesktopPestOpen(true)}
                   onMouseLeave={() => setDesktopPestOpen(false)}
                 >
-                  <a href="/residential-pest-control" style={{ cursor: 'pointer' }}>
+                  <Link href="/residential-pest-control" style={{ cursor: 'pointer' }}>
                     Pest Control <ChevronIcon open={desktopPestOpen} />
-                  </a>
+                  </Link>
                   <ul style={dropdownUlStyle(desktopPestOpen)}>
                     {pestControlItems.map((item) => (
                       <li key={item.href}>
-                        <a
+                        <Link
                           href={item.href}
                           className="nav-dropdown-link"
                           style={{ display: 'block', padding: '10px 20px', color: '#222', textDecoration: 'none', fontSize: '14px', whiteSpace: 'nowrap' }}
                         >
                           {item.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -190,26 +189,26 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setDesktopBirdOpen(true)}
                   onMouseLeave={() => setDesktopBirdOpen(false)}
                 >
-                  <a href="/bird-control-dubai" style={{ cursor: 'pointer' }}>
+                  <Link href="/bird-control-dubai" style={{ cursor: 'pointer' }}>
                     Bird Control <ChevronIcon open={desktopBirdOpen} />
-                  </a>
+                  </Link>
                   <ul style={dropdownUlStyle(desktopBirdOpen)}>
                     {birdControlItems.map((item) => (
                       <li key={item.href}>
-                        <a
+                        <Link
                           href={item.href}
                           className="nav-dropdown-link"
                           style={{ display: 'block', padding: '10px 20px', color: '#222', textDecoration: 'none', fontSize: '14px', whiteSpace: 'nowrap' }}
                         >
                           {item.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
 
-                <li><a href="/residential-pest-control">Residential Pest Control</a></li>
-                <li><a href="/contact-us">Contact Us</a></li>
+                <li><Link href="/residential-pest-control">Residential Pest Control</Link></li>
+                <li><Link href="/contact-us">Contact Us</Link></li>
               </ul>
             </div>
 
@@ -233,9 +232,9 @@ const Header: React.FC = () => {
       >
         {/* Drawer header */}
         <div className="mobile-drawer__head">
-          <a href="/" className="mobile-drawer__logo-link" onClick={closeDrawer}>
+          <Link href="/" className="mobile-drawer__logo-link" onClick={closeDrawer}>
             <img src={NewMobileLogo} alt="Prime Pest Control Dubai" />
-          </a>
+          </Link>
           <button className="mobile-drawer__close" onClick={closeDrawer} aria-label="Close menu">
             <i className="fa fa-times" aria-hidden="true"></i>
           </button>
@@ -246,15 +245,15 @@ const Header: React.FC = () => {
           <ul className="mobile-drawer__list">
 
             <li className="mobile-drawer__item">
-              <a href="/" className="mobile-drawer__link" onClick={closeDrawer}>
+              <Link href="/" className="mobile-drawer__link" onClick={closeDrawer}>
                 <span>Home</span>
-              </a>
+              </Link>
             </li>
 
             <li className="mobile-drawer__item">
-              <a href="/about-us" className="mobile-drawer__link" onClick={closeDrawer}>
+              <Link href="/about-us" className="mobile-drawer__link" onClick={closeDrawer}>
                 <span>About Us</span>
-              </a>
+              </Link>
             </li>
 
             <li className="mobile-drawer__item">
@@ -269,9 +268,9 @@ const Header: React.FC = () => {
               <ul className={`mobile-drawer__sub${pestMenuOpen ? ' mobile-drawer__sub--open' : ''}`}>
                 {pestControlItems.map((item) => (
                   <li key={item.href}>
-                    <a href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
+                    <Link href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -289,24 +288,24 @@ const Header: React.FC = () => {
               <ul className={`mobile-drawer__sub${birdMenuOpen ? ' mobile-drawer__sub--open' : ''}`}>
                 {birdControlItems.map((item) => (
                   <li key={item.href}>
-                    <a href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
+                    <Link href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </li>
 
             <li className="mobile-drawer__item">
-              <a href="/residential-pest-control" className="mobile-drawer__link" onClick={closeDrawer}>
+              <Link href="/residential-pest-control" className="mobile-drawer__link" onClick={closeDrawer}>
                 <span>Residential Pest Control</span>
-              </a>
+              </Link>
             </li>
 
             <li className="mobile-drawer__item">
-              <a href="/contact-us" className="mobile-drawer__link" onClick={closeDrawer}>
+              <Link href="/contact-us" className="mobile-drawer__link" onClick={closeDrawer}>
                 <span>Contact Us</span>
-              </a>
+              </Link>
             </li>
 
           </ul>
@@ -318,9 +317,9 @@ const Header: React.FC = () => {
             <i className="fa fa-phone" aria-hidden="true"></i>
             Call 24/7: {noBreakPhone(PHONE)}
           </a>
-          <a href="/free-quote" className="mobile-drawer__cta-quote" onClick={closeDrawer}>
+          <Link href="/free-quote" className="mobile-drawer__cta-quote" onClick={closeDrawer}>
             Free Instant Quote
-          </a>
+          </Link>
         </div>
       </div>
     </>

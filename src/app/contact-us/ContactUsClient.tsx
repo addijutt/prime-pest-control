@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 import WhatsAppIcon from '../../components/WhatsAppIcon';
 import { UrgencyComponentImage } from '../../utils/images';
 import ServiceAreaSection from '../../components/sections/ServiceAreaSection';
@@ -174,7 +175,7 @@ export default function ContactUsClient() {
                   </label>
                   <div className="contact-form-v2__consent-text">
                     By submitting this form you agree to be contacted by our team regarding your pest control enquiry.{' '}
-                    <a href="/privacy-policy" className="contact-form-v2__consent-link">Privacy Policy</a>.
+                    <Link href="/privacy-policy" className="contact-form-v2__consent-link">Privacy Policy</Link>.
                     {errors.Consent && <span className="contact-form-v2__error">{errors.Consent}</span>}
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { handlePestImageError } from '../../config/pageContentHelpers';
 import { pestIconScale } from '../../utils/pestIcons';
 
@@ -58,12 +59,12 @@ const ServiceGridImage: React.FC<{ item: ServiceGridItem }> = ({ item }) => {
 const ServiceGrid: React.FC<ServiceGridProps> = ({ items }) => (
   <div className="theme-service-grid">
     {items.map((item) => (
-      <a key={item.label} href={item.href} className="theme-service-card">
+      <Link key={item.label} href={item.href} className="theme-service-card">
         <div className="theme-service-card__image-wrap">
           <ServiceGridImage item={item} />
         </div>
         <span className="theme-service-card__label">{item.label}</span>
-      </a>
+      </Link>
     ))}
   </div>
 );

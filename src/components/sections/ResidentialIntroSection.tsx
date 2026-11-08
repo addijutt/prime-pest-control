@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import SectionContainer from '../layout/SectionContainer';
 import { WHY_CHOOSE_US_ITEMS } from '../../utils/whyChooseUsItems';
 import { noBreakPhone } from '../../utils/formatPhone';
@@ -85,9 +86,9 @@ const ResidentialIntroSection: React.FC = () => {
             <a href={whatsappUrl} className="residential-intro__cta-btn dynamic-href">
               WhatsApp Us <span className="dynamic-phone">{noBreakPhone(phone)}</span>
             </a>
-            <a href="/contact-us" className="residential-intro__cta-link">
+            <Link href="/contact-us" className="residential-intro__cta-link">
               WhatsApp for a Free Estimate
-            </a>
+            </Link>
           </div>
         </div>
       </div>

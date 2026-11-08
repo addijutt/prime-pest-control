@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
+import Link from 'next/link';
 import WhatsAppIcon from './WhatsAppIcon';
 import { pestIconScale } from '../utils/pestIcons';
 import { noBreakPhone } from '../utils/formatPhone';
@@ -170,7 +171,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
             </div>
             <div className="home-hero__pests-grid">
               {visiblePests.map((pest) => (
-                <a
+                <Link
                   key={pest.label}
                   href={pest.href}
                   className={`home-hero__pest${pest.longLabel ? ' home-hero__pest--long-label' : ''}`}
@@ -186,7 +187,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
                     />
                   </picture>
                   <span>{pest.label}</span>
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -239,7 +240,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
               {mobileHeroPests.map((pest) => {
                 const zoom = resolveZoom(pest);
                 return (
-                  <a
+                  <Link
                     key={pest.label}
                     href={pest.href}
                     className={`home-hero-mobile__pest${pest.badgeMore ? ' home-hero-mobile__pest--badge-more' : ''}`}
@@ -256,7 +257,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
                       />
                     ) : null}
                     {!pest.badgeMore && <span>{pest.label}</span>}
-                  </a>
+                  </Link>
                 );
               })}
             </div>

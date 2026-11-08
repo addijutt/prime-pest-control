@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { FooterLogo } from '../utils/images';
 
 const InstagramIcon = () => (
@@ -23,16 +24,16 @@ const Footer: React.FC = () => (
       </div>
       <nav role="navigation">
         <ul id="footer-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about-us">About Us</a></li>
-          <li><a href="/residential-pest-control">Residential Pest Control</a></li>
-          <li><a href="/bird-control-dubai">Bird Control</a></li>
-          <li><a href="/hornet-nest-removal">Hornet Control</a></li>
-          <li><a href="/wasp-nest-removal">Wasp Control</a></li>
-          <li><a href="/bee-removal">Bee Removal</a></li>
-          <li><a href="/contact-us">Contact Us</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms">Terms of Service</a></li>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/about-us">About Us</Link></li>
+          <li><Link href="/residential-pest-control">Residential Pest Control</Link></li>
+          <li><Link href="/bird-control-dubai">Bird Control</Link></li>
+          <li><Link href="/hornet-nest-removal">Hornet Control</Link></li>
+          <li><Link href="/wasp-nest-removal">Wasp Control</Link></li>
+          <li><Link href="/bee-removal">Bee Removal</Link></li>
+          <li><Link href="/contact-us">Contact Us</Link></li>
+          <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+          <li><Link href="/terms">Terms of Service</Link></li>
         </ul>
       </nav>
       <div className="footer-social">

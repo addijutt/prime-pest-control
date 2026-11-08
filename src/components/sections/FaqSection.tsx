@@ -35,7 +35,22 @@ const FaqSection: React.FC<FaqSectionProps> = ({ faqs, faqTitle }) => {
   const title = faqTitle || 'Frequently Asked Questions';
   const [openIndex, setOpenIndex] = useState<number>(0);
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  };
+
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
     <section className="faq-section-v2" id="faq">
       <div className="faq-section-v2__inner">
         <div className="faq-section-v2__left">
@@ -85,6 +100,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ faqs, faqTitle }) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

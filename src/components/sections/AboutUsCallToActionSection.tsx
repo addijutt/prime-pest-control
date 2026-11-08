@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import SectionContainer from '../layout/SectionContainer';
 import { CallUsComponentImage } from '../../utils/images';
 import { noBreakPhone } from '../../utils/formatPhone';
@@ -24,9 +25,9 @@ const AboutUsCallToActionSection: React.FC = () => {
             <a href={whatsappUrl} className="about-us-cta-section__call-btn dynamic-href">
               WhatsApp Us <span className="dynamic-phone">{noBreakPhone(phone)}</span>
             </a>
-            <a href="/contact-us" className="about-us-cta-section__estimate-link">
+            <Link href="/contact-us" className="about-us-cta-section__estimate-link">
               WhatsApp for a Free Estimate
-            </a>
+            </Link>
           </div>
         </div>
         <div className="about-us-cta-section__media">

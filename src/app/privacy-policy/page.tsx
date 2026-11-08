@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import WhyChooseUsSidebar from '../../components/sections/WhyChooseUsSidebar';
 import PillCta from '../../components/ui/PillCta';
 import { noBreakPhone } from '../../utils/formatPhone';
@@ -319,7 +320,7 @@ export default function PrivacyPolicyPage() {
                   <span className="theme-pill-cta__arrow" aria-hidden="true">→</span>
                 </PillCta>
                 <p>
-                  <a href="/contact-us">Call Us for a Free Estimate</a>
+                  <Link href="/contact-us">Call Us for a Free Estimate</Link>
                 </p>
               </div>
             </div>
