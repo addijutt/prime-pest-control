@@ -28,54 +28,58 @@ const PEST_ASSET_BASE = '/assets/img/pests';
 
 /** Missing keys → closest existing asset stem (labels in pageContent stay specific). */
 const PEST_IMAGE_FALLBACKS: Record<string, string> = {
+  // --- Ticks ---
   'american-dog-tick': 'blacklegged-tick',
-  'argentine-ant': 'odorous-house-ant',
-  'brown-dog-tick': 'blacklegged-tick',
   'hyalomma-tick': 'blacklegged-tick',
   'camel-tick': 'blacklegged-tick',
   'bont-tick': 'blacklegged-tick',
   'soft-tick': 'blacklegged-tick',
-  'asian-longhorned-tick': 'blacklegged-tick',
+  // --- Mosquitoes ---
   'inland-floodwater-mosquito': 'northern-house-mosquito',
-  'yellow-fever-mosquito': 'northern-house-mosquito',
   'malaria-mosquito': 'northern-house-mosquito',
-  'southern-house-mosquito': 'northern-house-mosquito',
   'arabian-mosquito': 'northern-house-mosquito',
   'culex-quinquefasciatus': 'northern-house-mosquito',
+  // --- Spiders ---
   'jumping-spider': 'common-house-spider',
   'false-black-widow': 'common-house-spider',
   'brown-widow': 'common-house-spider',
   'yellow-sac-spider': 'common-house-spider',
   'camel-spider': 'wolf-spider',
-  'cellar-spider': 'common-house-spider',
-  'orb-weaver': 'common-house-spider',
+  // --- Bees ---
   'leafcutter-bee': 'mason-bee',
-  'little-black-ant': 'pavement-ant',
   'long-horned-bee': 'mining-bee',
-  'sweat-bee': 'mason-bee',
   'eastern-honey-bee': 'western-honey-bee',
   'arab-carpenter-bee': 'eastern-carpenter-bee',
   'large-carpenter-bee': 'eastern-carpenter-bee',
   'small-carpenter-bee': 'eastern-carpenter-bee',
+  // --- Ants ---
+  'argentine-ant': 'odorous-house-ant',
+  'little-black-ant': 'pavement-ant',
+  // --- Wasps / Hornets ---
   'oriental-hornet': 'paper-wasp',
-  'asian-hornet': 'paper-wasp',
   'yellow-wasp': 'paper-wasp',
   'asian-paper-wasp': 'paper-wasp',
   'banded-mud-wasp': 'mud-dauber',
-  'potter-wasp': 'paper-wasp',
+  // --- Termites ---
   'desert-subterranean-termite': 'eastern-subterranean-termite',
   'arabian-drywood-termite': 'drywood-termite',
-  'arabian-fat-tailed-scorpion': 'shield',
-  'deathstalker-scorpion': 'shield',
-  'yellow-scorpion': 'shield',
-  'black-scorpion': 'shield',
+  // --- Rodents ---
   'cairo-spiny-mouse': 'house-mouse',
   'sand-rat': 'house-mouse',
-  'field-mouse': 'house-mouse',
+  // --- Centipedes ---
   'arabian-desert-centipede': 'common-house-centipede',
-  'silverfish': 'shield',
-  'drain-fly': 'shield',
-  'carpet-beetle': 'shield',
+  // --- Flies ---
+  'house-fly': 'fly',
+  'fruit-fly': 'friut-flies',
+  'moth-fly': 'fly',
+  // --- Miscellaneous plural/variant labels used in pageContent ---
+  'ants': 'black-ant',
+  'cockroaches': 'roach',
+  'roaches': 'roach',
+  'rodents': 'rodent',
+  'termites': 'termite',
+  'general-pest-control': 'residential-pc',
+  // --- Birds ---
   'seagull': 'bird',
 };
 
