@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "primepestcontrol.ae" }],
+      "destination": "https://www.primepestcontrol.ae/$1",
+      "permanent": true
+    }
+  ]
+}
