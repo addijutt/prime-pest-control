@@ -76,8 +76,6 @@ const PEST_IMAGE_FALLBACKS: Record<string, string> = {
   'silverfish': 'shield',
   'drain-fly': 'shield',
   'carpet-beetle': 'shield',
-  'house-crow': 'bird',
-  'house-sparrow': 'bird',
   'seagull': 'bird',
 };
 

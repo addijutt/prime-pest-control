@@ -1029,7 +1029,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       headline: 'Bird Control in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
-        { label: 'Mynah Control', href: '/mynah-bird-control', imageKey: 'bird' },
+        { label: 'Mynah Control', href: '/mynah-bird-control', imageKey: 'mynah' },
         { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
         { label: 'Bird Proofing', href: '/bird-proofing-dubai', imageKey: 'bird' },
       ],
@@ -1090,7 +1090,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
     hero: {
       headline: 'Mynah Bird Control in Dubai. Guaranteed.',
       pestIcons: [
-        { label: 'Mynah Removal', href: '/mynah-bird-control', imageKey: 'bird' },
+        { label: 'Mynah Removal', href: '/mynah-bird-control', imageKey: 'mynah' },
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
         { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
         { label: 'All Bird Control', href: '/bird-control-dubai', imageKey: 'bird' },
