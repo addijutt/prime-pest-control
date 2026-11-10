@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="legal-page-layout__content privacy">
               <h2>Privacy &amp; Terms</h2>
-              <p className="text-lg"><strong>Last updated on September 30, 2025</strong></p>
+              <p className="text-lg"><strong>Last updated on November 10, 2026</strong></p>
 
               <h3>1. Privacy &amp; Terms</h3>
               <p>

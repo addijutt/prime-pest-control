@@ -28,7 +28,7 @@ export default function TermsPage() {
 
             <div className="legal-page-layout__content privacy">
               <h2 className="text-center">Terms of Use</h2>
-              <p><strong>Last Updated: September 30, 2025</strong></p>
+              <p><strong>Last Updated: November 10, 2026</strong></p>
 
               <div className="legal-page__notice">
                 <h3>Important Notice: We Are Not A Pest Control Company</h3>
