@@ -18,6 +18,12 @@ const auth = new google.auth.GoogleAuth({
   scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
 });
 
+const INSPECT_URLS = [
+  'http://primepestcontrol.ae/',
+  'https://primepestcontrol.ae/',
+  'https://www.primepestcontrol.ae/',
+];
+
 async function listSites(sc) {
   const res = await sc.sites.list();
   console.log('\n📋 Sites accessible to this service account:');
@@ -59,6 +65,25 @@ async function query(sc, dimensions, label, limit = 15) {
   }
 }
 
+async function inspectUrls(sc) {
+  console.log('\n── URL Index Status ────────────────────────────────');
+  for (const url of INSPECT_URLS) {
+    try {
+      const res = await sc.urlInspection.index.inspect({
+        requestBody: { inspectionUrl: url, siteUrl: GSC_SITE },
+      });
+      const r = res.data.inspectionResult;
+      const index = r.indexStatusResult;
+      const verdict = index.verdict;
+      const crawled = index.lastCrawlTime ? index.lastCrawlTime.substring(0, 10) : 'never';
+      const canonical = index.googleCanonical || index.userDeclaredCanonical || '—';
+      console.log(`  ${url.padEnd(40)} verdict: ${verdict.padEnd(12)} crawled: ${crawled}  canonical: ${canonical}`);
+    } catch (err) {
+      console.log(`  ${url.padEnd(40)} Error: ${err.message}`);
+    }
+  }
+}
+
 async function fetchGSC() {
   const authClient = await auth.getClient();
   const sc = google.searchconsole({ version: 'v1', auth: authClient });
@@ -67,6 +92,9 @@ async function fetchGSC() {
 
   // Check site access first
   await listSites(sc);
+
+  // URL index status check
+  await inspectUrls(sc);
 
   // Top queries
   await query(sc, ['query'], 'Top Search Queries');
