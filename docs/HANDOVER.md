@@ -48,10 +48,32 @@ Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
   (price cards, text, and the price Google sees). Current prices are market-based and need the owner's
   confirmation: `docs/prices-for-review-whatsapp.txt` is a ready WhatsApp message for that.
 
+**Warranty, quotes and call-outs** (decided for the owner, in line with the Dubai market)
+- Free quote on WhatsApp; free survey for villas, businesses, netting, solar panels and fumigation.
+- Warranty: **90 days (3 months)** with free re-treatment on every treatment that has a warranty (owner, 21 Nov 2026),
+  and 90 days on bird netting and spikes installation. No warranty on mosquitoes, flies, snakes, scorpions,
+  camel spiders, disinfection.
+- Termite inspection AED 250 and call-out AED 100 (only when no treatment is needed), both deducted if a treatment
+  is booked. Annual contracts: free call-outs for covered pests within 48 hours; bed bugs, termites, rodents, birds
+  and wasp nests quoted separately.
+- All of it is in `src/config/prices.ts` (`warrantyDays`, `SERVICE_TERMS`, `callout`) and shows on every price
+  card, in a terms strip under the prices, and in the homepage FAQs. "100% guaranteed" claims were replaced with
+  the warranty.
+
 **Lead tracking**
 - Google Sheet "Prime Pest Control Leads (WhatsApp & Calls)" with a live dashboard:
   https://docs.google.com/spreadsheets/d/1SuwZPOCvJgsef12X1W5kq0BMqD3w3p2xQlTLVQNt8-0/edit
 - The website code is ready; it only needs the sheet's Apps Script deployed (section 3).
+
+**Menu**
+- New header menu (`src/config/navigation.ts`): Pest Control (For your home / Crawling insects / Flying insects /
+  Other pests), Bird Control, Business, Areas (all communities), About, Contact. Phone menu uses the same groups.
+- All page links with preview and live addresses: `docs/page-links.md`.
+
+**Hero (first screen)**
+- New hero with the WhatsApp button, proof points (Dubai Municipality approved, 100% satisfaction guarantee
+  and 90-day warranty, starting price) and trust chips. To go back to the old hero: set `HERO_V2 = false`
+  in `src/config/siteFlags.ts`.
 
 **Reports**
 - `docs/seo-review-2026-11-21/`: SEO and GA4 review (PDF), page merge plan, service gap analysis.
@@ -72,6 +94,9 @@ Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
    image, with the file name and what it should show (cut-out on white, 3 sizes). After adding the files,
    remove the key from `PEST_IMAGE_FALLBACKS` in `src/config/pageContentHelpers.ts`.
    The existing `mynah` image shows a bird of prey and `house-crow` has a yellow background: replace both.
+3. **Hero banner (2 images, every page):** `docs/hero-banner-images.md`: a real technician cut-out
+   (transparent, at least 1500 px tall, face in the left 65% so it shows on phones) and a Dubai background
+   without people (2400 × 1600, calm darker left half). Replaces the stock model and the street photo.
 
 ### B. Information from the owner
 - Confirm or change the prices (`docs/prices-for-review-whatsapp.txt`), warranty days per service, VAT,

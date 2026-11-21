@@ -12,7 +12,7 @@ import SatisfactionGuaranteeSection from '../../components/sections/Satisfaction
 const WHY_ITEMS = [
   { id: 'free-estimates',  label: 'Free Pest & Bird Control Estimates',    iconSrc: '/assets/img/why-choose-us-section/why-choose-us-free-estimates.png' },
   { id: 'prompt-service',  label: 'Prompt Same-Day Service in Dubai',       iconSrc: '/assets/img/why-choose-us-section/why-choose-us-prompt-service.png' },
-  { id: 'guaranteed',      label: 'Results 100% Guaranteed',                iconSrc: '/assets/img/why-choose-us-section/why-choose-us-results-guarantee.png' },
+  { id: 'guaranteed',      label: '100% Satisfaction Guarantee',                iconSrc: '/assets/img/why-choose-us-section/why-choose-us-results-guarantee.png' },
   { id: 'dubai-based',     label: 'Dubai-Based Specialists',                iconSrc: '/assets/img/why-choose-us-section/why-choose-us-locally-owned.png' },
   { id: 'top-rated',       label: 'Top Rated Customer Service',             iconSrc: null, iconClass: 'fa-solid fa-thumbs-up' },
   { id: 'fully-trained',   label: 'Fully Trained & Insured Technicians',    iconSrc: null, iconClass: 'fa-solid fa-certificate' },
@@ -148,7 +148,7 @@ export default function ContactUsClient() {
               <p className="contact-main-layout__desc">
                 Don&apos;t wait for the problem to get worse. WhatsApp us now or fill out the form below. It takes less
                 than a minute, and our Dubai team will get back to you quickly with a free quote. Every
-                service is 100% guaranteed, so reaching out costs you nothing.
+                service comes with our 100% satisfaction guarantee and a 90-day warranty, and the quote costs you nothing.
               </p>
 
               <form ref={formRef} className="contact-form-v2" onSubmit={handleSubmit} noValidate>

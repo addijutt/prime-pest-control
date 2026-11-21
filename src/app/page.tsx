@@ -15,11 +15,17 @@ import {
   SafetySection,
 } from '../components/sections/ServiceGuideSection';
 import { getServiceGuide } from '../config/serviceGuides';
+import { formatAed, lowestPrice, type PriceKey } from '../config/prices';
+
+function fromPrice(keys: PriceKey[]): string | undefined {
+  const low = lowestPrice(keys);
+  return low === null ? undefined : `From ${formatAed(low)}`;
+}
 
 export const metadata: Metadata = {
   title: 'Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256',
   description:
-    'Expert pest and bird control across all Dubai communities. Cockroaches, bed bugs, termites, pigeons, mynahs & 50+ more. Same-day service, 100% guaranteed. WhatsApp 055 304 5256.',
+    'Expert pest and bird control across all Dubai communities. Cockroaches, bed bugs, termites, pigeons, mynahs & 50+ more. Open 24/7, free quotes, 100% satisfaction guarantee. WhatsApp 055 304 5256.',
   alternates: { canonical: 'https://www.primepestcontrol.ae/' },
 };
 
@@ -29,7 +35,7 @@ const webPageSchema = {
   '@id': 'https://www.primepestcontrol.ae/#webpage',
   url: 'https://www.primepestcontrol.ae',
   name: 'Pest & Bird Control Dubai | Prime Pest Control',
-  description: 'Expert pest and bird control across all Dubai communities. Cockroaches, bed bugs, termites, pigeons, mynahs & 50+ more. Same-day service, 100% guaranteed.',
+  description: 'Expert pest and bird control across all Dubai communities. Cockroaches, bed bugs, termites, pigeons, mynahs & 50+ more. Open 24/7, free quotes, 100% satisfaction guarantee.',
   isPartOf: { '@id': 'https://www.primepestcontrol.ae/#website' },
   about: { '@id': 'https://www.primepestcontrol.ae/#business' },
   inLanguage: 'en-AE',
@@ -46,6 +52,7 @@ export default function HomePage() {
       <HomeHero
         title={heroTitle}
         desktopPestIcons={pageContent?.hero.pestIcons}
+        fromPrice={guide ? fromPrice(guide.priceKeys) : undefined}
       />
       {/* Home: visitors are less sure what they need, so the service grid comes first (one tap to the right page),
           then the answer, prices, when to call, how it works + why us, safety, trust badges, FAQ, areas, closing CTA */}

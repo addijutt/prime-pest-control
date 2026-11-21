@@ -10,7 +10,7 @@ import LeadLogger from '../components/LeadLogger';
 export const metadata: Metadata = {
   title: 'Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256',
   description:
-    'Expert pest and bird control across all Dubai communities. Cockroaches, bed bugs, termites, pigeons, mynahs & 50+ more. Same-day service, 100% guaranteed. WhatsApp 055 304 5256.',
+    'Expert pest and bird control across all Dubai communities. Cockroaches, bed bugs, termites, pigeons, mynahs & 50+ more. Open 24/7, free quotes, 100% satisfaction guarantee. WhatsApp 055 304 5256.',
   metadataBase: new URL('https://www.primepestcontrol.ae'),
   alternates: { canonical: 'https://www.primepestcontrol.ae/' },
   robots: 'index, follow',
@@ -49,7 +49,7 @@ const localBusinessSchema = {
   '@id': 'https://www.primepestcontrol.ae/#business',
   name: 'Prime Pest Control Dubai',
   image: 'https://www.primepestcontrol.ae/assets/img/prime-brand-kit/prime-brand-kit/web/web-schema-logo.png',
-  description: 'Professional pest and bird control services across all Dubai communities. We handle cockroaches, bed bugs, termites, rodents, pigeons, mynahs and 50+ more pest problems with same-day service and 100% satisfaction guarantee.',
+  description: 'Professional pest and bird control services across all Dubai communities. We handle cockroaches, bed bugs, termites, rodents, pigeons, mynahs and 50+ more pest problems with same-day service, free quotes, a 100% satisfaction guarantee and a 90-day warranty.',
   url: 'https://www.primepestcontrol.ae',
   telephone: '+971553045256',
   email: 'info@primepestcontrol.ae',
@@ -148,7 +148,7 @@ const websiteSchema = {
   '@id': 'https://www.primepestcontrol.ae/#website',
   name: 'Prime Pest Control Dubai',
   url: 'https://www.primepestcontrol.ae',
-  description: 'Expert pest and bird control services across all Dubai communities. Same-day service, 100% guaranteed.',
+  description: 'Expert pest and bird control services across all Dubai communities. Open 24/7, free quotes, 100% satisfaction guarantee and a 90-day warranty.',
   publisher: { '@id': 'https://www.primepestcontrol.ae/#business' },
   inLanguage: 'en-AE',
 };

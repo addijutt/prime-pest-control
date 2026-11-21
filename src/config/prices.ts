@@ -22,56 +22,63 @@ export type PriceItem = {
   unit: string;
   visits?: string;
   perUnit?: 'sqft' | 'sqm' | 'm';
+  /** Free re-treatment if the same pest returns within this many days (365 = 1 year) */
+  warrantyDays?: number;
+  /** 'installation' = warranty on the fitted netting/spikes, not a re-treatment */
+  warrantyKind?: 'retreatment' | 'installation';
 };
 
 export const PRICES = {
   // General
-  'general-apartment': { label: 'General pest control, apartment', from: 199, unit: 'studio / 1-bedroom', visits: '1 visit' },
-  'general-villa': { label: 'General pest control, villa', from: 449, unit: 'inside + garden perimeter', visits: '1 visit' },
-  'annual-apartment': { label: 'Annual contract, apartment', from: 599, unit: 'per year', visits: '3–4 scheduled visits + call-outs' },
-  'annual-villa': { label: 'Annual contract, villa', from: 1199, unit: 'per year', visits: '4 scheduled visits + call-outs' },
+  'general-apartment': { label: 'General pest control, apartment', from: 199, unit: 'studio / 1-bedroom', visits: '1 visit', warrantyDays: 90 },
+  'general-villa': { label: 'General pest control, villa', from: 449, unit: 'inside + garden perimeter', visits: '1 visit', warrantyDays: 90 },
+  'annual-apartment': { label: 'Annual contract, apartment', from: 599, unit: 'per year', visits: '3–4 scheduled visits + free call-outs for covered pests' },
+  'annual-villa': { label: 'Annual contract, villa', from: 1199, unit: 'per year', visits: '4 scheduled visits + free call-outs for covered pests' },
 
   // Insects
-  'cockroach-apartment': { label: 'Cockroach treatment, apartment', from: 179, unit: 'studio / 1-bedroom', visits: 'gel bait + spray, follow-up after 2–3 weeks if needed' },
-  'cockroach-villa': { label: 'Cockroach treatment, villa', from: 399, unit: 'villa or townhouse', visits: 'inside, drains and garden, follow-up if needed' },
-  'bed-bug-apartment': { label: 'Bed bug treatment, apartment', from: 349, unit: 'studio / 1-bedroom', visits: '2 visits, 10–14 days apart' },
-  'bed-bug-villa': { label: 'Bed bug treatment, villa', from: 1199, unit: 'up to 3 bedrooms', visits: '2 visits, 10–14 days apart' },
-  'ant': { label: 'Ant treatment', from: 179, unit: 'apartment; villas from AED 349', visits: '1 visit + follow-up if needed' },
+  'cockroach-apartment': { label: 'Cockroach treatment, apartment', from: 179, unit: 'studio / 1-bedroom', visits: 'gel bait + spray, follow-up after 2–3 weeks if needed', warrantyDays: 90 },
+  'cockroach-villa': { label: 'Cockroach treatment, villa', from: 399, unit: 'villa or townhouse', visits: 'inside, drains and garden, follow-up if needed', warrantyDays: 90 },
+  'bed-bug-apartment': { label: 'Bed bug treatment, apartment', from: 349, unit: 'studio / 1-bedroom', visits: '2 visits, 10–14 days apart', warrantyDays: 90 },
+  'bed-bug-villa': { label: 'Bed bug treatment, villa', from: 1199, unit: 'up to 3 bedrooms', visits: '2 visits, 10–14 days apart', warrantyDays: 90 },
+  'ant': { label: 'Ant treatment', from: 179, unit: 'apartment; villas from AED 349', visits: '1 visit + follow-up if needed', warrantyDays: 90 },
   'mosquito': { label: 'Mosquito treatment', from: 299, unit: 'villa garden', visits: '1 visit; monthly plans for summer' },
-  'flea': { label: 'Flea treatment', from: 249, unit: 'apartment', visits: '2 visits, about 2 weeks apart' },
-  'tick': { label: 'Tick treatment', from: 249, unit: 'apartment or ground-floor flat with garden', visits: '2 visits, about 2 weeks apart' },
-  'wasp-nest': { label: 'Wasp or hornet nest removal', from: 249, unit: 'per nest', visits: '1 visit' },
+  'flea': { label: 'Flea treatment', from: 249, unit: 'apartment', visits: '2 visits, about 2 weeks apart', warrantyDays: 90 },
+  'tick': { label: 'Tick treatment', from: 249, unit: 'apartment or ground-floor flat with garden', visits: '2 visits, about 2 weeks apart', warrantyDays: 90 },
+  'wasp-nest': { label: 'Wasp or hornet nest removal', from: 249, unit: 'per nest', visits: '1 visit', warrantyDays: 90 },
   'bee-relocation': { label: 'Bee swarm relocation', from: 349, unit: 'per swarm or colony', visits: '1 visit' },
-  'spider': { label: 'Spider treatment', from: 179, unit: 'apartment', visits: '1 visit' },
-  'drain-fly': { label: 'Drain fly treatment', from: 179, unit: 'apartment', visits: '1 visit + drain advice' },
+  'spider': { label: 'Spider treatment', from: 179, unit: 'apartment', visits: '1 visit', warrantyDays: 90 },
+  'drain-fly': { label: 'Drain fly treatment', from: 179, unit: 'apartment', visits: '1 visit + drain advice', warrantyDays: 90 },
   'fly': { label: 'Fly control, home', from: 249, unit: 'apartment or villa', visits: '1 visit + breeding-site advice' },
-  'silverfish': { label: 'Silverfish treatment', from: 179, unit: 'apartment', visits: '1 visit' },
+  'silverfish': { label: 'Silverfish treatment', from: 179, unit: 'apartment', visits: '1 visit', warrantyDays: 90 },
 
   // Termites
-  'termite-inspection': { label: 'Termite inspection', from: 250, unit: 'villa or townhouse', visits: '1 visit with written findings' },
-  'termite-villa': { label: 'Termite treatment, villa', from: 1500, unit: 'post-construction, 3–4 bedrooms', visits: 'treatment + checks' },
+  'termite-inspection': { label: 'Termite inspection', from: 250, unit: 'villa or townhouse; deducted from the treatment if you book it', visits: '1 visit with written findings' },
+  'termite-villa': { label: 'Termite treatment, villa', from: 1500, unit: 'post-construction, 3–4 bedrooms', visits: 'treatment + checks', warrantyDays: 90 },
   'termite-pre-construction': { label: 'Pre-construction anti-termite treatment', from: 8, unit: 'per m² of building footprint', perUnit: 'sqm', visits: 'soil treatment before the slab, with certificate' },
 
   // Rodents and others
-  'rodent': { label: 'Rat & mouse control', from: 299, unit: 'apartment; villas from AED 449', visits: 'baiting/trapping + follow-up visit' },
+  'rodent': { label: 'Rat & mouse control', from: 299, unit: 'apartment; villas from AED 449', visits: 'baiting/trapping + follow-up visit', warrantyDays: 90 },
   'scorpion': { label: 'Scorpion treatment', from: 299, unit: 'villa perimeter', visits: '1 visit' },
   'camel-spider': { label: 'Camel spider treatment', from: 249, unit: 'villa', visits: '1 visit' },
-  'lizard': { label: 'Lizard & gecko control', from: 249, unit: 'apartment; villas from AED 399', visits: 'exclusion + insect treatment' },
+  'lizard': { label: 'Lizard & gecko control', from: 249, unit: 'apartment; villas from AED 399', visits: 'exclusion + insect treatment', warrantyDays: 90 },
   'snake': { label: 'Snake removal call-out', from: 349, unit: 'villa or garden', visits: 'removal + entry-point check' },
 
   // Hygiene and moving
   'disinfection-apartment': { label: 'Disinfection, apartment', from: 249, unit: 'studio / 1-bedroom', visits: '1 visit' },
   'disinfection-villa': { label: 'Disinfection, villa', from: 449, unit: 'up to 4 bedrooms', visits: '1 visit' },
-  'move-in-apartment': { label: 'Move-in / move-out treatment, apartment', from: 249, unit: 'studio / 1-bedroom, empty unit', visits: '1 visit before you move in' },
-  'move-in-villa': { label: 'Move-in / move-out treatment, villa', from: 549, unit: 'empty villa or townhouse', visits: '1 visit before you move in' },
+  'move-in-apartment': { label: 'Move-in / move-out treatment, apartment', from: 249, unit: 'studio / 1-bedroom, empty unit', visits: '1 visit before you move in', warrantyDays: 90 },
+  'move-in-villa': { label: 'Move-in / move-out treatment, villa', from: 549, unit: 'empty villa or townhouse', visits: '1 visit before you move in', warrantyDays: 90 },
 
   // Birds
   'pigeon': { label: 'Pigeon control', from: 349, unit: 'balcony, ledge or AC area', visits: 'cleaning + deterrents' },
-  'bird-net': { label: 'Bird netting', from: 8, unit: 'per sq ft, installed (UV-stable HDPE)', perUnit: 'sqft', visits: 'free measurement first' },
+  'bird-net': { label: 'Bird netting', from: 8, unit: 'per sq ft, installed (UV-stable HDPE)', perUnit: 'sqft', visits: 'free measurement first', warrantyDays: 90, warrantyKind: 'installation' },
   // Spikes: only weak market data (AED 50–100 per metre installed); owner to confirm
-  'bird-spikes': { label: 'Bird spikes', from: 50, unit: 'per metre, installed (stainless steel)', perUnit: 'm', visits: 'ledges, parapets, signs, AC tops' },
+  'bird-spikes': { label: 'Bird spikes', from: 50, unit: 'per metre, installed (stainless steel)', perUnit: 'm', visits: 'ledges, parapets, signs, AC tops', warrantyDays: 90, warrantyKind: 'installation' },
   'bird-other': { label: 'Mynah, sparrow & crow control', from: 349, unit: 'per area', visits: 'survey + deterrents' },
   'solar-bird': { label: 'Solar panel bird proofing', from: null, unit: 'mesh skirt around the panel array', visits: 'free survey and quote' },
+
+  // Visits that are not part of a job (see SERVICE_TERMS)
+  'callout': { label: 'Call-out visit, no treatment needed', from: 100, unit: 'deducted if you book a treatment', visits: 'free under warranty or an annual contract' },
 
   // Business (quoted per site after a free survey, as is normal for contracts in Dubai)
   'restaurant-contract': { label: 'Restaurant pest control contract', from: null, unit: 'restaurants, cafes, cloud kitchens', visits: 'monthly visits + call-outs, report after every visit' },
@@ -82,6 +89,38 @@ export const PRICES = {
 } satisfies Record<string, PriceItem>;
 
 export type PriceKey = keyof typeof PRICES;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SERVICE TERMS: quotes, surveys, warranty and call-outs (decided 21 Nov 2026, in line with
+// the Dubai market). Change them here; the price cards, FAQs and guides read from this.
+// ─────────────────────────────────────────────────────────────────────────────
+export const SERVICE_TERMS = {
+  /** Hours within which annual-contract call-outs are attended */
+  calloutResponseHours: 48,
+  /** Pests covered by free call-outs on annual contracts */
+  annualCoveredPests: 'cockroaches, ants, spiders, silverfish and other crawling insects',
+  /** Treated separately on annual contracts (specialist work) */
+  annualExcluded: 'bed bugs, termites, rats and mice, birds and wasp nests',
+  /** Survey visits that are free because the job needs measuring or inspecting first */
+  freeSurveyFor: 'villas, businesses, bird netting, solar panels and fumigation',
+};
+
+/** "60 days", "1 year": the warranty period alone, for use inside sentences */
+export function warrantyPeriod(key: PriceKey): string {
+  const d = (PRICES[key] as PriceItem).warrantyDays ?? 0;
+  if (!d) return '';
+  const years = Math.round(d / 365);
+  if (d >= 365) return `${years} year${years > 1 ? 's' : ''}`;
+  return d % 30 === 0 ? `${d} days (${d / 30} months)` : `${d} days`;
+}
+
+/** "60-day warranty, free re-treatment", "1-year warranty on the installation", or '' */
+export function warrantyText(key: PriceKey): string {
+  const p: PriceItem = PRICES[key];
+  if (!p.warrantyDays) return '';
+  const span = p.warrantyDays >= 365 ? `${Math.round(p.warrantyDays / 365)}-year` : p.warrantyDays % 30 === 0 ? `${p.warrantyDays}-day (${p.warrantyDays / 30}-month)` : `${p.warrantyDays}-day`;
+  return p.warrantyKind === 'installation' ? `${span} warranty on the installation` : `${span} warranty, free re-treatment`;
+}
 
 /** "AED 1,500" */
 export function formatAed(n: number): string {

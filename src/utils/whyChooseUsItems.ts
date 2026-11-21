@@ -18,7 +18,7 @@ export const WHY_CHOOSE_US_ITEMS: WhyChooseUsItem[] = [
   },
   {
     id: 'guaranteed',
-    label: 'Results 100% Guaranteed',
+    label: '100% Satisfaction Guarantee',
     iconSrc: '/assets/img/why-choose-us-section/why-choose-us-results-guarantee.png',
   },
   {

@@ -9,7 +9,7 @@ import SatisfactionGuaranteeSection from '../../components/sections/Satisfaction
 export const metadata: Metadata = {
   title: 'About Prime Pest Control | Pest & Bird Control Dubai',
   description:
-    'Learn about Prime Pest Control Dubai, your trusted pest and bird control specialists. Covering all Dubai communities with same-day service and 100% guaranteed results.',
+    'Learn about Prime Pest Control Dubai, your trusted pest and bird control specialists. Covering all Dubai communities with same-day service and a 100% satisfaction guarantee.',
   alternates: { canonical: 'https://www.primepestcontrol.ae/about-us' },
 };
 

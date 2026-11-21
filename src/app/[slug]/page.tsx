@@ -18,7 +18,13 @@ import { getPageContent } from '../../config/pageContent';
 import { getServiceGuide } from '../../config/serviceGuides';
 import { COMMUNITY_SLUGS, getCommunityBySlug } from '../../config/communities';
 import { SEO_META } from '../../config/seoMeta';
-import { lowestPrice, type PriceKey } from '../../config/prices';
+import { formatAed, lowestPrice, type PriceKey } from '../../config/prices';
+
+/** 'From AED 179' for the hero, from the page's price keys */
+function fromPrice(keys: PriceKey[]): string | undefined {
+  const low = lowestPrice(keys);
+  return low === null ? undefined : `From ${formatAed(low)}`;
+}
 
 const BASE_URL = 'https://www.primepestcontrol.ae';
 
@@ -102,7 +108,7 @@ export default async function SlugPage({
           }}
         />
         {/* Order: answer → local pests → prices → local tips → trust + process → FAQ → areas → one closing CTA */}
-        <HomeHero title={community.headline} />
+        <HomeHero title={community.headline} fromPrice={fromPrice(community.priceKeys)} />
         <GuideIntroSection
           eyebrow={community.homes}
           title={`Pest Control in ${community.name}`}
@@ -161,7 +167,11 @@ export default async function SlugPage({
       {/* Order follows how a visitor decides: answer → price → is it my problem → what you treat →
           how it works + why us → safety → FAQ → areas → one closing CTA. Pages without a guide
           skip the guide sections. */}
-      <HomeHero title={heroTitle} desktopPestIcons={pageContent?.hero.pestIcons} />
+      <HomeHero
+        title={heroTitle}
+        desktopPestIcons={pageContent?.hero.pestIcons}
+        fromPrice={guide ? fromPrice(guide.priceKeys) : undefined}
+      />
       {guide ? (
         <>
           <GuideIntroSection

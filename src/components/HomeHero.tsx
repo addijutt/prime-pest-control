@@ -6,6 +6,8 @@ import WhatsAppIcon from './WhatsAppIcon';
 import { pestIconScale } from '../utils/pestIcons';
 import { noBreakPhone } from '../utils/formatPhone';
 import type { PestImageRef } from '../config/pageContentHelpers';
+import { HERO_V2 } from '../config/siteFlags';
+import { PRICES, type PriceItem } from '../config/prices';
 import {
   GENERIC_HERO_EXPANSION_PESTS,
   HERO_MORE_PEST,
@@ -89,8 +91,40 @@ const MOBILE_HERO_BENEFITS = [
   '24/7 Service. Same-Day Bookings Available.',
   'Free, No-Obligation Estimates',
   'Licensed & Insured Technicians',
-  'Results 100% Guaranteed',
+  '100% Satisfaction Guarantee',
 ];
+
+/** Hero v2 proof points: the three things Dubai visitors check before they message */
+function heroProofs(fromPrice?: string): string[] {
+  const days = (PRICES['general-apartment'] as PriceItem).warrantyDays;
+  return [
+    'Dubai Municipality approved',
+    `100% satisfaction guarantee${days ? `, ${days}-day warranty` : ''}`,
+    fromPrice ? `${fromPrice}. Exact price on WhatsApp in minutes` : 'Free quote on WhatsApp in minutes',
+  ];
+}
+
+const HERO_CHIPS = ['Open 24/7', 'Same-day visits', 'All Dubai areas'];
+
+/** Hero v2: main button + call link + trust chips, used on desktop and phone */
+const HeroActions: React.FC<{ whatsappUrl: string; phone: string; variant: 'desktop' | 'mobile' }> = ({
+  whatsappUrl,
+  phone,
+  variant,
+}) => (
+  <div className={`hero-v2-actions hero-v2-actions--${variant}`}>
+    <a href={whatsappUrl} className="hero-v2-actions__btn dynamic-href">
+      <WhatsAppIcon size={22} className="hero-v2-actions__icon" />
+      <span>WhatsApp for a Free Quote</span>
+    </a>
+    <a href="tel:+971553045256" className="hero-v2-actions__call">
+      or call <span className="dynamic-phone">{noBreakPhone(phone)}</span>
+    </a>
+    <ul className="hero-v2-actions__chips" aria-label="Service">
+      {HERO_CHIPS.map((c) => <li key={c}>{c}</li>)}
+    </ul>
+  </div>
+);
 
 function toMobileHeroPest(ref: PestImageRef): MobileHeroPestItem {
   const paths = pestAssetPaths(ref.imageKey);
@@ -100,11 +134,14 @@ function toMobileHeroPest(ref: PestImageRef): MobileHeroPestItem {
 interface HomeHeroProps {
   title?: string;
   desktopPestIcons?: PestImageRef[];
+  /** Hero v2: starting price for this page, e.g. "From AED 179" (from prices.ts) */
+  fromPrice?: string;
 }
 
 const HomeHero: React.FC<HomeHeroProps> = ({
   title = 'Expert Pest & Bird Control in Dubai',
   desktopPestIcons,
+  fromPrice,
 }) => {
   const [pestsExpanded, setPestsExpanded] = useState(false);
   const city = 'Dubai';
@@ -123,15 +160,19 @@ const HomeHero: React.FC<HomeHeroProps> = ({
   }, [desktopPestIcons]);
 
   const mobileHeroPests = useMemo(() => {
-    if (!desktopPestIcons?.length) return MOBILE_HERO_PESTS;
-    const firstFour = desktopPestIcons.slice(0, 4).map(toMobileHeroPest);
-    return [...firstFour, ...MOBILE_HERO_PESTS.slice(4)];
+    const base = !desktopPestIcons?.length
+      ? MOBILE_HERO_PESTS
+      : [...desktopPestIcons.slice(0, 4).map(toMobileHeroPest), ...MOBILE_HERO_PESTS.slice(4)];
+    // Hero v2: compact grid on phones (5 pests + "& 50+ More") so visitors reach the page content sooner
+    return HERO_V2 ? [...base.slice(0, 5), MOBILE_HERO_PESTS[MOBILE_HERO_PESTS.length - 1]] : base;
   }, [desktopPestIcons]);
+  const proofs = heroProofs(fromPrice);
 
   const visiblePests = pestsExpanded ? allPests : collapsedPests;
 
   return (
-    <section id="hero" className={`home-hero${isShortHeroTitle ? ' home-hero--short-title' : ''}`}>
+    <section id="hero" className={`home-hero${isShortHeroTitle ? ' home-hero--short-title' : ''}${HERO_V2 ? ' home-hero--v2' : ''}`}>
+      {/* Hero v2 hides this green bar on phones: the hero button and the bottom bar cover WhatsApp */}
       <a href={whatsappUrl} className="header-mobile-cta dynamic-href">
         <span className="header-mobile-cta__top">
           <WhatsAppIcon size={22} className="header-mobile-cta__icon" />
@@ -145,16 +186,30 @@ const HomeHero: React.FC<HomeHeroProps> = ({
         <div className={`home-hero__card${pestsExpanded ? ' home-hero__card--pests-expanded' : ''}`}>
           <div className="home-hero__content">
             <h1 className="home-hero__title">{title}</h1>
-            <ul className="home-hero__highlights">
-              <li className="home-hero__highlight">
-                <HeroCheckIcon className="home-hero__highlight-icon" />
-                <span>Serving {city} &amp; Surrounding Areas</span>
-              </li>
-              <li className="home-hero__highlight">
-                <HeroCheckIcon className="home-hero__highlight-icon" />
-                <span>24/7 Service. Free Quote in 60 Seconds.</span>
-              </li>
-            </ul>
+            {HERO_V2 ? (
+              <>
+                <ul className="home-hero__highlights">
+                  {proofs.map((p) => (
+                    <li key={p} className="home-hero__highlight">
+                      <HeroCheckIcon className="home-hero__highlight-icon" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <HeroActions whatsappUrl={whatsappUrl} phone={phone} variant="desktop" />
+              </>
+            ) : (
+              <ul className="home-hero__highlights">
+                <li className="home-hero__highlight">
+                  <HeroCheckIcon className="home-hero__highlight-icon" />
+                  <span>Serving {city} &amp; Surrounding Areas</span>
+                </li>
+                <li className="home-hero__highlight">
+                  <HeroCheckIcon className="home-hero__highlight-icon" />
+                  <span>24/7 Service. Free Quote in 60 Seconds.</span>
+                </li>
+              </ul>
+            )}
           </div>
 
           <div className={`home-hero__pests${pestsExpanded ? ' home-hero__pests--expanded' : ''}`}>
@@ -191,10 +246,13 @@ const HomeHero: React.FC<HomeHeroProps> = ({
               ))}
             </div>
 
-            <a href={whatsappUrl} className="home-hero__pests-cta dynamic-href">
-              <span className="home-hero__pests-cta-label">WhatsApp for Free Estimate:</span>
-              <span className="home-hero__pests-cta-phone dynamic-phone">{noBreakPhone(phone)}</span>
-            </a>
+            {/* Hero v2: the main button sits next to the headline, so this bar is not repeated */}
+            {HERO_V2 ? null : (
+              <a href={whatsappUrl} className="home-hero__pests-cta dynamic-href">
+                <span className="home-hero__pests-cta-label">WhatsApp for Free Estimate:</span>
+                <span className="home-hero__pests-cta-phone dynamic-phone">{noBreakPhone(phone)}</span>
+              </a>
+            )}
           </div>
 
           <div className="home-hero__guy" aria-hidden="true">
@@ -212,16 +270,30 @@ const HomeHero: React.FC<HomeHeroProps> = ({
           <div className="home-hero-mobile__headline">
             {/* Same text as the desktop h1 above; a <p> so each page has exactly one h1 */}
             <p className="home-hero-mobile__title">{title}</p>
-            <ul className="home-hero-mobile__highlights">
-              <li className="home-hero-mobile__highlight">
-                <HeroCheckIcon className="home-hero-mobile__highlight-icon" />
-                <span>Serving {city} &amp; Surrounding Areas</span>
-              </li>
-              <li className="home-hero-mobile__highlight">
-                <HeroCheckIcon className="home-hero-mobile__highlight-icon" />
-                <span>24/7 Service. Free Quote in 60 Seconds.</span>
-              </li>
-            </ul>
+            {HERO_V2 ? (
+              <>
+                <ul className="home-hero-mobile__highlights">
+                  {proofs.map((p) => (
+                    <li key={p} className="home-hero-mobile__highlight">
+                      <HeroCheckIcon className="home-hero-mobile__highlight-icon" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <HeroActions whatsappUrl={whatsappUrl} phone={phone} variant="mobile" />
+              </>
+            ) : (
+              <ul className="home-hero-mobile__highlights">
+                <li className="home-hero-mobile__highlight">
+                  <HeroCheckIcon className="home-hero-mobile__highlight-icon" />
+                  <span>Serving {city} &amp; Surrounding Areas</span>
+                </li>
+                <li className="home-hero-mobile__highlight">
+                  <HeroCheckIcon className="home-hero-mobile__highlight-icon" />
+                  <span>24/7 Service. Free Quote in 60 Seconds.</span>
+                </li>
+              </ul>
+            )}
           </div>
           <div className="home-hero-mobile__guy" aria-hidden="true">
             <img

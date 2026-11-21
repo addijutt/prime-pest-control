@@ -4,63 +4,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { NewLogo, NewMobileLogo } from '../utils/images';
 import { noBreakPhone } from '../utils/formatPhone';
+import { NAV_LINKS, NAV_MENUS, type NavMenu } from '../config/navigation';
+import { HERO_V2 } from '../config/siteFlags';
 
 const PHONE = '055 304 5256';
 const PHONE_RAW = '+971553045256';
-
-const pestControlItems = [
-  { label: 'All Pest Services', href: '/residential-pest-control' },
-  { label: 'Apartment Pest Control', href: '/apartment-pest-control-dubai' },
-  { label: 'Villa Pest Control', href: '/villa-pest-control-dubai' },
-  { label: 'Move-In / Move-Out Treatment', href: '/move-in-pest-control-dubai' },
-  { label: 'Cockroach Control', href: '/cockroach-control-dubai' },
-  { label: 'Bed Bug Treatment', href: '/bed-bug-treatment-dubai' },
-  { label: 'Ant Control', href: '/ant-control-dubai' },
-  { label: 'Termite Control', href: '/termite-control' },
-  { label: 'Pre-Construction Anti-Termite', href: '/pre-construction-termite-treatment-dubai' },
-  { label: 'Rodent Control', href: '/rodent-control' },
-  { label: 'Mosquito Control', href: '/mosquito-control-dubai' },
-  { label: 'Fly Control', href: '/fly-control-dubai' },
-  { label: 'Spider Control', href: '/spider-control-dubai' },
-  { label: 'Wasp, Hornet & Bee Removal', href: '/hornet-nest-removal' },
-  { label: 'Flea Control', href: '/pest-control-for-fleas' },
-  { label: 'Tick Control', href: '/tick-control-dubai' },
-  { label: 'Scorpion Control', href: '/scorpion-control-dubai' },
-  { label: 'Camel Spider Removal', href: '/camel-spider-control-dubai' },
-  { label: 'Lizard & Gecko Control', href: '/lizard-control-dubai' },
-  { label: 'Snake Removal', href: '/snake-removal-dubai' },
-  { label: 'Disinfection Services', href: '/disinfection-services-dubai' },
-  { label: 'Fumigation Services', href: '/fumigation-services-dubai' },
-  { label: 'Commercial Pest Control', href: '/commercial-pest-control-dubai' },
-  { label: 'Restaurant Pest Control', href: '/restaurant-pest-control-dubai' },
-  { label: 'Office Pest Control', href: '/office-pest-control-dubai' },
-];
-
-const birdControlItems = [
-  { label: 'All Bird Control', href: '/bird-control-dubai' },
-  { label: 'Pigeon Control', href: '/pigeon-control-dubai' },
-  { label: 'Mynah Bird Control', href: '/mynah-bird-control' },
-  { label: 'Bird Netting', href: '/bird-netting-dubai' },
-  { label: 'Solar Panel Bird Proofing', href: '/solar-panel-bird-proofing-dubai' },
-];
-
-const dropdownUlStyle = (open: boolean): React.CSSProperties => ({
-  display: open ? 'block' : 'none',
-  position: 'absolute',
-  top: '100%',
-  left: 0,
-  background: '#fff',
-  border: '1px solid #e5e5e5',
-  borderRadius: '8px',
-  boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
-  minWidth: '220px',
-  maxHeight: '320px',
-  overflowY: 'auto',
-  zIndex: 9999,
-  padding: '8px 0',
-  listStyle: 'none',
-  margin: 0,
-});
 
 const ChevronIcon: React.FC<{ open?: boolean }> = ({ open }) => (
   <svg
@@ -77,18 +25,39 @@ const ChevronIcon: React.FC<{ open?: boolean }> = ({ open }) => (
   </svg>
 );
 
+/** Desktop mega menu panel: grouped columns, no inner scrolling */
+const MegaPanel: React.FC<{ menu: NavMenu; open: boolean; onNavigate: () => void }> = ({ menu, open, onNavigate }) => (
+  <div
+    className={`mega-menu mega-menu--cols-${menu.columns}${open ? ' mega-menu--open' : ''}`}
+    role="region"
+    aria-label={`${menu.label} menu`}
+  >
+    {menu.groups.map((group, i) => (
+      <div key={group.heading ?? i} className="mega-menu__group">
+        {group.heading ? <p className="mega-menu__heading">{group.heading}</p> : null}
+        <ul>
+          {group.links.map((link) => (
+            <li key={link.href + link.label}>
+              <Link href={link.href} className="mega-menu__link" onClick={onNavigate}>
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+);
+
 const Header: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [pestMenuOpen, setPestMenuOpen] = useState(false);
-  const [birdMenuOpen, setBirdMenuOpen] = useState(false);
-  const [desktopPestOpen, setDesktopPestOpen] = useState(false);
-  const [desktopBirdOpen, setDesktopBirdOpen] = useState(false);
+  const [drawerSection, setDrawerSection] = useState<string | null>(null);
+  const [desktopOpen, setDesktopOpen] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
 
   const closeDrawer = () => {
     setDrawerOpen(false);
-    setPestMenuOpen(false);
-    setBirdMenuOpen(false);
+    setDrawerSection(null);
   };
 
   useEffect(() => {
@@ -108,17 +77,28 @@ const Header: React.FC = () => {
     return () => ro.disconnect();
   }, []);
 
+  // Close an open desktop menu with Escape
+  useEffect(() => {
+    if (!desktopOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setDesktopOpen(null); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [desktopOpen]);
+
   return (
     <>
       <header ref={headerRef} style={{ position: 'fixed', top: 0, width: '100%', zIndex: 999 }}>
         <div className="header-emergency-banner">
-          Emergency service appointments available.{' '}
+          {/* Hero v2 hides the first sentence on phones so the banner fits on one line */}
+          <span className={HERO_V2 ? 'header-emergency-banner__text' : undefined}>
+            Emergency service appointments available.{' '}
+          </span>
           <a href={`tel:${PHONE_RAW}`} className="header-emergency-banner__phone">
             Call 24/7: {noBreakPhone(PHONE)}
           </a>
         </div>
 
-        <nav className="site-navbar" role="navigation">
+        <nav className="site-navbar" role="navigation" aria-label="Main">
           <div className="container" style={{ maxWidth: '1440px' }}>
 
             {/* Mobile top bar */}
@@ -163,60 +143,32 @@ const Header: React.FC = () => {
               </div>
             </div>
 
-            {/* Desktop nav — hidden on mobile via CSS */}
+            {/* Desktop nav: mega menus (config/navigation.ts). The logo links home. */}
             <div className="site-nav__collapse" id="header-nav">
               <ul className="site-nav__list">
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/about-us">About Us</Link></li>
-
-                <li
-                  style={{ position: 'relative' }}
-                  onMouseEnter={() => setDesktopPestOpen(true)}
-                  onMouseLeave={() => setDesktopPestOpen(false)}
-                >
-                  <Link href="/residential-pest-control" style={{ cursor: 'pointer' }}>
-                    Pest Control <ChevronIcon open={desktopPestOpen} />
-                  </Link>
-                  <ul style={dropdownUlStyle(desktopPestOpen)}>
-                    {pestControlItems.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="nav-dropdown-link"
-                          style={{ display: 'block', padding: '10px 20px', color: '#222', textDecoration: 'none', fontSize: '14px', whiteSpace: 'nowrap' }}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-
-                <li
-                  style={{ position: 'relative' }}
-                  onMouseEnter={() => setDesktopBirdOpen(true)}
-                  onMouseLeave={() => setDesktopBirdOpen(false)}
-                >
-                  <Link href="/bird-control-dubai" style={{ cursor: 'pointer' }}>
-                    Bird Control <ChevronIcon open={desktopBirdOpen} />
-                  </Link>
-                  <ul style={dropdownUlStyle(desktopBirdOpen)}>
-                    {birdControlItems.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="nav-dropdown-link"
-                          style={{ display: 'block', padding: '10px 20px', color: '#222', textDecoration: 'none', fontSize: '14px', whiteSpace: 'nowrap' }}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-
-                <li><Link href="/residential-pest-control">Residential Pest Control</Link></li>
-                <li><Link href="/contact-us">Contact Us</Link></li>
+                {NAV_MENUS.map((menu) => {
+                  const open = desktopOpen === menu.id;
+                  return (
+                    <li
+                      key={menu.id}
+                      className="site-nav__mega-item"
+                      onMouseEnter={() => setDesktopOpen(menu.id)}
+                      onMouseLeave={() => setDesktopOpen(null)}
+                      onFocus={() => setDesktopOpen(menu.id)}
+                      onBlur={(e) => {
+                        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDesktopOpen(null);
+                      }}
+                    >
+                      <Link href={menu.href} aria-haspopup="true" aria-expanded={open}>
+                        {menu.label} <ChevronIcon open={open} />
+                      </Link>
+                      <MegaPanel menu={menu} open={open} onNavigate={() => setDesktopOpen(null)} />
+                    </li>
+                  );
+                })}
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href}><Link href={link.href}>{link.label}</Link></li>
+                ))}
               </ul>
             </div>
 
@@ -238,7 +190,6 @@ const Header: React.FC = () => {
         aria-modal="true"
         aria-label="Navigation menu"
       >
-        {/* Drawer header */}
         <div className="mobile-drawer__head">
           <Link href="/" className="mobile-drawer__logo-link" onClick={closeDrawer}>
             <img src={NewMobileLogo} alt="Prime Pest Control Dubai" />
@@ -248,78 +199,54 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Scrollable nav body */}
         <div className="mobile-drawer__body">
           <ul className="mobile-drawer__list">
-
             <li className="mobile-drawer__item">
               <Link href="/" className="mobile-drawer__link" onClick={closeDrawer}>
                 <span>Home</span>
               </Link>
             </li>
 
-            <li className="mobile-drawer__item">
-              <Link href="/about-us" className="mobile-drawer__link" onClick={closeDrawer}>
-                <span>About Us</span>
-              </Link>
-            </li>
+            {NAV_MENUS.map((menu) => {
+              const open = drawerSection === menu.id;
+              return (
+                <li key={menu.id} className="mobile-drawer__item">
+                  <button
+                    className={`mobile-drawer__link mobile-drawer__link--btn${open ? ' is-active' : ''}`}
+                    onClick={() => setDrawerSection(open ? null : menu.id)}
+                    aria-expanded={open}
+                  >
+                    <span>{menu.label}</span>
+                    <ChevronIcon open={open} />
+                  </button>
+                  <ul className={`mobile-drawer__sub${open ? ' mobile-drawer__sub--open' : ''}`}>
+                    {menu.groups.map((group, gi) => (
+                      <React.Fragment key={group.heading ?? gi}>
+                        {group.heading ? <li className="mobile-drawer__sub-heading">{group.heading}</li> : null}
+                        {group.links.map((link) => (
+                          <li key={link.href + link.label}>
+                            <Link href={link.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </React.Fragment>
+                    ))}
+                  </ul>
+                </li>
+              );
+            })}
 
-            <li className="mobile-drawer__item">
-              <button
-                className={`mobile-drawer__link mobile-drawer__link--btn${pestMenuOpen ? ' is-active' : ''}`}
-                onClick={() => setPestMenuOpen(!pestMenuOpen)}
-                aria-expanded={pestMenuOpen}
-              >
-                <span>Pest Control</span>
-                <ChevronIcon open={pestMenuOpen} />
-              </button>
-              <ul className={`mobile-drawer__sub${pestMenuOpen ? ' mobile-drawer__sub--open' : ''}`}>
-                {pestControlItems.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-
-            <li className="mobile-drawer__item">
-              <button
-                className={`mobile-drawer__link mobile-drawer__link--btn${birdMenuOpen ? ' is-active' : ''}`}
-                onClick={() => setBirdMenuOpen(!birdMenuOpen)}
-                aria-expanded={birdMenuOpen}
-              >
-                <span>Bird Control</span>
-                <ChevronIcon open={birdMenuOpen} />
-              </button>
-              <ul className={`mobile-drawer__sub${birdMenuOpen ? ' mobile-drawer__sub--open' : ''}`}>
-                {birdControlItems.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="mobile-drawer__sub-link" onClick={closeDrawer}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-
-            <li className="mobile-drawer__item">
-              <Link href="/residential-pest-control" className="mobile-drawer__link" onClick={closeDrawer}>
-                <span>Residential Pest Control</span>
-              </Link>
-            </li>
-
-            <li className="mobile-drawer__item">
-              <Link href="/contact-us" className="mobile-drawer__link" onClick={closeDrawer}>
-                <span>Contact Us</span>
-              </Link>
-            </li>
-
+            {NAV_LINKS.map((link) => (
+              <li key={link.href} className="mobile-drawer__item">
+                <Link href={link.href} className="mobile-drawer__link" onClick={closeDrawer}>
+                  <span>{link.label}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* CTA footer */}
         <div className="mobile-drawer__cta">
           <a href={`tel:${PHONE_RAW}`} className="mobile-drawer__cta-call">
             <i className="fa fa-phone" aria-hidden="true"></i>

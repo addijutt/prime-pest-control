@@ -5,7 +5,7 @@ import SplitSection from '../layout/SplitSection';
 import PillCta from '../ui/PillCta';
 import CheckmarkList from '../ui/CheckmarkList';
 import ImagePlaceholder, { type PhotoBrief } from '../ui/ImagePlaceholder';
-import { PRICES, priceText, type PriceItem, type PriceKey } from '../../config/prices';
+import { PRICES, SERVICE_TERMS, priceText, warrantyText, type PriceItem, type PriceKey } from '../../config/prices';
 import type { GuideLink } from '../../config/guideTypes';
 import { noBreakPhone } from '../../utils/formatPhone';
 
@@ -82,9 +82,19 @@ export const PriceBandSection: React.FC<{ title: string; keys: PriceKey[] }> = (
               <p className="price-card__price">{priceText(key)}</p>
               <p className="price-card__unit">{p.unit}</p>
               {p.visits ? <p className="price-card__visits">{p.visits}</p> : null}
+              {warrantyText(key) ? <p className="price-card__warranty">{warrantyText(key)}</p> : null}
             </li>
           );
         })}
+      </ul>
+      {/* Service terms (prices.ts SERVICE_TERMS): answers "is the visit free?" before the visitor asks */}
+      <ul className="price-band__terms" aria-label="How quotes, warranty and call-outs work">
+        <li><strong>Free quote</strong> on WhatsApp from a photo or description</li>
+        <li><strong>Free survey</strong> for {SERVICE_TERMS.freeSurveyFor}</li>
+        <li><strong>Warranty</strong> with free re-treatment if the pest comes back (shown on each price)</li>
+        <li>
+          <strong>Annual plans:</strong> free call-outs between visits, within {SERVICE_TERMS.calloutResponseHours} hours
+        </li>
       </ul>
       <div className="price-band__cta">
         <WhatsAppCta label="Get Your Exact Price on WhatsApp:" />
