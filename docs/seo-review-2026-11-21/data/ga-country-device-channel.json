@@ -1,0 +1,275 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "country"
+  },
+  {
+   "name": "deviceCategory"
+  },
+  {
+   "name": "sessionDefaultChannelGroup"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "averageSessionDuration",
+   "type": "TYPE_SECONDS"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "United Arab Emirates"
+    },
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "Direct"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "8"
+    },
+    {
+     "value": "4"
+    },
+    {
+     "value": "509.4298725"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United States"
+    },
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "Direct"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "6"
+    },
+    {
+     "value": "6"
+    },
+    {
+     "value": "21.359706333333335"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United Arab Emirates"
+    },
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "Organic Search"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "5"
+    },
+    {
+     "value": "4"
+    },
+    {
+     "value": "746.3307248"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United Arab Emirates"
+    },
+    {
+     "value": "mobile"
+    },
+    {
+     "value": "Direct"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "5"
+    },
+    {
+     "value": "4"
+    },
+    {
+     "value": "133.28816260000002"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United Arab Emirates"
+    },
+    {
+     "value": "mobile"
+    },
+    {
+     "value": "Organic Search"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    },
+    {
+     "value": "4"
+    },
+    {
+     "value": "57.23048225"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Germany"
+    },
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "Direct"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United Arab Emirates"
+    },
+    {
+     "value": "mobile"
+    },
+    {
+     "value": "Referral"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Ireland"
+    },
+    {
+     "value": "mobile"
+    },
+    {
+     "value": "Organic Social"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "28.62577"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United Kingdom"
+    },
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "Direct"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United States"
+    },
+    {
+     "value": "mobile"
+    },
+    {
+     "value": "Direct"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0.023662"
+    }
+   ]
+  }
+ ],
+ "rowCount": 10,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

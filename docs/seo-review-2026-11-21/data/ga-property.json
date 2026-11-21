@@ -1,0 +1,18 @@
+{
+ "account": "Prime Pest Control",
+ "property": "properties/562978109",
+ "name": "primepestcontrol.ae",
+ "created": "2026-11-06T21:11:18.864Z",
+ "timeZone": "Asia/Dubai",
+ "currency": "AED",
+ "industry": "OTHER",
+ "streams": [
+  {
+   "type": "WEB_DATA_STREAM",
+   "name": "Prime Pest Control - Web",
+   "url": "https://primepestcontrol.ae",
+   "measurementId": "G-VF1DJE32KE",
+   "created": "2026-11-06T21:23:05.995Z"
+  }
+ ]
+}

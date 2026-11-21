@@ -93,9 +93,9 @@ export default function PrivacyPolicyPage() {
               <p>4.1. We use Cookies and similar tracking technologies to track activity on our Service and store certain information.</p>
               <p>4.2. You can instruct your browser to refuse all Cookies or to indicate when a Cookie is being sent. If you do not accept Cookies, some parts of our Service may not function correctly.</p>
               <h4>4.3. Types of Cookies We Use</h4>
-              <p><strong>Necessary / Essential Cookies</strong> — Required to provide you with services available through the Website.</p>
-              <p><strong>Functionality Cookies</strong> — Allow us to remember choices you make when using the Website.</p>
-              <p><strong>Tracking and Performance Cookies</strong> — Used to track information about traffic to the Website and how users use the Website. These are administered by third parties such as Google Analytics.</p>
+              <p><strong>Necessary / Essential Cookies.</strong> Required to provide you with services available through the Website.</p>
+              <p><strong>Functionality Cookies.</strong> Allow us to remember choices you make when using the Website.</p>
+              <p><strong>Tracking and Performance Cookies.</strong> Used to track information about traffic to the Website and how users use the Website. These are administered by third parties such as Google Analytics.</p>
 
               <h3>5. Use of Your Personal Data</h3>
               <p>The Company may use Personal Data for the following purposes:</p>

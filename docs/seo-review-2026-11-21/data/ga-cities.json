@@ -1,0 +1,226 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "city"
+  },
+  {
+   "name": "country"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "Dubai"
+    },
+    {
+     "value": "United Arab Emirates"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "19"
+    },
+    {
+     "value": "14"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Sharjah"
+    },
+    {
+     "value": "United Arab Emirates"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Flint Hill"
+    },
+    {
+     "value": "United States"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Nuremberg"
+    },
+    {
+     "value": "Germany"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Phoenix"
+    },
+    {
+     "value": "United States"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "San Jose"
+    },
+    {
+     "value": "United States"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "(not set)"
+    },
+    {
+     "value": "Germany"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Abu Dhabi"
+    },
+    {
+     "value": "United Arab Emirates"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Ashburn"
+    },
+    {
+     "value": "United States"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Dublin"
+    },
+    {
+     "value": "Ireland"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "London"
+    },
+    {
+     "value": "United Kingdom"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  }
+ ],
+ "rowCount": 11,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

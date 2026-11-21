@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import FooterCall from '../components/FooterCall';
+import LeadLogger from '../components/LeadLogger';
 
 export const metadata: Metadata = {
   title: 'Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256',
@@ -69,9 +70,10 @@ const localBusinessSchema = {
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '08:00',
-      closes: '20:00',
+      // Open 24/7 (owner, 21 Nov 2026). Google's format for 24 hours: 00:00 to 23:59 every day
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
     },
   ],
   areaServed: [
@@ -82,7 +84,6 @@ const localBusinessSchema = {
     { '@type': 'Place', name: 'Business Bay' },
     { '@type': 'Place', name: 'Jumeirah' },
     { '@type': 'Place', name: 'Deira' },
-    { '@type': 'Place', name: 'Bur Dubai' },
     { '@type': 'Place', name: 'DIFC' },
     { '@type': 'Place', name: 'Palm Jumeirah' },
     { '@type': 'Place', name: 'Al Barsha' },
@@ -119,12 +120,8 @@ const localBusinessSchema = {
     'Residential Pest Control',
     'Solar Panel Bird Proofing',
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    bestRating: '5',
-    ratingCount: '127',
-  },
+  // No aggregateRating: the Google Business Profile has 1 review (21 Nov 2026), so 4.9 / 127 was not true.
+  // Add it back only with the real GMB numbers once there are enough reviews.
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Pest & Bird Control Services Dubai',
@@ -156,7 +153,7 @@ const websiteSchema = {
   inLanguage: 'en-AE',
 };
 
-const CRITICAL_CSS = `.call-company{font-size:1.2rem}.call-us a{color:#fff}#hero.home-hero{background:none;padding-top:0;margin-top:188px}#hero:not(.home-hero){background:url(/assets/img/hero-bg-v2.webp) no-repeat center top/1440px auto;padding-top:10px;margin-top:0}#hero:not(.home-hero) h1{text-align:center;display:block}.no-bm{margin-bottom:0}.family-roboto{font-family:'Nunito Sans',Arial,sans-serif}.text-center{text-align:center}.panel p span{font-size:1.3125rem;line-height:1.5rem;display:inline-block}.color-dark-grey{color:#504c4c}.visible-lg,.visible-md,.visible-sm,.visible-xs{display:none!important}.panel .img-responsive{text-align:center;display:inline-block;margin:0 auto}.nopad{padding:0}.special-list{padding-left:0;list-style:none;width:100%;max-width:100%;margin:0 auto 20px}.text-left{text-align:left}.special-list li{font-family:'Nunito Sans';padding:5px 0;font-size:1rem;color:#505050}@media (max-width:75rem){#hero.home-hero{margin-top:188px}#hero:not(.home-hero){margin-top:121px}.special-list li{font-size:.75rem;line-height:1.5rem}}@media (max-width:47.9375rem){.visible-xs{display:block!important}.hidden-xs{display:none!important}}@media (max-width:48rem){.special-list li{font-size:1rem}}@media (max-width:30rem){.block-in-mobile{display:block;clear:both;margin:10px 0}.call-us .block-in-mobile{margin:0}#hero:not(.home-hero)>.container{padding:0 5px}.home h1{font-size:1.75rem;line-height:2.25rem}.home .panel p.size-22{line-height:1.5rem;font-size:1.125rem}.panel p,.special-list li{text-align:center}.online-only{font-size:1rem!important}}`;
+const CRITICAL_CSS = `.call-company{font-size:1.2rem}.call-us a{color:#fff}#hero.home-hero{background:none;padding-top:0;margin-top:188px}#hero:not(.home-hero){background:url(/assets/img/hero-bg-v2.webp) no-repeat center top/1440px auto;padding-top:10px;margin-top:0}#hero:not(.home-hero) h1{text-align:center;display:block}.no-bm{margin-bottom:0}.family-roboto{font-family:'Nunito Sans',Arial,sans-serif}.text-center{text-align:center}.panel p span{font-size:1.3125rem;line-height:1.5rem;display:inline-block}.color-dark-grey{color:#504c4c}.visible-lg,.visible-md,.visible-sm,.visible-xs{display:none!important}.panel .img-responsive{text-align:center;display:inline-block;margin:0 auto}.nopad{padding:0}.special-list{padding-left:0;list-style:none;width:100%;max-width:100%;margin:0 auto 20px}.text-left{text-align:left}.special-list li{font-family:'Nunito Sans';padding:5px 0;font-size:1rem;color:#505050}@media (max-width:75rem){#hero.home-hero{margin-top:188px}#hero:not(.home-hero){margin-top:121px}.special-list li{font-size:.75rem;line-height:1.5rem}}@media (max-width:47.9375rem){.visible-xs{display:block!important}.hidden-xs{display:none!important}}@media (max-width:48rem){.special-list li{font-size:1rem}}@media (max-width:30rem){.block-in-mobile{display:block;clear:both;margin:10px 0}.call-us .block-in-mobile{margin:0}#hero:not(.home-hero)>.container{padding:0 5px}.home h1,.home .home-hero-mobile__title{font-size:1.75rem;line-height:2.25rem}.home .panel p.size-22{line-height:1.5rem;font-size:1.125rem}.panel p,.special-list li{text-align:center}.online-only{font-size:1rem!important}}`;
 
 export default function RootLayout({
   children,
@@ -189,27 +186,32 @@ export default function RootLayout({
         {/* Inline critical CSS */}
         <style dangerouslySetInnerHTML={{ __html: CRITICAL_CSS }} />
 
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager: only on the live site (localhost and vercel.app previews were counted as visitors) */}
         <Script id="gtm-script" strategy="beforeInteractive">{`
+          if (location.hostname === 'www.primepestcontrol.ae') {
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-MLXL4T5N');
+          }
         `}</Script>
-        {/* GA4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VF1DJE32KE"
-          strategy="afterInteractive"
-        />
+        {/* GA4: only on the live site; gtag() always exists so click events never throw */}
         <Script id="ga4-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){ dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-VF1DJE32KE');
+          window.gtag = gtag;
+          if (location.hostname === 'www.primepestcontrol.ae') {
+            var ga = document.createElement('script');
+            ga.async = true;
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-VF1DJE32KE';
+            document.head.appendChild(ga);
+            gtag('js', new Date());
+            gtag('config', 'G-VF1DJE32KE');
+          }
         `}</Script>
 
-        {/* LocalBusiness JSON-LD (includes AggregateRating) */}
+        {/* LocalBusiness JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -246,6 +248,8 @@ export default function RootLayout({
           />
         </noscript>
 
+        {/* WhatsApp / call taps → lead sheet (config/leadLog.ts) */}
+        <LeadLogger />
         <Header />
         {children}
         <Footer />

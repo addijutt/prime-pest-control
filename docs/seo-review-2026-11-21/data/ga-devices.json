@@ -1,0 +1,136 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "deviceCategory"
+  },
+  {
+   "name": "operatingSystem"
+  },
+  {
+   "name": "browser"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "Windows"
+    },
+    {
+     "value": "Chrome"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "21"
+    },
+    {
+     "value": "13"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "mobile"
+    },
+    {
+     "value": "iOS"
+    },
+    {
+     "value": "Safari"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    },
+    {
+     "value": "7"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "(not set)"
+    },
+    {
+     "value": "(not set)"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "6"
+    },
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "mobile"
+    },
+    {
+     "value": "Android"
+    },
+    {
+     "value": "Chrome"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "desktop"
+    },
+    {
+     "value": "Macintosh"
+    },
+    {
+     "value": "Chrome"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  }
+ ],
+ "rowCount": 5,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

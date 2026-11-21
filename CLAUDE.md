@@ -4,6 +4,8 @@ This file is the single source of truth for Claude Code working in this reposito
 It combines technical architecture, business context, and a living project tracker.
 **Update this file whenever a task is completed, a decision is made, or new work is planned.**
 
+> **Current state (21 Nov 2026):** all SEO, content and lead-tracking work is on branch `seo-content-overhaul`, **not live**. It goes live once the images are added (merge into `main`). What was done, what is left and a ready prompt to continue: `docs/HANDOVER.md`.
+
 ---
 
 ## Commands
@@ -19,7 +21,7 @@ npx tsc --noEmit  # type check without emitting
 
 ## Stack
 
-- **Next.js 16.4.1** App Router, **React 19**, **TypeScript 5**, **Tailwind CSS 4**
+- **Next.js 16.4.6** App Router, **React 19**, **TypeScript 5**, **Tailwind CSS 4**
 - `output: 'export'` in `next.config.ts` — **static site**. No server components, no API routes, no `getServerSideProps`. Everything must be statically renderable.
 - `images.unoptimized: true` — use plain `<img>` tags, not `next/image`.
 - Path alias: `@/*` → `./src/*`
@@ -33,11 +35,34 @@ npx tsc --noEmit  # type check without emitting
 | File | Route |
 |------|-------|
 | `src/app/page.tsx` | `/` (homepage) |
-| `src/app/[slug]/page.tsx` | All service pages (e.g. `/cockroach-exterminator-near-me`) |
+| `src/app/[slug]/page.tsx` | 32 service pages (e.g. `/cockroach-control-dubai`) **and** 22 community pages (`/pest-control-<community>`) |
 
-Every service page renders the same layout: `HomeHero → UrgencySection → WhatWeDoSection → ServiceAreaSection → WhyCallUsSection → TrustedByCustomersSection → WhyChooseUsSection → FreeQuoteSection → SatisfactionGuaranteeSection → FaqSection`.
+**Page layouts (UX order, 21 Nov 2026).** The order follows how a visitor decides: answer → price → "is it my problem" → what we treat → how it works + why us → safety → FAQ → areas → one closing CTA. One CTA per section type; no repeated "WhatsApp us" sections.
 
-Valid slugs are defined in `SEO_META` inside `src/app/[slug]/page.tsx`. Adding a new page requires an entry in both `SEO_META` (routing/metadata) and `PAGE_CONTENT` in `src/config/pageContent.ts` (content).
+- Service page: `HomeHero → GuideIntroSection → PriceBandSection → SignsSection → WhatWeDoSection → WhyChooseUsSection (process = this service's steps) → SafetySection → FaqSection → ServiceAreaSection → FreeQuoteSection`. Pages without a guide skip the four guide sections.
+- Community page: `HomeHero → GuideIntroSection → CommunityPestsSection → PriceBandSection → CommunityTipsSection → WhyChooseUsSection → FaqSection → ServiceAreaSection → FreeQuoteSection`.
+- Homepage: `HomeHero → WhatWeDoSection (service grid first: visitors pick their pest) → GuideIntroSection → PriceBandSection → SignsSection → WhyChooseUsSection → SafetySection → SatisfactionGuaranteeSection → FaqSection → ServiceAreaSection → FreeQuoteSection`.
+- Not used any more (still in the code): `UrgencySection` (its "AED 299 special" coupon contradicted the price cards), `WhyCallUsSection` (duplicate of Why Choose Us). `SatisfactionGuaranteeSection` only on the homepage.
+- Guide sections live in `ServiceGuideSection.tsx` / `CommunityGuideSection.tsx` and reuse the site patterns (`SplitSection`, `CheckmarkList`, `PillCta`, muted band, dark `process-block`). Don't add new visual patterns for content; reuse these.
+
+**Writing rules (owner):** no em dashes anywhere; no colons in headings (use Title Case like the rest of the site); prices only via `prices.ts`.
+
+**Photos:** every guide/community has `photos` briefs. `ImagePlaceholder` shows a labelled placeholder in `npm run dev` and an existing team photo in production. Add the real photo by setting `src` on the brief. Full list for the team: `docs/photo-shot-list.md` (52 photos).
+
+**Where things live (one place each):**
+
+| What | File |
+|------|------|
+| **Prices** (every "From AED …", price cards, schema `offers`) | `src/config/prices.ts`. In content text use `${aed('key')}`, never a typed number |
+| Service page list + title/description (also drives routing and the sitemap) | `src/config/seoMeta.ts` |
+| Hero, pest grid, expertise bullets, FAQs | `src/config/pageContent.ts` |
+| Long-form Dubai guide per page (answer, signs, steps, safety, prevention, related, `priceKeys`) | `src/config/serviceGuides.ts` |
+| Community pages (add one = one entry; route, sitemap and Service Area links follow) | `src/config/communities.ts` |
+| Sitemap | `src/app/sitemap.ts` builds from `seoMeta.ts` + `communities.ts` (no manual list) |
+
+**Adding a service page:** entry in `seoMeta.ts` + `pageContent.ts` (+ `serviceGuides.ts` for the guide), menu link in `Header.tsx`, line in `public/llms.txt`.
+
+**Removing or renaming a page:** add a 301 in `vercel.json` `redirects` (old path → final page, one hop), remove/rename it in `seoMeta.ts`, `pageContent.ts` and `serviceGuides.ts`, and repoint links in `Header.tsx`, `Footer.tsx`, `HomeHero.tsx`, `WhatWeDoSection.tsx`, `relatedHref()` in `pageContentHelpers.ts`, `related` links in `serviceGuides.ts`/`communities.ts` and `public/llms.txt`. Redirects only work on Vercel (locally an old path is a 404).
 
 ### Page Content System
 
@@ -82,11 +107,14 @@ All image paths live here. Import from here, never hardcode `/assets/img/...` pa
 - `FloatingWhatsApp` — fixed floating call + WhatsApp buttons with slide-in label (`.floating-btns__label` in `globals.css`)
 - `Header` — fixed navbar, desktop dropdowns + mobile right-side drawer. Phone: `Call 24/7: {phone}`
 - `HomeHero` — dual layout. Desktop: card + pest grid. Mobile: photo panel + pest selector + benefits list
-- `ServiceAreaSection` — uses `useVisitorLocation` hook to personalise city/region
+- `ServiceAreaSection` — fixed Dubai map (`DUBAI_CENTER`); no visitor IP lookup, no runtime geocoding
+- `src/config/siteFlags.ts` — `SHOW_CUSTOMER_REVIEWS` (false): hides the reviews carousel and the guarantee-section quote until there are real Google reviews
 - `dynamic-href` / `dynamic-phone` — CSS classes on CTAs for client-side location-based swap
 - `FaqSection` — accordion FAQ with FAQPage JSON-LD schema injected dynamically from props
 
 ### Tracking
+
+- **Lead sheet** (live log of every WhatsApp tap, phone tap and contact form send, by page, button, source and device): Google Sheet "Prime Pest Control Leads (WhatsApp & Calls)" https://docs.google.com/spreadsheets/d/1SuwZPOCvJgsef12X1W5kq0BMqD3w3p2xQlTLVQNt8-0/edit (tabs: Dashboard, Leads, About; Dubai time zone). Site side: `LeadLogger.tsx` (click listener, mounted in `layout.tsx`), `utils/leadLog.ts` (attribution per visit in sessionStorage, button zones, sendBeacon as text/plain), `config/leadLog.ts` (`LEAD_LOG_URL`, token, live host). Receiver: `docs/lead-tracking/apps-script.gs` pasted into the sheet and deployed as a web app; setup in `docs/lead-tracking/README.md`. Real rows only from www.primepestcontrol.ae; `?leadtest=1` sends test rows anywhere (Test = Yes, left out of the dashboard). No personal data stored. **`LEAD_LOG_URL` is empty until the owner deploys the Apps Script.**
 
 - GTM: `GTM-MLXL4T5N`
 - GA4: `G-VF1DJE32KE` (stream: Prime Pest Control - Web, stream ID: 16289271366)
@@ -97,7 +125,7 @@ All image paths live here. Import from here, never hardcode `/assets/img/...` pa
 ### Schema / Structured Data (`src/app/layout.tsx`)
 
 Two global schemas injected in `<head>`:
-1. **LocalBusiness** — full entity with aggregateRating, areaServed (22 areas), sameAs (3 platforms), knowsAbout, hasOfferCatalog
+1. **LocalBusiness** — full entity (no aggregateRating: removed 21 Nov 2026, GMB has 1 review), areaServed (22 areas), sameAs (3 platforms), knowsAbout, hasOfferCatalog
 2. **WebSite** — links site to business entity
 
 Per-page schemas:
@@ -116,7 +144,7 @@ Per-page schemas:
 - **Domain**: `https://www.primepestcontrol.ae`
 - **Pricing**: AED 299 promo, AED 299–2000 range
 - **Services**: Pest control (cockroaches, bed bugs, termites, rodents, ants, mosquitoes, wasps, fleas, scorpions, camel spiders, drain flies, silverfish, centipedes) + bird control (pigeons, mynahs, crows, sparrows, netting, proofing, solar panel bird-proofing) across Dubai
-- **Hours**: Monday–Saturday 08:00–20:00
+- **Hours**: Open 24/7, every day (owner, 21 Nov 2026). Schema: Mo–Su 00:00–23:59. The Google Business Profile still says "Closes 10 PM": set it to "Open 24 hours" so they match.
 
 ### Business Profiles (all verified, all in schema `sameAs`)
 
@@ -143,6 +171,23 @@ Per-page schemas:
 
 | Date | Task | Files Changed |
 |------|------|---------------|
+| 2026-11-21 | **Gap pages + bird merge**: 4 new service pages with guides, prices and pest grids: Fumigation (businesses, containers, ISPM 15 pallets, certificate; clearly never in homes), Restaurant pest control, Office pest control, Fly control. 2 new communities: Dubai South, Dubailand. Crow and Sparrow pages merged into Bird Control (UAE autocomplete: no demand of their own; 2 more 301s, bird hub got crow, sparrow and spikes FAQs). Spider and Silverfish kept (real searches). New price keys: `fly` (from AED 249) and quote-only `restaurant-contract`, `office-contract`, `fumigation-commercial`, `fly-commercial`. Menu, Commercial related links, llms.txt, image fallbacks, photo list (110) and pest image list (58) updated. 62 pages, 60 sitemap URLs, 30 redirects | `seoMeta.ts`, `pageContent.ts`, `serviceGuidesMore.ts`, `serviceGuides.ts`, `communitiesMore.ts`, `prices.ts`, `pageContentHelpers.ts`, `Header.tsx`, `vercel.json`, `public/llms.txt`, `docs/` |
+| 2026-11-21 | **Lead tracking sheet + service gap analysis**: Google Sheet with live Dashboard (KPIs, by page / source / button / device / landing page, 30-day chart, latest leads), Leads log and About tab; site logger for WhatsApp, calls and contact form; Apps Script receiver and setup guide. Service gap analysis from UAE Google autocomplete and competitors: `docs/seo-review-2026-11-21/service-gap-analysis.md` (missing: fumigation, office, restaurant, fly control, water tank cleaning (needs DM approval), bed bug inspection, Dubai South / Dubailand; incomplete: warranty terms, DM free-service FAQ) | `LeadLogger.tsx`, `utils/leadLog.ts`, `config/leadLog.ts`, `layout.tsx`, `ContactUsClient.tsx`, `docs/lead-tracking/`, `docs/seo-review-2026-11-21/service-gap-analysis.md` |
+| 2026-11-21 | **24/7 hours + Bur Dubai + bird coverage + Dubai pest grids + all guides + 10 more communities**: hours 24/7 everywhere (schema Mo–Su 00:00–23:59, contact page, llms.txt); Bur Dubai removed everywhere (schema areaServed, WhyCallUs, llms.txt). Bird control hub covers netting, spikes, wire, gel, solar mesh, AC covers (headline, title, guide, grid); `bird-spikes` price (from AED 50/m, weak market data, owner to confirm). US species removed from every pest grid and the About page (Dubai species + sign tiles; bird pages now show birds + methods); stand-in images via `PEST_IMAGE_FALLBACKS`, list in `docs/pest-image-list.md` (53 new + 2 to replace: mynah shows a bird of prey, house-crow has a yellow background). Guides for the 15 remaining pages (`serviceGuidesMore.ts`); per-page `signsEyebrow`. 10 more communities (`communitiesMore.ts`): Business Bay, Downtown, Jumeirah, Silicon Oasis, Springs & Meadows, Jumeirah Park & Islands, DAMAC Hills, Motor City/Sports City/Studio City, International City, Deira. Photo shot list now 102 photos. 58 pages, 56 sitemap URLs, no dead links, no em dashes; 360px audit clean | `layout.tsx`, `ContactUsClient.tsx`, `WhyCallUsSection.tsx`, `AboutUsIntroSection.tsx`, `pageContent.ts`, `pageContentHelpers.ts`, `prices.ts`, `seoMeta.ts`, `serviceGuides.ts`, `serviceGuidesMore.ts`, `communities.ts`, `communitiesMore.ts`, `guideTypes.ts`, `[slug]/page.tsx`, `public/llms.txt`, `docs/` |
+| 2026-11-21 | **Service area section redesign + responsive pass**: section no longer touches the one above (normal top padding); map fills the full card height (no empty strip); CTA moved into the text column; shorter text without the duplicate area list (Bur Dubai removed from the visible text; still in schema `areaServed` and llms.txt); communities as "Popular areas" chips. Tablet: desktop menu stays on one line (768–1100px), 3 price cards in one row, 4 cards 2 × 2; homepage shows 4 price cards. Audit: all 46 pages at 360px, key templates at 390/768px: no horizontal overflow | `ServiceAreaSection.tsx`, `globals.css`, `serviceGuides.ts` |
+| 2026-11-21 | **UX redesign of content pages**: guide split into sections in the site's own patterns (answer split + photo, prices band with cards, signs split + photo, service-specific steps in the dark process block, safety/prevention columns, related chips; community pest cards and tips split). Section order rebuilt for conversion; removed repeated CTA sections (Urgency with conflicting AED 299 coupon, Why WhatsApp Us; Satisfaction only on home). Headings Title Case without colons; all em dashes removed (also About meta, privacy policy, FAQ default). `ImagePlaceholder` + 52 photo briefs + `docs/photo-shot-list.md` | `ServiceGuideSection.tsx`, `CommunityGuideSection.tsx`, `ImagePlaceholder.tsx`, `WhyChooseUsSection.tsx`, `[slug]/page.tsx`, `page.tsx`, `serviceGuides.ts`, `communities.ts`, `guideTypes.ts`, `globals.css` |
+| 2026-11-21 | **Content gap (report §3/§7, plan v2 D + E)**: (1) `prices.ts` = one place for all prices (market-based starting prices, owner says ours are about the same), shown in price cards, sentences (`aed()`) and Service schema `AggregateOffer`. (2) `ServiceGuideSection`: unique Dubai guide (answer-first paragraph, problem, signs, treatment steps, safety incl. UAE fogging/aluminium phosphide ban, prevention, related links) on home + 15 pages: cockroach, bed bugs, termites, pre-construction termite, rodents, pigeons, bird netting, commercial, ticks, villa, apartment, move-in/out, lizards, snakes, disinfection. (3) 7 new service pages: villa, apartment, move-in/out, lizard, snake, disinfection, pre-construction anti-termite (all confirmed by the owner). (4) 10 community pages: Dubai Marina, JVC, JLT, Al Barsha, Arabian Ranches, Dubai Hills Estate, Al Barari, Mirdif, Palm Jumeirah, Discovery Gardens, linked from the Service Area section. (5) `SEO_META` moved to `seoMeta.ts`; sitemap generated. 48 pages, 46 sitemap URLs. Shared text cockroach vs bed bugs: 47% (was ~78%; the rest is CTA/trust sections) | `prices.ts`, `serviceGuides.ts`, `communities.ts`, `guideTypes.ts`, `seoMeta.ts`, `ServiceGuideSection.tsx`, `CommunityGuideSection.tsx`, `[slug]/page.tsx`, `page.tsx`, `sitemap.ts`, `pageContent.ts`, `ServiceAreaSection.tsx`, `Header.tsx`, `globals.css`, `public/llms.txt` |
+| 2026-11-21 | **Page merge (plan v2, A + C)**: 44 → 23 service pages. 21 pages merged into the page that covers the same search (FAQs moved: wasp + bee → hornet page, critter → scorpion), 6 "near me" pages moved to "-dubai" addresses (cockroach-control-dubai, bed-bug-treatment-dubai, ant-control-dubai, mosquito-control-dubai, spider-control-dubai, tick-control-dubai). 27 one-hop 301s in `vercel.json`. Menu, footer, hero icons, grid, sitemap, llms.txt updated. Hornet page = "Wasp, Hornet & Bee Removal"; rodent page = "Rat & Mouse Control". Also fixed: Pigeons/Mynahs hero icons and Commercial grid tile linked to the wrong page; camel spider and sparrow icon links; "Carpet Beetle" linked to the wasp page. Tick added to the menu and phone hero | `vercel.json`, `[slug]/page.tsx`, `pageContent.ts`, `pageContentHelpers.ts`, `sitemap.ts`, `Header.tsx`, `Footer.tsx`, `HomeHero.tsx`, `WhatWeDoSection.tsx`, `public/llms.txt` |
+| 2026-11-21 | Reviews hidden (`SHOW_CUSTOMER_REVIEWS = false`): the "Customer Reviews" carousel (home, /free-quote, all service pages) and the quote in "100% Satisfaction Guarantee". Turn on with real Google reviews | `siteFlags.ts`, `TrustedByCustomersSection.tsx`, `SatisfactionGuaranteeSection.tsx` |
+| 2026-11-21 | Service-area map fixed: always Dubai (fixed coordinates). Removed the US-template `useVisitorLocation` hook (default "Dallas, Texas", sent every visitor's IP to ipapi.co / ipinfo.io) and the failing Nominatim lookup | `ServiceAreaMap.tsx`, `ServiceAreaSection.tsx`, deleted `src/hooks/useVisitorLocation.ts` |
+| 2026-11-21 | Removed `aggregateRating` (4.9 / 127) from the LocalBusiness schema: the Google Business Profile has 1 review. Add back only with real GMB numbers | `layout.tsx` |
+| 2026-11-21 | Next.js 16.4.1 → 16.4.6 (+ `eslint-config-next`): fixes the security advisory; `npm audit` 0 vulnerabilities; `npm run dev` works again | `package.json`, `package-lock.json` |
+| 2026-11-21 | /about-us gets an h1 ("About Prime Pest Control Dubai", was the h2 "About Us") | `AboutUsIntroSection.tsx` |
+| 2026-11-21 | Hero: long headlines no longer run under the pest card (desktop: card is a flex column with `overflow: clip`, pest card in the flow with `margin-top: auto`; phone: headline padding-bottom matches the panel overlap). Checked on 13 pages at 800–1920px and 320–767px | `globals.css` |
+| 2026-11-21 | One `<h1>` per page: the mobile hero title is now a `<p>` (same look; `.home .home-hero-mobile__title` added to the phone rule in `CRITICAL_CSS`); /contact-us gets an h1 ("Contact Prime Pest Control in Dubai") | `HomeHero.tsx`, `layout.tsx`, `ContactUsClient.tsx` |
+| 2026-11-21 | GTM + GA4 load only on `www.primepestcontrol.ae` (localhost had been counted as 6 visitors / 28 page views); `gtag()` always defined | `layout.tsx` |
+| 2026-11-21 | Contact form sends GA4 `generate_lead` + `whatsapp_click` (it opens WhatsApp with `window.open`, which the link listener never saw) | `ContactUsClient.tsx` |
+| 2026-11-21 | `/free-quote` removed from `SEO_META` (it has its own page; the route was built twice) | `[slug]/page.tsx` |
 | 2026-11-08 | Replaced Google Ads (`AW-17105539352`) with GA4 (`G-VF1DJE32KE`); added phone + WhatsApp click events to GA4 | `layout.tsx` |
 | 2026-11-07 | Updated GTM container ID from `GTM-MND7JS6X` to `GTM-MLXL4T5N` | `layout.tsx` |
 | 2026-11-07 | Fixed all header call buttons to "Call 24/7" | `Header.tsx` |
@@ -164,14 +209,26 @@ Per-page schemas:
 ### 🔄 Ongoing
 
 - **NAP consistency audit** — GMB street address not yet in schema. Owner to provide full address → add to `localBusinessSchema.address`.
-- **Content coverage** — not all 46 service page slugs have custom `PAGE_CONTENT` entries. Pages without entries fall back to generic defaults. Gradually adding per-pest custom content improves AEO rankings.
+- **Content**: all 30 service pages have a guide (`serviceGuides.ts` + `serviceGuidesMore.ts`). Next: review older expertise texts and FAQs page by page.
+- **More communities** (owner wants more later): 20 live (`communities.ts` + `communitiesMore.ts`). Next candidates: Arjan, Al Furjan, Town Square, Mudon, Dubai Investments Park, Al Qusais, Al Nahda, The Greens / The Views, Emirates Hills, Nad Al Sheba.
+- **Prices in `prices.ts` are market-based**: owner to confirm or adjust each line once.
+- **Short quote form on every page** (report §7, P2) and **real job photos** (lizard and snake pages use a shield icon) still to do.
+- **After deploy of the merge**: check every old address 301s to its page on the live site, resubmit `sitemap.xml` in Search Console, and watch Search Console "Pages" for the old URLs dropping out.
+- Phone hero: Pigeons and Mynahs icons use `specialty.webp` (a ladybird); needs real bird icons.
 
 ---
 
 ### 🔴 Important / Urgent
 
+- **SEO + GA4 review 21 Nov 2026** (full report: `docs/seo-review-2026-11-21/Prime-Pest-Control-SEO-Lead-Review-2026-11-21.pdf`, raw Search Console + GA4 data in `docs/seo-review-2026-11-21/data/`). Waiting on the owner:
+  - **Dubai Municipality approval / trade licence number**, street address, years in business: needed for trust badges and NAP. The badge image (`TrustBadgesCombined`, in "100% Satisfaction Guarantee") shows Dubai Municipality "Approved", ISO 9001, ISO 14001 and NPMA (a US association): keep only what the owner can prove.
+  - **Page plan v2** in `docs/seo-review-2026-11-21/merge-map.md`. Done (21 Nov): Q0 licences (owner has all approvals incl. termite, bird, fumigation), A merges, C address changes. Still open: Q3 which extra services they offer (move-in/out, lizards, snakes, disinfection, pre-construction termite), Q4 prices and visits per service, Q5 main communities. Then section D (new pages) and E (content).
+  - **GA4 key events**: mark `phone_call_click`, `whatsapp_click`, `generate_lead` as key events (GA4 Admin → Events).
+- "Top Rated Customer Service" (Why Choose Us list, contact page) is a rating claim with 1 Google review; reword or drop it.
+- Service pages share ~78% of their text (only hero + expertise differ per page): unique content per money page is the main ranking job.
+
 - **GMB street address** — add to schema once confirmed. Required for full NAP consistency (critical for local SEO).
-- **Review count** — schema has `ratingCount: 127`. Keep this in sync with the actual GMB review count. Update when review count changes significantly.
+- **Review count**: the schema has no rating now. Once GMB has enough real reviews, add `aggregateRating` back with the exact GMB numbers and keep it in sync.
 - **Sitemap submission** — submit `https://www.primepestcontrol.ae/sitemap.xml` to Google Search Console and Bing Webmaster Tools if not already done.
 
 ---

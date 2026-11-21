@@ -1,0 +1,100 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "yearMonth"
+  },
+  {
+   "name": "sessionDefaultChannelGroup"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "202611"
+    },
+    {
+     "value": "Direct"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "24"
+    },
+    {
+     "value": "15"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "202611"
+    },
+    {
+     "value": "Organic Search"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "9"
+    },
+    {
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "202611"
+    },
+    {
+     "value": "Referral"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "202611"
+    },
+    {
+     "value": "Organic Social"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  }
+ ],
+ "rowCount": 4,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

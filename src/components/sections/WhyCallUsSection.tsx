@@ -28,7 +28,7 @@ const WHY_CALL_US_FEATURES = [
     id: 'all-dubai',
     iconSrc: '/assets/img/why-call-us-section/why-call-us-locally-owned.png',
     title: 'Serving all Dubai communities & free zones',
-    description: 'Dubai Marina, Downtown, JBR, Business Bay, Jumeirah, Deira, Bur Dubai, DIFC, Palm Jumeirah, Al Barsha, Mirdif and more.',
+    description: 'Dubai Marina, Downtown, JBR, Business Bay, Jumeirah, Deira, DIFC, Palm Jumeirah, Al Barsha, Mirdif and more.',
   },
   {
     id: 'licensed',
@@ -52,7 +52,7 @@ const WhyCallUsSection: React.FC = () => {
       body={<IconFeatureList items={[...WHY_CALL_US_FEATURES]} />}
       cta={
         <PillCta href={whatsappUrl} className="dynamic-href">
-          <span className="dynamic-phone">WhatsApp Now – Free Quote: {noBreakPhone(phone)}</span>
+          <span className="dynamic-phone">WhatsApp Now for a Free Quote: {noBreakPhone(phone)}</span>
         </PillCta>
       }
     />

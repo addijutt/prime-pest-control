@@ -4,16 +4,20 @@ import React, { lazy, Suspense } from 'react';
 import SectionContainer from '../layout/SectionContainer';
 import PillCta from '../ui/PillCta';
 import { noBreakPhone } from '../../utils/formatPhone';
-import { useVisitorLocation } from '../../hooks/useVisitorLocation';
+import Link from 'next/link';
+import { COMMUNITIES } from '../../config/communities';
 
 const ServiceAreaMap = lazy(() =>
   import('./service-area/ServiceAreaMap').then((m) => ({ default: m.ServiceAreaMap })),
 );
 
+// Centre of the service-area map. Fixed: the business only serves Dubai (the map used to follow the
+// visitor's IP city, defaulting to Dallas, Texas, from the original template)
+const DUBAI_CENTER = { lat: 25.15, lng: 55.25 };
+
 const ServiceAreaSection: React.FC = () => {
   const phone = '055 304 5256';
   const whatsappUrl = 'https://wa.me/971553045256';
-  const { city, region } = useVisitorLocation();
 
   return (
     <SectionContainer className="service-area-section" id="service-area">
@@ -38,19 +42,35 @@ const ServiceAreaSection: React.FC = () => {
           <h2 className="service-area-card__city">Dubai, UAE</h2>
           <p className="service-area-card__subtitle">&amp; All Surrounding Communities</p>
           <p className="service-area-card__body">
-            Whether you are in Dubai Marina, Downtown, JBR, Business Bay, Jumeirah,
-            Deira, Bur Dubai, DIFC, Palm Jumeirah, Al Barsha, Mirdif, or any other community, help is close by.
-            WhatsApp us today and get a free, no-obligation quote in minutes.
+            Apartments, villas and businesses in every Dubai community, from the Marina to Mirdif. Choose your
+            area for the local pests, tips and prices, or WhatsApp us for a free quote in minutes.
           </p>
+          {/* Community pages (communities.ts): internal links help Google find and rank them */}
+          <nav className="service-area-card__areas" aria-label="Pest control by community">
+            <p className="service-area-card__areas-title">Popular areas</p>
+            <ul className="service-area-card__communities">
+              {COMMUNITIES.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/pest-control-${c.slug}`}>{c.name.replace(/ \(.*\)$/, '')}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <PillCta href={whatsappUrl} className="service-area-card__cta dynamic-href">
+            <span className="dynamic-phone">WhatsApp for a Free Quote: {noBreakPhone(phone)}</span>
+          </PillCta>
         </div>
 
-        <Suspense fallback={<div className="service-area-map service-area-map--loading" />}>
-          <ServiceAreaMap city={city} state={region} className="service-area-card__map" />
-        </Suspense>
-
-        <PillCta href={whatsappUrl} className="service-area-card__cta dynamic-href">
-          <span className="dynamic-phone">WhatsApp for Free Quote in Dubai: {noBreakPhone(phone)}</span>
-        </PillCta>
+        <div className="service-area-card__map-wrap">
+          <Suspense fallback={<div className="service-area-map service-area-map--loading" />}>
+            <ServiceAreaMap
+              label="Dubai, UAE"
+              lat={DUBAI_CENTER.lat}
+              lng={DUBAI_CENTER.lng}
+              className="service-area-card__map"
+            />
+          </Suspense>
+        </div>
       </div>
     </SectionContainer>
   );

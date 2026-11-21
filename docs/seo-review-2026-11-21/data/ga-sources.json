@@ -1,0 +1,101 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "sessionSourceMedium"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "averageSessionDuration",
+   "type": "TYPE_SECONDS"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "(direct) / (none)"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "24"
+    },
+    {
+     "value": "15"
+    },
+    {
+     "value": "202.91923720833333"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "google / organic"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "9"
+    },
+    {
+     "value": "8"
+    },
+    {
+     "value": "440.06395033333337"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "l.wl.co / referral"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "facebook.com / referral"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "28.62577"
+    }
+   ]
+  }
+ ],
+ "rowCount": 4,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

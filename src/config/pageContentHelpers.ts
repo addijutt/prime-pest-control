@@ -28,6 +28,53 @@ const PEST_ASSET_BASE = '/assets/img/pests';
 
 /** Missing keys → closest existing asset stem (labels in pageContent stay specific). */
 const PEST_IMAGE_FALLBACKS: Record<string, string> = {
+  // --- Dubai species and "signs" tiles added 21 Nov 2026: stand-ins until the real image exists.
+  //     Full list of images to produce: docs/pest-image-list.md
+  'ghost-ant': 'pharaoh-ant',
+  'black-garden-ant': 'black-ant',
+  'longhorn-crazy-ant': 'black-ant',
+  'big-headed-ant': 'pavement-ant',
+  'ant-trail': 'ant',
+  'garden-ant-nest': 'ant',
+  'german-cockroach-nymph': 'german-cockroach',
+  'cockroach-egg-case': 'roach',
+  'cockroach-droppings': 'roach',
+  'subterranean-termite': 'eastern-subterranean-termite',
+  'harvester-termite': 'termite',
+  'winged-termite': 'termite',
+  'termite-soldier': 'termite',
+  'termite-worker': 'termite',
+  'termite-mud-tubes': 'termite',
+  'termite-damage': 'termite',
+  'common-house-mosquito': 'northern-house-mosquito',
+  'mosquito-larvae': 'mosquito',
+  'mosquito-breeding-water': 'mosquito',
+  midges: 'gnat',
+  'sand-fly': 'gnat',
+  'flea-larvae': 'flea',
+  'flea-eggs': 'flea',
+  'rodent-droppings': 'rodent',
+  'arabian-spiny-mouse': 'house-mouse',
+  'engorged-tick': 'brown-dog-tick',
+  'brown-dog-tick-nymph': 'brown-dog-tick',
+  'tick-larvae': 'brown-dog-tick',
+  'tick-eggs': 'brown-dog-tick',
+  'pigeon-tick': 'blacklegged-tick',
+  'bird-netting': 'bird',
+  'bird-spikes': 'bird',
+  'bird-wire': 'bird',
+  'bird-gel': 'bird',
+  'solar-panel-mesh': 'bird',
+  'balcony-net': 'bird',
+  'terrace-net': 'bird',
+  'car-park-net': 'bird',
+  'pigeon-nest': 'pigeon',
+  'pigeon-droppings': 'pigeon',
+  'stored-product-moth': 'weevil',
+  'wooden-pallets': 'commercial-pc',
+  'shipping-container': 'commercial-pc',
+  'fly-larvae': 'fly',
+  'insect-light-trap': 'fly',
   // --- Ticks ---
   'american-dog-tick': 'blacklegged-tick',
   'hyalomma-tick': 'blacklegged-tick',
@@ -127,32 +174,30 @@ export function relatedHref(label: string): string {
   const l = label.toLowerCase();
 
   if (l.includes('40+') || l.includes('shield')) return '/residential-pest-control';
-  if (l.includes('carpenter bee')) return '/carpenter-bee-exterminator-near-me';
-  if (l.includes('yellow jacket')) return '/wasp-nest-removal';
-  if (l.includes('oriental hornet') || l.includes('asian hornet')) return '/hornet-nest-removal';
-  if (l.includes('hornet')) return '/hornet-nest-removal';
-  if (l.includes('wasp') || l.includes('mud dauber') || l.includes('cicada killer') || l.includes('potter wasp') || l.includes('banded mud')) return '/wasp-nest-removal';
-  if (l.includes('bee')) return '/bee-removal';
-  if (l.includes('bed bug')) return '/bed-bug-exterminator-near-me';
+  // Bed bugs before bees ("bed bug" does not contain "bee", but keep specific matches first)
+  if (l.includes('bed bug')) return '/bed-bug-treatment-dubai';
+  // Wasps, hornets and bees share one page
+  if (l.includes('hornet') || l.includes('wasp') || l.includes('mud dauber') || l.includes('yellow jacket') || (l.includes('bee') && !l.includes('beetle'))) return '/hornet-nest-removal';
   if (l.includes('termite')) return '/termite-control';
-  if (l.includes('roach') || l.includes('cockroach')) return '/roach-exterminator-near-me';
-  if (l.includes('centipede')) return '/exterminator-for-house-centipedes';
-  if (l.includes('mosquito')) return '/mosquito-spraying-near-me';
-  if (l.includes('tick')) return '/tick-control-near-me';
+  if (l.includes('roach') || l.includes('cockroach')) return '/cockroach-control-dubai';
+  if (l.includes('centipede')) return '/residential-pest-control';
+  if (l.includes('mosquito')) return '/mosquito-control-dubai';
+  if (l.includes('tick')) return '/tick-control-dubai';
   if (l.includes('flea')) return '/pest-control-for-fleas';
-  if (l.includes('scorpion') || l.includes('camel spider')) return '/critter-control';
+  if (l.includes('camel spider')) return '/camel-spider-control-dubai';
+  if (l.includes('scorpion')) return '/scorpion-control-dubai';
   if (l.includes('silverfish')) return '/silverfish-control-dubai';
   if (l.includes('drain fly') || l.includes('moth fly')) return '/drain-fly-control-dubai';
-  if (l.includes('spider')) return '/spider-exterminator-near-me';
-  if (l.includes('ant')) return '/ant-exterminator-near-me';
-  if (l.includes('rat') && !l.includes('operat')) return '/rat-exterminator-near-me';
-  if (l.includes('mouse') || l.includes('mice') || l.includes('vole')) return '/mice-exterminator-near-me';
+  if (l.includes('spider')) return '/spider-control-dubai';
+  if (l.includes('ant')) return '/ant-control-dubai';
+  if (l.includes('rat') && !l.includes('operat')) return '/rodent-control';
+  if (l.includes('mouse') || l.includes('mice') || l.includes('vole')) return '/rodent-control';
   if (l.includes('rodent')) return '/rodent-control';
-  if (l.includes('crow') || l.includes('sparrow') || l.includes('seagull')) return '/crow-control-dubai';
+  if (l.includes('sparrow') || l.includes('crow') || l.includes('seagull')) return '/bird-control-dubai';
   if (l.includes('pigeon')) return '/pigeon-control-dubai';
   if (l.includes('mynah')) return '/mynah-bird-control';
 
-  return '/pest-control-for-bugs';
+  return '/residential-pest-control';
 }
 
 export function pest(label: string, href?: string, imageKey?: string): PestImageRef {
@@ -192,9 +237,9 @@ export const HERO_MORE_PEST: PestImageRef = pest('40+ More', '/residential-pest-
 export const GENERIC_HERO_EXPANSION_PESTS: PestImageRef[] = [
   pest('General Pest Control', '/residential-pest-control', 'residential-pc'),
   pest('Termites', '/termite-control', 'termite'),
-  pest('Roaches', '/roach-exterminator-near-me', 'roach'),
+  pest('Roaches', '/cockroach-control-dubai', 'roach'),
   pest('Rodents', '/rodent-control', 'rodent'),
-  pest('Ants', '/ant-exterminator-near-me', 'black-ant'),
+  pest('Ants', '/ant-control-dubai', 'black-ant'),
 ];
 
 export function toHeroDesktopAssets(ref: PestImageRef) {

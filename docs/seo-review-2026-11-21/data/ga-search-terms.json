@@ -1,0 +1,18 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "searchTerm"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "eventCount",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

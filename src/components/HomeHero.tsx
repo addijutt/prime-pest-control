@@ -54,12 +54,12 @@ const HeroCheckIcon: React.FC<{ className?: string }> = ({ className }) => (
 const ALL_PESTS: PestItem[] = [
   { label: 'GENERAL PEST CONTROL', href: '/residential-pest-control', desktop: '/assets/img/pests/residential-pc.webp', mobile: '/assets/img/pests/residential-pc-m.webp', longLabel: true },
   { label: 'TERMITES', href: '/termite-control', desktop: '/assets/img/pests/termite.webp', mobile: '/assets/img/pests/termite-m.webp' },
-  { label: 'ROACHES', href: '/roach-exterminator-near-me', desktop: '/assets/img/pests/roach.webp', mobile: '/assets/img/pests/roach-m.webp' },
+  { label: 'ROACHES', href: '/cockroach-control-dubai', desktop: '/assets/img/pests/roach.webp', mobile: '/assets/img/pests/roach-m.webp' },
   { label: 'RODENTS', href: '/rodent-control', desktop: '/assets/img/pests/white-mouse.webp', mobile: '/assets/img/pests/white-mouse-m.webp' },
-  { label: 'ANTS', href: '/ant-exterminator-near-me', desktop: '/assets/img/pests/black-ant.webp', mobile: '/assets/img/pests/black-ant-m.webp' },
-  { label: 'MOSQUITOS', href: '/mosquito-spraying-near-me', desktop: '/assets/img/pests/mosquito.webp', mobile: '/assets/img/pests/mosquito-m.webp' },
-  { label: 'BED BUGS', href: '/bed-bug-exterminator-near-me', desktop: '/assets/img/pests/common-bed-bug-d.webp', mobile: '/assets/img/pests/common-bed-bug-m.webp' },
-  { label: 'WASPS & BEES', href: '/wasp-nest-removal', desktop: '/assets/img/pests/wasp.webp', mobile: '/assets/img/pests/wasp-m.webp', longLabel: true },
+  { label: 'ANTS', href: '/ant-control-dubai', desktop: '/assets/img/pests/black-ant.webp', mobile: '/assets/img/pests/black-ant-m.webp' },
+  { label: 'MOSQUITOS', href: '/mosquito-control-dubai', desktop: '/assets/img/pests/mosquito.webp', mobile: '/assets/img/pests/mosquito-m.webp' },
+  { label: 'BED BUGS', href: '/bed-bug-treatment-dubai', desktop: '/assets/img/pests/common-bed-bug-d.webp', mobile: '/assets/img/pests/common-bed-bug-m.webp' },
+  { label: 'WASPS & BEES', href: '/hornet-nest-removal', desktop: '/assets/img/pests/wasp.webp', mobile: '/assets/img/pests/wasp-m.webp', longLabel: true },
   { label: '50+ MORE', href: '/residential-pest-control', desktop: '/assets/img/pests/shield.webp', mobile: '/assets/img/pests/shield-m.webp' },
 ];
 
@@ -67,20 +67,20 @@ const COLLAPSED_PESTS = [ALL_PESTS[0], ALL_PESTS[1], ALL_PESTS[2], ALL_PESTS[3],
 
 const BASE = '/assets/img/pests/mobile-hero';
 const MOBILE_HERO_PESTS: MobileHeroPestItem[] = [
-  { label: 'Ants', href: '/ant-exterminator-near-me', image: `${BASE}/ant.webp` },
+  { label: 'Ants', href: '/ant-control-dubai', image: `${BASE}/ant.webp` },
   { label: 'Rats & Mice', href: '/rodent-control', image: `${BASE}/mouse.webp` },
   { label: 'Termites', href: '/termite-control', image: `${BASE}/termite.webp` },
-  { label: 'Roaches', href: '/roach-exterminator-near-me', image: `${BASE}/roach.webp` },
-  { label: 'Wasps', href: '/wasp-nest-removal', image: `${BASE}/wasp.webp` },
-  { label: 'Bed Bugs', href: '/bed-bug-exterminator-near-me', image: `${BASE}/bed-bug.webp` },
-  { label: 'Mosquitoes', href: '/mosquito-spraying-near-me', image: `${BASE}/mosquito.webp` },
+  { label: 'Roaches', href: '/cockroach-control-dubai', image: `${BASE}/roach.webp` },
+  { label: 'Wasps', href: '/hornet-nest-removal', image: `${BASE}/wasp.webp` },
+  { label: 'Bed Bugs', href: '/bed-bug-treatment-dubai', image: `${BASE}/bed-bug.webp` },
+  { label: 'Mosquitoes', href: '/mosquito-control-dubai', image: `${BASE}/mosquito.webp` },
   { label: 'Hornets', href: '/hornet-nest-removal', image: `${BASE}/hornet.webp` },
-  { label: 'Pigeons', href: '/residential-pest-control', image: `${BASE}/specialty.webp` },
-  { label: 'Mynahs', href: '/residential-pest-control', image: `${BASE}/specialty.webp` },
-  { label: 'Carpenter Bees', href: '/carpenter-bee-exterminator-near-me', image: `${BASE}/carpenter-bee.webp` },
-  { label: 'Spiders', href: '/spider-exterminator-near-me', image: `${BASE}/spider.webp` },
+  { label: 'Pigeons', href: '/pigeon-control-dubai', image: `${BASE}/specialty.webp` },
+  { label: 'Mynahs', href: '/mynah-bird-control', image: `${BASE}/specialty.webp` },
+  { label: 'Ticks', href: '/tick-control-dubai', image: '/assets/img/pests/brown-dog-tick-m.webp' },
+  { label: 'Spiders', href: '/spider-control-dubai', image: `${BASE}/spider.webp` },
   { label: 'Fleas', href: '/pest-control-for-fleas', image: `${BASE}/flea.webp` },
-  { label: 'Bees', href: '/bee-removal', image: `${BASE}/bee.webp` },
+  { label: 'Bees', href: '/hornet-nest-removal', image: `${BASE}/bee.webp` },
   { label: '& 50+ More', href: '/residential-pest-control', badgeMore: true },
 ];
 
@@ -210,7 +210,8 @@ const HomeHero: React.FC<HomeHeroProps> = ({
       <div className="home-hero-mobile">
         <div className="home-hero-mobile__photo">
           <div className="home-hero-mobile__headline">
-            <h1 className="home-hero-mobile__title">{title}</h1>
+            {/* Same text as the desktop h1 above; a <p> so each page has exactly one h1 */}
+            <p className="home-hero-mobile__title">{title}</p>
             <ul className="home-hero-mobile__highlights">
               <li className="home-hero-mobile__highlight">
                 <HeroCheckIcon className="home-hero-mobile__highlight-icon" />

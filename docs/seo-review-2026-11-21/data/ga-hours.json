@@ -1,0 +1,265 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "hour"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "12"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "14"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "23"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    },
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "13"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "16"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "18"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "22"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "1"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "10"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "15"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "19"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "21"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "8"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "11"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "20"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "4"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  }
+ ],
+ "rowCount": 16,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

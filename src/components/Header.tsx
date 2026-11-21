@@ -10,19 +10,30 @@ const PHONE_RAW = '+971553045256';
 
 const pestControlItems = [
   { label: 'All Pest Services', href: '/residential-pest-control' },
-  { label: 'Cockroach Control', href: '/cockroach-exterminator-near-me' },
-  { label: 'Bed Bug Treatment', href: '/bed-bug-exterminator-near-me' },
-  { label: 'Ant Control', href: '/ant-exterminator-near-me' },
+  { label: 'Apartment Pest Control', href: '/apartment-pest-control-dubai' },
+  { label: 'Villa Pest Control', href: '/villa-pest-control-dubai' },
+  { label: 'Move-In / Move-Out Treatment', href: '/move-in-pest-control-dubai' },
+  { label: 'Cockroach Control', href: '/cockroach-control-dubai' },
+  { label: 'Bed Bug Treatment', href: '/bed-bug-treatment-dubai' },
+  { label: 'Ant Control', href: '/ant-control-dubai' },
   { label: 'Termite Control', href: '/termite-control' },
+  { label: 'Pre-Construction Anti-Termite', href: '/pre-construction-termite-treatment-dubai' },
   { label: 'Rodent Control', href: '/rodent-control' },
-  { label: 'Mosquito Control', href: '/mosquito-spraying-near-me' },
-  { label: 'Spider Control', href: '/spider-exterminator-near-me' },
-  { label: 'Wasp Control', href: '/wasp-nest-removal' },
-  { label: 'Hornet Control', href: '/hornet-nest-removal' },
+  { label: 'Mosquito Control', href: '/mosquito-control-dubai' },
+  { label: 'Fly Control', href: '/fly-control-dubai' },
+  { label: 'Spider Control', href: '/spider-control-dubai' },
+  { label: 'Wasp, Hornet & Bee Removal', href: '/hornet-nest-removal' },
   { label: 'Flea Control', href: '/pest-control-for-fleas' },
+  { label: 'Tick Control', href: '/tick-control-dubai' },
   { label: 'Scorpion Control', href: '/scorpion-control-dubai' },
   { label: 'Camel Spider Removal', href: '/camel-spider-control-dubai' },
+  { label: 'Lizard & Gecko Control', href: '/lizard-control-dubai' },
+  { label: 'Snake Removal', href: '/snake-removal-dubai' },
+  { label: 'Disinfection Services', href: '/disinfection-services-dubai' },
+  { label: 'Fumigation Services', href: '/fumigation-services-dubai' },
   { label: 'Commercial Pest Control', href: '/commercial-pest-control-dubai' },
+  { label: 'Restaurant Pest Control', href: '/restaurant-pest-control-dubai' },
+  { label: 'Office Pest Control', href: '/office-pest-control-dubai' },
 ];
 
 const birdControlItems = [
@@ -30,9 +41,6 @@ const birdControlItems = [
   { label: 'Pigeon Control', href: '/pigeon-control-dubai' },
   { label: 'Mynah Bird Control', href: '/mynah-bird-control' },
   { label: 'Bird Netting', href: '/bird-netting-dubai' },
-  { label: 'Bird Proofing', href: '/bird-proofing-dubai' },
-  { label: 'Crow Control', href: '/crow-control-dubai' },
-  { label: 'Sparrow Control', href: '/sparrow-control-dubai' },
   { label: 'Solar Panel Bird Proofing', href: '/solar-panel-bird-proofing-dubai' },
 ];
 

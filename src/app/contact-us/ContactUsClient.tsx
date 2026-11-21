@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import WhatsAppIcon from '../../components/WhatsAppIcon';
+import { logLead } from '../../utils/leadLog';
 import { UrgencyComponentImage } from '../../utils/images';
 import ServiceAreaSection from '../../components/sections/ServiceAreaSection';
 import FreeQuoteSection from '../../components/sections/FreeQuoteSection';
@@ -59,6 +60,12 @@ export default function ContactUsClient() {
       formData.Problem ? `*Problem:* ${formData.Problem}` : null,
     ].filter(Boolean).join('\n');
 
+    // The form opens WhatsApp with the details: count it as a lead in GA4 (window.open is not a link click,
+    // so the global whatsapp_click listener never saw these)
+    const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+    gtag?.('event', 'generate_lead', { form_name: 'contact_form', method: 'whatsapp' });
+    logLead('Form', 'Contact form');
+    gtag?.('event', 'whatsapp_click', { event_category: 'contact', event_label: 'contact_form' });
     window.open(`https://wa.me/971553045256?text=${encodeURIComponent(lines)}`, '_blank', 'noopener,noreferrer');
     setFormData({ Name: '', Phone: '', Email: '', Problem: '', Consent: false });
     setErrors({});
@@ -70,7 +77,7 @@ export default function ContactUsClient() {
 
       <section className="contact-info-section">
         <div className="container">
-          <h2 className="contact-info-section__title">We Are Here For You</h2>
+          <h1 className="contact-info-section__title">Contact Prime Pest Control in Dubai</h1>
           <div className="contact-info-section__cards">
             <div className="contact-info-card">
               <div className="contact-info-card__header">
@@ -95,7 +102,7 @@ export default function ContactUsClient() {
                 <i className="fa-regular fa-clock contact-info-card__icon" aria-hidden="true" />
                 <span className="contact-info-card__label">Hours</span>
               </div>
-              <div className="contact-info-card__body">Monday to Saturday, 8am&ndash;8pm</div>
+              <div className="contact-info-card__body">Open 24/7, every day</div>
             </div>
           </div>
         </div>

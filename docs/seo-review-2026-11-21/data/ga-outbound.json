@@ -1,0 +1,39 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "linkDomain"
+  },
+  {
+   "name": "linkUrl"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "eventCount",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "wa.me"
+    },
+    {
+     "value": "https://wa.me/971553045256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    }
+   ]
+  }
+ ],
+ "rowCount": 1,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

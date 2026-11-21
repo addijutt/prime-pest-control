@@ -1,0 +1,21 @@
+{
+ "status": 200,
+ "url": "https://www.primepestcontrol.ae/robots.txt",
+ "headers": {
+  "accept-ranges": "bytes",
+  "access-control-allow-origin": "*",
+  "age": "2359",
+  "cache-control": "public, max-age=0, must-revalidate",
+  "content-disposition": "inline; filename=\"robots.txt\"",
+  "content-length": "77",
+  "content-type": "text/plain; charset=utf-8",
+  "date": "Sat, 21 Nov 2026 07:12:46 GMT",
+  "etag": "\"32b069dc4e4531377a3ba8e453871816\"",
+  "last-modified": "Sat, 21 Nov 2026 06:33:27 GMT",
+  "server": "Vercel",
+  "strict-transport-security": "max-age=63072000",
+  "x-vercel-cache": "HIT",
+  "x-vercel-id": "bom1::tbbgk-1795245166503-467972a7493b"
+ },
+ "body": "User-Agent: *\nAllow: /\n\nSitemap: https://www.primepestcontrol.ae/sitemap.xml\n"
+}

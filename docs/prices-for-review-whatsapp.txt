@@ -1,0 +1,64 @@
+*Prime Pest Control: website prices for review*
+
+These are the *starting prices* shown on the new website. Please check each line.
+
+✅ Correct: reply *OK*
+✏️ Change: reply with the number and the new price, e.g. *7 = AED 199* or *12 = 2 visits, AED 450*
+❓ We do not offer it: reply with the number and *remove*
+"Free quote" = no price shown, price given after a survey. Reply with a price if you want one shown.
+
+*🏠 General & contracts*
+1. General pest control, apartment: *From AED 199* (studio / 1-bedroom, 1 visit)
+2. General pest control, villa: *From AED 449* (inside + garden perimeter, 1 visit)
+3. Annual contract, apartment: *From AED 599* (per year, 3–4 scheduled visits + call-outs)
+4. Annual contract, villa: *From AED 1,199* (per year, 4 scheduled visits + call-outs)
+5. Move-in / move-out treatment, apartment: *From AED 249* (studio / 1-bedroom, empty unit, 1 visit before you move in)
+6. Move-in / move-out treatment, villa: *From AED 549* (empty villa or townhouse, 1 visit before you move in)
+7. Disinfection, apartment: *From AED 249* (studio / 1-bedroom, 1 visit)
+8. Disinfection, villa: *From AED 449* (up to 4 bedrooms, 1 visit)
+
+*🪳 Insects*
+9. Cockroach treatment, apartment: *From AED 179* (studio / 1-bedroom, gel bait + spray, follow-up after 2–3 weeks if needed)
+10. Cockroach treatment, villa: *From AED 399* (villa or townhouse, inside, drains and garden, follow-up if needed)
+11. Bed bug treatment, apartment: *From AED 349* (studio / 1-bedroom, 2 visits, 10–14 days apart)
+12. Bed bug treatment, villa: *From AED 1,199* (up to 3 bedrooms, 2 visits, 10–14 days apart)
+13. Ant treatment: *From AED 179* (apartment; villas from AED 349, 1 visit + follow-up if needed)
+14. Mosquito treatment: *From AED 299* (villa garden, 1 visit; monthly plans for summer)
+15. Fly control, home: *From AED 249* (apartment or villa, 1 visit + breeding-site advice)
+16. Flea treatment: *From AED 249* (apartment, 2 visits, about 2 weeks apart)
+17. Tick treatment: *From AED 249* (apartment or ground-floor flat with garden, 2 visits, about 2 weeks apart)
+18. Spider treatment: *From AED 179* (apartment, 1 visit)
+19. Drain fly treatment: *From AED 179* (apartment, 1 visit + drain advice)
+20. Silverfish treatment: *From AED 179* (apartment, 1 visit)
+21. Wasp or hornet nest removal: *From AED 249* (per nest, 1 visit)
+22. Bee swarm relocation: *From AED 349* (per swarm or colony, 1 visit)
+
+*🐀 Rodents, termites & others*
+23. Rat & mouse control: *From AED 299* (apartment; villas from AED 449, baiting/trapping + follow-up visit)
+24. Termite inspection: *From AED 250* (villa or townhouse, 1 visit with written findings)
+25. Termite treatment, villa: *From AED 1,500* (post-construction, 3–4 bedrooms, treatment + checks)
+26. Pre-construction anti-termite treatment: *From AED 8 / m²* (per m² of building footprint, soil treatment before the slab, with certificate)
+27. Scorpion treatment: *From AED 299* (villa perimeter, 1 visit)
+28. Camel spider treatment: *From AED 249* (villa, 1 visit)
+29. Lizard & gecko control: *From AED 249* (apartment; villas from AED 399, exclusion + insect treatment)
+30. Snake removal call-out: *From AED 349* (villa or garden, removal + entry-point check)
+
+*🕊️ Birds*
+31. Pigeon control: *From AED 349* (balcony, ledge or AC area, cleaning + deterrents)
+32. Bird netting: *From AED 8 / sq ft* (per sq ft, installed (UV-stable HDPE), free measurement first)
+33. Bird spikes: *From AED 50 / metre* (per metre, installed (stainless steel), ledges, parapets, signs, AC tops)
+34. Mynah, sparrow & crow control: *From AED 349* (per area, survey + deterrents)
+35. Solar panel bird proofing: *Free quote* (mesh skirt around the panel array, free survey and quote)
+
+*🏢 Business (quote after survey)*
+36. Commercial pest control: *Free quote* (restaurants, offices, buildings, warehouses, monthly or quarterly contract after a free survey)
+37. Restaurant pest control contract: *Free quote* (restaurants, cafes, cloud kitchens, monthly visits + call-outs, report after every visit)
+38. Office pest control: *Free quote* (one-off or quarterly contract, visits outside working hours)
+39. Fumigation (warehouses, containers, stored goods): *Free quote* (per container, room or volume, certificate included)
+40. Fly control, restaurants & food sites: *Free quote* (light traps + monthly service, part of a monthly contract)
+
+Also please tell us:
+41. Warranty: how many days for each service (e.g. cockroach 90 days, bed bugs 60 days)?
+42. Is there a call-out or minimum charge?
+43. Do prices include VAT (5%)?
+44. The "AED 299 special" offer: keep it, change it or remove it?

@@ -1,0 +1,180 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "landingPage"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "averageSessionDuration",
+   "type": "TYPE_SECONDS"
+  },
+  {
+   "name": "bounceRate",
+   "type": "TYPE_FLOAT"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "/"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "29"
+    },
+    {
+     "value": "20"
+    },
+    {
+     "value": "118.12113679310345"
+    },
+    {
+     "value": "0.31034482758620691"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/pigeon-control-dubai"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    },
+    {
+     "value": "1414.5953675"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "(not set)"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/about-us"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/bee-removal"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/pest-control-for-bugs"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "2592.051257"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/tick-control-near-me"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "12.508057"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  }
+ ],
+ "rowCount": 7,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

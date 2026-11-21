@@ -3,6 +3,7 @@ import SectionContainer from '../layout/SectionContainer';
 import PillCta from '../ui/PillCta';
 import { TrustBadgesCombined } from '../../utils/images';
 import { noBreakPhone } from '../../utils/formatPhone';
+import { SHOW_CUSTOMER_REVIEWS } from '../../config/siteFlags';
 
 const TESTIMONIAL = {
   quote: "I want to thank you. The technician did a wonderful job. He listened to everything I needed to tell him and explained a few things that I really appreciated. He solved our cockroach problem in Dubai Marina completely. He is an asset to your company, and I feel lucky that he works for you.",
@@ -36,11 +37,14 @@ const SatisfactionGuaranteeSection: React.FC = () => {
             across Dubai. We treat interior spaces, garages, and outdoor areas as part of every service. If a problem persists,
             simply WhatsApp us and we&apos;ll work with you to find the right solution.
           </p>
-          <blockquote className="satisfaction-guarantee-section__testimonial">
-            <QuoteIcon />
-            <p className="satisfaction-guarantee-section__quote-text">{TESTIMONIAL.quote}</p>
-            <cite className="satisfaction-guarantee-section__quote-author">{TESTIMONIAL.author}</cite>
-          </blockquote>
+          {/* Hidden until there are real Google reviews (see siteFlags.ts) */}
+          {SHOW_CUSTOMER_REVIEWS && (
+            <blockquote className="satisfaction-guarantee-section__testimonial">
+              <QuoteIcon />
+              <p className="satisfaction-guarantee-section__quote-text">{TESTIMONIAL.quote}</p>
+              <cite className="satisfaction-guarantee-section__quote-author">{TESTIMONIAL.author}</cite>
+            </blockquote>
+          )}
         </div>
 
         <div className="satisfaction-guarantee-section__card">

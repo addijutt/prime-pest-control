@@ -1,0 +1,119 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "country"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "averageSessionDuration",
+   "type": "TYPE_SECONDS"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "United Arab Emirates"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "24"
+    },
+    {
+     "value": "16"
+    },
+    {
+     "value": "362.60230608333336"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United States"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    },
+    {
+     "value": "7"
+    },
+    {
+     "value": "18.311700000000002"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Germany"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "Ireland"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "28.62577"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "United Kingdom"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  }
+ ],
+ "rowCount": 5,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

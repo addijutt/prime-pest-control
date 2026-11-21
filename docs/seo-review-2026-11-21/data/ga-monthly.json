@@ -1,0 +1,75 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "yearMonth"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "activeUsers",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "newUsers",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "screenPageViews",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "averageSessionDuration",
+   "type": "TYPE_SECONDS"
+  },
+  {
+   "name": "eventCount",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "202611"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "36"
+    },
+    {
+     "value": "23"
+    },
+    {
+     "value": "30"
+    },
+    {
+     "value": "24"
+    },
+    {
+     "value": "97"
+    },
+    {
+     "value": "246.09063933333334"
+    },
+    {
+     "value": "211"
+    }
+   ]
+  }
+ ],
+ "rowCount": 1,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

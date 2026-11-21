@@ -28,9 +28,7 @@ const Footer: React.FC = () => (
           <li><Link href="/about-us">About Us</Link></li>
           <li><Link href="/residential-pest-control">Residential Pest Control</Link></li>
           <li><Link href="/bird-control-dubai">Bird Control</Link></li>
-          <li><Link href="/hornet-nest-removal">Hornet Control</Link></li>
-          <li><Link href="/wasp-nest-removal">Wasp Control</Link></li>
-          <li><Link href="/bee-removal">Bee Removal</Link></li>
+          <li><Link href="/hornet-nest-removal">Wasp, Hornet &amp; Bee Removal</Link></li>
           <li><Link href="/contact-us">Contact Us</Link></li>
           <li><Link href="/privacy-policy">Privacy Policy</Link></li>
           <li><Link href="/terms">Terms of Service</Link></li>

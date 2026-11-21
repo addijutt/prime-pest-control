@@ -14,11 +14,31 @@ const PROCESS_STEPS = [
   { id: 'step-02', number: '02', title: 'Free Site Assessment', description: 'Our specialist visits your property, identifies every pest or bird problem, and explains the plan.' },
   { id: 'step-03', number: '03', title: 'Targeted Treatment', description: 'We apply the right solution for your specific pest or bird problem. It is safe, effective, and eco-responsible.' },
   { id: 'step-04', number: '04', title: 'Guaranteed Results', description: "If pests return between treatments, we come back at no extra charge. That's our promise." },
-] as const;
+];
 
-const WhyChooseUsSection: React.FC = () => {
+const DEFAULT_HEADING = 'From Your First Call to a Pest-Free Home';
+const DEFAULT_BODY =
+  'Getting rid of pests in Dubai has never been simpler. Our expert team handles everything from a free on-site assessment to guaranteed, eco-responsible treatments across all Dubai communities and free zones.';
+
+export type ProcessContent = {
+  eyebrow?: string;
+  heading: string;
+  body: string;
+  steps: { title: string; text: string }[];
+};
+
+/** Icons row + dark "How it works" block. Service pages pass their own treatment steps via `process`. */
+const WhyChooseUsSection: React.FC<{ process?: ProcessContent }> = ({ process }) => {
   const phone = '055 304 5256';
   const whatsappUrl = 'https://wa.me/971553045256';
+  const steps = process
+    ? process.steps.map((s, i) => ({
+        id: `step-${i + 1}`,
+        number: String(i + 1).padStart(2, '0'),
+        title: s.title,
+        description: s.text,
+      }))
+    : PROCESS_STEPS;
 
   return (
     <section className="why-choose-us-section" aria-labelledby="why-choose-us-title">
@@ -38,11 +58,9 @@ const WhyChooseUsSection: React.FC = () => {
 
         <div className="process-block">
           <div className="process-block__left">
-            <span className="process-block__eyebrow">HOW IT WORKS</span>
-            <h3 className="process-block__heading">From Your First Call to a Pest-Free Home</h3>
-            <p className="process-block__body">
-              Getting rid of pests in Dubai has never been simpler. Our expert team handles everything from a free on-site assessment to guaranteed, eco-responsible treatments across all Dubai communities and free zones.
-            </p>
+            <span className="process-block__eyebrow">{process?.eyebrow ?? 'HOW IT WORKS'}</span>
+            <h3 className="process-block__heading">{process?.heading ?? DEFAULT_HEADING}</h3>
+            <p className="process-block__body">{process?.body ?? DEFAULT_BODY}</p>
             <a href={whatsappUrl} className="process-block__cta dynamic-href">
               <WhatsAppIcon size={20} className="process-block__cta-icon" />
               <span>WhatsApp for a Free Quote: {noBreakPhone(phone)}</span>
@@ -50,8 +68,8 @@ const WhyChooseUsSection: React.FC = () => {
           </div>
 
           <div className="process-block__right">
-            <div className="process-block__steps">
-              {PROCESS_STEPS.map((step) => (
+            <div className={`process-block__steps process-block__steps--${steps.length}`}>
+              {steps.map((step) => (
                 <div key={step.id} className="process-block__step">
                   <span className="process-block__step-number">{step.number}</span>
                   <h4 className="process-block__step-title">{step.title}</h4>

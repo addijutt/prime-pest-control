@@ -6,15 +6,175 @@
   "headers": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": ".+\\.vercel\\.app" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "has": [
+        {
+          "type": "host",
+          "value": ".+\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "primepestcontrol.ae" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "primepestcontrol.ae"
+        }
+      ],
       "destination": "https://www.primepestcontrol.ae/$1",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-near-me",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/local-pest-control",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/local-pest-control-in-my-area",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/exterminator-near-me",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-bugs",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/insect-control",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/same-day-appointment",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/24-7-service",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/exterminator-for-house-centipedes",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/roach-exterminator-near-me",
+      "destination": "/cockroach-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/rodent-control-near-me",
+      "destination": "/rodent-control",
+      "permanent": true
+    },
+    {
+      "source": "/rat-exterminator-near-me",
+      "destination": "/rodent-control",
+      "permanent": true
+    },
+    {
+      "source": "/mice-exterminator-near-me",
+      "destination": "/rodent-control",
+      "permanent": true
+    },
+    {
+      "source": "/professional-flea-control",
+      "destination": "/pest-control-for-fleas",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control-service",
+      "destination": "/residential-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/wasp-nest-removal",
+      "destination": "/hornet-nest-removal",
+      "permanent": true
+    },
+    {
+      "source": "/yellow-jacket-nest-removal",
+      "destination": "/hornet-nest-removal",
+      "permanent": true
+    },
+    {
+      "source": "/bee-removal",
+      "destination": "/hornet-nest-removal",
+      "permanent": true
+    },
+    {
+      "source": "/carpenter-bee-exterminator-near-me",
+      "destination": "/hornet-nest-removal",
+      "permanent": true
+    },
+    {
+      "source": "/bird-proofing-dubai",
+      "destination": "/bird-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/critter-control",
+      "destination": "/scorpion-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-exterminator-near-me",
+      "destination": "/cockroach-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/bed-bug-exterminator-near-me",
+      "destination": "/bed-bug-treatment-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/ant-exterminator-near-me",
+      "destination": "/ant-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/mosquito-spraying-near-me",
+      "destination": "/mosquito-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/spider-exterminator-near-me",
+      "destination": "/spider-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/tick-control-near-me",
+      "destination": "/tick-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/crow-control-dubai",
+      "destination": "/bird-control-dubai",
+      "permanent": true
+    },
+    {
+      "source": "/sparrow-control-dubai",
+      "destination": "/bird-control-dubai",
       "permanent": true
     }
   ]

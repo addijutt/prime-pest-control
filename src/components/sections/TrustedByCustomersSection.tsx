@@ -2,6 +2,7 @@ import React from 'react';
 import PillCta from '../ui/PillCta';
 import TestimonialMarquee from '../ui/TestimonialMarquee';
 import { noBreakPhone } from '../../utils/formatPhone';
+import { SHOW_CUSTOMER_REVIEWS } from '../../config/siteFlags';
 
 const REVIEWS = [
   {
@@ -32,6 +33,9 @@ const CommentIcon: React.FC = () => (
 const TrustedByCustomersSection: React.FC = () => {
   const phone = '055 304 5256';
   const whatsappUrl = 'https://wa.me/971553045256';
+
+  // Hidden until there are real Google reviews (see siteFlags.ts)
+  if (!SHOW_CUSTOMER_REVIEWS) return null;
 
   return (
     <section className="customer-reviews-section" aria-labelledby="customer-reviews-title">

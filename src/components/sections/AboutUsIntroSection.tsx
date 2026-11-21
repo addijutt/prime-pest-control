@@ -3,8 +3,8 @@ import SectionContainer from '../layout/SectionContainer';
 import { UrgencyComponentImage } from '../../utils/images';
 import { WHY_CHOOSE_US_ITEMS } from '../../utils/whyChooseUsItems';
 
-const PESTS_LEFT = ['Wasps', 'Hornets', 'Bees', 'Ants', 'Spiders', 'Ticks', 'Mosquitoes'];
-const PESTS_RIGHT = ['Fleas', 'Voles', 'Rats', 'Mice', 'Chipmunks', 'Other occasional invaders'];
+const PESTS_LEFT = ['Cockroaches', 'Bed bugs', 'Termites', 'Ants', 'Mosquitoes', 'Ticks & fleas', 'Wasps, hornets & bees'];
+const PESTS_RIGHT = ['Rats & mice', 'Scorpions', 'Snakes', 'Lizards & geckos', 'Spiders & camel spiders', 'Pigeons & other birds'];
 
 const AboutUsIntroSection: React.FC = () => (
   <SectionContainer className="about-us-intro-section">
@@ -38,7 +38,7 @@ const AboutUsIntroSection: React.FC = () => (
       </div>
 
       <div className="about-us-intro-section__right">
-        <h2 className="about-us-intro-section__heading">About Us</h2>
+        <h1 className="about-us-intro-section__heading">About Prime Pest Control Dubai</h1>
         <h3 className="about-us-intro-section__subheading">Our Promise</h3>
         <p className="about-us-intro-section__body-text">
           Our team doesn&apos;t just provide a service. We provide a promise that your home will
@@ -47,7 +47,7 @@ const AboutUsIntroSection: React.FC = () => (
           thoroughly inspect your home and create a customized treatment plan aimed at lasting
           results.
         </p>
-        <h3 className="about-us-intro-section__subheading">Our pest controllers can eliminate:</h3>
+        <h3 className="about-us-intro-section__subheading">Pests Our Controllers Eliminate</h3>
         <div className="about-us-intro-section__pest-columns">
           <ul className="about-us-intro-section__pest-list">
             {PESTS_LEFT.map((pest) => (

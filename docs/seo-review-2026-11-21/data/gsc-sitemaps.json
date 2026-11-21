@@ -1,0 +1,21 @@
+{
+ "sitemap": [
+  {
+   "path": "https://www.primepestcontrol.ae/sitemap.xml",
+   "lastSubmitted": "2026-11-10T15:39:12.715Z",
+   "isPending": false,
+   "isSitemapsIndex": false,
+   "type": "sitemap",
+   "lastDownloaded": "2026-11-21T05:12:29.898Z",
+   "warnings": "0",
+   "errors": "0",
+   "contents": [
+    {
+     "type": "web",
+     "submitted": "50",
+     "indexed": "0"
+    }
+   ]
+  }
+ ]
+}

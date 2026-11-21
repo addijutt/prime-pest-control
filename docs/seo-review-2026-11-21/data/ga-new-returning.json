@@ -1,0 +1,70 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "newVsReturning"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "sessions",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "engagedSessions",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "new"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "23"
+    },
+    {
+     "value": "15"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "returning"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "10"
+    },
+    {
+     "value": "9"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "(not set)"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  }
+ ],
+ "rowCount": 3,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

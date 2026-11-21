@@ -9,12 +9,12 @@ import { toServiceGridItem } from '../../config/pageContentHelpers';
 
 const SERVICES: ServiceGridItem[] = [
   { label: 'General Pest Control', href: '/residential-pest-control', imageDesktop: '/assets/img/pests/residential-pc.webp', imageMobile: '/assets/img/pests/residential-pc-m.webp' },
-  { label: 'Commercial Pest Control', href: '/contact-us', imageDesktop: '/assets/img/pests/commercial-pc-d.webp', imageMobile: '/assets/img/pests/commercial-pc-m.webp' },
-  { label: 'Bed Bugs', href: '/bed-bug-exterminator-near-me', imageDesktop: '/assets/img/pests/common-bed-bug-d.webp', imageMobile: '/assets/img/pests/common-bed-bug-m.webp' },
-  { label: 'Mosquitoes', href: '/mosquito-spraying-near-me', imageDesktop: '/assets/img/pests/mosquito-d.webp', imageMobile: '/assets/img/pests/mosquito-m.webp' },
-  { label: 'Roaches', href: '/roach-exterminator-near-me', imageDesktop: '/assets/img/pests/roach-d.webp', imageMobile: '/assets/img/pests/roach-m.webp' },
+  { label: 'Commercial Pest Control', href: '/commercial-pest-control-dubai', imageDesktop: '/assets/img/pests/commercial-pc-d.webp', imageMobile: '/assets/img/pests/commercial-pc-m.webp' },
+  { label: 'Bed Bugs', href: '/bed-bug-treatment-dubai', imageDesktop: '/assets/img/pests/common-bed-bug-d.webp', imageMobile: '/assets/img/pests/common-bed-bug-m.webp' },
+  { label: 'Mosquitoes', href: '/mosquito-control-dubai', imageDesktop: '/assets/img/pests/mosquito-d.webp', imageMobile: '/assets/img/pests/mosquito-m.webp' },
+  { label: 'Roaches', href: '/cockroach-control-dubai', imageDesktop: '/assets/img/pests/roach-d.webp', imageMobile: '/assets/img/pests/roach-m.webp' },
   { label: 'Termites', href: '/termite-control', imageDesktop: '/assets/img/pests/termite-d.webp', imageMobile: '/assets/img/pests/termite-m.webp' },
-  { label: 'Stinging Insects', href: '/wasp-nest-removal', imageDesktop: '/assets/img/pests/wasp-d.webp', imageMobile: '/assets/img/pests/wasp-m.webp' },
+  { label: 'Stinging Insects', href: '/hornet-nest-removal', imageDesktop: '/assets/img/pests/wasp-d.webp', imageMobile: '/assets/img/pests/wasp-m.webp' },
   { label: 'Rodents', href: '/rodent-control', imageDesktop: '/assets/img/pests/rodent-d.webp', imageMobile: '/assets/img/pests/rodent-m.webp' },
   { label: '50+ Pests & Birds', href: '/residential-pest-control', imageDesktop: '/assets/img/pests/shield.webp', imageMobile: '/assets/img/pests/shield-m.webp' },
 ];

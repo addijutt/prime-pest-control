@@ -1,0 +1,145 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "eventName"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "eventCount",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "totalUsers",
+   "type": "TYPE_INTEGER"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "page_view"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "97"
+    },
+    {
+     "value": "23"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "session_start"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "43"
+    },
+    {
+     "value": "23"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "first_visit"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "30"
+    },
+    {
+     "value": "23"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "user_engagement"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "29"
+    },
+    {
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "scroll"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "9"
+    },
+    {
+     "value": "5"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "phone_call_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "whatsapp_click"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  }
+ ],
+ "rowCount": 8,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}

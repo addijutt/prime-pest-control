@@ -1,0 +1,851 @@
+{
+ "dimensionHeaders": [
+  {
+   "name": "pagePath"
+  },
+  {
+   "name": "pageTitle"
+  }
+ ],
+ "metricHeaders": [
+  {
+   "name": "screenPageViews",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "activeUsers",
+   "type": "TYPE_INTEGER"
+  },
+  {
+   "name": "userEngagementDuration",
+   "type": "TYPE_SECONDS"
+  }
+ ],
+ "rows": [
+  {
+   "dimensionValues": [
+    {
+     "value": "/"
+    },
+    {
+     "value": "Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "40"
+    },
+    {
+     "value": "20"
+    },
+    {
+     "value": "564"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/residential-pest-control"
+    },
+    {
+     "value": "Residential Pest Control Dubai | Home Pest Services | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "7"
+    },
+    {
+     "value": "4"
+    },
+    {
+     "value": "176"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/pigeon-control-dubai"
+    },
+    {
+     "value": "Pigeon Control Dubai | Pigeon Removal & Deterrents | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "4"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "11"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/about-us"
+    },
+    {
+     "value": "About Prime Pest Control | Pest & Bird Control Dubai"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "3"
+    },
+    {
+     "value": "130"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/bird-control-dubai"
+    },
+    {
+     "value": "Bird Control Dubai | Pigeon & Mynah Control | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "2"
+    },
+    {
+     "value": "44"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/scorpion-control-dubai"
+    },
+    {
+     "value": "Scorpion Control Dubai | Scorpion Removal & Treatment | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "3"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "44"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/bed-bug-exterminator-near-me"
+    },
+    {
+     "value": "Bed Bug Treatment Dubai | Bed Bug Exterminator | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/bird-proofing-dubai"
+    },
+    {
+     "value": "Bird Proofing Dubai | Bird Deterrent Solutions | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    },
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/camel-spider-control-dubai"
+    },
+    {
+     "value": "Camel Spider Removal Dubai | Solifugae Control | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "29"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/commercial-pest-control-dubai"
+    },
+    {
+     "value": "Commercial Pest Control Dubai | Restaurants, Hotels & Offices | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "18"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/pest-control-for-bugs"
+    },
+    {
+     "value": "404: This page could not be found."
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "2"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/privacy-policy"
+    },
+    {
+     "value": "Privacy Policy | Prime Pest Control Dubai"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "25"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/roach-exterminator-near-me"
+    },
+    {
+     "value": "404: This page could not be found."
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/sparrow-control-dubai"
+    },
+    {
+     "value": "Sparrow Control Dubai | AC Unit Bird Proofing | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "2"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "13"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/ant-exterminator-near-me"
+    },
+    {
+     "value": "Ant Control Dubai | Ant Exterminator Services | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "25"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/bee-removal"
+    },
+    {
+     "value": "Bee Removal Dubai | Bee Hive Removal Services | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/camel-spider-control-dubai"
+    },
+    {
+     "value": "404: This page could not be found."
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/camel-spider-control-dubai"
+    },
+    {
+     "value": "Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/cockroach-exterminator-near-me"
+    },
+    {
+     "value": "Cockroach Control Dubai | Cockroach Exterminator | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/contact-us"
+    },
+    {
+     "value": "Contact Us | Prime Pest Control Dubai | Free Quote"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/free-quote"
+    },
+    {
+     "value": "Free Pest & Bird Control Quote Dubai | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/mynah-bird-control"
+    },
+    {
+     "value": "Mynah Bird Control Dubai | Mynah Removal Services | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "25"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/pest-control-for-fleas"
+    },
+    {
+     "value": "Flea Control Dubai | Flea Treatment Services | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "11"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/professional-flea-control"
+    },
+    {
+     "value": "Professional Flea Control Dubai | Guaranteed Results | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/roach-exterminator-near-me"
+    },
+    {
+     "value": "Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/roach-exterminator-near-me"
+    },
+    {
+     "value": "Roach Exterminator Dubai | Cockroach Treatment | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "31"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/rodent-control"
+    },
+    {
+     "value": "Rodent Control Dubai | Rat & Mouse Removal | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/solar-panel-bird-proofing-dubai"
+    },
+    {
+     "value": "404: This page could not be found."
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/solar-panel-bird-proofing-dubai"
+    },
+    {
+     "value": "Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/spider-exterminator-near-me"
+    },
+    {
+     "value": "404: This page could not be found."
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/termite-control"
+    },
+    {
+     "value": "Termite Control Dubai | Termite Treatment Services | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "5"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/terms"
+    },
+    {
+     "value": "Terms of Use | Prime Pest Control Dubai"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "13"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/tick-control-near-me"
+    },
+    {
+     "value": "Tick Control Dubai | Tick Exterminator Services | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/wasp-nest-removal"
+    },
+    {
+     "value": "Wasp Control Dubai | Wasp Nest Removal | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "34"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/yellow-jacket-nest-removal"
+    },
+    {
+     "value": "404: This page could not be found."
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/pest-control-for-bugs"
+    },
+    {
+     "value": "Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "0"
+    },
+    {
+     "value": "2"
+    },
+    {
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/solar-panel-bird-proofing-dubai"
+    },
+    {
+     "value": "Solar Panel Bird Proofing Dubai | Pigeon Mesh Installation | Prime Pest Control"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "0"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "22"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/spider-exterminator-near-me"
+    },
+    {
+     "value": "Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "0"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "dimensionValues": [
+    {
+     "value": "/yellow-jacket-nest-removal"
+    },
+    {
+     "value": "Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256"
+    }
+   ],
+   "metricValues": [
+    {
+     "value": "0"
+    },
+    {
+     "value": "1"
+    },
+    {
+     "value": "1"
+    }
+   ]
+  }
+ ],
+ "rowCount": 39,
+ "metadata": {
+  "currencyCode": "AED",
+  "timeZone": "Asia/Dubai"
+ },
+ "kind": "analyticsData#runReport"
+}
