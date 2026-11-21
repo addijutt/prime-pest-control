@@ -7,7 +7,7 @@ import { pestIconScale } from '../utils/pestIcons';
 import { noBreakPhone } from '../utils/formatPhone';
 import type { PestImageRef } from '../config/pageContentHelpers';
 import { HERO_V2 } from '../config/siteFlags';
-import { PRICES, type PriceItem } from '../config/prices';
+import { heroImagesFor } from '../config/heroImages';
 import {
   GENERIC_HERO_EXPANSION_PESTS,
   HERO_MORE_PEST,
@@ -94,9 +94,9 @@ const MOBILE_HERO_BENEFITS = [
   '100% Satisfaction Guarantee',
 ];
 
-/** Hero v2 proof points: the three things Dubai visitors check before they message */
-function heroProofs(fromPrice?: string): string[] {
-  const days = (PRICES['general-apartment'] as PriceItem).warrantyDays;
+/** Hero v2 proof points: the three things Dubai visitors check before they message.
+ *  The warranty and price come from this page's services (prices.ts), so a page without a warranty never shows one. */
+function heroProofs(fromPrice?: string, days?: number): string[] {
   return [
     'Dubai Municipality approved',
     `100% satisfaction guarantee${days ? `, ${days}-day warranty` : ''}`,
@@ -134,14 +134,20 @@ function toMobileHeroPest(ref: PestImageRef): MobileHeroPestItem {
 interface HomeHeroProps {
   title?: string;
   desktopPestIcons?: PestImageRef[];
-  /** Hero v2: starting price for this page, e.g. "From AED 179" (from prices.ts) */
+  /** Hero v2: starting price for this page, e.g. "From AED 179" (heroPriceText in prices.ts) */
   fromPrice?: string;
+  /** Hero v2: this page's warranty in days (heroWarrantyDays in prices.ts); 0 = no warranty line */
+  warrantyDays?: number;
+  /** Page path, picks the hero image set (config/heroImages.ts) */
+  pathname?: string;
 }
 
 const HomeHero: React.FC<HomeHeroProps> = ({
   title = 'Expert Pest & Bird Control in Dubai',
   desktopPestIcons,
   fromPrice,
+  warrantyDays,
+  pathname = '/',
 }) => {
   const [pestsExpanded, setPestsExpanded] = useState(false);
   const city = 'Dubai';
@@ -160,13 +166,22 @@ const HomeHero: React.FC<HomeHeroProps> = ({
   }, [desktopPestIcons]);
 
   const mobileHeroPests = useMemo(() => {
-    const base = !desktopPestIcons?.length
-      ? MOBILE_HERO_PESTS
-      : [...desktopPestIcons.slice(0, 4).map(toMobileHeroPest), ...MOBILE_HERO_PESTS.slice(4)];
-    // Hero v2: compact grid on phones (5 pests + "& 50+ More") so visitors reach the page content sooner
-    return HERO_V2 ? [...base.slice(0, 5), MOBILE_HERO_PESTS[MOBILE_HERO_PESTS.length - 1]] : base;
+    const more = MOBILE_HERO_PESTS[MOBILE_HERO_PESTS.length - 1];
+    if (HERO_V2) {
+      // Compact grid on phones: this page's own pests (up to 5, topped up with General Pest Control)
+      // + "& 50+ More", so visitors reach the page content sooner and never see an unrelated pest
+      if (!desktopPestIcons?.length) return [...MOBILE_HERO_PESTS.slice(0, 5), more];
+      const own = desktopPestIcons.slice(0, 5).map(toMobileHeroPest);
+      const general = toMobileHeroPest(GENERIC_HERO_EXPANSION_PESTS[0]);
+      const topUp = own.length < 5 && !own.some((p) => p.href === general.href) ? [general] : [];
+      return [...own, ...topUp, more];
+    }
+    if (!desktopPestIcons?.length) return MOBILE_HERO_PESTS;
+    return [...desktopPestIcons.slice(0, 4).map(toMobileHeroPest), ...MOBILE_HERO_PESTS.slice(4)];
   }, [desktopPestIcons]);
-  const proofs = heroProofs(fromPrice);
+  const proofs = heroProofs(fromPrice, warrantyDays);
+  const images = heroImagesFor(pathname);
+  const heroBg = { '--hero-bg': `url(${images.background})` } as React.CSSProperties;
 
   const visiblePests = pestsExpanded ? allPests : collapsedPests;
 
@@ -183,7 +198,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
       </a>
 
       <div className="home-hero--desktop">
-        <div className={`home-hero__card${pestsExpanded ? ' home-hero__card--pests-expanded' : ''}`}>
+        <div className={`home-hero__card${pestsExpanded ? ' home-hero__card--pests-expanded' : ''}`} style={heroBg}>
           <div className="home-hero__content">
             <h1 className="home-hero__title">{title}</h1>
             {HERO_V2 ? (
@@ -257,7 +272,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
 
           <div className="home-hero__guy" aria-hidden="true">
             <img
-              src="/assets/img/hero-guy-transparent.png"
+              src={images.technician}
               alt=""
               loading="eager"
             />
@@ -266,7 +281,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
       </div>
 
       <div className="home-hero-mobile">
-        <div className="home-hero-mobile__photo">
+        <div className="home-hero-mobile__photo" style={heroBg}>
           <div className="home-hero-mobile__headline">
             {/* Same text as the desktop h1 above; a <p> so each page has exactly one h1 */}
             <p className="home-hero-mobile__title">{title}</p>
@@ -297,7 +312,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
           </div>
           <div className="home-hero-mobile__guy" aria-hidden="true">
             <img
-              src="/assets/img/hero-guy-transparent.png"
+              src={images.technician}
               alt=""
               loading="eager"
             />

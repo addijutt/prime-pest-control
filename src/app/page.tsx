@@ -15,12 +15,7 @@ import {
   SafetySection,
 } from '../components/sections/ServiceGuideSection';
 import { getServiceGuide } from '../config/serviceGuides';
-import { formatAed, lowestPrice, type PriceKey } from '../config/prices';
-
-function fromPrice(keys: PriceKey[]): string | undefined {
-  const low = lowestPrice(keys);
-  return low === null ? undefined : `From ${formatAed(low)}`;
-}
+import { heroPriceText, heroWarrantyDays } from '../config/prices';
 
 export const metadata: Metadata = {
   title: 'Pest & Bird Control Dubai | Prime Pest Control | 055 304 5256',
@@ -52,7 +47,9 @@ export default function HomePage() {
       <HomeHero
         title={heroTitle}
         desktopPestIcons={pageContent?.hero.pestIcons}
-        fromPrice={guide ? fromPrice(guide.priceKeys) : undefined}
+        fromPrice={guide ? heroPriceText(guide.priceKeys) : undefined}
+        warrantyDays={guide ? heroWarrantyDays(guide.priceKeys) : 0}
+        pathname="/"
       />
       {/* Home: visitors are less sure what they need, so the service grid comes first (one tap to the right page),
           then the answer, prices, when to call, how it works + why us, safety, trust badges, FAQ, areas, closing CTA */}

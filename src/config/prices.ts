@@ -148,3 +148,24 @@ export function lowestPrice(keys: PriceKey[]): number | null {
     .map((p) => p.from as number);
   return nums.length ? Math.min(...nums) : null;
 }
+
+/** Hero price line. 'main' (service pages): the price of the page's main service, its first price key,
+ *  e.g. 'From AED 179' or 'From AED 8 / m²'; undefined when that service is quote-only, so a related
+ *  service's price (rats on the snake page) is never shown as the page's price.
+ *  'lowest' (area pages): the lowest whole-job price among the keys. */
+export function heroPriceText(keys: PriceKey[], mode: 'main' | 'lowest' = 'main'): string | undefined {
+  if (mode === 'lowest') {
+    const low = lowestPrice(keys);
+    return low === null ? undefined : `From ${formatAed(low)}`;
+  }
+  const main = keys[0];
+  return main && (PRICES[main] as PriceItem).from !== null ? priceText(main) : undefined;
+}
+
+/** Hero warranty for a page: the warranty of its main service (the first price key, skipping an inspection),
+ *  or 0. Related services further down the list (rats on the snake page, netting on the pigeon page) don't
+ *  count, so a page never claims a warranty its own service doesn't have. */
+export function heroWarrantyDays(keys: PriceKey[]): number {
+  const main = keys.find((k) => !k.endsWith('-inspection'));
+  return main ? ((PRICES[main] as PriceItem).warrantyDays ?? 0) : 0;
+}

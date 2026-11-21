@@ -10,7 +10,7 @@ The hero at the top of every page (home, 32 service pages, 22 area pages) is bui
 The goal is a **real Prime technician** on a **real Dubai background**. Customers trust real people more than a
 model, and it is the strongest trust signal we can put in the first screen.
 
-You need **2 new images** (plus 2 optional ones). Both are reused on every page and every screen size, so the
+Start with **2 images** (technician + default background); they cover every page. Then 5 more backgrounds for the page types (below). All are used at every screen size, so the
 framing rules below matter.
 
 ---
@@ -59,7 +59,7 @@ DESKTOP / LAPTOP (wider than 768 px)          PHONE (up to 767 px)
   retina laptops and phones).
 - Save as **WebP with transparency**, under **300 KB** (squoosh.app: WebP, quality 80, keep alpha). Keep the
   full-size PNG as the master.
-- Name: `public/assets/img/hero-technician.webp`
+- Name: `public/assets/img/hero/technician.webp`
 
 ---
 
@@ -101,19 +101,45 @@ Full photo, 3 : 2 (for example 2400 × 1600)
 **File to deliver**
 - Landscape **3 : 2**, at least **2400 × 1600 px**.
 - WebP, quality 75 to 80, under **250 KB**.
-- Name: `public/assets/img/hero-background.webp`
+- Name: `public/assets/img/hero/default-bg.webp`
 
 ---
 
-## Optional extra images (later)
+## A hero for each type of page (point 7)
 
-| # | Image | Use |
+Each service page already has its own headline, its own price (the main service's "From" price in
+`prices.ts`), its own warranty line (only when that service has a warranty) and its own pests. The last step
+is the **photo**: a cockroach page should look like a Dubai kitchen, a bird page like a tower with netting.
+
+Making 32 different banners is not needed. Pages are grouped in **6 sets**; each set is one background photo
+(and optionally its own technician). The site already knows which page uses which set
+(`src/config/heroImages.ts`); until a set's photo is added, the page shows the default set.
+
+Every background follows the rules of Image 2 above (3 : 2, at least 2400 × 1600, no people, calm darker left
+half, the strip from 48% to 84% of the width must work on its own for phones, WebP under 250 KB).
+
+| Set | File name | Pages | What the background shows |
+|---|---|---|---|
+| **default** | `hero/default-bg.webp` | Homepage, all 22 area pages, Residential | A Dubai community street or a villa entrance with palm trees, early morning light (the Image 2 brief above) |
+| **indoor** | `hero/indoor-bg.webp` | Cockroaches, Bed bugs, Ants, Spiders, Silverfish, Fleas, Drain flies, Lizards, Apartment, Move-in / move-out, Disinfection (11) | A clean, modern Dubai apartment: open kitchen with cabinets and a window, or a bright living room. Left side: darker cabinets or a wall. No mess, no visible pests, no family photos |
+| **outdoor** | `hero/outdoor-bg.webp` | Villa, Termites, Rats & mice, Mosquitoes, Flies, Ticks, Wasps & hornets, Scorpions, Camel spiders, Snakes (10) | A villa garden: boundary wall, planting, a bit of lawn and a palm tree, shade on the left. Late afternoon light. Optional: the Prime van at the gate on the right |
+| **birds** | `hero/birds-bg.webp` | Bird control, Pigeons, Mynahs, Bird netting, Solar panel bird proofing (5) | Balconies of a Dubai residential tower with clean, finished bird netting (one of our jobs), shot from below or from a neighbouring balcony; sky darker on the left (shoot towards the sun at an angle, or in late afternoon) |
+| **business** | `hero/business-bg.webp` | Commercial, Restaurants, Offices, Fumigation (4) | A clean stainless-steel commercial kitchen (most recognisable), or a warehouse aisle with pallets. No staff, no customer branding or logos |
+| **construction** | `hero/construction-bg.webp` | Pre-construction anti-termite treatment (1) | A Dubai building plot with foundation trenches or levelled soil before the slab, cranes or a half-built villa in the background |
+
+**Technician per set (optional).** All sets use the main technician cut-out (Image 1). Two sets look more
+convincing with their own:
+
+| Set | File name | What the technician wears / holds |
 |---|---|---|
-| 3 | Second technician cut-out (another team member, or one person in protective gear for bed bugs / disinfection) | Different face on business or bed bug pages |
-| 4 | Business background (restaurant kitchen, office or warehouse, no people) | Hero on Commercial, Restaurant, Office and Fumigation pages |
+| business | `hero/business-technician.webp` | Full uniform with mask and gloves, holding a clipboard or a light trap: "food-safe, inspection-ready" |
+| construction | `hero/construction-technician.webp` | Hi-vis vest and hard hat over the Prime uniform, holding a sprayer |
 
-Same rules as images 1 and 2. The site uses one hero image set for every page today; ask Claude to "use
-image 3 / 4 on the business pages" once they exist.
+Same cut-out rules as Image 1 (transparent, portrait 3 : 4, at least 1500 px tall, face and logo in the left
+65% and the top third).
+
+**Order to shoot them in** (most visitors first): 1) technician cut-out, 2) default, 3) indoor (cockroach and
+bed bug pages bring the most searches), 4) birds, 5) outdoor, 6) business, 7) construction.
 
 ---
 
@@ -129,15 +155,16 @@ image 3 / 4 on the business pages" once they exist.
 
 ## Adding them to the site (Claude or the developer)
 
-1. Save the files as `public/assets/img/hero-technician.webp` and `public/assets/img/hero-background.webp`.
-2. In `src/components/HomeHero.tsx`, change both `src="/assets/img/hero-guy-transparent.png"` to
-   `src="/assets/img/hero-technician.webp"`.
-3. In `src/app/globals.css`, change both `url(/assets/img/pest_control_near_me.webp)` (in `.home-hero__card` and
-   `.home-hero-mobile__photo`) to `url(/assets/img/hero-background.webp)`.
-4. Check the hero on a large screen, a 1366 × 768 laptop and a 390 px and 360 px phone: face fully visible,
+1. Save the files in `public/assets/img/hero/` with the names above (for example `hero/indoor-bg.webp`,
+   `hero/technician.webp`).
+2. In `src/config/heroImages.ts`, fill in the set:
+   - main technician: `default: { ..., technician: '/assets/img/hero/technician.webp' }` (all sets use it)
+   - a background: `indoor: { ..., background: '/assets/img/hero/indoor-bg.webp' }`
+   No other file needs to change; a set without files keeps showing the default images.
+3. Check the hero on a large screen, a 1366 × 768 laptop and a 390 px and 360 px phone: face fully visible,
    headline easy to read, button above the fold. If the face is too low or cut on phones, adjust
-   `object-position` / `right` in `.home-hero-mobile__guy`.
+   `object-position` / `right` in `.home-hero-mobile__guy` in `src/app/globals.css`.
 
-Prompt for Claude Code: *"The new hero images are in public/assets/img (hero-technician.webp and
-hero-background.webp). Put them in the hero as described in docs/hero-banner-images.md and show me desktop and
-phone screenshots."*
+Prompt for Claude Code: *"The new hero images are in public/assets/img/hero/. Add them to
+src/config/heroImages.ts as described in docs/hero-banner-images.md and show me desktop and phone screenshots
+of one page per set."*

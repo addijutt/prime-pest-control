@@ -96,7 +96,8 @@ Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
    The existing `mynah` image shows a bird of prey and `house-crow` has a yellow background: replace both.
 3. **Hero banner (2 images, every page):** `docs/hero-banner-images.md`: a real technician cut-out
    (transparent, at least 1500 px tall, face in the left 65% so it shows on phones) and a Dubai background
-   without people (2400 × 1600, calm darker left half). Replaces the stock model and the street photo.
+   without people (2400 × 1600, calm darker left half). Then 5 backgrounds per page type (indoor, outdoor,
+   birds, business, construction); add them in `src/config/heroImages.ts`.
 
 ### B. Information from the owner
 - Confirm or change the prices (`docs/prices-for-review-whatsapp.txt`), warranty days per service, VAT,
