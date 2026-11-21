@@ -74,6 +74,10 @@ Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
 - New hero with the WhatsApp button, proof points (Dubai Municipality approved, 100% satisfaction guarantee
   and 90-day warranty, starting price) and trust chips. To go back to the old hero: set `HERO_V2 = false`
   in `src/config/siteFlags.ts`.
+- Each page's hero shows its own main service: its price ("From AED 179", "From AED 8 / sq ft", or "Free
+  quote" for business pages), a warranty line only when that service has one, and its own pests on phones.
+- Hero photos per page type (6 sets: default, indoor, outdoor, birds, business, construction) are set up in
+  `src/config/heroImages.ts`; until the photos exist, every page shows the current images.
 
 **Reports**
 - `docs/seo-review-2026-11-21/`: SEO and GA4 review (PDF), page merge plan, service gap analysis.
@@ -120,7 +124,7 @@ Follow `docs/lead-tracking/README.md`: paste `docs/lead-tracking/apps-script.gs`
 6. Test the lead sheet: open a page with `?leadtest=1` and tap WhatsApp; a grey test row appears.
 
 ### E. Later improvements (from `docs/seo-review-2026-11-21/service-gap-analysis.md`)
-- Warranty terms on every page; Dubai Municipality free-service FAQ; flying cockroach FAQ;
+- Dubai Municipality free-service FAQ; flying cockroach FAQ;
   bed bug inspection price; pantry and fabric pests page; water tank cleaning (only with DM approval).
 - Trust badge section with the licence number once the owner provides it.
 - A short quote form on every page.
@@ -130,19 +134,38 @@ Follow `docs/lead-tracking/README.md`: paste `docs/lead-tracking/apps-script.gs`
 
 ## 3. Continue in Claude Code
 
-Open the project folder in Claude Code, check out the branch, and paste this prompt:
+**Once, in the VS Code terminal** (project folder):
+
+```bash
+git fetch origin
+git checkout seo-content-overhaul
+git pull
+npm install
+npm run dev        # preview at http://localhost:3000 (photo slots show labelled placeholders)
+```
+
+Then open Claude Code in VS Code and paste this prompt:
 
 ```
-Read CLAUDE.md and docs/HANDOVER.md first. We are on branch seo-content-overhaul, which is not live yet.
-Continue from section 2 of the handover:
-1. I added these photos and pest images: [list the files you added]. Wire each photo into its brief
-   (src field) and remove the replaced pest keys from PEST_IMAGE_FALLBACKS. Show me desktop and phone
-   screenshots of the pages that changed.
-2. Here are the owner's answers to the price review: [paste the WhatsApp reply]. Update
-   src/config/prices.ts (prices change only there) and add the warranty to the price cards and FAQs.
-3. Here is the lead sheet web app URL: [paste]. Put it in src/config/leadLog.ts.
-Run tsc, lint and build after each step, keep CLAUDE.md up to date, and do not merge into main or push
-until I ask. Rules: no em dashes, no colons in headings, prices only via prices.ts.
+Read CLAUDE.md and docs/HANDOVER.md first. We are on branch seo-content-overhaul, which is not live yet
+(main is the live site; do not touch it). Continue from section 2 of the handover:
+1. Hero images: I added [file names] to public/assets/img/hero/. Add them to src/config/heroImages.ts as
+   described in docs/hero-banner-images.md. Show me desktop (1920 and 1366x768) and phone (390 and 360)
+   screenshots of one page per set.
+2. Photos and pest images: I added [list the files]. Wire each photo into its brief (src field) and remove
+   the replaced pest keys from PEST_IMAGE_FALLBACKS. Show me desktop and phone screenshots of the pages
+   that changed.
+3. Owner's answers to the price review: [paste the WhatsApp reply]. Update src/config/prices.ts only
+   (prices, warrantyDays, SERVICE_TERMS); price cards, hero, FAQs and schema follow from there. Regenerate
+   docs/prices-for-review-whatsapp.txt.
+4. Lead sheet web app URL: [paste]. Put it in src/config/leadLog.ts.
+Run tsc, lint and build after each step (stop npm run dev before building, start it again after),
+keep CLAUDE.md and docs/HANDOVER.md up to date, and do not merge into main, commit or push until I ask.
+Rules: no em dashes, no colons in headings, prices only via prices.ts, show desktop and phone screenshots
+before saying a change is done.
 ```
 
 Replace the brackets with what you have; leave out any step you are not ready for.
+
+**Going live** (only when the images are in): ask Claude *"Follow section 2D of docs/HANDOVER.md: check the
+build, merge seo-content-overhaul into main and push"*, then do steps 3 to 6 of 2D yourself.
