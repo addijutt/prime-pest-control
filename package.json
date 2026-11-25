@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preview": "node scripts/preview-out.mjs"
   },
   "dependencies": {
     "@google-analytics/data": "^7.3.0",

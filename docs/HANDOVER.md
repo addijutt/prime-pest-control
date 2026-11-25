@@ -1,11 +1,38 @@
-# Handover: SEO, content and lead tracking work (21 Nov 2026)
+# Handover: SEO, content and lead tracking work (21 to 25 Nov 2026)
 
-**Branch:** `seo-content-overhaul`. **Not live.** The live site (`main`) is unchanged.
-Everything below is on this branch until the images are added and it is merged into `main`.
+**Status: LIVE since 25 Nov 2026.** Branch `seo-content-overhaul` was merged into `main` and deployed by Vercel.
+Work from `main` from now on.
 
-If Vercel builds a preview for this branch, the preview is on a `*.vercel.app` address, which
-`vercel.json` already marks `noindex`, and Google Analytics / Tag Manager only run on
-`www.primepestcontrol.ae`, so a preview does not affect Google or the visitor numbers.
+The real photos are not in yet: on the live site every photo slot shows an existing team photo, and the
+labelled placeholders only show on your own computer (`npm run dev`). Add the photos (section 2A) and push
+again; no other step is needed.
+
+## 0. Owner to-do list (in this order)
+
+1. **Google Business Profile** (business.google.com), 10 minutes:
+   - Website link: `https://www.primepestcontrol.ae/?utm_source=gbp&utm_medium=organic&utm_campaign=profile`
+     (so visits and WhatsApp/phone taps from the profile show as "gbp" in GA4 and in the lead sheet instead
+     of "direct").
+   - Hours: set to **Open 24 hours**, every day (the website says 24/7).
+   - Ask every customer for a Google review (the profile has 1; reviews are the strongest local signal).
+2. **Google Search Console**: Sitemaps > submit `https://www.primepestcontrol.ae/sitemap.xml`. Then URL
+   Inspection > Request indexing for: `/`, `/bird-control-dubai`, `/cockroach-control-dubai`,
+   `/bed-bug-treatment-dubai`, `/mosquito-control-dubai`, `/rodent-control`, `/commercial-pest-control-dubai`,
+   `/camel-spider-control-dubai`, `/pest-control-al-barari`.
+3. **GA4** (analytics.google.com > Admin):
+   - Events > mark `whatsapp_click`, `phone_call_click` and `generate_lead` as **key events**.
+   - Data streams > Configure tag settings > Define internal traffic: add the office/team IP, then
+     Data filters > activate "Internal traffic", so the team's own visits stop counting.
+4. **Lead sheet**: deploy the Apps Script (section 2C) and put the URL in `src/config/leadLog.ts`;
+   until then no rows are logged.
+5. **Photos**: real job photos, the hero technician and backgrounds, and the missing pest images (section 2A).
+6. **Prices**: confirm or adjust when ready (`docs/prices-for-review-whatsapp.txt`); change them only in
+   `src/config/prices.ts`.
+7. **Licence number, street address, years in business**: for trust badges and Google (section 2B).
+
+Expect 2 to 6 weeks of ranking movement while Google follows the 30 redirects and indexes the new pages.
+US and Indian impressions ("roach exterminator" and similar) will drop: they came from the old US template
+and were never Dubai customers.
 
 Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
 
@@ -53,8 +80,8 @@ Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
 - Warranty: **90 days (3 months)** with free re-treatment on every treatment that has a warranty (owner, 21 Nov 2026),
   and 90 days on bird netting and spikes installation. No warranty on mosquitoes, flies, snakes, scorpions,
   camel spiders, disinfection.
-- Termite inspection AED 250 and call-out AED 100 (only when no treatment is needed), both deducted if a treatment
-  is booked. Annual contracts: free call-outs for covered pests within 48 hours; bed bugs, termites, rodents, birds
+- Termite inspection AED 250 and call-out AED 50 (outside warranty or contract), both deducted from the job price when a job
+  is booked and completed. Annual contracts: free call-outs for covered pests within 48 hours; bed bugs, termites, rodents, birds
   and wasp nests quoted separately.
 - All of it is in `src/config/prices.ts` (`warrantyDays`, `SERVICE_TERMS`, `callout`) and shows on every price
   card, in a terms strip under the prices, and in the homepage FAQs. "100% guaranteed" claims were replaced with
@@ -114,14 +141,10 @@ Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
 Follow `docs/lead-tracking/README.md`: paste `docs/lead-tracking/apps-script.gs` into the sheet
 (Extensions > Apps Script), deploy as a web app, and put the URL in `src/config/leadLog.ts`.
 
-### D. Going live
-1. `npx tsc --noEmit && npm run lint && npm run build` must pass.
-2. Merge `seo-content-overhaul` into `main` and push; Vercel deploys the live site.
-3. On the live site, check a few old addresses redirect (e.g. `/roach-exterminator-near-me`,
-   `/crow-control-dubai`) and that pages load.
-4. Google Search Console: resubmit `https://www.primepestcontrol.ae/sitemap.xml`.
-5. GA4 Admin > Events: mark `phone_call_click`, `whatsapp_click` and `generate_lead` as key events.
-6. Test the lead sheet: open a page with `?leadtest=1` and tap WhatsApp; a grey test row appears.
+### D. Going live (done 25 Nov 2026)
+Merged into `main` and deployed; redirects checked on the live site. The remaining steps (sitemap, key
+events, lead sheet test with `?leadtest=1`) are in the owner to-do list at the top.
+For every later change: `npx tsc --noEmit && npm run lint && npm run build` must pass, then push to `main`.
 
 ### E. Later improvements (from `docs/seo-review-2026-11-21/service-gap-analysis.md`)
 - Dubai Municipality free-service FAQ; flying cockroach FAQ;
@@ -138,17 +161,18 @@ Follow `docs/lead-tracking/README.md`: paste `docs/lead-tracking/apps-script.gs`
 
 ```bash
 git fetch origin
-git checkout seo-content-overhaul
+git checkout main
 git pull
 npm install
 npm run dev        # preview at http://localhost:3000 (photo slots show labelled placeholders)
+# npm run build && npm run preview   # the live version at http://localhost:4000 (team photos, no placeholders)
 ```
 
 Then open Claude Code in VS Code and paste this prompt:
 
 ```
-Read CLAUDE.md and docs/HANDOVER.md first. We are on branch seo-content-overhaul, which is not live yet
-(main is the live site; do not touch it). Continue from section 2 of the handover:
+Read CLAUDE.md and docs/HANDOVER.md first. The site is live from the main branch (Vercel deploys every push
+to main). Continue from section 2 of the handover:
 1. Hero images: I added [file names] to public/assets/img/hero/. Add them to src/config/heroImages.ts as
    described in docs/hero-banner-images.md. Show me desktop (1920 and 1366x768) and phone (390 and 360)
    screenshots of one page per set.
@@ -160,12 +184,13 @@ Read CLAUDE.md and docs/HANDOVER.md first. We are on branch seo-content-overhaul
    docs/prices-for-review-whatsapp.txt.
 4. Lead sheet web app URL: [paste]. Put it in src/config/leadLog.ts.
 Run tsc, lint and build after each step (stop npm run dev before building, start it again after),
-keep CLAUDE.md and docs/HANDOVER.md up to date, and do not merge into main, commit or push until I ask.
+keep CLAUDE.md and docs/HANDOVER.md up to date, and do not commit or push until I ask (a push to main goes
+live straight away).
 Rules: no em dashes, no colons in headings, prices only via prices.ts, show desktop and phone screenshots
 before saying a change is done.
 ```
 
 Replace the brackets with what you have; leave out any step you are not ready for.
 
-**Going live** (only when the images are in): ask Claude *"Follow section 2D of docs/HANDOVER.md: check the
-build, merge seo-content-overhaul into main and push"*, then do steps 3 to 6 of 2D yourself.
+**Publishing a change:** when you are happy with the screenshots, ask Claude *"commit and push to main"*.
+Vercel deploys it to www.primepestcontrol.ae within a few minutes.

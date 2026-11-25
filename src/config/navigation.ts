@@ -5,7 +5,8 @@ import { COMMUNITIES } from './communities';
 
 export type NavLink = { label: string; href: string };
 export type NavGroup = { heading?: string; links: NavLink[] };
-export type NavMenu = { id: string; label: string; href: string; groups: NavGroup[]; columns: number };
+/** footer: the help line at the bottom of the desktop panel, next to the WhatsApp link */
+export type NavMenu = { id: string; label: string; href: string; groups: NavGroup[]; columns: number; footer: string };
 
 const areaLinks: NavLink[] = [...COMMUNITIES]
   .map((c) => ({ label: c.name.replace(/ \(.*\)$/, ''), href: `/pest-control-${c.slug}` }))
@@ -23,6 +24,7 @@ export const NAV_MENUS: NavMenu[] = [
     label: 'Pest Control',
     href: '/residential-pest-control',
     columns: 4,
+    footer: 'Not sure which pest it is? Send us a photo on WhatsApp.',
     groups: [
       {
         heading: 'For your home',
@@ -72,6 +74,7 @@ export const NAV_MENUS: NavMenu[] = [
     label: 'Bird Control',
     href: '/bird-control-dubai',
     columns: 1,
+    footer: 'Send a photo of the area for a free netting quote.',
     groups: [
       {
         links: [
@@ -89,6 +92,7 @@ export const NAV_MENUS: NavMenu[] = [
     label: 'Business',
     href: '/commercial-pest-control-dubai',
     columns: 1,
+    footer: 'Free site survey and a quote for your business.',
     groups: [
       {
         links: [
@@ -107,6 +111,7 @@ export const NAV_MENUS: NavMenu[] = [
     label: 'Areas',
     href: '/#service-area',
     columns: 3,
+    footer: "Don't see your area? We cover all of Dubai.",
     groups: columns(areaLinks, 3),
   },
 ];

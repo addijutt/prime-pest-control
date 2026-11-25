@@ -68,6 +68,8 @@ const PEST_IMAGE_FALLBACKS: Record<string, string> = {
   'balcony-net': 'bird',
   'terrace-net': 'bird',
   'car-park-net': 'bird',
+  // The mynah image shows a bird of prey (25 Nov 2026): neutral bird until the real mynah image is made
+  mynah: 'bird',
   'pigeon-nest': 'pigeon',
   'pigeon-droppings': 'pigeon',
   'stored-product-moth': 'weevil',

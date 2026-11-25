@@ -878,7 +878,8 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   '/lizard-control-dubai': {
     hero: {
       headline: 'Lizard & Gecko Control in Dubai. Humane & Lasting.',
-      pestIcons: [pest('House Gecko', '/lizard-control-dubai', 'shield'), pest('German Cockroach'), pest('Common House Spider'), pest('Fly', '/residential-pest-control', 'fly')],
+      // No gecko image yet (docs/pest-image-list.md): the tiles show the insects that draw lizards in
+      pestIcons: [pest('German Cockroach'), pest('Common House Spider'), pest('Fly', '/fly-control-dubai', 'fly'), pest('Mosquito', '/mosquito-control-dubai', 'mosquito')],
     },
     expertise: {
       title: 'Get Rid of Lizards by Removing What Attracts Them',
@@ -912,7 +913,8 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   '/snake-removal-dubai': {
     hero: {
       headline: 'Snake Removal in Dubai. Keep Away, WhatsApp Us.',
-      pestIcons: [pest('Snakes', '/snake-removal-dubai', 'shield'), pest('Rodents', '/rodent-control', 'rodent'), pest('Arabian Fat-tailed Scorpion'), pest('Camel Spider')],
+      // No snake image yet (docs/pest-image-list.md): the tiles show the pests that draw snakes in and the other desert-edge pests
+      pestIcons: [pest('Rodents', '/rodent-control', 'rodent'), pest('Arabian Fat-tailed Scorpion'), pest('Camel Spider')],
     },
     expertise: {
       title: 'Safe Snake Removal for Dubai Villas and Gardens',

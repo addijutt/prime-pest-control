@@ -80,5 +80,12 @@ These files exist but show the wrong thing or do not match the style.
 
 | File key | Problem | What it should show | Used on |
 |---|---|---|---|
-| `mynah` | Shows a bird of prey, not a mynah | Common mynah: brown bird with black head, yellow beak and yellow eye patch | All bird pages, Mynah control |
-| `house-crow` | Yellow background, unlike the other icons | House crow (grey neck, black body) on a plain white background | All bird pages |
+| `mynah` | Showed a bird of prey; until the real one exists the site shows the generic `bird` image (`PEST_IMAGE_FALLBACKS`). After adding it, remove `mynah` from the fallbacks | Common mynah: brown bird with black head, yellow beak and yellow eye patch | All bird pages, Mynah control |
+| `house-crow` | Fixed 25 Nov 2026 (yellow and grey background removed by `scripts/fix-crow-background.mjs`); a better photo is still welcome | House crow (grey neck, black body) on a plain white background | All bird pages |
+
+## Still missing (tiles removed until the image exists)
+
+| Key | What it should show | Where to add it back |
+|---|---|---|
+| `house-gecko` | House gecko (pale, see-through skin) on a white background | First tile of the Lizard page hero (`pageContent.ts`, `/lizard-control-dubai` `pestIcons`) |
+| `snake` | A Gulf sand snake or similar local snake, coiled, on a white background | First tile of the Snake page hero (`pageContent.ts`, `/snake-removal-dubai` `pestIcons`) |

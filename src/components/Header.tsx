@@ -9,6 +9,7 @@ import { HERO_V2 } from '../config/siteFlags';
 
 const PHONE = '055 304 5256';
 const PHONE_RAW = '+971553045256';
+const WHATSAPP_URL = 'https://wa.me/971553045256';
 
 const ChevronIcon: React.FC<{ open?: boolean }> = ({ open }) => (
   <svg
@@ -25,27 +26,35 @@ const ChevronIcon: React.FC<{ open?: boolean }> = ({ open }) => (
   </svg>
 );
 
-/** Desktop mega menu panel: grouped columns, no inner scrolling */
+/** Desktop mega menu panel: grouped columns, no inner scrolling, help strip at the bottom */
 const MegaPanel: React.FC<{ menu: NavMenu; open: boolean; onNavigate: () => void }> = ({ menu, open, onNavigate }) => (
   <div
     className={`mega-menu mega-menu--cols-${menu.columns}${open ? ' mega-menu--open' : ''}`}
     role="region"
     aria-label={`${menu.label} menu`}
   >
-    {menu.groups.map((group, i) => (
-      <div key={group.heading ?? i} className="mega-menu__group">
-        {group.heading ? <p className="mega-menu__heading">{group.heading}</p> : null}
-        <ul>
-          {group.links.map((link) => (
-            <li key={link.href + link.label}>
-              <Link href={link.href} className="mega-menu__link" onClick={onNavigate}>
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
+    <div className="mega-menu__cols">
+      {menu.groups.map((group, i) => (
+        <div key={group.heading ?? i} className="mega-menu__group">
+          {group.heading ? <p className="mega-menu__heading">{group.heading}</p> : null}
+          <ul>
+            {group.links.map((link) => (
+              <li key={link.href + link.label}>
+                <Link href={link.href} className="mega-menu__link" onClick={onNavigate}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div className="mega-menu__footer">
+      <span>{menu.footer}</span>
+      <a href={WHATSAPP_URL} className="mega-menu__footer-link dynamic-href">
+        Get a free quote <span aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 );
 
@@ -54,6 +63,17 @@ const Header: React.FC = () => {
   const [drawerSection, setDrawerSection] = useState<string | null>(null);
   const [desktopOpen, setDesktopOpen] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
+  // Short delay before a desktop menu closes, so it survives the mouse briefly leaving it on the way to a link
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openMenu = (id: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setDesktopOpen(id);
+  };
+  const closeMenuSoon = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setDesktopOpen(null), 150);
+  };
+  useEffect(() => () => { if (closeTimer.current) clearTimeout(closeTimer.current); }, []);
 
   const closeDrawer = () => {
     setDrawerOpen(false);
@@ -152,9 +172,9 @@ const Header: React.FC = () => {
                     <li
                       key={menu.id}
                       className="site-nav__mega-item"
-                      onMouseEnter={() => setDesktopOpen(menu.id)}
-                      onMouseLeave={() => setDesktopOpen(null)}
-                      onFocus={() => setDesktopOpen(menu.id)}
+                      onMouseEnter={() => openMenu(menu.id)}
+                      onMouseLeave={closeMenuSoon}
+                      onFocus={() => openMenu(menu.id)}
                       onBlur={(e) => {
                         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDesktopOpen(null);
                       }}

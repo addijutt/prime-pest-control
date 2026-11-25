@@ -78,7 +78,7 @@ export const PRICES = {
   'solar-bird': { label: 'Solar panel bird proofing', from: null, unit: 'mesh skirt around the panel array', visits: 'free survey and quote' },
 
   // Visits that are not part of a job (see SERVICE_TERMS)
-  'callout': { label: 'Call-out visit, no treatment needed', from: 100, unit: 'deducted if you book a treatment', visits: 'free under warranty or an annual contract' },
+  'callout': { label: 'Call-out visit', from: 50, unit: 'deducted from the job price when the job is booked and completed', visits: 'free under warranty or an annual contract' },
 
   // Business (quoted per site after a free survey, as is normal for contracts in Dubai)
   'restaurant-contract': { label: 'Restaurant pest control contract', from: null, unit: 'restaurants, cafes, cloud kitchens', visits: 'monthly visits + call-outs, report after every visit' },
