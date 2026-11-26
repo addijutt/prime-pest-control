@@ -7,8 +7,10 @@ real image is added.
 **Style:** the same style as the existing pest icons: the pest (or the sign / method) cut out on a plain white
 or transparent background, centred, no text. Real photos preferred; for methods (nets, spikes) a clear close-up.
 
-**Files (3 per image), in `public/assets/img/pests/`:** `<key>.webp` (base, about 400 × 400),
-`<key>-d.webp` (desktop, about 600 × 600) and `<key>-m.webp` (mobile, about 300 × 300). Once the 3 files are in
+**Ready-made image prompts for every image below:** `docs/pest-image-prompts.md`.
+
+**Files (3 per image), in `public/assets/img/pests/`, WebP with transparency (same as the existing ones):**
+`<key>.webp` (300 × 300), `<key>-d.webp` (150 × 150) and `<key>-m.webp` (100 × 100). Once the 3 files are in
 place, remove the key from `PEST_IMAGE_FALLBACKS` in `src/config/pageContentHelpers.ts`.
 
 Sorted by how many pages use the tile (most first).
