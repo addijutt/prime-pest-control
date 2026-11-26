@@ -1,5 +1,7 @@
 # Pest image list
 
+> **Status 26 Nov 2026: 54 of 62 added** (ChatGPT images, prompts in `docs/pest-image-prompts.md`; the `balcony-net` tile is an outside view of two tower balconies). **Still to make:** `termite-worker`, `winged-termite`, `tick-eggs`, `tick-larvae`, `bird-gel`, `terrace-net`, `wooden-pallets` (they show their stand-in until then), and optionally a better `house-crow`. Rows below are the original brief; an image exists for every key not in this status line.
+
 Tiles in the "What we treat" grids and hero pest icons that still use a stand-in image. Generated from
 `src/config/pageContent.ts` (21 Nov 2026). The site works without them; each tile shows the stand-in until the
 real image is added.
@@ -10,15 +12,16 @@ or transparent background, centred, no text. Real photos preferred; for methods 
 **Ready-made image prompts for every image below:** `docs/pest-image-prompts.md`.
 
 **Files (3 per image), in `public/assets/img/pests/`, WebP with transparency (same as the existing ones):**
-`<key>.webp` (300 × 300), `<key>-d.webp` (150 × 150) and `<key>-m.webp` (100 × 100). Once the 3 files are in
-place, remove the key from `PEST_IMAGE_FALLBACKS` in `src/config/pageContentHelpers.ts`.
+`<key>.webp` (300 × 300), `<key>-d.webp` (150 × 150) and `<key>-m.webp` (100 × 100). To add images: put the `<key>.png` files in one folder and run
+`node scripts/add-pest-images.mjs "<folder>"` (cuts out a white background, centres, writes the 3 sizes),
+then remove the keys from `PEST_IMAGE_FALLBACKS` in `src/config/pageContentHelpers.ts`.
 
 Sorted by how many pages use the tile (most first).
 
 | # | Tile | File key | What the image should show | Stand-in now | Pages |
 |---|---|---|---|---|---|
-| 1 | Bird Spikes | `bird-spikes` | Stainless steel bird spikes fixed on a ledge or parapet (method) | bird | 5 |
-| 2 | Camel Spider | `camel-spider` | Camel spider (solifuge): large sandy-coloured arachnid with big jaws | wolf-spider | 5 |
+| 1 | Bird Spikes | `bird-spikes` | ✅ Added 26 Nov 2026 (ChatGPT image) | - | 5 |
+| 2 | Camel Spider | `camel-spider` | ✅ Added 26 Nov 2026 (ChatGPT image) | - | 5 |
 | 3 | Subterranean Termite | `subterranean-termite` | Subterranean termite worker: creamy-white soft-bodied termite (the type that damages Dubai villas) | eastern-subterranean-termite | 5 |
 | 4 | Bird Netting | `bird-netting` | Bird net installed on a balcony or terrace (method) | bird | 4 |
 | 5 | Bird Wire | `bird-wire` | Tensioned bird wire along a ledge or railing (method) | bird | 4 |

@@ -78,7 +78,7 @@ const MOBILE_HERO_PESTS: MobileHeroPestItem[] = [
   { label: 'Mosquitoes', href: '/mosquito-control-dubai', image: `${BASE}/mosquito.webp` },
   { label: 'Hornets', href: '/hornet-nest-removal', image: `${BASE}/hornet.webp` },
   { label: 'Pigeons', href: '/pigeon-control-dubai', image: '/assets/img/pests/pigeon-m.webp' },
-  { label: 'Mynahs', href: '/mynah-bird-control', image: '/assets/img/pests/bird-m.webp' },
+  { label: 'Mynahs', href: '/mynah-bird-control', image: '/assets/img/pests/mynah-m.webp' },
   { label: 'Ticks', href: '/tick-control-dubai', image: '/assets/img/pests/brown-dog-tick-m.webp' },
   { label: 'Spiders', href: '/spider-control-dubai', image: `${BASE}/spider.webp` },
   { label: 'Fleas', href: '/pest-control-for-fleas', image: `${BASE}/flea.webp` },

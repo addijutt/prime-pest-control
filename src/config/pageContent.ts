@@ -423,7 +423,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       pestIcons: [
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
         { label: 'Mynah Control', href: '/mynah-bird-control', imageKey: 'mynah' },
-        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
+        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird-netting' },
         { label: 'Bird Spikes', href: '/bird-control-dubai', imageKey: 'bird-spikes' },
       ],
     },
@@ -466,7 +466,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       headline: 'Pigeon Control in Dubai. Guaranteed.',
       pestIcons: [
         { label: 'Pigeon Removal', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
-        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
+        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird-netting' },
         { label: 'Bird Spikes', href: '/bird-control-dubai', imageKey: 'bird-spikes' },
         { label: 'All Bird Control', href: '/bird-control-dubai', imageKey: 'bird' },
       ],
@@ -507,7 +507,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       pestIcons: [
         { label: 'Mynah Removal', href: '/mynah-bird-control', imageKey: 'mynah' },
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
-        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
+        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird-netting' },
         { label: 'All Bird Control', href: '/bird-control-dubai', imageKey: 'bird' },
       ],
     },
@@ -537,7 +537,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
     hero: {
       headline: 'Dubai Bird Netting. Installed Same-Day.',
       pestIcons: [
-        { label: 'Anti-Bird Nets', href: '/bird-netting-dubai', imageKey: 'bird' },
+        { label: 'Anti-Bird Nets', href: '/bird-netting-dubai', imageKey: 'bird-netting' },
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
         { label: 'Bird Spikes', href: '/bird-control-dubai', imageKey: 'bird-spikes' },
         { label: 'All Bird Control', href: '/bird-control-dubai', imageKey: 'bird' },
@@ -741,10 +741,10 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
     hero: {
       headline: 'Dubai Solar Panel Bird Proofing. Same-Day.',
       pestIcons: [
-        { label: 'Solar Bird Proofing', href: '/solar-panel-bird-proofing-dubai', imageKey: 'bird' },
+        { label: 'Solar Bird Proofing', href: '/solar-panel-bird-proofing-dubai', imageKey: 'solar-panel-mesh' },
         { label: 'Pigeon Control', href: '/pigeon-control-dubai', imageKey: 'pigeon' },
         { label: 'Bird Spikes', href: '/bird-control-dubai', imageKey: 'bird-spikes' },
-        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird' },
+        { label: 'Bird Netting', href: '/bird-netting-dubai', imageKey: 'bird-netting' },
       ],
     },
     expertise: {
@@ -879,8 +879,8 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   '/lizard-control-dubai': {
     hero: {
       headline: 'Lizard & Gecko Control in Dubai. Humane & Lasting.',
-      // No gecko image yet (docs/pest-image-list.md): the tiles show the insects that draw lizards in
-      pestIcons: [pest('German Cockroach'), pest('Common House Spider'), pest('Fly', '/fly-control-dubai', 'fly'), pest('Mosquito', '/mosquito-control-dubai', 'mosquito')],
+      // The gecko, then the insects that draw lizards in
+      pestIcons: [pest('House Gecko', '/lizard-control-dubai', 'house-gecko'), pest('German Cockroach'), pest('Common House Spider'), pest('Fly', '/fly-control-dubai', 'fly'), pest('Mosquito', '/mosquito-control-dubai', 'mosquito')],
     },
     expertise: {
       title: 'Get Rid of Lizards by Removing What Attracts Them',
@@ -914,8 +914,8 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
   '/snake-removal-dubai': {
     hero: {
       headline: 'Snake Removal in Dubai. Keep Away, WhatsApp Us.',
-      // No snake image yet (docs/pest-image-list.md): the tiles show the pests that draw snakes in and the other desert-edge pests
-      pestIcons: [pest('Rodents', '/rodent-control', 'rodent'), pest('Arabian Fat-tailed Scorpion'), pest('Camel Spider')],
+      // The snake, then the pests that draw snakes in and the other desert-edge pests
+      pestIcons: [pest('Snakes', '/snake-removal-dubai', 'snake'), pest('Rodents', '/rodent-control', 'rodent'), pest('Arabian Fat-tailed Scorpion'), pest('Camel Spider')],
     },
     expertise: {
       title: 'Safe Snake Removal for Dubai Villas and Gardens',
