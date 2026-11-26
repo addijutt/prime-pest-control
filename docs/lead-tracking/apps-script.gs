@@ -7,7 +7,9 @@
  * Copy the web app URL into src/config/leadLog.ts (LEAD_LOG_URL) and redeploy the site.
  *
  * The website sends one small JSON message per WhatsApp tap, phone tap or contact form send.
- * Nothing personal is stored: no IP address, name, phone number or message text.
+ * Nothing personal is stored: no IP address, name, phone number or message text. For visits from a Google ad
+ * the ad click ID is stored (columns N and O) so booked jobs can be uploaded to Google Ads as conversions.
+ * Columns P to R (Booked?, Job value, Booked on) are filled in by hand and never written by this script.
  */
 
 const SHEET_NAME = 'Leads';
@@ -34,6 +36,8 @@ function doPost(e) {
       clean_(d.device, 20),
       clean_(d.visit, 20),
       d.test ? 'Yes' : 'No',
+      clean_(d.clickId, 200),
+      clean_(d.clickType, 10),
     ];
 
     const lock = LockService.getScriptLock();

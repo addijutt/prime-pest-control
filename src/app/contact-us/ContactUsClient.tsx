@@ -3,7 +3,7 @@
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import WhatsAppIcon from '../../components/WhatsAppIcon';
-import { logLead } from '../../utils/leadLog';
+import { logLead, whatsappRefLine } from '../../utils/leadLog';
 import { UrgencyComponentImage } from '../../utils/images';
 import ServiceAreaSection from '../../components/sections/ServiceAreaSection';
 import FreeQuoteSection from '../../components/sections/FreeQuoteSection';
@@ -58,6 +58,7 @@ export default function ContactUsClient() {
       `*Phone:* ${formData.Phone}`,
       formData.Email   ? `*Email:* ${formData.Email}`     : null,
       formData.Problem ? `*Problem:* ${formData.Problem}` : null,
+      whatsappRefLine() || null,
     ].filter(Boolean).join('\n');
 
     // The form opens WhatsApp with the details: count it as a lead in GA4 (window.open is not a link click,

@@ -2,7 +2,7 @@
 // Setup: docs/lead-tracking/README.md. Leave LEAD_LOG_URL empty to switch logging off.
 
 /** Web app URL from the sheet's Apps Script deployment (https://script.google.com/macros/s/.../exec) */
-export const LEAD_LOG_URL = '';
+export const LEAD_LOG_URL = 'https://script.google.com/macros/s/AKfycbzGD9csRlrIDIARV7pEUPpBqe6eVWycYBSRbpGVCgOnwFC-_A7VbBl7eSb10ozweEb4/exec';
 
 /** Must match TOKEN in docs/lead-tracking/apps-script.gs */
 export const LEAD_LOG_TOKEN = 'ppc-leads-2026';

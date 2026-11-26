@@ -119,7 +119,7 @@ All image paths live here. Import from here, never hardcode `/assets/img/...` pa
 
 ### Tracking
 
-- **Lead sheet** (live log of every WhatsApp tap, phone tap and contact form send, by page, button, source and device): Google Sheet "Prime Pest Control Leads (WhatsApp & Calls)" https://docs.google.com/spreadsheets/d/1SuwZPOCvJgsef12X1W5kq0BMqD3w3p2xQlTLVQNt8-0/edit (tabs: Dashboard, Leads, About; Dubai time zone). Site side: `LeadLogger.tsx` (click listener, mounted in `layout.tsx`), `utils/leadLog.ts` (attribution per visit in sessionStorage, button zones, sendBeacon as text/plain), `config/leadLog.ts` (`LEAD_LOG_URL`, token, live host). Receiver: `docs/lead-tracking/apps-script.gs` pasted into the sheet and deployed as a web app; setup in `docs/lead-tracking/README.md`. Real rows only from www.primepestcontrol.ae; `?leadtest=1` sends test rows anywhere (Test = Yes, left out of the dashboard). No personal data stored. **`LEAD_LOG_URL` is empty until the owner deploys the Apps Script.**
+- **Lead sheet** (live log of every WhatsApp tap, phone tap and contact form send, by page, button, source and device): Google Sheet "Prime Pest Control Leads (WhatsApp & Calls)" https://docs.google.com/spreadsheets/d/1SuwZPOCvJgsef12X1W5kq0BMqD3w3p2xQlTLVQNt8-0/edit (tabs: Dashboard, Leads, About; Dubai time zone). Site side: `LeadLogger.tsx` (click listener, mounted in `layout.tsx`), `utils/leadLog.ts` (attribution per visit in sessionStorage, button zones, sendBeacon as text/plain), `config/leadLog.ts` (`LEAD_LOG_URL`, token, live host). Receiver: `docs/lead-tracking/apps-script.gs` pasted into the sheet and deployed as a web app; setup in `docs/lead-tracking/README.md`. Real rows only from www.primepestcontrol.ae; `?leadtest=1` sends test rows anywhere (Test = Yes, left out of the dashboard). No personal data stored. **`LEAD_LOG_URL` set 26 Nov 2026** (web app .../AKfycbzGD9cs.../exec). Deployment access must stay "Who has access: Anyone" (otherwise 401). Tested end to end 26 Nov 2026: test row arrives with all columns incl. ad click ID. **Google Ads ready (26 Nov 2026):** the visit keeps the ad click ID (gclid / gbraid / wbraid, localStorage 90 days) and sends it (Leads N, O); every WhatsApp link gets "Ref: XXXXXX" (the visit code, Leads L) added to its message at click time (`withWhatsAppRef` in `LeadLogger`, contact form via `whatsappRefLine`). Owner fills Booked? / Job value / Booked on (P to R); tab "Google Ads upload" builds the offline conversion file (FILTER formula, TimeZone +0400, conversion name on "Ads settings"). Steps: `docs/lead-tracking/README.md`. Owner redeployed the updated script 26 Nov 2026.
 
 - GTM: `GTM-MLXL4T5N`
 - GA4: `G-VF1DJE32KE` (stream: Prime Pest Control - Web, stream ID: 16289271366)
@@ -166,7 +166,7 @@ Per-page schemas:
 - **KG ID**: `/g/11zzm2kjkl`
 - **Category**: `pest_control_service`
 
-> **NAP gap**: GMB full street address is not yet in the schema (only `addressLocality: Dubai`). Once the owner provides the street address, add it to `localBusinessSchema.address` in `layout.tsx` for full NAP consistency.
+> **Address (decided 26 Nov 2026)**: service-area business, no public street address (same as the GBP). Schema keeps `addressLocality: Dubai` only; every directory hides the address and sets the service area to Dubai. Listing details and progress: Google Sheet "Prime Pest Control: Business Listings" https://docs.google.com/spreadsheets/d/1hKH5XsYmGam4C_3OxbivxF4l6bx3VB1D28F9D1bzyT8/edit (same content as `docs/business-listing-sheet.md`). Reviews: Google Sheet "Prime Pest Control: Google Reviews" https://docs.google.com/spreadsheets/d/1__zQe2tkt_EmPUrw7gDxI0btV8RzxsTD_qhvlLFtA2o/edit (messages, review tracker, replies, rules; same as `docs/review-messages.md`). Review link: https://g.page/r/CQtAAXyhoqatEBM/review
 
 ---
 
@@ -176,6 +176,7 @@ Per-page schemas:
 
 | Date | Task | Files Changed |
 |------|------|---------------|
+| 2026-11-26 | **Listing sheet + review messages**: `docs/business-listing-sheet.md` (exact name, phone, website, hours, categories, short/medium/long descriptions, services with links, images, directories in order with status, local link ideas) and `docs/review-messages.md` (review link, WhatsApp messages in English, Arabic and Roman Urdu, reminder, what to do when a customer asks you to write the review, Google rules, reply templates). Search Console grouped by service (90 days): birds 115 impressions avg position 66, cockroaches 57 / 73, bed bugs 52 / 43, rats 35 / 70, scorpions + camel spiders 22 / 18, wasps 20 / 49, mosquitoes 18 / 67; all 15 clicks from the brand name | `docs/` |
 | 2026-11-26 | **Unique phone snippet per page**: Google showed the generic phone-hero line "We specialize in pest control, bird control & pest removal across Dubai!" as the snippet (same on all 54 pages). `HomeHero` now takes `tagline` (service pages: their meta description, area pages: theirs, homepage: own line). Bird FAQ gained "What do your bird control services include?". Keyword-specific wording changes for one search were tried and reverted (owner): optimise pages for the whole query group from Search Console, not single searches | `HomeHero.tsx`, `[slug]/page.tsx`, `pageContent.ts` |
 | 2026-11-26 | **New brand kit logos + icons**: `scripts/build-brand-assets.mjs <kit folder>` builds everything in `public/assets/img/brand/` from the brand kit (Downloads/Prime-Pest-Control-Complete-Brand-Kit): trimmed horizontal logo for the desktop header (60px), vertical logo for the phone header (58px) and phone menu (52px) (`logo-vertical.webp`: the kit version with the gap between mark and name tightened, so the name is readable at phone size), white-text version for the black footer, `src/app/favicon.ico` (16/32/48 on a white tile so it shows on dark tabs), apple-touch-icon, 192/512 + maskable icons for the new `src/app/manifest.ts`, schema `logo` (600px square) and a 1200 × 630 share image `og-image.jpg` (logo + one line, no AI technician photo; the kit says that photo is illustrative). Old `prime-brand-kit` folder removed. Facebook link is now `facebook.com/primepestdubai` (footer + schema `sameAs`). LocalBusiness `name` = "Prime Pest Control" (same as GBP and Facebook), `alternateName` "Prime Pest Control Dubai". GBP checked 26 Nov: Open 24 hours, 5.0 (1 review), website link still without the UTM tag | `images.ts`, `layout.tsx`, `manifest.ts`, `Footer.tsx`, `globals.css`, `scripts/build-brand-assets.mjs`, `public/assets/img/brand/` |
 | 2026-11-26 | **Mega menu v2 (responsive)**: every panel = light intro column on the left (menu name, help line from `footer` in `navigation.ts`, green WhatsApp "Get a free quote" button) + link columns sized to their content (`width: max-content`, no fixed column widths, so no empty space). Wide panels (Pest Control, Areas; `columns > 1`) hang from the right edge of the nav list (`.site-nav__mega-item--wide` is static, `.site-nav__list` relative), so they no longer run off to the left on small laptops; Bird Control and Business hang from their own item. Below 1024px the intro becomes a strip under the links; Pest Control keeps 4 columns down to 768px. Checked at 1920, 1024, 820 and 390px | `Header.tsx`, `globals.css` |
@@ -222,7 +223,7 @@ Per-page schemas:
 
 ### 🔄 Ongoing
 
-- **NAP consistency audit** — GMB street address not yet in schema. Owner to provide full address → add to `localBusinessSchema.address`.
+- **Directory listings**: owner works through the Directories tab of the Business Listings sheet (Bing Places, Apple Business Connect, 2GIS, Yellow Pages UAE, Dubizzle, LinkedIn, Foursquare).
 - **Content**: all 30 service pages have a guide (`serviceGuides.ts` + `serviceGuidesMore.ts`). Next: review older expertise texts and FAQs page by page.
 - **More communities** (owner wants more later): 20 live (`communities.ts` + `communitiesMore.ts`). Next candidates: Arjan, Al Furjan, Town Square, Mudon, Dubai Investments Park, Al Qusais, Al Nahda, The Greens / The Views, Emirates Hills, Nad Al Sheba.
 - **Prices in `prices.ts` are market-based**: owner to confirm or adjust each line once.
@@ -235,13 +236,12 @@ Per-page schemas:
 ### 🔴 Important / Urgent
 
 - **SEO + GA4 review 21 Nov 2026** (full report: `docs/seo-review-2026-11-21/Prime-Pest-Control-SEO-Lead-Review-2026-11-21.pdf`, raw Search Console + GA4 data in `docs/seo-review-2026-11-21/data/`). Waiting on the owner:
-  - **Dubai Municipality approval / trade licence number**, street address, years in business: needed for trust badges and NAP. The badge image (`TrustBadgesCombined`, in "100% Satisfaction Guarantee") shows Dubai Municipality "Approved", ISO 9001, ISO 14001 and NPMA (a US association): keep only what the owner can prove.
+  - **Dubai Municipality approval / trade licence number**, years in business: needed for trust badges and NAP. The badge image (`TrustBadgesCombined`, in "100% Satisfaction Guarantee") shows Dubai Municipality "Approved", ISO 9001, ISO 14001 and NPMA (a US association): keep only what the owner can prove.
   - **Page plan v2** in `docs/seo-review-2026-11-21/merge-map.md`. Done (21 Nov): Q0 licences (owner has all approvals incl. termite, bird, fumigation), A merges, C address changes. Still open: Q3 which extra services they offer (move-in/out, lizards, snakes, disinfection, pre-construction termite), Q4 prices and visits per service, Q5 main communities. Then section D (new pages) and E (content).
   - **GA4 key events**: mark `phone_call_click`, `whatsapp_click`, `generate_lead` as key events (GA4 Admin → Events).
 - "Top Rated Customer Service" (Why Choose Us list, contact page) is a rating claim with 1 Google review; reword or drop it.
 - Service pages share ~78% of their text (only hero + expertise differ per page): unique content per money page is the main ranking job.
 
-- **GMB street address** — add to schema once confirmed. Required for full NAP consistency (critical for local SEO).
 - **Review count**: the schema has no rating now. Once GMB has enough real reviews, add `aggregateRating` back with the exact GMB numbers and keep it in sync.
 - **Sitemap submission** — submit `https://www.primepestcontrol.ae/sitemap.xml` to Google Search Console and Bing Webmaster Tools if not already done.
 
@@ -251,7 +251,7 @@ Per-page schemas:
 
 #### SEO / AEO / GEO
 
-- [ ] **Add full street address to LocalBusiness schema** — waiting on owner confirmation
+- [x] **Street address**: not shown (service-area business, decided 26 Nov 2026)
 - [x] **Google Search Console** — Domain property (`primepestcontrol.ae`) verified via DNS TXT record ✅
 - [ ] **Submit sitemap in GSC** — go to GSC → Sitemaps → submit `https://www.primepestcontrol.ae/sitemap.xml`
 - [ ] **Add `Review` schema items** — add 3–5 individual reviews as JSON-LD to boost E-E-A-T for AI engines (use real GMB reviews)

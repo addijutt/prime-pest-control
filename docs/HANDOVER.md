@@ -15,7 +15,8 @@ again; no other step is needed.
      of "direct").
    - Hours: done (Open 24 hours, checked 26 Nov 2026).
    - Logo: the profile photo and cover can use the brand kit (`social/google-business-profile-light.png`, `covers/google-business-cover-light.png`).
-   - Ask every customer for a Google review (the profile has 1; reviews are the strongest local signal).
+   - Ask every customer for a Google review (the profile has 1; reviews are the strongest local signal). Messages: `docs/review-messages.md`.
+   - List the business in directories with the same details: `docs/business-listing-sheet.md`.
 2. **Google Search Console**: Sitemaps > submit `https://www.primepestcontrol.ae/sitemap.xml`. Then URL
    Inspection > Request indexing for: `/`, `/bird-control-dubai`, `/cockroach-control-dubai`,
    `/bed-bug-treatment-dubai`, `/mosquito-control-dubai`, `/rodent-control`, `/commercial-pest-control-dubai`,
