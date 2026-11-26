@@ -140,12 +140,16 @@ interface HomeHeroProps {
   warrantyDays?: number;
   /** Page path, picks the hero image set (config/heroImages.ts) */
   pathname?: string;
+  /** Phone hero sentence under the WhatsApp button. Unique per page (the page's meta description): Google
+   *  reads the phone page and used to show the same generic sentence as the snippet for every page. */
+  tagline?: string;
 }
 
 const HomeHero: React.FC<HomeHeroProps> = ({
   title = 'Expert Pest & Bird Control in Dubai',
   desktopPestIcons,
   fromPrice,
+  tagline = 'Pest and bird control services across every Dubai community. Open 24/7, with a free quote on WhatsApp.',
   warrantyDays,
   pathname = '/',
 }) => {
@@ -357,7 +361,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
           </a>
 
           <p className="home-hero-mobile__tagline">
-            We specialize in pest control, bird control &amp; pest removal across Dubai!
+            {tagline}
           </p>
 
           <ul className="home-hero-mobile__benefits">

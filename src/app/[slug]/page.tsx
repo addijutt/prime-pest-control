@@ -107,6 +107,7 @@ export default async function SlugPage({
           fromPrice={heroPriceText(community.priceKeys, 'lowest')}
           warrantyDays={heroWarrantyDays(community.priceKeys)}
           pathname={`/${slug}`}
+          tagline={community.metaDescription}
         />
         <GuideIntroSection
           eyebrow={community.homes}
@@ -172,6 +173,7 @@ export default async function SlugPage({
         fromPrice={guide ? heroPriceText(guide.priceKeys) : undefined}
         warrantyDays={guide ? heroWarrantyDays(guide.priceKeys) : 0}
         pathname={pathname}
+        tagline={pageMeta.description}
       />
       {guide ? (
         <>

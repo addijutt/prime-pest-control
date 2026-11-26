@@ -450,6 +450,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
     },
     faqTitle: 'Bird Control FAQs',
     faqs: [
+      { question: 'What do your bird control services include?', answer: 'A free survey of every spot birds use, removal of nests and droppings, disinfection, and the proofing that suits each spot: netting for balconies and terraces, stainless steel spikes or wire for ledges, parapets and railings, gel where spikes cannot be fixed, and mesh for solar panels and AC units. We cover villas, apartments, towers, offices, warehouses and restaurants across Dubai, and give a written quote before any work starts.' },
       { question: 'What is the most effective bird control method in Dubai?', answer: 'The most effective solution depends on the species and location. Anti-bird netting is the most permanent solution for balconies and rooftops. Spikes work well on ledges and parapets. Gel and visual deterrents are used where aesthetics are important. We recommend the right combination after assessing your property.' },
       { question: 'Is bird control humane?', answer: 'Yes. Our bird control methods are deterrent-based. We prevent birds from accessing and roosting on your property without harming them. All methods we use comply with UAE wildlife regulations.' },
       { question: 'How long does bird netting last?', answer: 'UV-resistant bird netting installed in Dubai typically lasts 5–10 years with no maintenance required. We use high-quality nets designed to withstand Dubai\'s extreme heat and sun.' },
