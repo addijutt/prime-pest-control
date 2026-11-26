@@ -22,7 +22,10 @@ export const metadata: Metadata = {
       'Expert pest and bird control in Dubai. Cockroaches, bed bugs, termites, pigeons, mynahs & 50+ more. Same-day service available. WhatsApp for a free quote.',
     images: [
       {
-        url: 'https://www.primepestcontrol.ae/assets/img/prime-brand-kit/prime-brand-kit/social/prime-profile-1080.png',
+        url: 'https://www.primepestcontrol.ae/assets/img/brand/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prime Pest Control: pest and bird control in Dubai',
       },
     ],
     siteName: 'Prime Pest Control Dubai',
@@ -34,12 +37,15 @@ export const metadata: Metadata = {
     description:
       'Expert pest and bird control in Dubai. Same-day service. WhatsApp for a free quote.',
     images: [
-      'https://www.primepestcontrol.ae/assets/img/prime-brand-kit/prime-brand-kit/social/prime-profile-1080.png',
+      'https://www.primepestcontrol.ae/assets/img/brand/og-image.jpg',
     ],
   },
   icons: {
-    icon: '/assets/img/prime-brand-kit/prime-brand-kit/web/favicon.ico',
-    apple: '/assets/img/prime-brand-kit/prime-brand-kit/web/web-apple-icon.png',
+    // /favicon.ico comes from src/app/favicon.ico (Next adds the link itself)
+    icon: [
+      { url: '/assets/img/brand/icon-192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: { url: '/assets/img/brand/apple-touch-icon.png', sizes: '180x180' },
   },
 };
 
@@ -47,8 +53,11 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://www.primepestcontrol.ae/#business',
-  name: 'Prime Pest Control Dubai',
-  image: 'https://www.primepestcontrol.ae/assets/img/prime-brand-kit/prime-brand-kit/web/web-schema-logo.png',
+  // Same name as the Google Business Profile and Facebook page
+  name: 'Prime Pest Control',
+  alternateName: 'Prime Pest Control Dubai',
+  image: 'https://www.primepestcontrol.ae/assets/img/brand/og-image.jpg',
+  logo: 'https://www.primepestcontrol.ae/assets/img/brand/schema-logo.png',
   description: 'Professional pest and bird control services across all Dubai communities. We handle cockroaches, bed bugs, termites, rodents, pigeons, mynahs and 50+ more pest problems with same-day service, free quotes, a 100% satisfaction guarantee and a 90-day warranty.',
   url: 'https://www.primepestcontrol.ae',
   telephone: '+971553045256',
@@ -101,7 +110,7 @@ const localBusinessSchema = {
   ],
   sameAs: [
     'https://www.instagram.com/primepestdubai/',
-    'https://www.facebook.com/profile.php?id=61595101124439',
+    'https://www.facebook.com/primepestdubai',
     'https://maps.app.goo.gl/qB9B8YiMyvSbGfxj7',
   ],
   knowsAbout: [

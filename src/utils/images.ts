@@ -1,6 +1,7 @@
-export const FooterLogo = '/assets/img/prime-brand-kit/prime-brand-kit/web/web-logo-white.png';
-export const NewLogo = '/assets/img/prime-brand-kit/prime-brand-kit/web/web-logo.png';
-export const NewMobileLogo = '/assets/img/prime-brand-kit/prime-brand-kit/logo/prime-logo-stacked.png';
+// Logos (built from the brand kit by scripts/build-brand-assets.mjs)
+export const FooterLogo = '/assets/img/brand/logo-horizontal-white.webp';
+export const NewLogo = '/assets/img/brand/logo-horizontal.webp';
+export const NewMobileLogo = '/assets/img/brand/logo-vertical.webp';
 export const FeedbackJayLeigh = '/assets/img/feedback-Jay-Leigh.webp';
 export const TrustedLogos = '/assets/img/trusted-logos.avif';
 export const Service01 = '/assets/img/service01.webp';

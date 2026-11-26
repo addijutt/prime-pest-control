@@ -13,7 +13,8 @@ again; no other step is needed.
    - Website link: `https://www.primepestcontrol.ae/?utm_source=gbp&utm_medium=organic&utm_campaign=profile`
      (so visits and WhatsApp/phone taps from the profile show as "gbp" in GA4 and in the lead sheet instead
      of "direct").
-   - Hours: set to **Open 24 hours**, every day (the website says 24/7).
+   - Hours: done (Open 24 hours, checked 26 Nov 2026).
+   - Logo: the profile photo and cover can use the brand kit (`social/google-business-profile-light.png`, `covers/google-business-cover-light.png`).
    - Ask every customer for a Google review (the profile has 1; reviews are the strongest local signal).
 2. **Google Search Console**: Sitemaps > submit `https://www.primepestcontrol.ae/sitemap.xml`. Then URL
    Inspection > Request indexing for: `/`, `/bird-control-dubai`, `/cockroach-control-dubai`,
@@ -135,7 +136,7 @@ Full project notes for developers and for Claude: `CLAUDE.md` (read it first).
   call-out charge, and whether to keep the "AED 299 special" offer.
 - Dubai Municipality licence / approval numbers, street address, years in business (for trust badges and
   Google). Check which badges are real: the badge image shows DM Approved, ISO 9001, ISO 14001 and NPMA.
-- Google Business Profile: set the hours to **Open 24 hours** (it still says "Closes 10 PM").
+- Google Business Profile: hours are Open 24 hours (done 26 Nov 2026).
 
 ### C. Lead sheet (5 minutes, needs the sheet owner's Google account)
 Follow `docs/lead-tracking/README.md`: paste `docs/lead-tracking/apps-script.gs` into the sheet
@@ -194,3 +195,9 @@ Replace the brackets with what you have; leave out any step you are not ready fo
 
 **Publishing a change:** when you are happy with the screenshots, ask Claude *"commit and push to main"*.
 Vercel deploys it to www.primepestcontrol.ae within a few minutes.
+
+## Logos and icons
+
+All site logos, favicons, app icons and the share image are built from the brand kit with
+`node scripts/build-brand-assets.mjs "<path to Prime-Pest-Control-Complete-Brand-Kit>"` (output in
+`public/assets/img/brand/` and `src/app/favicon.ico`). Run it again if the kit changes.

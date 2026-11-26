@@ -46,7 +46,7 @@ const Footer: React.FC = () => (
           <span>Instagram</span>
         </a>
         <a
-          href="https://www.facebook.com/profile.php?id=61595101124439"
+          href="https://www.facebook.com/primepestdubai"
           className="footer-social__btn footer-social__btn--facebook"
           target="_blank"
           rel="noopener noreferrer"

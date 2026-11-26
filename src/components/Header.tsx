@@ -26,13 +26,20 @@ const ChevronIcon: React.FC<{ open?: boolean }> = ({ open }) => (
   </svg>
 );
 
-/** Desktop mega menu panel: grouped columns, no inner scrolling, help strip at the bottom */
+/** Desktop mega menu panel: intro column (title, help line, WhatsApp) + grouped link columns */
 const MegaPanel: React.FC<{ menu: NavMenu; open: boolean; onNavigate: () => void }> = ({ menu, open, onNavigate }) => (
   <div
-    className={`mega-menu mega-menu--cols-${menu.columns}${open ? ' mega-menu--open' : ''}`}
+    className={`mega-menu mega-menu--cols-${menu.columns}${menu.columns > 1 ? ' mega-menu--wide' : ''}${open ? ' mega-menu--open' : ''}`}
     role="region"
     aria-label={`${menu.label} menu`}
   >
+    <div className="mega-menu__aside">
+      <p className="mega-menu__title">{menu.label}</p>
+      <p className="mega-menu__text">{menu.footer}</p>
+      <a href={WHATSAPP_URL} className="mega-menu__cta dynamic-href">
+        <i className="fab fa-whatsapp" aria-hidden="true"></i> Get a free quote
+      </a>
+    </div>
     <div className="mega-menu__cols">
       {menu.groups.map((group, i) => (
         <div key={group.heading ?? i} className="mega-menu__group">
@@ -48,12 +55,6 @@ const MegaPanel: React.FC<{ menu: NavMenu; open: boolean; onNavigate: () => void
           </ul>
         </div>
       ))}
-    </div>
-    <div className="mega-menu__footer">
-      <span>{menu.footer}</span>
-      <a href={WHATSAPP_URL} className="mega-menu__footer-link dynamic-href">
-        Get a free quote <span aria-hidden="true">→</span>
-      </a>
     </div>
   </div>
 );
@@ -171,7 +172,7 @@ const Header: React.FC = () => {
                   return (
                     <li
                       key={menu.id}
-                      className="site-nav__mega-item"
+                      className={`site-nav__mega-item${menu.columns > 1 ? ' site-nav__mega-item--wide' : ''}`}
                       onMouseEnter={() => openMenu(menu.id)}
                       onMouseLeave={closeMenuSoon}
                       onFocus={() => openMenu(menu.id)}
