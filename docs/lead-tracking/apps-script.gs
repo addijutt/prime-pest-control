@@ -42,7 +42,10 @@ function doPost(e) {
 
     const lock = LockService.getScriptLock();
     lock.tryLock(5000);
-    SpreadsheetApp.getActive().getSheetByName(SHEET_NAME).appendRow(row);
+    const sheet = SpreadsheetApp.getActive().getSheetByName(SHEET_NAME);
+    sheet.appendRow(row);
+    // appendRow ignores the column's format: show the time like the rest of the sheet
+    sheet.getRange(sheet.getLastRow(), 1).setNumberFormat('d mmm yyyy, hh:mm');
     lock.releaseLock();
     return reply_('ok');
   } catch (err) {
