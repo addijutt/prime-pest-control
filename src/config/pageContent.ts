@@ -112,7 +112,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       headline: 'Free Pest & Bird Control Quote in Dubai',
       pestIcons: [
         pest('Ants', '/ant-control-dubai', 'black-ant'),
-        pest('Mice', '/rodent-control', 'white-mouse'),
+        pest('Mice', '/rodent-control', 'house-mouse'),
         pest('Cockroaches', '/cockroach-control-dubai', 'roach'),
         pest('Termites', '/termite-control', 'termite'),
       ],
