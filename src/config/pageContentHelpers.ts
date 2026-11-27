@@ -30,14 +30,7 @@ const PEST_ASSET_BASE = '/assets/img/pests';
 const PEST_IMAGE_FALLBACKS: Record<string, string> = {
   // --- Dubai species and "signs" tiles added 21 Nov 2026: stand-ins until the real image exists.
   //     Full list of images to produce: docs/pest-image-list.md
-  'winged-termite': 'termite',
-  'termite-worker': 'termite',
   midges: 'gnat',
-  'tick-larvae': 'brown-dog-tick',
-  'tick-eggs': 'brown-dog-tick',
-  'bird-gel': 'bird',
-  'terrace-net': 'bird',
-  'wooden-pallets': 'commercial-pc',
   // --- Ticks ---
   'american-dog-tick': 'blacklegged-tick',
   'bont-tick': 'blacklegged-tick',

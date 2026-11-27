@@ -1,6 +1,6 @@
 # Pest image list
 
-> **Status 26 Nov 2026: 54 of 62 added** (ChatGPT images, prompts in `docs/pest-image-prompts.md`; the `balcony-net` tile is an outside view of two tower balconies). **Still to make:** `termite-worker`, `winged-termite`, `tick-eggs`, `tick-larvae`, `bird-gel`, `terrace-net`, `wooden-pallets` (they show their stand-in until then), and optionally a better `house-crow`. Rows below are the original brief; an image exists for every key not in this status line.
+> **Status 27 Nov 2026: all 62 images added** (ChatGPT images made with `docs/pest-image-prompts.md`, converted with `scripts/add-pest-images.mjs`; `house-crow` replaced with a new image; the `balcony-net` tile is an outside view of two tower balconies). The table below is the original brief, kept for reference.
 
 Tiles in the "What we treat" grids and hero pest icons that still use a stand-in image. Generated from
 `src/config/pageContent.ts` (21 Nov 2026). The site works without them; each tile shows the stand-in until the
