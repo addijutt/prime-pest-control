@@ -3312,7 +3312,8 @@ button:active {
     --theme-section-padding-y: 36px;
     --theme-testimonials-padding-y: 52px;
     --theme-hero-gap: 16px;
-    --header-gap: 0px;
+    /* small gap so the hero card does not touch the header on phones */
+    --header-gap: 12px;
   }
 
   .theme-section {
