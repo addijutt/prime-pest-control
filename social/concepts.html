@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=block" rel="stylesheet">
+<style>
+  /* ?c=chat | bento | cover   ·   1080 x 1350 */
+  :root { --ink: #0E1A35; --bone: #efece5; --emerald: #16A34A; --deep: #15803D; --lime: #FF7A00; --wa: #d9fdd3; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { -webkit-font-smoothing: antialiased; }
+  .post { position: relative; overflow: hidden; width: 1080px; height: 1350px; display: none; }
+  .mono { font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: .12em; }
+  .grain::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .09; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+  /* ───────── 1. WhatsApp chat ───────── */
+  .chat { background: var(--bone); color: var(--ink); padding: 72px 72px 64px; font-family: 'Inter', sans-serif; }
+  .chat .head { display: flex; justify-content: space-between; align-items: center; }
+  .chat .head img { height: 60px; }
+  .chat .head .mono { font-size: 17px; color: #5c625f; }
+  .chat .thread { margin-top: 44px; display: flex; flex-direction: column; gap: 14px; }
+  .b { max-width: 660px; padding: 16px 22px 12px; border-radius: 24px; font-size: 27px; line-height: 1.32; position: relative;
+    box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 12px 30px -18px rgba(0,0,0,.25); }
+  .b .t { display: block; text-align: right; font-size: 18px; color: #6b736f; margin-top: 6px; }
+  .b .t i { color: #34b7f1; font-style: normal; margin-left: 6px; }
+  .me { align-self: flex-end; background: var(--wa); border-bottom-right-radius: 8px; }
+  .us { align-self: flex-start; background: #fff; border-bottom-left-radius: 8px; }
+  .us .who { display: block; font-weight: 600; font-size: 21px; color: var(--deep); margin-bottom: 4px; }
+  .me.photo { padding: 10px 10px 12px; }
+  .me.photo img { display: block; width: 440px; height: 250px; object-fit: cover; object-position: 50% 45%; border-radius: 18px; }
+  .me.photo .cap { padding: 10px 12px 0; font-size: 27px; }
+  .chat .end { position: absolute; left: 72px; right: 72px; bottom: 64px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .chat h1 { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 96px; line-height: .92; letter-spacing: -.045em; }
+  .chat h1 span { color: var(--emerald); }
+  .pill { display: inline-flex; align-items: center; gap: 12px; background: var(--ink); color: #fff; border-radius: 999px; padding: 20px 28px;
+    font-family: 'Inter'; font-weight: 600; font-size: 26px; white-space: nowrap; }
+  .pill svg { width: 30px; height: 30px; }
+
+  /* ───────── 2. Bento ───────── */
+  .bento { background: var(--ink); color: #fff; padding: 56px; font-family: 'Inter'; }
+  .bento .grid { display: grid; height: 100%; gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1.25fr .8fr .8fr .62fr;
+    grid-template-areas: "hero hero hero" "big dm wa" "big pests pests" "logo logo tag"; }
+  .tile { border-radius: 34px; overflow: hidden; position: relative; padding: 32px; background: #16274D; border: 1px solid rgba(255,255,255,.06); }
+  .hero { grid-area: hero; padding: 0; }
+  .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%; }
+  .hero .ov { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,26,53,0) 35%, rgba(14,26,53,.85)); }
+  .hero h2 { position: absolute; left: 36px; bottom: 30px; font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 82px; line-height: .92; letter-spacing: -.04em; }
+  .hero h2 em { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; letter-spacing: -.01em; color: var(--lime); }
+  .hero .mono { position: absolute; top: 28px; left: 32px; font-size: 15px; background: rgba(14,26,53,.55); padding: 9px 14px; border-radius: 999px; }
+  .big { grid-area: big; background: var(--emerald); display: flex; flex-direction: column; justify-content: space-between; }
+  .big .n { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 150px; line-height: .85; letter-spacing: -.06em; }
+  .big p { font-size: 25px; line-height: 1.3; font-weight: 500; }
+  .dm { grid-area: dm; display: flex; flex-direction: column; justify-content: space-between; }
+  .dm .seal { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--lime); display: grid; place-items: center; color: var(--lime); font-size: 32px; }
+  .dm p { font-size: 22px; line-height: 1.25; font-weight: 600; }
+  .wa { grid-area: wa; background: var(--bone); color: var(--ink); display: flex; flex-direction: column; justify-content: space-between; }
+  .wa svg { width: 54px; height: 54px; }
+  .wa p { font-size: 22px; line-height: 1.25; font-weight: 600; }
+  .pests { grid-area: pests; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 22px 30px; }
+  .pests figure { text-align: center; }
+  .pests img { width: 92px; height: 92px; object-fit: contain; filter: drop-shadow(0 8px 14px rgba(0,0,0,.5)); }
+  .pests figcaption { font-size: 13px; color: #9aa19e; margin-top: 6px; }
+  .logo { grid-area: logo; display: flex; align-items: center; }
+  .logo img { height: 66px; }
+  .tag { grid-area: tag; background: var(--lime); color: var(--ink); display: flex; align-items: center; justify-content: center;
+    font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 30px; letter-spacing: -.02em; text-align: center; line-height: 1.05; }
+
+  /* ───────── 3. Magazine cover ───────── */
+  .cover { background: #000; color: #fff; font-family: 'Inter'; }
+  .cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; filter: saturate(.92) contrast(1.05); }
+  .cover .ov { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,0) 52%, rgba(0,0,0,.78) 100%); }
+  .cover .mast { position: absolute; top: 36px; left: 0; right: 0; text-align: center; font-family: 'Bricolage Grotesque'; font-weight: 800;
+    font-size: 300px; line-height: .8; letter-spacing: -.07em; }
+  .cover .issue { position: absolute; top: 300px; left: 56px; right: 56px; display: flex; justify-content: space-between; font-size: 16px; }
+  .cover .lines { position: absolute; left: 56px; bottom: 64px; width: 610px; }
+  .cover .lines .k { font-size: 16px; color: var(--lime); }
+  .cover .lines h3 { font-family: 'Instrument Serif'; font-weight: 400; font-size: 64px; line-height: 1; margin: 10px 0 30px; }
+  .cover .lines h3 em { font-style: italic; }
+  .cover .lines p { font-size: 24px; line-height: 1.3; font-weight: 500; border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; margin-top: 16px; }
+  .cover .side { position: absolute; right: 56px; bottom: 64px; width: 250px; text-align: right; }
+  .cover .side .stamp { display: inline-block; width: 170px; height: 170px; border-radius: 50%; background: var(--lime); color: var(--ink);
+    display: grid; place-items: center; text-align: center; font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 26px; line-height: 1.05; transform: rotate(-10deg); margin-left: auto; }
+  .cover .side .mono { margin-top: 26px; font-size: 15px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<!-- 1 · WhatsApp chat -->
+<div class="post chat grain" id="chat">
+  <div class="head"><img src="assets/logo-on-light.png" alt="Prime Pest Control"><span class="mono">How it works · Dubai</span></div>
+  <div class="thread">
+    <div class="b me photo"><img src="assets/cockroach-photo.webp" alt=""><div class="cap">Found this behind the fridge. How much? <span class="t">9:41 PM<i>✓✓</i></span></div></div>
+    <div class="b us"><span class="who">Prime Pest Control</span>German cockroach. Gel bait, no smell, safe for your cat. 1-bed from AED 179. We can come tonight. <span class="t">9:43 PM</span></div>
+    <div class="b me">Book it <span class="t">9:44 PM<i>✓✓</i></span></div>
+    <div class="b us"><span class="who">Prime Pest Control</span>Booked ✅ Technician arriving 10:30 PM. <span class="t">9:44 PM</span></div>
+  </div>
+  <div class="end">
+    <h1>Send a photo.<br><span>We handle it.</span></h1>
+    <span class="pill"><svg viewBox="0 0 24 24" fill="#25d366"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>055 304 5256</span>
+  </div>
+</div>
+
+<!-- 2 · Bento -->
+<div class="post bento" id="bento">
+  <div class="grid">
+    <div class="tile hero"><img src="assets/villa-photo.webp" alt=""><div class="ov"></div><span class="mono">Pest &amp; bird control · Dubai</span><h2>Calm homes.<br><em>No pests.</em></h2></div>
+    <div class="tile big"><span class="n">24/7</span><p>Every day, every Dubai community. Same-day visits.</p></div>
+    <div class="tile dm"><span class="seal">✓</span><p>Dubai Municipality approved</p></div>
+    <div class="tile wa"><svg viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><p>Price on WhatsApp in minutes</p></div>
+    <div class="tile pests">
+      <figure><img src="assets/pest-german-cockroach.webp" alt=""><figcaption class="mono">Roaches</figcaption></figure>
+      <figure><img src="assets/pest-adult-bed-bug.webp" alt=""><figcaption class="mono">Bed bugs</figcaption></figure>
+      <figure><img src="assets/pest-termite-worker.webp" alt=""><figcaption class="mono">Termites</figcaption></figure>
+      <figure><img src="assets/pest-pigeon.webp" alt=""><figcaption class="mono">Pigeons</figcaption></figure>
+    </div>
+    <div class="tile logo"><img src="assets/logo-on-dark.png" alt="Prime Pest Control"></div>
+    <div class="tile tag">055 304 5256</div>
+  </div>
+</div>
+
+<!-- 3 · Magazine cover -->
+<div class="post cover" id="cover">
+  <img src="assets/villa-photo.webp" alt="">
+  <div class="ov"></div>
+  <div class="mast">PRIME</div>
+  <div class="issue mono"><span>Pest &amp; bird control</span><span>Dubai · Issue 01</span></div>
+  <div class="lines">
+    <span class="k mono">This issue</span>
+    <h3>The calm <em>villa</em><br>handbook.</h3>
+    <p>Pigeons on the balcony, solved for good</p>
+    <p>Why your cockroach spray made it worse</p>
+    <p>Safe for kids and pets, explained</p>
+  </div>
+  <div class="side"><span class="stamp">Dubai<br>Municipality<br>approved</span><div class="mono">Open 24/7<br>WhatsApp<br>055 304 5256</div></div>
+</div>
+<script>
+  const c = new URLSearchParams(location.search).get('c') || 'chat';
+  document.getElementById(c).style.display = 'block';
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Team visuals</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&family=Inter:wght@500;600&display=block" rel="stylesheet">
+<style>
+  /* ?v=cover (1640 x 624, Facebook) | post (1080 x 1350) */
+  :root { --navy: #0E1A35; --green: #16A34A; --green-l: #22C55E; --orange: #FF7A00; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { -webkit-font-smoothing: antialiased; font-family: 'Inter', sans-serif; color: #fff; background: var(--navy); }
+  .mono { font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: .14em; }
+  .v { display: none; position: relative; overflow: hidden; }
+
+  /* Facebook cover: text panel left (inside the mobile crop), photo right; bottom-left kept calm for the profile picture */
+  .cover { width: 1640px; height: 624px; background: var(--navy); }
+  .cover .photo { position: absolute; top: 0; right: 0; width: 900px; height: 100%; }
+  .cover .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 48% 20%; }
+  .cover .photo::before { content: ''; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(90deg, var(--navy) 0%, rgba(14,26,53,.5) 12%, rgba(14,26,53,0) 30%); }
+  .cover .txt { position: absolute; left: 285px; top: 110px; width: 450px; z-index: 2; }
+  .cover .txt img { height: 58px; }
+  .cover h1 { margin-top: 32px; font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 62px; line-height: .95; letter-spacing: -.04em; }
+  .cover h1 em { font-style: normal; color: var(--green-l); }
+  .cover .line { margin-top: 24px; font-size: 16px; line-height: 1.7; color: #c9d2e3; }
+  .cover .line b { color: var(--orange); font-weight: 700; }
+
+  /* Feed post: full photo, headline at the bottom */
+  .post { width: 1080px; height: 1350px; }
+  .post > img.bg { position: absolute; left: 0; right: 0; top: 150px; width: 100%; height: 1200px; object-fit: cover; object-position: 46% 0%; }
+  .post .shade { position: absolute; inset: 0; background: linear-gradient(180deg, var(--navy) 0%, var(--navy) 11%, rgba(14,26,53,0) 20%, rgba(14,26,53,0) 46%, rgba(14,26,53,.92) 78%, var(--navy) 100%); }
+  .post .top { position: absolute; top: 52px; left: 60px; right: 60px; display: flex; justify-content: space-between; align-items: center; }
+  .post .top img { height: 62px; }
+  .post .top .badge { font-size: 16px; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.35); background: rgba(14,26,53,.45); }
+  .post .bottom { position: absolute; left: 60px; right: 60px; bottom: 60px; }
+  .post h1 { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 104px; line-height: .92; letter-spacing: -.045em; }
+  .post h1 em { font-style: normal; color: var(--green-l); }
+  .post .chips { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .post .chips span { font-size: 17px; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); }
+  .post .row { margin-top: 30px; display: flex; justify-content: space-between; align-items: center; }
+  .post .row p { font-size: 22px; color: #c9d2e3; font-weight: 500; }
+  .post .pill { background: var(--orange); color: var(--navy); border-radius: 999px; padding: 18px 28px; font-weight: 700; font-size: 25px; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="v cover" id="cover">
+  <div class="photo"><img src="assets/team-brand.png" alt=""></div>
+  <div class="txt">
+    <img src="assets/logo-on-dark.png" alt="Prime Pest Control">
+    <h1>Pest &amp; bird control<br><em>across Dubai.</em></h1>
+    <p class="line mono">Dubai Municipality approved · 24/7<br><b>WhatsApp 055 304 5256</b></p>
+  </div>
+</div>
+
+<div class="v post" id="post">
+  <img class="bg" src="assets/team-brand.png" alt="">
+  <div class="shade"></div>
+  <div class="top"><img src="assets/logo-on-dark.png" alt="Prime Pest Control"><span class="badge mono">Dubai Municipality Approved</span></div>
+  <div class="bottom">
+    <h1>Trained. Uniformed.<br><em>On their way.</em></h1>
+    <div class="chips mono"><span>Same-day visits</span><span>24/7</span><span>Safe for kids &amp; pets</span><span>All Dubai</span></div>
+    <div class="row"><p>Send a photo, get a price in minutes.</p><span class="pill">WhatsApp 055 304 5256</span></div>
+  </div>
+</div>
+<script>
+  const v = new URLSearchParams(location.search).get('v') || 'cover';
+  document.getElementById(v).style.display = 'block';
+</script>
+</body>
+</html>

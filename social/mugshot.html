@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mugshot</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&family=Inter:wght@500;600&display=block" rel="stylesheet">
+<style>
+  /* Mugshot series: ?pest=cockroach|bedbug|termite|pigeon */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { -webkit-font-smoothing: antialiased; }
+  .post { position: relative; overflow: hidden; width: 1080px; height: 1350px; background: #0E1A35; color: #fff; font-family: 'Inter'; }
+  .wall { position: absolute; left: 0; right: 0; top: 0; height: 960px; background: #d9dcd6; overflow: hidden; }
+  /* height chart */
+  .wall .row { position: absolute; left: 0; right: 0; height: 2px; background: rgba(14,26,53,.55); }
+  .wall .row span { position: absolute; left: 34px; top: -26px; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 22px; color: rgba(14,26,53,.7); }
+  .wall .row.thin { height: 1px; background: rgba(14,26,53,.25); }
+  .wall .pest { position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%) rotate(-90deg); width: 560px; filter: drop-shadow(0 26px 30px rgba(0,0,0,.3)); }
+  .wall .pest.upright { transform: translate(-50%, -50%); }
+  .wall .head { position: absolute; top: 44px; left: 44px; right: 44px; display: flex; justify-content: space-between; align-items: center; }
+  .wall .head img { height: 58px; }
+  .wall .head span { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 18px; letter-spacing: .14em; color: #0E1A35; }
+  /* placard */
+  .plate { position: absolute; left: 50%; top: 760px; transform: translateX(-50%) rotate(-1.5deg); width: 640px; background: #0E1A35; color: #fff;
+    padding: 22px 30px; border-radius: 8px; font-family: 'JetBrains Mono'; box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+  .plate .l1 { display: flex; justify-content: space-between; font-size: 18px; letter-spacing: .12em; color: #FF7A00; }
+  .plate .l2 { margin-top: 8px; font-size: 40px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+  .plate .l3 { margin-top: 6px; font-size: 18px; color: #b9bfbc; letter-spacing: .06em; }
+  /* bottom */
+  .bottom { position: absolute; left: 60px; right: 60px; bottom: 60px; }
+  .bottom h1 { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 118px; line-height: .9; letter-spacing: -.05em; }
+  .bottom h1 em { font-style: normal; color: #22C55E; }
+  .bottom .row2 { margin-top: 26px; display: flex; justify-content: space-between; align-items: center; font-size: 24px; color: #b9bfbc; font-weight: 500; }
+  .bottom .row2 b { color: #fff; font-weight: 600; }
+  .bottom .pill { white-space: nowrap; display: inline-flex; align-items: center; gap: 12px; background: #FF7A00; color: #0E1A35; border-radius: 999px; padding: 16px 26px; font-weight: 600; font-size: 24px; }
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="wall" id="wall">
+    <div class="head"><img src="assets/logo-on-light.png" alt="Prime Pest Control"><span id="case">CASE 0001 · DUBAI</span></div>
+    <img class="pest" id="pest" alt="">
+  </div>
+  <div class="plate">
+    <div class="l1"><span>PRIME PEST CONTROL</span><span id="date">28 · 11 · 2026</span></div>
+    <div class="l2" id="name"></div>
+    <div class="l3" id="seen"></div>
+  </div>
+  <div class="bottom">
+    <h1 id="h1"></h1>
+    <div class="row2"><span><b>Caught across Dubai</b> · 24/7</span><span class="pill">WhatsApp 055 304 5256</span></div>
+  </div>
+</div>
+<script>
+  const P = {
+    cockroach: { scale: [3.5, 0.5, 'CM'], photo: 'mug-cockroach.png', wallColor: 'rgb(205,206,205)', size: 780, top: 20, mx: '30%', my: '40%', cy: '44%', img: 'pest-german-cockroach.webp', name: 'German cockroach', seen: 'Last seen: behind the fridge, JLT', h: 'Wanted.<br><em>Behind your fridge.</em>', rot: true },
+    bedbug: { scale: [7, 1, 'MM'], img: 'pest-adult-bed-bug.webp', name: 'Bed bug', seen: 'Last seen: mattress seam, Dubai Marina', h: 'Wanted.<br><em>In your bed.</em>', rot: false },
+    termite: { scale: [7, 1, 'MM'], photo: 'mug-termite.png', wallColor: 'rgb(212,214,209)', size: 780, top: 20, img: 'pest-termite-worker.webp', name: 'Subterranean termite', seen: 'Last seen: inside the door frame, Mirdif', h: 'Wanted.<br><em>Eating your villa.</em>', rot: false },
+    pigeon: { scale: [42, 6, 'CM'], photo: 'mug-pigeon.png', wallColor: 'rgb(210,212,208)', size: 780, top: 10, soft: 'radial-gradient(circle at 52% 50%, #000 70%, transparent 86%)', mx: '36%', my: '38%', cy: '44%', img: 'pest-pigeon.webp', name: 'Feral pigeon', seen: 'Last seen: your balcony, every morning', h: 'Wanted.<br><em>On your balcony.</em>', rot: false },
+  };
+  const k = new URLSearchParams(location.search).get('pest') || 'cockroach';
+  const p = P[k];
+  const wall = document.getElementById('wall');
+  // Sharp studio photo (pest on grey) becomes the wall itself; chart lines fade out behind the pest
+  let target = wall;
+  if (p.photo) {
+    const bg = document.createElement('img');
+    bg.src = 'assets/' + p.photo;
+    const S = p.size || 760, soft = p.soft || 'radial-gradient(circle at 50% 50%, #000 52%, transparent 71%)';
+    wall.style.background = p.wallColor;
+    bg.style.cssText = 'position:absolute;left:50%;top:' + (p.top || 40) + 'px;width:' + S + 'px;height:' + S + 'px;transform:translateX(-50%);-webkit-mask-image:' + soft + ';mask-image:' + soft + ';';
+    wall.insertBefore(bg, wall.firstChild);
+    target = document.createElement('div');
+    // Mask cut to the subject's outline (scripts/make-mug-mask.mjs): lines everywhere except behind the pest
+    const mask = `url(assets/mask-${k}.png)`;
+    target.style.cssText = `position:absolute;inset:0;mix-blend-mode:multiply;-webkit-mask-image:${mask};mask-image:${mask};-webkit-mask-size:100% 100%;mask-size:100% 100%;`;
+    wall.insertBefore(target, wall.children[1]);
+    document.getElementById('pest').style.display = 'none';
+  }
+  const [max, step, unit] = p.scale;
+  for (let i = 0, y = 120; y < 960; y += 60, i++) {
+    const r = document.createElement('div');
+    const major = i % 2 === 0;
+    r.className = 'row' + (major ? '' : ' thin');
+    r.style.top = y + 'px';
+    const v = max - (i / 2) * step;
+    if (major && v > 0) r.innerHTML = '<span>' + (Number.isInteger(v) ? v : v.toFixed(1)) + ' ' + unit + '</span>';
+    target.appendChild(r);
+  }
+  const img = document.getElementById('pest');
+  img.src = 'assets/' + p.img;
+  if (!p.rot) img.classList.add('upright');
+  if (!p.photo) wall.appendChild(img);
+  document.getElementById('name').textContent = p.name;
+  document.getElementById('seen').textContent = p.seen;
+  document.getElementById('h1').innerHTML = p.h;
+  document.getElementById('case').textContent = 'CASE 000' + (Object.keys(P).indexOf(k) + 1) + ' · DUBAI';
+</script>
+</body>
+</html>

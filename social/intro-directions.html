@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Intro directions</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter+Tight:wght@500;700;800;900&display=block" rel="stylesheet">
+<style>
+  /* Three directions for the first post: ?d=1 editorial, ?d=2 bold type, ?d=3 native POV */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0E1A35; }
+  body { font-family: 'Inter Tight', 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; color: #fff; }
+  .post { position: relative; overflow: hidden; width: var(--w); height: var(--h); }
+  .d { display: none; position: absolute; inset: 0; }
+
+  /* 1. Editorial: full-bleed photo, two huge words */
+  .d1 img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+  .d1 .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,26,53,.55) 0%, rgba(14,26,53,0) 22%, rgba(14,26,53,0) 45%, rgba(14,26,53,.92) 100%); }
+  .d1 .logo { position: absolute; top: 56px; left: 60px; height: 58px; }
+  .d1 .txt { position: absolute; left: 60px; right: 60px; bottom: 70px; }
+  .d1 h1 { font-weight: 900; font-size: 210px; line-height: .86; letter-spacing: -.06em; }
+  .d1 h1 em { font-style: normal; color: #22C55E; }
+  .d1 .line { margin-top: 34px; display: flex; justify-content: space-between; align-items: center; font-family: 'Manrope'; font-size: 26px; font-weight: 600; color: rgba(255,255,255,.85); }
+  .d1 .line b { color: #fff; }
+
+  /* 2. Bold type: brand-colour poster */
+  .d2 { background: #16A34A; padding: 64px; display: none; flex-direction: column; }
+  .d2 .logo { height: 58px; align-self: flex-start; }
+  .d2 ul { list-style: none; margin-top: auto; }
+  .d2 li { font-weight: 900; font-size: 128px; line-height: .98; letter-spacing: -.055em; color: rgba(255,255,255,.95); position: relative; width: fit-content; }
+  .d2 li::after { content: ''; position: absolute; left: -6px; right: -6px; top: 54%; height: 14px; background: #f5e50a; border-radius: 8px; transform: rotate(-2deg); }
+  .d2 .done { margin-top: 26px; font-weight: 900; font-size: 128px; letter-spacing: -.055em; color: #0E1A35; line-height: .98; }
+  .d2 .foot { margin-top: 40px; display: flex; justify-content: space-between; font-family: 'Manrope'; font-size: 26px; font-weight: 700; color: #eafff1; }
+
+  /* 4. Bold type + pest cut-outs */
+  .d4 { background:
+      radial-gradient(700px 500px at 100% 0%, rgba(255,255,255,.10), transparent 60%),
+      radial-gradient(600px 500px at 0% 100%, rgba(0,0,0,.18), transparent 60%), #16A34A;
+    padding: 64px; display: none; flex-direction: column; }
+  .d4 .top { display: flex; justify-content: space-between; align-items: center; }
+  .d4 .logo { height: 60px; }
+  .d4 .badge { font-family: 'Manrope'; font-size: 17px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #fff;
+    padding: 12px 18px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.5); }
+  .d4 .stack { margin: auto 0; padding-top: 20px; }
+  .d4 ul { list-style: none; }
+  .d4 li { display: flex; align-items: center; gap: 26px; }
+  .d4 li .w { font-weight: 900; font-size: 118px; line-height: 1.02; letter-spacing: -.055em; color: #fff; position: relative; }
+  .d4 li .w::after { content: ''; position: absolute; left: -6px; right: -6px; top: 55%; height: 13px; background: #f5e50a; border-radius: 8px; transform: rotate(-2deg); }
+  .d4 li img { height: 130px; width: 130px; object-fit: contain; filter: drop-shadow(0 10px 16px rgba(0,0,0,.35)); }
+  .d4 .done { margin-top: 22px; font-weight: 900; font-size: 150px; letter-spacing: -.06em; color: #0E1A35; line-height: .95; }
+  .d4 .foot { margin-top: 0; display: flex; justify-content: space-between; font-family: 'Manrope'; font-size: 26px; font-weight: 700; color: #eafff1; }
+
+  .story .d4 { padding-top: 250px; padding-bottom: 360px; }
+  .story .d4 li .w { font-size: 124px; }
+  .story .d4 .done { font-size: 170px; }
+
+  /* 3. Native POV: looks like a real phone story */
+  .d3 img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
+  .d3 .pov { position: absolute; left: 50%; top: 22%; transform: translateX(-50%); width: 86%; text-align: center; }
+  .d3 .pov span { font-family: 'Manrope'; font-weight: 700; font-size: 46px; line-height: 1.5; color: #111; background: #fff; padding: 6px 18px;
+    box-decoration-break: clone; -webkit-box-decoration-break: clone; border-radius: 12px; }
+  .d3 .handle { position: absolute; left: 50%; bottom: 120px; transform: translateX(-50%); display: flex; align-items: center; gap: 14px;
+    background: rgba(14,26,53,.7); padding: 14px 24px 14px 16px; border-radius: 999px; backdrop-filter: blur(10px); font-family: 'Manrope'; font-weight: 700; font-size: 26px; }
+  .d3 .handle img { height: 44px; }
+</style>
+</head>
+<body>
+<div class="post" id="post">
+  <div class="d d1">
+    <img class="bg" src="assets/villa-photo.webp" alt="">
+    <div class="shade"></div>
+    <img class="logo" src="assets/logo-on-dark.png" alt="Prime Pest Control">
+    <div class="txt">
+      <h1>Pests?<br><em>Handled.</em></h1>
+      <div class="line"><span>Pest and bird control across Dubai</span><b>24/7</b></div>
+    </div>
+  </div>
+
+  <div class="d d2">
+    <img class="logo" src="assets/logo-on-dark.png" alt="Prime Pest Control">
+    <ul><li>Cockroaches.</li><li>Bed bugs.</li><li>Termites.</li><li>Pigeons.</li></ul>
+    <div class="done">Handled.</div>
+    <div class="foot"><span>Across Dubai · 24/7</span><span>WhatsApp 055 304 5256</span></div>
+  </div>
+
+  <div class="d d4">
+    <div class="top"><img class="logo" src="assets/logo-on-dark.png" alt="Prime Pest Control"><span class="badge">Dubai Municipality Approved</span></div>
+    <div class="stack"><ul>
+      <li><span class="w">Cockroaches.</span><img src="assets/pest-german-cockroach.webp" alt=""></li>
+      <li><span class="w">Bed bugs.</span><img src="assets/pest-adult-bed-bug.webp" alt=""></li>
+      <li><span class="w">Termites.</span><img src="assets/pest-termite-worker.webp" alt=""></li>
+      <li><span class="w">Pigeons.</span><img src="assets/pest-pigeon.webp" alt=""></li>
+    </ul>
+    <div class="done">Handled.</div></div>
+    <div class="foot"><span>Across Dubai · 24/7</span><span>WhatsApp 055 304 5256</span></div>
+  </div>
+
+  <div class="d d3">
+    <img class="bg" src="assets/intro-photo.webp" alt="">
+    <div class="pov"><span>POV: you WhatsApp'd a photo of the cockroach and got a price in minutes</span></div>
+    <div class="handle"><img src="assets/logo-on-dark.png" alt="">@primepestdubai</div>
+  </div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const w = +(q.get('w') || 1080), h = +(q.get('h') || 1350);
+  const p = document.getElementById('post');
+  p.style.setProperty('--w', w + 'px'); p.style.setProperty('--h', h + 'px');
+  if (h >= 1800) p.classList.add('story');
+  const d = q.get('d') || '1';
+  document.querySelector('.d' + d).style.display = (d === '2' || d === '4') ? 'flex' : 'block';
+</script>
+</body>
+</html>

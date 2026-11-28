@@ -43,3 +43,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Social post tools and generated posts (local only)
+/social/node_modules
+/social/out
