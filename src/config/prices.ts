@@ -40,8 +40,8 @@ export const PRICES = {
   'cockroach-villa': { label: 'Cockroach treatment, villa', from: 399, unit: 'villa or townhouse', visits: 'inside, drains and garden, follow-up if needed', warrantyDays: 90 },
   'bed-bug-apartment': { label: 'Bed bug treatment, apartment', from: 349, unit: 'studio / 1-bedroom', visits: '2 visits, 10–14 days apart', warrantyDays: 90 },
   'bed-bug-villa': { label: 'Bed bug treatment, villa', from: 1199, unit: 'up to 3 bedrooms', visits: '2 visits, 10–14 days apart', warrantyDays: 90 },
-  'ant': { label: 'Ant treatment', from: 179, unit: 'apartment; villas from AED 349', visits: '1 visit + follow-up if needed', warrantyDays: 90 },
-  'mosquito': { label: 'Mosquito treatment', from: 299, unit: 'villa garden', visits: '1 visit; monthly plans for summer' },
+  'ant': { label: 'Ant treatment', from: 179, unit: 'apartment (villas from AED 349)', visits: '1 visit + follow-up if needed', warrantyDays: 90 },
+  'mosquito': { label: 'Mosquito treatment', from: 299, unit: 'villa garden', visits: '1 visit, or monthly plans for summer' },
   'flea': { label: 'Flea treatment', from: 249, unit: 'apartment', visits: '2 visits, about 2 weeks apart', warrantyDays: 90 },
   'tick': { label: 'Tick treatment', from: 249, unit: 'apartment or ground-floor flat with garden', visits: '2 visits, about 2 weeks apart', warrantyDays: 90 },
   'wasp-nest': { label: 'Wasp or hornet nest removal', from: 249, unit: 'per nest', visits: '1 visit', warrantyDays: 90 },
@@ -52,15 +52,15 @@ export const PRICES = {
   'silverfish': { label: 'Silverfish treatment', from: 179, unit: 'apartment', visits: '1 visit', warrantyDays: 90 },
 
   // Termites
-  'termite-inspection': { label: 'Termite inspection', from: 250, unit: 'villa or townhouse; deducted from the treatment if you book it', visits: '1 visit with written findings' },
+  'termite-inspection': { label: 'Termite inspection', from: 250, unit: 'villa or townhouse (deducted from the treatment if you book it)', visits: '1 visit with written findings' },
   'termite-villa': { label: 'Termite treatment, villa', from: 1500, unit: 'post-construction, 3–4 bedrooms', visits: 'treatment + checks', warrantyDays: 90 },
   'termite-pre-construction': { label: 'Pre-construction anti-termite treatment', from: 8, unit: 'per m² of building footprint', perUnit: 'sqm', visits: 'soil treatment before the slab, with certificate' },
 
   // Rodents and others
-  'rodent': { label: 'Rat & mouse control', from: 299, unit: 'apartment; villas from AED 449', visits: 'baiting/trapping + follow-up visit', warrantyDays: 90 },
+  'rodent': { label: 'Rat & mouse control', from: 299, unit: 'apartment (villas from AED 449)', visits: 'baiting/trapping + follow-up visit', warrantyDays: 90 },
   'scorpion': { label: 'Scorpion treatment', from: 299, unit: 'villa perimeter', visits: '1 visit' },
   'camel-spider': { label: 'Camel spider treatment', from: 249, unit: 'villa', visits: '1 visit' },
-  'lizard': { label: 'Lizard & gecko control', from: 249, unit: 'apartment; villas from AED 399', visits: 'exclusion + insect treatment', warrantyDays: 90 },
+  'lizard': { label: 'Lizard & gecko control', from: 249, unit: 'apartment (villas from AED 399)', visits: 'exclusion + insect treatment', warrantyDays: 90 },
   'snake': { label: 'Snake removal call-out', from: 349, unit: 'villa or garden', visits: 'removal + entry-point check' },
 
   // Hygiene and moving

@@ -7,7 +7,7 @@ import { MORE_GUIDES } from './serviceGuidesMore';
 
 const SAFETY_COMMON = [
   'Only products approved for use in Dubai, applied by trained technicians from a Dubai Municipality licensed company.',
-  'No smoke "bombs", no thermal fogging inside flats and never aluminium phosphide: these are banned for homes in the UAE after deaths through shared AC ducts.',
+  'No smoke "bombs", no thermal fogging inside flats and never aluminium phosphide. These are banned for homes in the UAE after deaths through shared AC ducts.',
 ];
 
 export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
@@ -20,7 +20,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       signs: { brief: 'Close-up of common signs: cockroach droppings in a kitchen hinge, bed bug spots on a mattress seam, termite mud tube on a wall (collage or one clear shot)', alt: 'Common signs of pests in a Dubai home' },
     },
     answer:
-      `Pest control in Dubai usually starts from about ${aed('general-apartment')} for a studio or 1-bedroom apartment and ${aed('general-villa')} for a villa. Cockroaches, bed bugs, ants, rodents and termites are the most common call-outs, and most jobs are done in one visit; bed bugs and heavy cockroach problems need a follow-up.`,
+      `Pest control in Dubai usually starts from about ${aed('general-apartment')} for a studio or 1-bedroom apartment and ${aed('general-villa')} for a villa. Cockroaches, bed bugs, ants, rodents and termites are the most common call-outs, and most jobs are done in one visit. Bed bugs and heavy cockroach problems need a follow-up.`,
     body: [
       'Dubai\'s heat keeps pests active all year, with the peak from April to October. In apartment towers, cockroaches and ants move between flats through shared drains, risers and garbage rooms, so a problem often starts next door. In villas, gardens and irrigation bring ants, termites, mosquitoes, rodents and, near the desert edge, scorpions and snakes.',
       'We treat homes, buildings and businesses in every Dubai community, as a one-off visit or on an annual contract. Send a photo on WhatsApp and we tell you what it is, how we would treat it and the price before we book.',
@@ -41,7 +41,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Most treatments need you out of the room for 1–4 hours; we tell you exactly how long, and what to do about children, pets, fish tanks and food.',
+      'Most treatments need you out of the room for 1–4 hours. We tell you exactly how long, and what to do about children, pets, fish tanks and food.',
     ],
     prevention: [
       'Keep drain covers closed and run water in unused bathrooms weekly so traps do not dry out.',
@@ -66,13 +66,13 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       signs: { brief: 'Cockroach droppings and an egg case behind a fridge or in a cabinet corner, real job photo', alt: 'Cockroach droppings and egg case in a kitchen cabinet' },
     },
     answer:
-      'Most cockroach problems in Dubai apartments are German cockroaches living in the kitchen and bathroom, and they are treated with gel bait in cracks and hinges, not by spraying the room. One visit clears most homes; heavy infestations need a second visit after 2–3 weeks to kill the young that hatch from eggs.',
+      'Most cockroach problems in Dubai apartments are German cockroaches living in the kitchen and bathroom, and they are treated with gel bait in cracks and hinges, not by spraying the room. One visit clears most homes, but heavy infestations need a second visit after 2–3 weeks to kill the young that hatch from eggs.',
     body: [
       'Dubai has two main cockroaches. The small, light-brown German cockroach breeds indoors: behind the fridge, inside cabinet hinges, under the sink and in the dishwasher motor. One female can produce several hundred young in her life, so a few sightings usually mean a colony. The large reddish American cockroach lives in drains, sewers, parking basements and garbage rooms, and comes up through floor drains, especially in summer.',
-      'In towers, cockroaches travel between flats through shared risers, kitchen ducts and garbage chutes. That is why they come back after a DIY spray: the spray kills what it touches and drives the rest into the walls and next door. Gel bait works the other way round. Cockroaches eat it, go back to the colony and spread it, which reaches the ones you never see.',
+      'In towers, cockroaches travel between flats through shared risers, kitchen ducts and garbage chutes. That is why they come back after a DIY spray. The spray kills what it touches and drives the rest into the walls and next door. Gel bait works the other way round. Cockroaches eat it, go back to the colony and spread it, which reaches the ones you never see.',
     ],
     signs: [
-      'Cockroaches seen during the day: the hiding places are already full.',
+      'Cockroaches seen during the day, a sign the hiding places are already full.',
       'Droppings like black pepper or coffee grounds in drawers, hinges and behind appliances.',
       'Brown egg cases (about 8 mm) behind the fridge, in cabinet corners or under the sink.',
       'A musty, oily smell in kitchen cupboards.',
@@ -87,14 +87,14 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Gel bait sits inside cracks and hinges, out of reach of children and pets; you can usually stay at home.',
-      'Wipe kitchen surfaces before cooking if a spray was used; we tell you which areas.',
+      'Gel bait sits inside cracks and hinges, out of reach of children and pets, so you can usually stay at home.',
+      'Wipe kitchen surfaces before cooking if a spray was used. We tell you which areas.',
     ],
     prevention: [
-      'Do not leave dishes, pet food or open rubbish overnight; cockroaches need very little.',
+      'Do not leave dishes, pet food or open rubbish overnight, because cockroaches need very little.',
       'Keep floor drains closed and pour water into unused drains every week.',
       'Seal gaps around kitchen pipes and the gap behind the kitchen sink cabinet.',
-      'Check grocery boxes and delivery cartons; German cockroaches often arrive in them.',
+      'Check grocery boxes and delivery cartons, because German cockroaches often arrive in them.',
       'In towers, ask the building to treat garbage rooms and risers at the same time.',
     ],
     related: [
@@ -114,21 +114,21 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       signs: { brief: 'Close-up of a mattress seam with dark bed bug spots, shed skins and a live bed bug', alt: 'Bed bug spots and shed skins on a mattress seam' },
     },
     answer:
-      `Bed bug treatment in Dubai needs two visits, 10–14 days apart: the first kills the adults and young, the second kills the ones that hatch from eggs, which no spray kills reliably. Prices start from about ${aed('bed-bug-apartment')} for a studio or 1-bedroom apartment.`,
+      `Bed bug treatment in Dubai needs two visits, 10–14 days apart. The first kills the adults and young, and the second kills the ones that hatch from eggs, which no spray kills reliably. Prices start from about ${aed('bed-bug-apartment')} for a studio or 1-bedroom apartment.`,
     body: [
       'Bed bugs arrive in luggage, second-hand furniture and from neighbouring flats, not because a home is dirty. Dubai is a travel hub and many people move flats every year, so bed bugs are one of the two most common reasons people call pest control here. They hide in mattress seams, bed frames, headboards, sofa joints, skirting boards and behind wall sockets, and come out at night to feed.',
-      'Eggs are glued into cracks and protected by a shell, so one treatment never finishes the job. Skipping the second visit is the main reason bed bugs "come back". Good preparation also matters: bedding and clothes from the affected rooms must be washed hot and dried on high heat before the treatment.',
+      'Eggs are glued into cracks and protected by a shell, so one treatment never finishes the job. Skipping the second visit is the main reason bed bugs "come back". Good preparation also matters. Bedding and clothes from the affected rooms must be washed hot and dried on high heat before the treatment.',
     ],
     signs: [
       'Itchy red bites, often in a line or group of three, on arms, neck and legs after sleeping.',
       'Small rusty or dark spots on sheets, mattress seams and the bed frame.',
       'Pale shed skins and tiny white eggs in mattress seams and furniture joints.',
-      'Live bugs: flat, brown and about the size of an apple seed.',
+      'Live bugs that are flat, brown and about the size of an apple seed.',
       'A sweet, musty smell in heavy infestations.',
     ],
     steps: [
       { title: 'Inspection of beds and furniture', text: 'Mattresses, frames, headboards, sofas, curtains and skirting boards, to find every hiding place.' },
-      { title: 'Preparation list', text: 'We send you a checklist: hot wash and dry bedding and clothes, bag them, clear under beds.' },
+      { title: 'Preparation list', text: 'We send you a checklist to hot wash and dry bedding and clothes, bag them and clear under beds.' },
       { title: 'First treatment', text: 'Targeted treatment of seams, joints, cracks and sockets, plus a residual product that keeps working.' },
       { title: 'Second treatment after 10–14 days', text: 'Kills the young that hatched from eggs before they can breed.' },
       { title: 'Advice for the next weeks', text: 'Mattress encasements, what to check, and how to avoid bringing them back after travel.' },
@@ -136,13 +136,13 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     safety: [
       ...SAFETY_COMMON,
       'Stay out of treated rooms for about 4 hours and air them before sleeping there again.',
-      'Mattresses are treated on seams and joints only; you can sleep on them the same night once the room is aired.',
+      'Mattresses are treated on seams and joints only, so you can sleep on them the same night once the room is aired.',
     ],
     prevention: [
-      'After travel, unpack on a hard floor and wash clothes hot straight away; keep suitcases off the bed.',
+      'After travel, unpack on a hard floor and wash clothes hot straight away. Keep suitcases off the bed.',
       'Check second-hand beds and sofas carefully before bringing them home.',
       'Use zipped mattress encasements after treatment.',
-      'In apartments, tell the building management: neighbouring flats may need inspection too.',
+      'In apartments, tell the building management, as neighbouring flats may need inspection too.',
     ],
     related: [
       { label: 'Move-in pest control', href: '/move-in-pest-control-dubai' },
@@ -163,7 +163,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'Termites in Dubai are mostly subterranean termites that come up from the soil and eat wooden door frames, skirting, kitchen cabinets and wardrobes from the inside. The first sign is usually mud tubes on walls or wood that sounds hollow. Treatment is a soil barrier or bait system around the villa, after an inspection to find where they enter.',
     body: [
       'Subterranean termites cause the most structural damage in Dubai villas and low-rise buildings. They live in the soil, need moisture and build mud tubes to travel into the house through expansion joints, cracks in the slab, pipe penetrations and gaps behind skirting. Gardens with irrigation next to the walls make this much easier. Because they eat wood from the inside, damage is often found late, when a door frame or cabinet gives way.',
-      'Termite control is a separate approval from Dubai Municipality; general pest control licences do not cover it. We hold the termite control approval and treat both existing homes and buildings under construction.',
+      'Termite control is a separate approval from Dubai Municipality, and general pest control licences do not cover it. We hold the termite control approval and treat both existing homes and buildings under construction.',
     ],
     signs: [
       'Pencil-thin mud tubes on walls, columns or along skirting boards.',
@@ -176,17 +176,17 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       { title: 'Inspection', text: 'We map mud tubes, damaged wood and moisture around the villa, inside and in the garden, and give you written findings.' },
       { title: 'Soil barrier', text: 'A termiticide barrier in the soil along foundations and entry points, so termites cannot reach the building.' },
       { title: 'Bait stations where needed', text: 'Stations around the villa that termites feed on and carry back, to eliminate the colony.' },
-      { title: 'Treat damaged wood', text: 'Infested wood inside is treated; badly damaged wood should be replaced by a carpenter.' },
+      { title: 'Treat damaged wood', text: 'Infested wood inside is treated, and badly damaged wood should be replaced by a carpenter.' },
       { title: 'Checks', text: 'Follow-up inspections to confirm activity has stopped, and an annual check for peace of mind.' },
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Soil treatments go into the ground outside, away from where children play; we mark treated areas.',
+      'Soil treatments go into the ground outside, away from where children play, and we mark treated areas.',
       'Bait stations are tamper-resistant and safe around pets.',
     ],
     prevention: [
       'Keep irrigation and planting at least 50 cm away from villa walls.',
-      'Fix leaking AC drains and pipes; termites need moisture.',
+      'Fix leaking AC drains and pipes, because termites need moisture.',
       'Do not store wood, cardboard or timber against walls or in the garden.',
       'For new villas and extensions, ask for pre-construction anti-termite treatment.',
     ],
@@ -232,7 +232,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     ],
     prevention: [
       'Book us at least a few days before each pour so no stage is missed.',
-      'Ask for treatment around every pipe and cable penetration; these are common entry points.',
+      'Ask for treatment around every pipe and cable penetration, because these are common entry points.',
       'Keep timber offcuts and formwork away from the site soil.',
       'After handover, keep irrigation away from the walls and book an annual termite check.',
     ],
@@ -253,19 +253,19 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     answer:
       'Rats and mice in Dubai are mostly roof rats, Norway (brown) rats and house mice. They come in from parking basements, garbage rooms, gardens and nearby construction, and live in false ceilings, kitchen cabinets and store rooms. Control is trapping and tamper-resistant bait stations plus sealing the gaps they use, with a follow-up visit to check activity has stopped.',
     body: [
-      'A mouse needs a gap the size of a pen to get in, a young rat a gap the size of a thumb. In apartments they use gaps around AC and kitchen pipes, shafts and doors to service areas; in villas they come from the garden, drains and roof spaces. Construction nearby often pushes rats into homes as their burrows are disturbed.',
-      'Rodents chew cables, contaminate food and carry disease, so they should be dealt with quickly. Inside homes we prefer traps to poison where possible: a poisoned rat dying in a false ceiling causes a smell for weeks.',
+      'A mouse needs a gap the size of a pen to get in, a young rat a gap the size of a thumb. In apartments they use gaps around AC and kitchen pipes, shafts and doors to service areas. In villas they come from the garden, drains and roof spaces. Construction nearby often pushes rats into homes as their burrows are disturbed.',
+      'Rodents chew cables, contaminate food and carry disease, so they should be dealt with quickly. Inside homes we prefer traps to poison where possible, because a poisoned rat dying in a false ceiling causes a smell for weeks.',
     ],
     signs: [
       'Scratching or running sounds in the false ceiling at night.',
-      'Droppings in cabinets, store rooms or along walls (mice: rice-sized; rats: olive-stone-sized).',
+      'Droppings in cabinets, store rooms or along walls (rice-sized for mice, olive-stone-sized for rats).',
       'Chewed cables, food packets, plastic pipes or door edges.',
       'Greasy dark marks along walls and pipes where they run.',
       'Burrows in the garden or near the boundary wall.',
     ],
     steps: [
       { title: 'Inspection', text: 'We find the species, where they nest and every entry point, inside and outside.' },
-      { title: 'Traps and bait stations', text: 'Traps inside the home; tamper-resistant, locked bait stations outside and in service areas.' },
+      { title: 'Traps and bait stations', text: 'Traps inside the home, and tamper-resistant, locked bait stations outside and in service areas.' },
       { title: 'Seal entry points', text: 'Gaps around pipes, cables and doors closed with rodent-proof material (steel wool and sealant, mesh).' },
       { title: 'Follow-up visit', text: 'We check and clear traps, and confirm activity has stopped.' },
     ],
@@ -299,7 +299,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'Pigeons in Dubai nest behind split AC units, on balcony ledges, in window recesses and on solar panels. The lasting fix is to make the spot unusable: clean and disinfect the droppings, remove the nest, then fit netting, spikes or wire so they cannot land or nest there again. Feeding or scaring them does not work for long.',
     body: [
       'Pigeons return to the same spot every day and breed all year in Dubai\'s climate, so one pair on a balcony quickly becomes many. Their droppings are acidic, stain stone and metal, block AC drains and can carry fungi and bacteria that are harmful when the dried dust is breathed in.',
-      'Bird control is a separate Dubai Municipality approval; we hold it. Many towers have rules about the colour and type of balcony nets, so we use clear or black UV-stable nets and can check with your building management first.',
+      'Bird control is a separate Dubai Municipality approval, and we hold it. Many towers have rules about the colour and type of balcony nets, so we use clear or black UV-stable nets and can check with your building management first.',
     ],
     signs: [
       'Droppings on the balcony floor, railings, AC unit and window sills.',
@@ -314,15 +314,15 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       { title: 'Check the result', text: 'We check after installation that birds can no longer land or get behind the AC unit.' },
     ],
     safety: [
-      'Birds are excluded, not harmed: no poison, no glue.',
+      'Birds are kept out, not harmed, with no poison and no glue.',
       'Technicians wear masks and gloves when removing dried droppings.',
       'Nets and spikes are installed from inside the balcony or with proper access equipment for high floors.',
     ],
     prevention: [
-      'Never feed pigeons from the balcony; they will come back daily.',
+      'Never feed pigeons from the balcony, or they will come back daily.',
       'Do not leave water or plant pots with standing water on the balcony.',
-      'Clear nesting material early; a pair that has nested will try again.',
-      'Proof the whole balcony, not one ledge: birds move to the next unprotected spot.',
+      'Clear nesting material early, because a pair that has nested will try again.',
+      'Proof the whole balcony, not one ledge, because birds move to the next unprotected spot.',
     ],
     related: [
       { label: 'Bird netting', href: '/bird-netting-dubai' },
@@ -367,9 +367,9 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'Nets do not block fire escape routes or AC airflow.',
     ],
     prevention: [
-      'Close the whole opening: a small gap is enough for a pigeon.',
+      'Close the whole opening, because even a small gap is enough for a pigeon.',
       'Have the net checked after storms or facade cleaning.',
-      'Do not hang items on the net; it loosens the tension.',
+      'Do not hang items on the net, because it loosens the tension.',
     ],
     related: [
       { label: 'Pigeon control', href: '/pigeon-control-dubai' },
@@ -396,7 +396,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     signs: [
       'Restaurants, cafes, cloud kitchens and catering.',
       'Supermarkets, groceries and food stores.',
-      'Residential buildings: common areas, garbage rooms, risers and car parks.',
+      'Residential buildings, including common areas, garbage rooms, risers and car parks.',
       'Offices, clinics, schools and gyms.',
       'Warehouses, logistics and labour accommodation.',
     ],
@@ -440,8 +440,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     answer:
       'Ticks in Dubai homes are almost always brown dog ticks. They come in on dogs, then hide in cracks, skirting boards, door frames and garden walls, and can climb up walls in large numbers. Treatment is two visits about two weeks apart, timed with a vet tick treatment for the dog, otherwise they come straight back.',
     body: [
-      'Brown dog ticks can complete their whole life cycle indoors, which is why they are found in apartments, not only in villas. Ground-floor flats with gardens, villas with kennels and homes with dogs that use shared parks are the most common cases. Outdoors they are most active in spring and autumn; indoors, all year.',
-      'Ticks can carry diseases that affect dogs and, rarely, people, so a tick problem should be treated promptly. Spraying once is not enough: eggs and hidden ticks survive, so the second visit and the vet treatment of the pet are what stop it.',
+      'Brown dog ticks can complete their whole life cycle indoors, which is why they are found in apartments, not only in villas. Ground-floor flats with gardens, villas with kennels and homes with dogs that use shared parks are the most common cases. Outdoors they are most active in spring and autumn, and indoors all year.',
+      'Ticks can carry diseases that affect dogs and, rarely, people, so a tick problem should be treated promptly. Spraying once is not enough, because eggs and hidden ticks survive. The second visit and the vet treatment of the pet are what stop it.',
     ],
     signs: [
       'Small brown ticks on the dog, especially ears, neck and between the toes.',
@@ -450,21 +450,21 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'Clusters of tiny larvae near skirting boards after a few weeks.',
     ],
     steps: [
-      { title: 'Inspection', text: 'Where the dog sleeps, rests and walks; cracks, skirting, kennels, garden borders and walls.' },
-      { title: 'Vet treatment for the pet', text: 'We ask you to treat the dog with a vet tick product the same week; this is essential.' },
+      { title: 'Inspection', text: 'Where the dog sleeps, rests and walks, including cracks, skirting, kennels, garden borders and walls.' },
+      { title: 'Vet treatment for the pet', text: 'We ask you to treat the dog with a vet tick product the same week. This is essential.' },
       { title: 'First treatment', text: 'Cracks, skirting, door frames, furniture bases, patio and garden borders.' },
       { title: 'Second treatment after about 2 weeks', text: 'Kills ticks that hatched or came out of hiding after the first visit.' },
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Pets stay out of treated areas until surfaces are dry, usually 2–4 hours; fish tanks covered and pumps off.',
+      'Pets stay out of treated areas until surfaces are dry, usually 2–4 hours, with fish tanks covered and pumps off.',
       'We use products suitable for homes with pets and tell you exactly when they can go back.',
     ],
     prevention: [
       'Keep the dog on a year-round vet tick preventative.',
       'Check the dog after walks in shared parks and grass.',
       'Wash pet bedding hot every week.',
-      'Keep grass short and garden borders clear; seal cracks in patio and walls.',
+      'Keep grass short and garden borders clear, and seal cracks in patio and walls.',
     ],
     related: [
       { label: 'Flea control', href: '/pest-control-for-fleas' },
@@ -500,13 +500,13 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       { title: 'Full walk-round', text: 'Inside, roof, garden and boundary, with a short report of what we found.' },
       { title: 'Indoor treatment', text: 'Gel baits and crack-and-crevice treatment in kitchens, bathrooms and store rooms.' },
       { title: 'Perimeter barrier', text: 'Treatment along walls, doors and the garden edge to stop crawling pests getting in.' },
-      { title: 'Garden and drains', text: 'Ant nests, mosquito breeding spots and drains treated; bait stations for rodents where needed.' },
+      { title: 'Garden and drains', text: 'Ant nests, mosquito breeding spots and drains treated, with bait stations for rodents where needed.' },
       { title: 'Annual plan if you want it', text: 'Scheduled visits through the year and call-outs between them.' },
     ],
     safety: [
       ...SAFETY_COMMON,
       'Garden treatments avoid flowering plants where bees feed and keep away from pools and fish ponds.',
-      'Pets and children stay out of treated areas until dry; we tell you how long.',
+      'Pets and children stay out of treated areas until dry, and we tell you how long.',
     ],
     prevention: [
       'Keep irrigation and planting away from villa walls.',
@@ -532,7 +532,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       signs: { brief: 'Small German cockroaches in a kitchen drawer or around a floor drain in an apartment', alt: 'Cockroaches in a Dubai apartment kitchen' },
     },
     answer:
-      `In Dubai apartments the usual problems are cockroaches, bed bugs and ants, and they often come from shared drains, risers and neighbouring flats. Treatment for a studio or 1-bedroom starts from about ${aed('general-apartment')} and is done in one visit with gel baits and targeted treatment; you do not need to leave the flat for the day.`,
+      `In Dubai apartments the usual problems are cockroaches, bed bugs and ants, and they often come from shared drains, risers and neighbouring flats. Treatment for a studio or 1-bedroom starts from about ${aed('general-apartment')} and is done in one visit with gel baits and targeted treatment. You do not need to leave the flat for the day.`,
     body: [
       'Apartment towers share plumbing, kitchen ducts, garbage chutes and electrical risers. Cockroaches and ants use them to move between flats, and bed bugs can travel along walls and through sockets. That is why a flat can be spotless and still have pests, and why the most lasting results come when the building treats common areas at the same time.',
       'Smoke bombs and thermal fogging inside flats are banned in Dubai for safety, so professional apartment treatment is targeted: gel baits, crack-and-crevice treatment, drains and entry points, done in an hour or two.',
@@ -555,7 +555,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     safety: [
       ...SAFETY_COMMON,
       'Most apartment treatments need you out of the treated rooms for 1–2 hours only.',
-      'Safe for neighbours: no fogging or fumigation that can travel through shared ducts.',
+      'Safe for neighbours, with no fogging or fumigation that can travel through shared ducts.',
     ],
     prevention: [
       'Keep floor drains covered and run water in unused bathrooms weekly.',
@@ -580,10 +580,10 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       signs: { brief: 'Technician handing a service report to a tenant at the door of an empty flat, moving boxes visible', alt: 'Service report handed over after move-in treatment' },
     },
     answer:
-      `The best time to treat a home in Dubai is when it is empty, before you move in: every cabinet, wardrobe and drain can be reached and you do not need to protect furniture or food. A move-in treatment for an empty studio or 1-bedroom starts from about ${aed('move-in-apartment')} and takes one visit.`,
+      `The best time to treat a home in Dubai is when it is empty, before you move in. Every cabinet, wardrobe and drain can be reached and you do not need to protect furniture or food. A move-in treatment for an empty studio or 1-bedroom starts from about ${aed('move-in-apartment')} and takes one visit.`,
     body: [
       'Flats that have been empty often have dry drain traps that let cockroaches and drain flies come up, and the previous tenant may have left a problem behind. Treating before your furniture arrives means pests are dealt with before they can get into your boxes, mattress and kitchen.',
-      'Under Dubai tenancy rules, maintenance and pest control usually sit with the landlord unless your contract says otherwise, so check your tenancy contract and ask your landlord or agent. Many landlords and tenancy contracts also ask for pest control when you move out; we provide a service report for your handover.',
+      'Under Dubai tenancy rules, maintenance and pest control usually sit with the landlord unless your contract says otherwise, so check your tenancy contract and ask your landlord or agent. Many landlords and tenancy contracts also ask for pest control when you move out, and we provide a service report for your handover.',
     ],
     signsTitle: 'What a Move-In Treatment Covers',
     signsEyebrow: 'What\'s Included',
@@ -592,7 +592,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'Bathrooms, floor drains and sink traps.',
       'Wardrobes, bedrooms and skirting boards, with a check for bed bugs.',
       'AC closet, store room, balcony and maid\'s room.',
-      'Villas: garden perimeter, garage and drains.',
+      'In villas, the garden perimeter, garage and drains as well.',
     ],
     steps: [
       { title: 'Book before your move date', text: 'Ideally 1–3 days before your furniture arrives, after any deep cleaning.' },
@@ -602,13 +602,13 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     ],
     safety: [
       ...SAFETY_COMMON,
-      'The unit can be aired and used again the same day; we tell you when it is safe to unpack food items.',
+      'The unit can be aired and used again the same day. We tell you when it is safe to unpack food items.',
     ],
     prevention: [
       'Deep clean before the treatment, not after, so baits are not washed away.',
       'Check second-hand furniture and mattresses before they come in.',
       'Pour water into every drain once a week if rooms are unused.',
-      'Keep your service report: it helps if there is a dispute about pests at move-out.',
+      'Keep your service report, as it helps if there is a dispute about pests at move-out.',
     ],
     related: [
       { label: 'Disinfection services', href: '/disinfection-services-dubai' },
@@ -627,10 +627,10 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       signs: { brief: 'Technician sealing the gap around an AC pipe where it enters the wall', alt: 'Sealing gaps around AC pipes to keep lizards out' },
     },
     answer:
-      'The small lizards in Dubai homes are house geckos. They are harmless to people, but they come indoors to hunt insects near lights and leave droppings on walls and curtains. To get rid of them for good you remove what attracts them, the insects, and close the gaps they use; killing geckos alone does not stop new ones coming in.',
+      'The small lizards in Dubai homes are house geckos. They are harmless to people, but they come indoors to hunt insects near lights and leave droppings on walls and curtains. To get rid of them for good you remove what attracts them, the insects, and close the gaps they use. Killing geckos alone does not stop new ones coming in.',
     body: [
       'Geckos follow food. Lights on balconies and windows attract moths, flies and mosquitoes, and geckos come to eat them. Inside, cockroaches and spiders keep them fed. They get in through gaps under doors, around AC pipes, window frames and balcony doors left open in the evening.',
-      'We treat the insects that feed them, seal the entry gaps and move geckos out where we find them. We do not use glue traps: they are cruel and catch other animals.',
+      'We treat the insects that feed them, seal the entry gaps and move geckos out where we find them. We do not use glue traps, because they are cruel and catch other animals.',
     ],
     signs: [
       'Small black and white droppings on walls, window sills and behind curtains.',
@@ -641,7 +641,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     steps: [
       { title: 'Inspection', text: 'Where geckos are seen, where they get in, and which insects attract them.' },
       { title: 'Insect treatment', text: 'Cockroaches, spiders and flying insects around the home treated, so the food source goes.' },
-      { title: 'Exclusion', text: 'Gaps under doors, around AC pipes and window frames sealed; mesh where needed.' },
+      { title: 'Exclusion', text: 'Gaps under doors, around AC pipes and window frames sealed, with mesh where needed.' },
       { title: 'Removal', text: 'Geckos found indoors are caught and released outside.' },
     ],
     safety: [
@@ -679,7 +679,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     signsEyebrow: 'Safety First',
     signs: [
       'Keep children and pets indoors and stay at least a few metres away.',
-      'Do not try to catch, kill or corner it; most bites happen when people try.',
+      'Do not try to catch, kill or corner it, because most bites happen when people try.',
       'Watch where it goes from a safe distance, or take a photo for us to identify.',
       'Close internal doors to keep it in one room if it is inside.',
       'If anyone is bitten, call 998, keep them still and calm, and do not cut or suck the wound.',
@@ -695,7 +695,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'We do not use chemical "snake repellents" that do not work and can harm pets.',
     ],
     prevention: [
-      'Control rodents: they are the main reason snakes come into gardens.',
+      'Control rodents, because they are the main reason snakes come into gardens.',
       'Fit sweeps under gates and doors and close holes in boundary walls.',
       'Keep grass short and clear rubble, wood and stored items from the garden edges.',
       'Fix leaking irrigation and avoid standing water.',
@@ -716,7 +716,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       signs: { brief: 'Technician cleaning and disinfecting pigeon droppings on a balcony', alt: 'Disinfecting pigeon droppings on a balcony' },
     },
     answer:
-      'Disinfection kills germs on surfaces; it is different from pest control, which deals with insects and rodents. We disinfect homes after illness, before moving in, after pest or bird droppings, and offices and businesses on a schedule, using disinfectants approved for use in Dubai.',
+      'Disinfection kills germs on surfaces. It is different from pest control, which deals with insects and rodents. We disinfect homes after illness, before moving in, after pest or bird droppings, and offices and businesses on a schedule, using disinfectants approved for use in Dubai.',
     body: [
       'Most homes need disinfection at specific moments: after someone in the family has been ill, before a new baby comes home, when moving into a flat, or after rodents or pigeons have left droppings. Businesses such as clinics, gyms, nurseries, offices and kitchens often schedule it regularly.',
       'We focus on high-touch surfaces and risk areas: door handles, switches, kitchen and bathroom surfaces, AC grilles, and areas contaminated by droppings, applied with sprayers that cover surfaces evenly without soaking furniture.',
@@ -731,17 +731,17 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     ],
     steps: [
       { title: 'Plan', text: 'Rooms, surfaces and any sensitive areas (electronics, food, fabrics) agreed in advance.' },
-      { title: 'Clean contaminated areas', text: 'Droppings and nesting material removed first; disinfectant does not work through dirt.' },
+      { title: 'Clean contaminated areas', text: 'Droppings and nesting material removed first, because disinfectant does not work through dirt.' },
       { title: 'Disinfect', text: 'Approved disinfectant applied to high-touch and risk surfaces, with the right contact time.' },
-      { title: 'Ventilate and hand back', text: 'Rooms aired and ready to use; we tell you when.' },
+      { title: 'Ventilate and hand back', text: 'Rooms aired and ready to use, and we tell you when.' },
     ],
     safety: [
       'Disinfectants approved for use in Dubai, used at label strength by trained technicians.',
-      'Food, toys and pet items removed or covered; rooms aired before use.',
+      'Food, toys and pet items removed or covered, and rooms aired before use.',
     ],
     prevention: [
-      'Clean high-touch surfaces regularly; disinfection works best on clean surfaces.',
-      'Deal with pests first: droppings come back if the pests do.',
+      'Clean high-touch surfaces regularly, because disinfection works best on clean surfaces.',
+      'Deal with the pests first, or the droppings come back.',
       'Keep AC filters clean.',
     ],
     related: [

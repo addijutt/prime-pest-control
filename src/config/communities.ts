@@ -17,19 +17,19 @@ const FIRST_COMMUNITIES: Community[] = [
     answer:
       'Most pest calls in Dubai Marina are for cockroaches, bed bugs and pigeons on balconies. The towers share drains, risers and garbage chutes, and many flats change tenants or guests often, which spreads bed bugs and cockroaches between units.',
     body: [
-      'Dubai Marina is almost entirely high-rise apartments around the marina canal, with many holiday homes and short lets. Busy turnover means luggage and furniture come and go constantly, which is how bed bugs travel; Dubai Marina has long been one of the areas with the most bed bug call-outs in Dubai.',
+      'Dubai Marina is almost entirely high-rise apartments around the marina canal, with many holiday homes and short lets. Busy turnover means luggage and furniture come and go constantly, which is how bed bugs travel. Dubai Marina has long been one of the areas with the most bed bug call-outs in Dubai.',
       'We treat Marina flats with targeted methods that are safe in towers: gel baits, crack-and-crevice treatment and drain treatment, with no fogging that could travel through shared ducts. For holiday home operators we can schedule treatments between guests.',
     ],
     pests: [
       { pest: 'Bed bugs', why: 'Frequent guest and tenant turnover brings them in luggage and furniture.', href: '/bed-bug-treatment-dubai' },
-      { pest: 'Cockroaches', why: 'German cockroaches in kitchens; drain cockroaches from shared risers.', href: '/cockroach-control-dubai' },
+      { pest: 'Cockroaches', why: 'German cockroaches in kitchens and drain cockroaches from shared risers.', href: '/cockroach-control-dubai' },
       { pest: 'Pigeons', why: 'Nest behind balcony AC units on the sea-facing side.', href: '/bird-netting-dubai' },
       { pest: 'Ants', why: 'Come up through wall cavities and pipe gaps in kitchens.', href: '/ant-control-dubai' },
       { pest: 'Drain flies', why: 'Breed in slow drains and unused bathrooms.', href: '/drain-fly-control-dubai' },
     ],
     priceKeys: ['general-apartment', 'bed-bug-apartment', 'cockroach-apartment', 'bird-net'],
     tips: [
-      'Holiday homes: inspect mattress seams between guests and treat at the first sign.',
+      'In holiday homes, inspect mattress seams between guests and treat at the first sign.',
       'Keep floor drains covered and run water in unused bathrooms weekly.',
       'Ask building management to check net colour rules before fitting a balcony net.',
       'Report cockroaches to the building so risers and garbage rooms are treated too.',
@@ -69,9 +69,9 @@ const FIRST_COMMUNITIES: Community[] = [
     priceKeys: ['general-apartment', 'general-villa', 'rodent', 'cockroach-apartment'],
     tips: [
       'If a plot next to you starts construction, watch for droppings and seal gaps early.',
-      'Townhouses: keep irrigation and planters away from the walls to keep ants out.',
+      'In townhouses, keep irrigation and planters away from the walls to keep ants out.',
       'Cover floor drains in apartments, especially on lower floors.',
-      'Building owners: treat garbage rooms and car parks on a schedule, not only flats.',
+      'Building owners should treat garbage rooms and car parks on a schedule, not only flats.',
     ],
     faqs: [
       { question: 'Why do I have rats in my JVC building?', answer: 'Nearby construction often disturbs rats, which then move into car parks, garbage rooms and lower floors. We use bait stations outside and traps inside, and seal the entry points.' },
@@ -108,13 +108,13 @@ const FIRST_COMMUNITIES: Community[] = [
     tips: [
       'Keep balcony doors closed at dusk on lake-facing flats.',
       'Do not leave rubbish outside the flat door overnight.',
-      'Offices: keep pantry food in closed containers and empty bins daily.',
-      'Restaurants: keep pest control service reports ready for inspections.',
+      'In offices, keep pantry food in closed containers and empty bins daily.',
+      'Restaurants should keep pest control service reports ready for inspections.',
     ],
     faqs: [
       { question: 'Do you treat offices and restaurants in JLT?', answer: 'Yes. We treat offices outside working hours and restaurants on monthly contracts with a service report after every visit.' },
       { question: 'Why do cockroaches keep coming back in my JLT flat?', answer: 'In towers they travel through shared drains and risers. Gel bait treatment in your flat plus treatment of the building\'s garbage rooms and risers gives the most lasting result.' },
-      { question: 'How much is pest control for a JLT apartment?', answer: `General treatment for a studio or 1-bedroom starts from ${aed('general-apartment')}; cockroach-only treatment from ${aed('cockroach-apartment')}.` },
+      { question: 'How much is pest control for a JLT apartment?', answer: `General treatment for a studio or 1-bedroom starts from ${aed('general-apartment')}, and cockroach-only treatment from ${aed('cockroach-apartment')}.` },
     ],
     nearby: ['dubai-marina', 'discovery-gardens', 'al-barsha'],
     photos: {
@@ -132,7 +132,7 @@ const FIRST_COMMUNITIES: Community[] = [
     answer:
       'Al Barsha has both older family villas and busy apartment buildings, so the pest problems are split: bed bugs and cockroaches in flats, and termites, rodents and ants in villas with gardens. It is one of the Dubai areas with the most pest control requests, especially for bed bugs.',
     body: [
-      'Al Barsha 1, 2 and 3 are mostly independent villas with gardens, many of them older, while the area around Mall of the Emirates and Al Barsha Heights has dense apartment buildings and hotels. Older villas have more gaps and more wood at risk from termites; the apartment blocks see high tenant turnover and bed bugs.',
+      'Al Barsha 1, 2 and 3 are mostly independent villas with gardens, many of them older, while the area around Mall of the Emirates and Al Barsha Heights has dense apartment buildings and hotels. Older villas have more gaps and more wood at risk from termites, while the apartment blocks see high tenant turnover and bed bugs.',
       'We treat Al Barsha villas inside, in the garden and along the boundary, and apartments with targeted, tower-safe treatments.',
     ],
     pests: [
@@ -144,7 +144,7 @@ const FIRST_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-apartment', 'general-villa', 'bed-bug-apartment', 'termite-inspection'],
     tips: [
-      'Older villas: book a termite inspection, especially if door frames sound hollow.',
+      'In older villas, book a termite inspection, especially if door frames sound hollow.',
       'Keep garden irrigation away from villa walls.',
       'After travel, check suitcases before bringing them into bedrooms.',
       'Seal gaps under villa doors and around AC pipes.',
@@ -189,7 +189,7 @@ const FIRST_COMMUNITIES: Community[] = [
       'Check under solar panels for pigeon nests in spring.',
     ],
     faqs: [
-      { question: 'Do you remove snakes in Arabian Ranches?', answer: 'Yes. Keep away from the snake and send us a photo on WhatsApp; we remove it safely and check the garden for what attracted it.' },
+      { question: 'Do you remove snakes in Arabian Ranches?', answer: 'Yes. Keep away from the snake and send us a photo on WhatsApp. We remove it safely and check the garden for what attracted it.' },
       { question: 'How often should a villa in Arabian Ranches be treated?', answer: 'Most owners choose quarterly visits on an annual contract, with extra visits in summer when scorpions and ants are most active.' },
       { question: 'Do you treat the garden as well as the villa?', answer: 'Yes. Every villa treatment includes the garden, the perimeter and the boundary walls.' },
     ],
@@ -213,7 +213,7 @@ const FIRST_COMMUNITIES: Community[] = [
       'We treat ant problems at the colony with baits and perimeter treatment rather than only spraying the trails you see, which is why they stop instead of moving to the next room.',
     ],
     pests: [
-      { pest: 'Ants', why: 'Golf course and park landscaping next to homes; Dubai Hills has had the most ant requests in Dubai.', href: '/ant-control-dubai' },
+      { pest: 'Ants', why: 'Golf course and park landscaping next to homes. Dubai Hills has had the most ant requests in Dubai.', href: '/ant-control-dubai' },
       { pest: 'Cockroaches', why: 'Kitchens and drains in apartments and villas.', href: '/cockroach-control-dubai' },
       { pest: 'Mosquitoes', why: 'Irrigation, water features and planters.', href: '/mosquito-control-dubai' },
       { pest: 'Pigeons', why: 'Apartment balconies and villa roofs.', href: '/bird-netting-dubai' },
@@ -221,7 +221,7 @@ const FIRST_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-apartment', 'general-villa', 'cockroach-apartment', 'annual-villa'],
     tips: [
-      'Do not spray ant trails yourself: it splits colonies. Use baits or call us.',
+      'Do not spray ant trails yourself, because it splits colonies. Use baits or call us.',
       'Wipe sugary spills and keep pet food bowls clean.',
       'Empty plant saucers and pool covers of standing water weekly.',
       'Seal expansion joints and door gaps on the garden side.',
@@ -260,7 +260,7 @@ const FIRST_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-villa', 'mosquito', 'termite-inspection', 'annual-villa'],
     tips: [
-      'Keep water features moving and clean; still water breeds mosquitoes within a week.',
+      'Keep water features moving and clean, because still water breeds mosquitoes within a week.',
       'Trim planting back from villa walls and windows.',
       'Use bait stations, not loose poison, in gardens with pets.',
       'Book a termite inspection once a year.',
@@ -336,10 +336,10 @@ const FIRST_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-apartment', 'general-villa', 'bed-bug-apartment', 'bird-net'],
     tips: [
-      'Holiday homes: check mattress seams and sofa joints between every guest.',
-      'Villas: keep garden irrigation away from walls and doors.',
+      'In holiday homes, check mattress seams and sofa joints between every guest.',
+      'In villas, keep garden irrigation away from walls and doors.',
       'Do not leave food or bins on terraces overnight.',
-      'Use UV-stable nets on sea-facing balconies; salt air wears cheap nets fast.',
+      'Use UV-stable nets on sea-facing balconies, because salt air wears cheap nets fast.',
     ],
     faqs: [
       { question: 'Do you treat holiday homes on Palm Jumeirah?', answer: 'Yes, discreetly and between bookings. For bed bugs we plan the two visits around your guests.' },
@@ -374,13 +374,13 @@ const FIRST_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-apartment', 'cockroach-apartment', 'bed-bug-apartment', 'move-in-apartment'],
     tips: [
-      'Ground-floor flats: fit a door sweep on the garden-side door.',
+      'In ground-floor flats, fit a door sweep on the garden-side door.',
       'Cover floor drains and keep traps filled with water.',
       'Moving in? Treat the empty flat before your furniture arrives.',
       'Ask the building to treat the garbage area at the same time.',
     ],
     faqs: [
-      { question: 'How much is pest control in a Discovery Gardens apartment?', answer: `General treatment starts from ${aed('general-apartment')} for a studio or 1-bedroom; cockroach-only treatment from ${aed('cockroach-apartment')}.` },
+      { question: 'How much is pest control in a Discovery Gardens apartment?', answer: `General treatment starts from ${aed('general-apartment')} for a studio or 1-bedroom, and cockroach-only treatment from ${aed('cockroach-apartment')}.` },
       { question: 'I am moving into Discovery Gardens. Should I treat first?', answer: `Yes. Treating the empty flat is the most thorough and easiest moment; move-in treatment starts from ${aed('move-in-apartment')}.` },
       { question: 'Do you treat whole buildings?', answer: 'Yes, common areas, garbage rooms and drains on contract for owners associations.' },
     ],

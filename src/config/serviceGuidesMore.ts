@@ -151,9 +151,9 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     },
     priceKeys: ['ant'],
     answer:
-      'Most ant problems in Dubai homes are small indoor ants such as pharaoh ants and ghost ants, and garden ants coming in from villas and parks. Spraying the trail makes it worse: the colony splits and you get more nests. The fix is slow-acting bait that workers carry back to the nest, plus a perimeter treatment in villas.',
+      'Most ant problems in Dubai homes are small indoor ants such as pharaoh ants and ghost ants, and garden ants coming in from villas and parks. Spraying the trail makes it worse, because the colony splits and you get more nests. The fix is slow-acting bait that workers carry back to the nest, plus a perimeter treatment in villas.',
     body: [
-      'Ants follow food and water, and in Dubai they are active all year, with complaints rising in the heat and after rain. In apartments they come through wall cavities, pipe gaps and electrical boxes; in villas they nest in irrigated gardens, planters and under paving, then trail into kitchens and bathrooms. Communities with large green areas such as Dubai Hills, JLT and JVC see the most ant call-outs.',
+      'Ants follow food and water, and in Dubai they are active all year, with complaints rising in the heat and after rain. In apartments they come through wall cavities, pipe gaps and electrical boxes. In villas they nest in irrigated gardens, planters and under paving, then trail into kitchens and bathrooms. Communities with large green areas such as Dubai Hills, JLT and JVC see the most ant call-outs.',
       'Pharaoh ants react to sprays by budding into several new colonies, which is why shop-bought sprays often spread the problem. Baits work with the colony instead of against it.',
     ],
     signs: [
@@ -173,7 +173,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
       'Baits are placed in cracks and corners, out of reach of children and pets.',
     ],
     prevention: [
-      'Do not spray ant trails yourself: it splits the colony.',
+      'Do not spray ant trails yourself, because it splits the colony.',
       'Wipe sugary spills and keep food in sealed containers.',
       'Keep pet bowls clean and do not leave pet food out.',
       'Keep irrigation and planters away from villa walls and seal expansion joints.',
@@ -237,7 +237,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     },
     priceKeys: ['flea', 'tick'],
     answer:
-      'Fleas in Dubai homes are almost always cat fleas, which live on both cats and dogs. Only about one in twenty fleas in a home is on the pet; the rest are eggs, larvae and pupae in carpets, sofas and pet beds. That is why treatment needs two visits about two weeks apart, together with a vet flea treatment for the pet.',
+      'Fleas in Dubai homes are almost always cat fleas, which live on both cats and dogs. Only about one in twenty fleas in a home is on the pet. The rest are eggs, larvae and pupae in carpets, sofas and pet beds. That is why treatment needs two visits about two weeks apart, together with a vet flea treatment for the pet.',
     body: [
       'Flea pupae sit in a protective cocoon that no spray reaches. They hatch when they sense vibration or warmth, often weeks later. The second visit catches those new fleas before they lay more eggs. Vacuuming between visits helps, because it makes pupae hatch into the treatment.',
       'Fleas also come in from stray cats around villas and from shared gardens, so outdoor resting spots may need treatment too.',
@@ -292,13 +292,13 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     ],
     steps: [
       { title: 'Identify', text: 'Hornet, wasp or bee, from a photo on WhatsApp if possible.' },
-      { title: 'Protect the area', text: 'People and pets kept away; work done in protective suits.' },
-      { title: 'Remove or relocate', text: 'Hornet and wasp nests treated and removed; honey bees relocated where possible.' },
+      { title: 'Protect the area', text: 'People and pets kept away, and work done in protective suits.' },
+      { title: 'Remove or relocate', text: 'Hornet and wasp nests treated and removed, and honey bees relocated where possible.' },
       { title: 'Seal', text: 'Entry holes sealed so they do not rebuild in the same spot.' },
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Never block a nest entrance or spray it yourself: it makes the colony attack.',
+      'Never block a nest entrance or spray it yourself, because it makes the colony attack.',
     ],
     prevention: [
       'Seal holes in walls and around AC pipes before spring.',
@@ -345,7 +345,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
       'Fit door sweeps on garden, garage and maid\'s room doors.',
       'Clear stones, wood and rubble from along the walls.',
       'Shake out shoes and check bedding in villas near the desert.',
-      'Keep outdoor lights low: they draw insects, which draw scorpions.',
+      'Keep outdoor lights low, because they draw insects, which draw scorpions.',
     ],
     related: [
       { label: 'Camel spider control', href: '/camel-spider-control-dubai' },
@@ -366,7 +366,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
       'Most spiders in Dubai homes are harmless house and cellar spiders that live off small insects. A few, such as the brown widow, can bite. Lasting spider control means removing webs and egg sacs, treating the corners and gaps they live in, and treating the insects they feed on.',
     body: [
       'Spiders follow food. Outdoor lights, balconies and gardens attract flying insects, and spiders build webs where those insects gather. Indoors, they hide behind furniture, in ceiling corners, store rooms and maid\'s rooms.',
-      'Brown widows are brown with an orange hourglass mark under the body and are found in garden furniture, under ledges and in storage. Their bite can be painful; seek medical advice if bitten.',
+      'Brown widows are brown with an orange hourglass mark under the body and are found in garden furniture, under ledges and in storage. Their bite can be painful, so seek medical advice if bitten.',
     ],
     signs: [
       'Webs in ceiling corners, behind furniture or around outdoor lights.',
@@ -406,7 +406,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     answer:
       'Camel spiders are not true spiders and are not venomous, but they are large, very fast and have strong jaws that can give a painful bite. In Dubai they come into villas near the desert edge, mostly at night and in summer, chasing insects and shade. Control is a perimeter treatment and closing the gaps they use.',
     body: [
-      'Camel spiders, also called solifuges or wind scorpions, hunt insects at night and are drawn to lights and cool shaded spots like garages, store rooms and maid\'s rooms. Many stories about them are myths: they do not chase people and they are not poisonous.',
+      'Camel spiders, also called solifuges or wind scorpions, hunt insects at night and are drawn to lights and cool shaded spots like garages, store rooms and maid\'s rooms. Many stories about them are myths. They do not chase people and they are not poisonous.',
       'The same conditions that bring camel spiders, open land, rubble and outdoor lights, also bring scorpions, so we usually treat for both.',
     ],
     signs: [
@@ -423,7 +423,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Do not try to catch one by hand; use a container and call us.',
+      'Do not try to catch one by hand. Use a container and call us.',
     ],
     prevention: [
       'Fit door sweeps and keep garage doors closed at night.',
@@ -446,7 +446,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     },
     priceKeys: ['drain-fly', 'cockroach-apartment'],
     answer:
-      'Drain flies are the small fuzzy flies resting on bathroom and kitchen walls. They breed in the slimy film inside drains, floor traps and unused bathrooms, not in the room itself. Spraying the flies does nothing; the fix is cleaning and treating the drains where the larvae live.',
+      'Drain flies are the small fuzzy flies resting on bathroom and kitchen walls. They breed in the slimy film inside drains, floor traps and unused bathrooms, not in the room itself. Spraying the flies does nothing. The fix is cleaning and treating the drains where the larvae live.',
     body: [
       'In Dubai apartments drain flies are common in bathrooms that are rarely used, where floor traps dry out, and in kitchens with slow sinks. The flies are weak fliers and stay close to where they breed, so finding the right drain usually solves it.',
       'They do not bite, but they show there is organic build-up in the drains, which can also bring cockroaches up from the building\'s drainage.',
@@ -522,7 +522,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     },
     priceKeys: ['general-apartment', 'general-villa', 'annual-apartment', 'annual-villa'],
     answer:
-      'Residential pest control covers apartments, townhouses and villas, as a one-off treatment or an annual contract. Apartments mostly need cockroach, bed bug and ant treatment; villas also need the garden, drains and perimeter treated for ants, termites, rodents, scorpions and mosquitoes.',
+      'Residential pest control covers apartments, townhouses and villas, as a one-off treatment or an annual contract. Apartments mostly need cockroach, bed bug and ant treatment. Villas also need the garden, drains and perimeter treated for ants, termites, rodents, scorpions and mosquitoes.',
     body: [
       'Every home is different. A studio in a tower shares drains and risers with neighbours, while a villa has a garden, irrigation, roof and boundary walls. We start with what you are seeing, check where it comes from, and treat in the way that fits your home.',
       'For homes with recurring problems, an annual contract with scheduled visits is cheaper than repeated one-off treatments and catches problems early.',
@@ -567,7 +567,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     },
     priceKeys: ['fumigation-commercial', 'general-apartment', 'general-villa'],
     answer:
-      'Fumigation fills a sealed space with a gas that reaches pests deep inside goods, wood and packaging. In Dubai it is used for warehouses, stored food and commodities, shipping containers and wooden pallets, and it needs a separate Dubai Municipality fumigation approval, which we hold. It is never used in homes: for apartments and villas we use safe targeted treatments instead.',
+      'Fumigation fills a sealed space with a gas that reaches pests deep inside goods, wood and packaging. In Dubai it is used for warehouses, stored food and commodities, shipping containers and wooden pallets, and it needs a separate Dubai Municipality fumigation approval, which we hold. It is never used in homes. For apartments and villas we use safe targeted treatments instead.',
     body: [
       'Many people search for "fumigation" when they mean pest control at home. Gas fumigants such as aluminium phosphide are banned in homes in the UAE, after deaths caused by gas spreading through shared AC ducts into neighbouring flats. If someone offers to fumigate your apartment, do not accept. Cockroaches, bed bugs and other home pests are treated safely with gels, baits and targeted sprays.',
       'For businesses, fumigation protects stock from weevils, beetles and moths, and is required for many exports. Wooden pallets and crates often need ISPM 15 treatment, and many importers and customs authorities ask for a fumigation certificate with the shipping documents. We seal, treat, monitor and ventilate the space, and issue the certificate.',
@@ -590,7 +590,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     ],
     safety: [
       'Carried out only by trained technicians with the Dubai Municipality fumigation approval.',
-      'Never in homes, flats or occupied buildings: gas fumigation in residential buildings is banned in the UAE.',
+      'Never used in homes, flats or occupied buildings, because gas fumigation in residential buildings is banned in the UAE.',
       'Treated areas are sealed, signed and monitored until gas levels are safe.',
     ],
     prevention: [
@@ -640,7 +640,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Gel baits and targeted treatments suitable for food premises; food and utensils covered or removed.',
+      'Gel baits and targeted treatments suitable for food premises, with food and utensils covered or removed.',
       'Product safety data sheets and service reports for your records.',
     ],
     prevention: [
@@ -670,7 +670,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     answer:
       'Offices in Dubai mostly get cockroaches and ants in pantries and washrooms, and rodents in false ceilings, risers and cable trays. We treat outside working hours, as a one-off visit or on a quarterly contract, with a report after every visit.',
     body: [
-      'Pantries with food, coffee machines, dishwashers and bins are where office pests start, and towers share drains and risers that let cockroaches move between floors. Rodents in ceilings are a bigger risk than they look: they chew cables and can cause outages.',
+      'Pantries with food, coffee machines, dishwashers and bins are where office pests start, and towers share drains and risers that let cockroaches move between floors. Rodents in ceilings are a bigger risk than they look. They chew cables and can cause outages.',
       'We work early morning, in the evening or at weekends, so treatment never disturbs your team, and most areas are dry and ready before staff arrive.',
     ],
     signsTitle: 'Signs Your Office Needs Pest Control',
@@ -688,7 +688,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     ],
     safety: [
       ...SAFETY_COMMON,
-      'Treatments are dry before staff arrive; we tell you if any area needs to stay closed for longer.',
+      'Treatments are dry before staff arrive. We tell you if any area needs to stay closed for longer.',
     ],
     prevention: [
       'Keep pantry food in sealed containers and empty bins daily.',
@@ -712,7 +712,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     },
     priceKeys: ['fly', 'fly-commercial'],
     answer:
-      'Flies in Dubai homes and restaurants come from breeding sites close by: bins, drains, grease traps, food waste, pet waste and rotting fruit. Spraying the flies you see gives a day or two of relief; finding and treating where they breed, and fitting insect light traps in food areas, is what stops them.',
+      'Flies in Dubai homes and restaurants come from breeding sites close by: bins, drains, grease traps, food waste, pet waste and rotting fruit. Spraying the flies you see gives a day or two of relief. Finding and treating where they breed, and fitting insect light traps in food areas, is what stops them.',
     body: [
       'House flies and blow flies breed in rubbish and organic waste, fruit flies in fermenting fruit and drinks residue, and drain flies in the slime inside drains. In the heat, a fly can go from egg to adult in about a week, so one overlooked bin can bring back a whole population.',
       'For homes we find and treat the source in one visit. For restaurants and food businesses fly control is part of a monthly programme with light traps that catch flies without spraying near food.',

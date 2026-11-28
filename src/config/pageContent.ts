@@ -162,7 +162,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       bullets: [
       'Inspection to find active nests, flight paths and entry holes in walls, roof spaces, gardens and AC units around your Dubai home or business',
       'Safe removal of hornet and wasp nests with protective equipment and targeted treatment of the colony',
-      'Honey bee swarms and colonies relocated where possible; honeycomb removed from wall voids so it does not melt in the heat',
+      'Honey bee swarms and colonies relocated where possible, and honeycomb removed from wall voids so it does not melt in the heat',
       'Entry points sealed and advice to stop hornets, wasps and bees rebuilding in the same spot',
       'Not sure if it is a hornet, a wasp or a bee? Send us a photo on WhatsApp and we will tell you what it is and the safest option.',
       ],
@@ -586,7 +586,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       bullets: [
       'Thorough inspection of garden walls, storage areas, gaps in flooring, and exterior entry points where scorpions hide',
       'Targeted residual treatments to eliminate active scorpions and create a barrier around your Dubai property',
-      'Scorpion proofing: sealing cracks, gaps around pipes, and entry points into your home',
+      'Scorpion proofing by sealing cracks, gaps around pipes, and entry points into your home',
       'Customised scorpion control plans for Dubai villas, garages, gardens, and desert-edge communities',
       'Emergency same-day response available for scorpion sightings. WhatsApp for the fastest response.',
       ],
@@ -790,7 +790,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
         pest('Camel Spider'),
       ],
       bullets: [
-        'Walk-round of the whole plot: inside, roof, garden, drains and boundary walls',
+        'Walk-round of the whole plot, covering inside, roof, garden, drains and boundary walls',
         'Indoor gel baits and crack-and-crevice treatment in kitchens, bathrooms and store rooms',
         'Perimeter barrier along walls and doors against ants, cockroaches and scorpions',
         'Garden treatment for ant nests, mosquito breeding spots and rodent activity',
@@ -828,13 +828,13 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
         'Gel bait and crack-and-crevice treatment in kitchens and bathrooms',
         'Floor drains, sink traps and pipe gaps treated so pests cannot come back up',
         'Bed bug inspection and two-visit treatment when needed',
-        'Safe in towers: no fogging or fumigation that travels through shared ducts',
+        'Safe in towers, with no fogging or fumigation that travels through shared ducts',
         'Balcony bird netting to stop pigeons nesting behind the AC unit',
       ],
     },
     faqTitle: 'Apartment Pest Control FAQs',
     faqs: [
-      { question: 'Do I have to leave my apartment during pest control?', answer: 'Usually not for the day. Most treatments need you out of the treated rooms for 1–2 hours; bed bug treatment about 4 hours.' },
+      { question: 'Do I have to leave my apartment during pest control?', answer: 'Usually not for the day. Most treatments need you out of the treated rooms for 1–2 hours, or about 4 hours for bed bug treatment.' },
       { question: 'Why do I still have cockroaches when my flat is clean?', answer: 'In towers they come through shared drains, risers and garbage chutes from other flats. Gel baits in your flat plus treatment of the building\'s common areas gives the best result.' },
       { question: 'Is pest control safe for my neighbours?', answer: 'Yes. We use targeted treatments, not fogging or fumigation. Smoke bombs and fogging inside flats are banned in Dubai for safety.' },
       { question: 'Should the landlord or tenant pay for pest control?', answer: 'It depends on your tenancy contract. Under Dubai rules maintenance usually sits with the landlord unless the contract says otherwise, so check yours.' },
@@ -861,7 +861,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
       ],
       bullets: [
         'Every cabinet, drawer, wardrobe and appliance space treated while empty',
-        'Drains and floor traps treated: empty flats often have dry traps that let pests up',
+        'Drains and floor traps treated, since empty flats often have dry traps that let pests up',
         'Bed bug check of the bedrooms and any furniture left behind',
         'Service report for your records, landlord or move-out handover',
         'Apartments, townhouses and villas across Dubai',
@@ -899,7 +899,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
         'Inspection of where geckos are seen and how they get in',
         'Treatment of the cockroaches, spiders and flying insects they feed on',
         'Sealing gaps under doors, around AC pipes and window frames',
-        'Geckos caught and released outside; no glue traps, no poison',
+        'Geckos caught and released outside, with no glue traps and no poison',
         'Advice on lighting and screens to stop them coming back',
       ],
     },
@@ -931,7 +931,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
         pest('General Pest Control', '/residential-pest-control', 'residential-pc'),
       ],
       bullets: [
-        'Fast advice on WhatsApp: send a photo and we tell you if it is venomous',
+        'Fast advice on WhatsApp, where you send a photo and we tell you if it is venomous',
         'Safe removal by trained technicians with proper tools, never by hand',
         'Property check for rodents, gaps under gates and doors, and wall holes',
         'Rodent control and sealing so snakes have less reason to come back',
@@ -974,7 +974,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
     },
     faqTitle: 'Disinfection FAQs',
     faqs: [
-      { question: 'Is disinfection the same as pest control?', answer: 'No. Disinfection kills germs on surfaces; pest control deals with insects and rodents. After a pest problem we often do both.' },
+      { question: 'Is disinfection the same as pest control?', answer: 'No. Disinfection kills germs on surfaces, while pest control deals with insects and rodents. After a pest problem we often do both.' },
       { question: 'How long after disinfection can we use the rooms?', answer: 'Usually after the rooms have been aired, typically within an hour or two. We tell you for the product used.' },
       { question: 'Do you disinfect offices and clinics?', answer: 'Yes, one-off or on a schedule, outside working hours if needed.' },
       { question: 'Can you clean and disinfect pigeon droppings?', answer: 'Yes. Droppings are removed with protective equipment and the area is disinfected, then we can fit netting or spikes so the birds do not return.' },
@@ -1037,7 +1037,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
         'Fumigation of warehouses, stored food and commodities against weevils, beetles and moths',
         'Container and wooden pallet fumigation for export, with a fumigation certificate for your shipping documents',
         'Gas-tight sealing, monitoring and safe ventilation by trained, licensed technicians',
-        'For homes: safe targeted treatment instead of fumigation, which is banned in residential buildings',
+        'For homes we use safe targeted treatment instead of fumigation, which is banned in residential buildings',
         'Dubai Municipality fumigation approval',
       ],
     },
@@ -1125,7 +1125,7 @@ export const PAGE_CONTENT: Record<string, PageContent> = {
     },
     expertise: {
       title: 'Fly Control That Starts at the Source',
-      subtitle: 'Flies breed in rubbish, drains, food waste and organic build-up. Killing the adults alone does not stop them; finding and treating where they breed does.',
+      subtitle: 'Flies breed in rubbish, drains, food waste and organic build-up. Killing the adults alone does not stop them. Finding and treating where they breed does.',
       images: [
         pest('House Fly', undefined, 'fly'),
         pest('Fruit Fly'),

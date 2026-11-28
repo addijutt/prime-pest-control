@@ -31,7 +31,7 @@ export const MORE_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-apartment', 'bed-bug-apartment', 'cockroach-apartment', 'bird-net'],
     tips: [
-      'Holiday lets: check mattress seams between every guest.',
+      'In holiday lets, check mattress seams between every guest.',
       'Run water in unused bathrooms weekly so floor traps stay sealed.',
       'Report cockroaches to building management so risers are treated too.',
       'Check building rules on net colour before fitting a balcony net.',
@@ -66,7 +66,7 @@ export const MORE_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-apartment', 'bed-bug-apartment', 'cockroach-apartment', 'bird-net'],
     tips: [
-      'Holiday homes: inspect beds and sofas between every booking.',
+      'In holiday homes, inspect beds and sofas between every booking.',
       'Keep balcony doors closed and do not feed birds.',
       'Run water in unused bathrooms weekly.',
       'Ask the building to treat garbage rooms at the same time as your flat.',
@@ -140,7 +140,7 @@ export const MORE_COMMUNITIES: Community[] = [
       'Cover floor drains and keep traps filled with water.',
       'Do not leave rubbish outside the flat door overnight.',
       'Moving in? Treat the empty flat before your furniture arrives.',
-      'Villas: keep irrigation away from walls.',
+      'In villas, keep irrigation away from walls.',
     ],
     faqs: [
       { question: 'Why are cockroaches so common in my Silicon Oasis building?', answer: 'They travel between flats through shared drains and garbage areas. Gel bait in your flat plus treatment of the building common areas works best.' },
@@ -179,7 +179,7 @@ export const MORE_COMMUNITIES: Community[] = [
       'If you see a snake, keep away and send us a photo.',
     ],
     faqs: [
-      { question: 'Are there snakes in The Springs and The Meadows?', answer: 'Vipers have been reported in Emirates Living gardens in the past. Keep away from any snake, keep pets inside and WhatsApp us a photo; we remove it safely.' },
+      { question: 'Are there snakes in The Springs and The Meadows?', answer: 'Vipers have been reported in Emirates Living gardens in the past. Keep away from any snake, keep pets inside and WhatsApp us a photo. We remove it safely.' },
       { question: 'Can you reduce mosquitoes near the lakes?', answer: 'We treat breeding water and resting spots in your garden, which makes a big difference at home. Lakes themselves are managed by the community.' },
       { question: 'Do you treat townhouses?', answer: `Yes, townhouses and villas, from ${aed('general-villa')}.` },
     ],
@@ -209,7 +209,7 @@ export const MORE_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-villa', 'snake', 'scorpion', 'annual-villa'],
     tips: [
-      'Control rodents: they are the main reason snakes come into gardens.',
+      'Control rodents, because they are the main reason snakes come into gardens.',
       'Fit sweeps under gates and doors and close holes in boundary walls.',
       'Keep water features moving and clean.',
       'Book a termite inspection once a year.',
@@ -315,13 +315,13 @@ export const MORE_COMMUNITIES: Community[] = [
     ],
     priceKeys: ['general-apartment', 'cockroach-apartment', 'bed-bug-apartment', 'commercial'],
     tips: [
-      'Treat neighbouring flats at the same time if you can: pests move between units.',
+      'Treat neighbouring flats at the same time if you can, because pests move between units.',
       'Check second-hand beds and sofas before bringing them in.',
       'Keep food in sealed containers and do not leave rubbish out overnight.',
       'Cover floor drains.',
     ],
     faqs: [
-      { question: 'How much is pest control in International City?', answer: `General treatment for a studio or 1-bedroom starts from ${aed('general-apartment')}; cockroach-only from ${aed('cockroach-apartment')}.` },
+      { question: 'How much is pest control in International City?', answer: `General treatment for a studio or 1-bedroom starts from ${aed('general-apartment')}, and cockroach-only from ${aed('cockroach-apartment')}.` },
       { question: 'Do you treat shops and restaurants in International City?', answer: 'Yes, on monthly contracts with service reports for inspections.' },
       { question: 'Can you treat a whole building?', answer: 'Yes, common areas, garbage rooms and drains on contract for building owners.' },
     ],
@@ -352,8 +352,8 @@ export const MORE_COMMUNITIES: Community[] = [
     tips: [
       'Seal gaps around pipes under kitchen sinks.',
       'Keep drain covers closed and traps filled with water.',
-      'Shops: store stock off the floor and away from walls.',
-      'Restaurants: keep pest control service reports ready for inspections.',
+      'In shops, store stock off the floor and away from walls.',
+      'Restaurants should keep pest control service reports ready for inspections.',
     ],
     faqs: [
       { question: 'Do you treat restaurants and shops in Deira?', answer: 'Yes, on monthly contracts with a service report after every visit, outside opening hours.' },
@@ -377,7 +377,7 @@ export const MORE_COMMUNITIES: Community[] = [
       'Villas and townhouses at the edge of the community see desert pests in summer: scorpions, camel spiders and occasionally snakes, which follow rodents. A perimeter treatment and door sweeps keep most of them out.',
     ],
     pests: [
-      { pest: 'Move-in treatment', why: 'New handovers: treat the empty home before your furniture arrives.', href: '/move-in-pest-control-dubai' },
+      { pest: 'Move-in treatment', why: 'In a new handover, treat the empty home before your furniture arrives.', href: '/move-in-pest-control-dubai' },
       { pest: 'Cockroaches', why: 'Dry drain traps in empty and new units.', href: '/cockroach-control-dubai' },
       { pest: 'Drain flies', why: 'Unused bathrooms and new drains.', href: '/drain-fly-control-dubai' },
       { pest: 'Rats and mice', why: 'Construction sites and open land nearby.', href: '/rodent-control' },
@@ -414,7 +414,7 @@ export const MORE_COMMUNITIES: Community[] = [
     ],
     pests: [
       { pest: 'Scorpions & camel spiders', why: 'Open desert next to many communities, especially in summer.', href: '/scorpion-control-dubai' },
-      { pest: 'Snakes', why: 'A saw-scaled viper has been reported in Dubailand; snakes follow rodents.', href: '/snake-removal-dubai' },
+      { pest: 'Snakes', why: 'A saw-scaled viper has been reported in Dubailand, and snakes follow rodents.', href: '/snake-removal-dubai' },
       { pest: 'Ants', why: 'Irrigated townhouse gardens and parks.', href: '/ant-control-dubai' },
       { pest: 'Termites', why: 'Gardens against townhouse and villa walls.', href: '/termite-control' },
       { pest: 'Cockroaches', why: 'Shared drains in apartment buildings.', href: '/cockroach-control-dubai' },
