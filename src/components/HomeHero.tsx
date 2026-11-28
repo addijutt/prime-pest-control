@@ -96,10 +96,10 @@ const MOBILE_HERO_BENEFITS = [
 
 /** Hero v2 proof points: the three things Dubai visitors check before they message.
  *  The warranty and price come from this page's services (prices.ts), so a page without a warranty never shows one. */
-function heroProofs(fromPrice?: string, days?: number): string[] {
+function heroProofs(fromPrice?: string, warranty?: string): string[] {
   return [
     'Dubai Municipality approved',
-    `100% satisfaction guarantee${days ? `, ${days}-day warranty` : ''}`,
+    `100% satisfaction guarantee${warranty ? `, ${warranty}` : ''}`,
     fromPrice ? `${fromPrice}. Exact price on WhatsApp in minutes` : 'Free quote on WhatsApp in minutes',
   ];
 }
@@ -136,8 +136,8 @@ interface HomeHeroProps {
   desktopPestIcons?: PestImageRef[];
   /** Hero v2: starting price for this page, e.g. "From AED 179" (heroPriceText in prices.ts) */
   fromPrice?: string;
-  /** Hero v2: this page's warranty in days (heroWarrantyDays in prices.ts); 0 = no warranty line */
-  warrantyDays?: number;
+  /** Hero v2: this page's warranty wording (heroWarrantyText in prices.ts); '' = no warranty line */
+  warranty?: string;
   /** Page path, picks the hero image set (config/heroImages.ts) */
   pathname?: string;
   /** Phone hero sentence under the WhatsApp button. Unique per page (the page's meta description): Google
@@ -150,7 +150,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
   desktopPestIcons,
   fromPrice,
   tagline = 'Pest and bird control services across every Dubai community. Open 24/7, with a free quote on WhatsApp.',
-  warrantyDays,
+  warranty,
   pathname = '/',
 }) => {
   const [pestsExpanded, setPestsExpanded] = useState(false);
@@ -183,7 +183,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({
     if (!desktopPestIcons?.length) return MOBILE_HERO_PESTS;
     return [...desktopPestIcons.slice(0, 4).map(toMobileHeroPest), ...MOBILE_HERO_PESTS.slice(4)];
   }, [desktopPestIcons]);
-  const proofs = heroProofs(fromPrice, warrantyDays);
+  const proofs = heroProofs(fromPrice, warranty);
   const images = heroImagesFor(pathname);
   const heroBg = { '--hero-bg': `url(${images.background})` } as React.CSSProperties;
 

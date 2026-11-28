@@ -136,7 +136,7 @@ Paste the style block of the group, then the subject line.
 | 11 | `rodent-control-intro` | C | Black locked tamper-resistant rodent bait station on the ground along a sand-coloured villa boundary wall, garden gravel and a small plant. |
 | 12 | `rodent-control-signs` | B | Store room shelf corner with rodent droppings, a gnawed cable and a chewed food packet, real dusty surface. |
 | 13 | `pigeon-control-dubai-intro` | C | Dubai apartment balcony with a nearly invisible black pigeon net fitted across the opening, outdoor split AC unit clean, towers in the background. |
-| 14 | `pigeon-control-dubai-signs` | B | Pigeon nest of twigs and heavy white droppings behind an outdoor split AC unit on a Dubai apartment balcony, one pigeon nearby. |
+| 14 | `pigeon-control-dubai-signs` | B | Flat scruffy pigeon nest of twigs and feathers in the corner of a modern Dubai apartment tower balcony next to a planter, heavy white droppings on the ledge, tiles and glass railing base, one grey pigeon nearby. No AC unit. |
 | 15 | `bird-netting-dubai-intro` | C | View from inside a Dubai apartment balcony through a finished fine black bird net, the city clearly visible through it, neat edges. |
 | 16 | `bird-netting-dubai-signs` | D | Gloved hands fixing net clips onto a thin stainless steel cable along the edge of a balcony, the net and towers behind. |
 | 17 | `commercial-pest-control-dubai-intro` | D | Gloved hand holding a tablet with a blank checklist screen in a stainless steel commercial kitchen after closing, lights dimmed. |

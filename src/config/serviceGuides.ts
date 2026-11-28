@@ -31,7 +31,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'Itchy bites in a line after sleeping, or small dark spots on mattress seams (bed bugs).',
       'Mud tubes on walls, hollow-sounding door frames or skirting boards (termites).',
       'Scratching in the false ceiling, chewed cables or droppings in the store room (rodents).',
-      'Pigeons nesting behind the AC unit or droppings on the balcony.',
+      'Pigeons nesting on balcony ledges or roofs, or droppings on the balcony.',
     ],
     steps: [
       { title: 'Tell us what you see', text: 'A photo or short description on WhatsApp is enough to identify most pests and give a starting price.' },
@@ -292,18 +292,18 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Pigeon Control',
     title: 'Pigeon Control in Dubai',
     photos: {
-      intro: { brief: 'Before and after of an apartment balcony: droppings and a nest behind the AC unit, then clean with a net installed', alt: 'Apartment tower balcony closed with a fine pigeon net, view of the neighbouring towers', src: '/assets/img/jobs/pigeon-control-dubai-intro.webp' },
-      signs: { brief: 'Pigeon nest and droppings behind an outdoor split AC unit on a Dubai balcony', alt: 'Pigeon, nest and droppings behind an outdoor AC unit on an apartment balcony', src: '/assets/img/jobs/pigeon-control-dubai-signs.webp' },
+      intro: { brief: 'Clean apartment tower balcony with a pigeon net fitted (after photo)', alt: 'Apartment tower balcony closed with a fine pigeon net, view of the neighbouring towers', src: '/assets/img/jobs/pigeon-control-dubai-intro.webp' },
+      signs: { brief: 'Pigeon nest and droppings in the corner of an apartment balcony, on the ledge or behind a planter', alt: 'Pigeon, nest and droppings behind an outdoor AC unit on an apartment balcony', src: '/assets/img/jobs/pigeon-control-dubai-signs.webp' },
     },
     answer:
-      'Pigeons in Dubai nest behind split AC units, on balcony ledges, in window recesses and on solar panels. The lasting fix is to make the spot unusable: clean and disinfect the droppings, remove the nest, then fit netting, spikes or wire so they cannot land or nest there again. Feeding or scaring them does not work for long.',
+      'Pigeons in Dubai nest on balcony ledges and in corners, in window recesses, behind villa AC units and on solar panels. The lasting fix is to make the spot unusable: clean and disinfect the droppings, remove the nest, then fit netting, spikes or wire so they cannot land or nest there again. Feeding or scaring them does not work for long.',
     body: [
       'Pigeons return to the same spot every day and breed all year in Dubai\'s climate, so one pair on a balcony quickly becomes many. Their droppings are acidic, stain stone and metal, block AC drains and can carry fungi and bacteria that are harmful when the dried dust is breathed in.',
       'Bird control is a separate Dubai Municipality approval, and we hold it. Many towers have rules about the colour and type of balcony nets, so we use clear or black UV-stable nets and can check with your building management first.',
     ],
     signs: [
-      'Droppings on the balcony floor, railings, AC unit and window sills.',
-      'Twigs and nests behind or under the outdoor AC unit.',
+      'Droppings on the balcony floor, railings, ledges and window sills.',
+      'Twigs and nests in balcony corners, planters or behind villa AC units.',
       'Cooing early in the morning and birds landing on the same ledge every day.',
       'AC condensate drain blocked by droppings and feathers.',
     ],
@@ -311,7 +311,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       { title: 'Survey', text: 'We find where they land, roost and nest and recommend the right method for each spot.' },
       { title: 'Clean and disinfect', text: 'Droppings and nests removed safely with protective equipment and the area disinfected.' },
       { title: 'Proofing', text: 'Netting for balconies and recesses, spikes or wire for ledges and railings, AC unit covers and solar panel mesh.' },
-      { title: 'Check the result', text: 'We check after installation that birds can no longer land or get behind the AC unit.' },
+      { title: 'Check the result', text: 'We check after installation that birds can no longer land or nest in the protected spots.' },
     ],
     safety: [
       'Birds are kept out, not harmed, with no poison and no glue.',
@@ -349,7 +349,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     signsTitle: 'Where Nets Work Best',
     signsEyebrow: 'Where It Works',
     signs: [
-      'Apartment balconies where pigeons nest behind the AC unit.',
+      'Apartment balconies where pigeons nest on ledges and in corners.',
       'Villa terraces, courtyards and roof areas.',
       'Window recesses, light wells and building shafts.',
       'Car parks, warehouses and loading bays (commercial netting).',
@@ -544,7 +544,7 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
       'Bites after sleeping and spots on the mattress (bed bugs).',
       'Trails of tiny ants along the kitchen counter or bathroom.',
       'Drain flies over sinks and floor drains.',
-      'Pigeons nesting behind the balcony AC unit.',
+      'Pigeons nesting on balcony ledges, planters and corners.',
     ],
     steps: [
       { title: 'Quick inspection', text: 'Kitchen, bathrooms, bedrooms, AC closet and balcony, to find what and where.' },

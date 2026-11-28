@@ -25,7 +25,7 @@ export const MORE_COMMUNITIES: Community[] = [
     pests: [
       { pest: 'Cockroaches', why: 'Food outlets, garbage rooms and shared risers.', href: '/cockroach-control-dubai' },
       { pest: 'Bed bugs', why: 'Serviced apartments and short lets with frequent guests.', href: '/bed-bug-treatment-dubai' },
-      { pest: 'Pigeons', why: 'Balconies and AC units on canal-facing towers.', href: '/bird-netting-dubai' },
+      { pest: 'Pigeons', why: 'Balcony ledges and corners on canal-facing towers.', href: '/bird-netting-dubai' },
       { pest: 'Rats and mice', why: 'Car parks, construction sites and service areas.', href: '/rodent-control' },
       { pest: 'Drain flies', why: 'Unused bathrooms in empty or holiday flats.', href: '/drain-fly-control-dubai' },
     ],
@@ -60,7 +60,7 @@ export const MORE_COMMUNITIES: Community[] = [
     pests: [
       { pest: 'Bed bugs', why: 'Holiday homes and visitors with luggage.', href: '/bed-bug-treatment-dubai' },
       { pest: 'Cockroaches', why: 'Shared drains and garbage chutes.', href: '/cockroach-control-dubai' },
-      { pest: 'Pigeons', why: 'Balconies, AC units and window recesses.', href: '/pigeon-control-dubai' },
+      { pest: 'Pigeons', why: 'Balcony ledges, corners and window recesses.', href: '/pigeon-control-dubai' },
       { pest: 'Ants', why: 'Old Town courtyards and planters.', href: '/ant-control-dubai' },
       { pest: 'Drain flies', why: 'Unused bathrooms between bookings.', href: '/drain-fly-control-dubai' },
     ],
@@ -133,7 +133,7 @@ export const MORE_COMMUNITIES: Community[] = [
       { pest: 'Bed bugs', why: 'Rental flats with frequent moves.', href: '/bed-bug-treatment-dubai' },
       { pest: 'Rats and mice', why: 'Garbage areas and villa gardens.', href: '/rodent-control' },
       { pest: 'Ants', why: 'Gardens and planters next to homes.', href: '/ant-control-dubai' },
-      { pest: 'Pigeons', why: 'Balconies and AC units.', href: '/pigeon-control-dubai' },
+      { pest: 'Pigeons', why: 'Balcony ledges, corners and window recesses.', href: '/pigeon-control-dubai' },
     ],
     priceKeys: ['general-apartment', 'general-villa', 'cockroach-apartment', 'bed-bug-apartment'],
     tips: [

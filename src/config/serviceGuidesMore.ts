@@ -27,7 +27,7 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     answer:
       'Bird control in Dubai means making the places birds land, roost and nest unusable. Netting closes balconies and terraces, spikes and wire stop birds landing on ledges, parapets and railings, gel works where spikes cannot be fixed, and mesh seals the gap under solar panels. We choose the method for each spot, often a mix of two or three.',
     body: [
-      'Pigeons are the main problem, followed by mynahs, house crows and sparrows. They nest behind split AC units, on window recesses, under solar panels and in roof gaps, and they return to the same spot every day. Their droppings stain stone, corrode metal, block AC drains and carry fungi and bacteria that are harmful when the dried dust is breathed in.',
+      'Pigeons are the main problem, followed by mynahs, house crows and sparrows. They nest on balcony ledges, in window recesses, behind villa AC units, under solar panels and in roof gaps, and they return to the same spot every day. Their droppings stain stone, corrode metal, block AC drains and carry fungi and bacteria that are harmful when the dried dust is breathed in.',
       'Scaring devices, reflective tape and plastic owls stop working within days because birds get used to them. Physical proofing is what lasts. We survey every spot first, clean and disinfect, then fit the right proofing so the birds move on for good.',
     ],
     signsTitle: 'Bird Proofing Methods We Use',

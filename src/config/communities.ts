@@ -23,7 +23,7 @@ const FIRST_COMMUNITIES: Community[] = [
     pests: [
       { pest: 'Bed bugs', why: 'Frequent guest and tenant turnover brings them in luggage and furniture.', href: '/bed-bug-treatment-dubai' },
       { pest: 'Cockroaches', why: 'German cockroaches in kitchens and drain cockroaches from shared risers.', href: '/cockroach-control-dubai' },
-      { pest: 'Pigeons', why: 'Nest behind balcony AC units on the sea-facing side.', href: '/bird-netting-dubai' },
+      { pest: 'Pigeons', why: 'Nest on balcony ledges and in corners on the sea-facing side.', href: '/bird-netting-dubai' },
       { pest: 'Ants', why: 'Come up through wall cavities and pipe gaps in kitchens.', href: '/ant-control-dubai' },
       { pest: 'Drain flies', why: 'Breed in slow drains and unused bathrooms.', href: '/drain-fly-control-dubai' },
     ],
@@ -63,7 +63,7 @@ const FIRST_COMMUNITIES: Community[] = [
       { pest: 'Rats and mice', why: 'Pushed out of construction plots into buildings and townhouse gardens.', href: '/rodent-control' },
       { pest: 'Ants', why: 'Nest in parks, planters and townhouse gardens and trail into kitchens.', href: '/ant-control-dubai' },
       { pest: 'Bed bugs', why: 'High tenant turnover in rental buildings.', href: '/bed-bug-treatment-dubai' },
-      { pest: 'Pigeons', why: 'Nest on balconies and AC units.', href: '/pigeon-control-dubai' },
+      { pest: 'Pigeons', why: 'Nest on balcony ledges, planters and window recesses.', href: '/pigeon-control-dubai' },
       { pest: 'Mosquitoes', why: 'Breed in irrigation, planters and standing water near parks.', href: '/mosquito-control-dubai' },
     ],
     priceKeys: ['general-apartment', 'general-villa', 'rodent', 'cockroach-apartment'],
@@ -370,7 +370,7 @@ const FIRST_COMMUNITIES: Community[] = [
       { pest: 'Bed bugs', why: 'Rental flats and shared accommodation.', href: '/bed-bug-treatment-dubai' },
       { pest: 'Ants', why: 'Courtyard gardens next to ground-floor flats.', href: '/ant-control-dubai' },
       { pest: 'Rats and mice', why: 'Gardens and garbage areas near lower floors.', href: '/rodent-control' },
-      { pest: 'Pigeons', why: 'Balconies and AC units.', href: '/pigeon-control-dubai' },
+      { pest: 'Pigeons', why: 'Balcony ledges, corners and window recesses.', href: '/pigeon-control-dubai' },
     ],
     priceKeys: ['general-apartment', 'cockroach-apartment', 'bed-bug-apartment', 'move-in-apartment'],
     tips: [

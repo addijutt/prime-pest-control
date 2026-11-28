@@ -18,7 +18,7 @@ import { getPageContent } from '../../config/pageContent';
 import { getServiceGuide } from '../../config/serviceGuides';
 import { COMMUNITY_SLUGS, getCommunityBySlug } from '../../config/communities';
 import { SEO_META } from '../../config/seoMeta';
-import { heroPriceText, heroWarrantyDays, lowestPrice, type PriceKey } from '../../config/prices';
+import { heroPriceText, heroWarrantyText, lowestPrice, type PriceKey } from '../../config/prices';
 
 const BASE_URL = 'https://www.primepestcontrol.ae';
 
@@ -105,7 +105,7 @@ export default async function SlugPage({
         <HomeHero
           title={community.headline}
           fromPrice={heroPriceText(community.priceKeys, 'lowest')}
-          warrantyDays={heroWarrantyDays(community.priceKeys)}
+          warranty={heroWarrantyText(community.priceKeys)}
           pathname={`/${slug}`}
           tagline={community.metaDescription}
         />
@@ -171,7 +171,7 @@ export default async function SlugPage({
         title={heroTitle}
         desktopPestIcons={pageContent?.hero.pestIcons}
         fromPrice={guide ? heroPriceText(guide.priceKeys) : undefined}
-        warrantyDays={guide ? heroWarrantyDays(guide.priceKeys) : 0}
+        warranty={guide ? heroWarrantyText(guide.priceKeys) : ''}
         pathname={pathname}
         tagline={pageMeta.description}
       />

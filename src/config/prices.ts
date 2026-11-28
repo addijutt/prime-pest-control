@@ -24,7 +24,8 @@ export type PriceItem = {
   perUnit?: 'sqft' | 'sqm' | 'm';
   /** Free re-treatment if the same pest returns within this many days (365 = 1 year) */
   warrantyDays?: number;
-  /** 'installation' = warranty on the fitted netting/spikes, not a re-treatment */
+  /** 'installation' = long-term guarantee on fitted netting, spikes, wire and mesh (owner, 28 Nov 2026: no timeframe
+   *  stated): free repair, and a free visit if birds get back into the protected area. warrantyDays is not used. */
   warrantyKind?: 'retreatment' | 'installation';
 };
 
@@ -70,12 +71,12 @@ export const PRICES = {
   'move-in-villa': { label: 'Move-in / move-out treatment, villa', from: 549, unit: 'empty villa or townhouse', visits: '1 visit before you move in', warrantyDays: 90 },
 
   // Birds
-  'pigeon': { label: 'Pigeon control', from: 349, unit: 'balcony, ledge or AC area', visits: 'cleaning + deterrents' },
-  'bird-net': { label: 'Bird netting', from: 8, unit: 'per sq ft, installed (UV-stable HDPE)', perUnit: 'sqft', visits: 'free measurement first', warrantyDays: 90, warrantyKind: 'installation' },
+  'pigeon': { label: 'Pigeon control', from: 349, unit: 'balcony, ledge or AC area', visits: 'cleaning + deterrents', warrantyKind: 'installation' },
+  'bird-net': { label: 'Bird netting', from: 8, unit: 'per sq ft, installed (UV-stable HDPE)', perUnit: 'sqft', visits: 'free measurement first', warrantyKind: 'installation' },
   // Spikes: only weak market data (AED 50–100 per metre installed); owner to confirm
-  'bird-spikes': { label: 'Bird spikes', from: 50, unit: 'per metre, installed (stainless steel)', perUnit: 'm', visits: 'ledges, parapets, signs, AC tops', warrantyDays: 90, warrantyKind: 'installation' },
-  'bird-other': { label: 'Mynah, sparrow & crow control', from: 349, unit: 'per area', visits: 'survey + deterrents' },
-  'solar-bird': { label: 'Solar panel bird proofing', from: null, unit: 'mesh skirt around the panel array', visits: 'free survey and quote' },
+  'bird-spikes': { label: 'Bird spikes', from: 50, unit: 'per metre, installed (stainless steel)', perUnit: 'm', visits: 'ledges, parapets, signs, AC tops', warrantyKind: 'installation' },
+  'bird-other': { label: 'Mynah, sparrow & crow control', from: 349, unit: 'per area', visits: 'survey + deterrents', warrantyKind: 'installation' },
+  'solar-bird': { label: 'Solar panel bird proofing', from: null, unit: 'mesh skirt around the panel array', visits: 'free survey and quote', warrantyKind: 'installation' },
 
   // Visits that are not part of a job (see SERVICE_TERMS)
   'callout': { label: 'Call-out visit', from: 50, unit: 'deducted from the job price when the job is booked and completed', visits: 'free under warranty or an annual contract' },
@@ -114,12 +115,16 @@ export function warrantyPeriod(key: PriceKey): string {
   return d % 30 === 0 ? `${d} days (${d / 30} months)` : `${d} days`;
 }
 
-/** "60-day warranty, free re-treatment", "1-year warranty on the installation", or '' */
+/** Text of the long-term guarantee on bird proofing installations (netting, spikes, wire, mesh) */
+export const INSTALLATION_GUARANTEE = 'Long-term guarantee, with free repair and a free visit if birds get back in';
+
+/** "90-day (3-month) warranty, free re-treatment", the long-term installation guarantee, or '' */
 export function warrantyText(key: PriceKey): string {
   const p: PriceItem = PRICES[key];
+  if (p.warrantyKind === 'installation') return INSTALLATION_GUARANTEE;
   if (!p.warrantyDays) return '';
   const span = p.warrantyDays >= 365 ? `${Math.round(p.warrantyDays / 365)}-year` : p.warrantyDays % 30 === 0 ? `${p.warrantyDays}-day (${p.warrantyDays / 30}-month)` : `${p.warrantyDays}-day`;
-  return p.warrantyKind === 'installation' ? `${span} warranty on the installation` : `${span} warranty, free re-treatment`;
+  return `${span} warranty, free re-treatment`;
 }
 
 /** "AED 1,500" */
@@ -168,4 +173,13 @@ export function heroPriceText(keys: PriceKey[], mode: 'main' | 'lowest' = 'main'
 export function heroWarrantyDays(keys: PriceKey[]): number {
   const main = keys.find((k) => !k.endsWith('-inspection'));
   return main ? ((PRICES[main] as PriceItem).warrantyDays ?? 0) : 0;
+}
+
+/** Hero warranty wording for a page: '90-day warranty', 'long-term guarantee on the installation' (bird proofing), or '' */
+export function heroWarrantyText(keys: PriceKey[]): string {
+  const main = keys.find((k) => !k.endsWith('-inspection'));
+  if (!main) return '';
+  const p = PRICES[main] as PriceItem;
+  if (p.warrantyKind === 'installation') return 'installation guaranteed long term';
+  return p.warrantyDays ? `${p.warrantyDays}-day warranty` : '';
 }

@@ -91,7 +91,7 @@ export const PriceBandSection: React.FC<{ title: string; keys: PriceKey[] }> = (
       <ul className="price-band__terms" aria-label="How quotes, warranty and call-outs work">
         <li><strong>Free quote</strong> on WhatsApp from a photo or description</li>
         <li><strong>Free survey</strong> for {SERVICE_TERMS.freeSurveyFor}</li>
-        <li><strong>Warranty</strong> with free re-treatment if the pest comes back (shown on each price)</li>
+        <li><strong>Warranty</strong> shown on each price, with free re-treatment for pests and free repair for bird proofing</li>
         <li>
           <strong>Annual plans:</strong> free call-outs between visits, within {SERVICE_TERMS.calloutResponseHours} hours
         </li>
