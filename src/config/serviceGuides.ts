@@ -16,8 +16,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Pest Control',
     title: 'What to Expect From Pest Control in Dubai',
     photos: {
-      intro: { brief: 'Technician in uniform at the door of a Dubai apartment with a treatment kit, greeting a resident', alt: 'Prime Pest Control technician arriving at a Dubai apartment' },
-      signs: { brief: 'Close-up of common signs: cockroach droppings in a kitchen hinge, bed bug spots on a mattress seam, termite mud tube on a wall (collage or one clear shot)', alt: 'Common signs of pests in a Dubai home' },
+      intro: { brief: 'Technician in uniform at the door of a Dubai apartment with a treatment kit, greeting a resident', alt: 'Gloved hands placing cockroach gel bait in a kitchen cabinet hinge with a torch', src: '/assets/img/jobs/home-intro.webp' },
+      signs: { brief: 'Close-up of common signs: cockroach droppings in a kitchen hinge, bed bug spots on a mattress seam, termite mud tube on a wall (collage or one clear shot)', alt: 'German cockroaches, droppings and an egg case inside a kitchen sink cabinet', src: '/assets/img/jobs/home-signs.webp' },
     },
     answer:
       `Pest control in Dubai usually starts from about ${aed('general-apartment')} for a studio or 1-bedroom apartment and ${aed('general-villa')} for a villa. Cockroaches, bed bugs, ants, rodents and termites are the most common call-outs, and most jobs are done in one visit. Bed bugs and heavy cockroach problems need a follow-up.`,
@@ -62,8 +62,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Cockroach Control',
     title: 'Cockroach Control in Dubai',
     photos: {
-      intro: { brief: 'Technician applying gel bait inside a kitchen cabinet hinge in a Dubai apartment, close-up of the bait gun', alt: 'Technician applying cockroach gel bait in a Dubai kitchen' },
-      signs: { brief: 'Cockroach droppings and an egg case behind a fridge or in a cabinet corner, real job photo', alt: 'Cockroach droppings and egg case in a kitchen cabinet' },
+      intro: { brief: 'Technician applying gel bait inside a kitchen cabinet hinge in a Dubai apartment, close-up of the bait gun', alt: 'Gloved hands placing cockroach gel bait in the gap between the countertop and wall tiles beside a cooker', src: '/assets/img/jobs/cockroach-control-dubai-intro.webp' },
+      signs: { brief: 'Cockroach droppings and an egg case behind a fridge or in a cabinet corner, real job photo', alt: 'German cockroach, droppings and egg cases in the floor corner behind a fridge', src: '/assets/img/jobs/cockroach-control-dubai-signs.webp' },
     },
     answer:
       'Most cockroach problems in Dubai apartments are German cockroaches living in the kitchen and bathroom, and they are treated with gel bait in cracks and hinges, not by spraying the room. One visit clears most homes, but heavy infestations need a second visit after 2–3 weeks to kill the young that hatch from eggs.',
@@ -110,8 +110,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Bed Bug Treatment',
     title: 'Bed Bug Treatment in Dubai',
     photos: {
-      intro: { brief: 'Technician inspecting mattress seams with a torch in a Dubai bedroom', alt: 'Technician inspecting a mattress for bed bugs in Dubai' },
-      signs: { brief: 'Close-up of a mattress seam with dark bed bug spots, shed skins and a live bed bug', alt: 'Bed bug spots and shed skins on a mattress seam' },
+      intro: { brief: 'Technician inspecting mattress seams with a torch in a Dubai bedroom', alt: 'Gloved hands lifting a sheet and checking the mattress seam for bed bugs with a torch', src: '/assets/img/jobs/bed-bug-treatment-dubai-intro.webp' },
+      signs: { brief: 'Close-up of a mattress seam with dark bed bug spots, shed skins and a live bed bug', alt: 'Adult bed bug, eggs, shed skins and dark spots on a mattress seam', src: '/assets/img/jobs/bed-bug-treatment-dubai-signs.webp' },
     },
     answer:
       `Bed bug treatment in Dubai needs two visits, 10–14 days apart. The first kills the adults and young, and the second kills the ones that hatch from eggs, which no spray kills reliably. Prices start from about ${aed('bed-bug-apartment')} for a studio or 1-bedroom apartment.`,
@@ -156,8 +156,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Termite Control',
     title: 'Termite Control in Dubai',
     photos: {
-      intro: { brief: 'Technician inspecting a wooden door frame or skirting in a Dubai villa with a moisture meter', alt: 'Technician inspecting a villa door frame for termites' },
-      signs: { brief: 'Termite mud tubes on a villa wall or column, close-up', alt: 'Termite mud tubes on a wall in a Dubai villa' },
+      intro: { brief: 'Technician inspecting a wooden door frame or skirting in a Dubai villa with a moisture meter', alt: 'Gloved hands checking a termite-damaged villa door frame with a moisture meter and torch', src: '/assets/img/jobs/termite-control-intro.webp' },
+      signs: { brief: 'Termite mud tubes on a villa wall or column, close-up', alt: 'Termite mud tubes running up a villa wall beside a wooden door frame', src: '/assets/img/jobs/termite-control-signs.webp' },
     },
     answer:
       'Termites in Dubai are mostly subterranean termites that come up from the soil and eat wooden door frames, skirting, kitchen cabinets and wardrobes from the inside. The first sign is usually mud tubes on walls or wood that sounds hollow. Treatment is a soil barrier or bait system around the villa, after an inspection to find where they enter.',
@@ -247,8 +247,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Rat & Mouse Control',
     title: 'Rat and Mouse Control in Dubai',
     photos: {
-      intro: { brief: 'Technician placing a locked bait station along a villa boundary wall or in a building car park', alt: 'Technician placing a rodent bait station in Dubai' },
-      signs: { brief: 'Rodent droppings and gnaw marks on cables or a food packet in a store room', alt: 'Rat droppings and chewed cables in a Dubai store room' },
+      intro: { brief: 'Technician placing a locked bait station along a villa boundary wall or in a building car park', alt: 'Locked rodent bait stations along a villa boundary wall', src: '/assets/img/jobs/rodent-control-intro.webp' },
+      signs: { brief: 'Rodent droppings and gnaw marks on cables or a food packet in a store room', alt: 'Rat droppings, a gnawed power cable and a chewed food packet on a store room shelf', src: '/assets/img/jobs/rodent-control-signs.webp' },
     },
     answer:
       'Rats and mice in Dubai are mostly roof rats, Norway (brown) rats and house mice. They come in from parking basements, garbage rooms, gardens and nearby construction, and live in false ceilings, kitchen cabinets and store rooms. Control is trapping and tamper-resistant bait stations plus sealing the gaps they use, with a follow-up visit to check activity has stopped.',
@@ -292,8 +292,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Pigeon Control',
     title: 'Pigeon Control in Dubai',
     photos: {
-      intro: { brief: 'Before and after of an apartment balcony: droppings and a nest behind the AC unit, then clean with a net installed', alt: 'Balcony before and after pigeon control in Dubai' },
-      signs: { brief: 'Pigeon nest and droppings behind an outdoor split AC unit on a Dubai balcony', alt: 'Pigeon nest behind a balcony AC unit' },
+      intro: { brief: 'Before and after of an apartment balcony: droppings and a nest behind the AC unit, then clean with a net installed', alt: 'Apartment tower balcony closed with a fine pigeon net, view of the neighbouring towers', src: '/assets/img/jobs/pigeon-control-dubai-intro.webp' },
+      signs: { brief: 'Pigeon nest and droppings behind an outdoor split AC unit on a Dubai balcony', alt: 'Pigeon, nest and droppings behind an outdoor AC unit on an apartment balcony', src: '/assets/img/jobs/pigeon-control-dubai-signs.webp' },
     },
     answer:
       'Pigeons in Dubai nest behind split AC units, on balcony ledges, in window recesses and on solar panels. The lasting fix is to make the spot unusable: clean and disinfect the droppings, remove the nest, then fit netting, spikes or wire so they cannot land or nest there again. Feeding or scaring them does not work for long.',
@@ -382,8 +382,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Commercial Pest Control',
     title: 'Commercial Pest Control in Dubai',
     photos: {
-      intro: { brief: 'Technician servicing a restaurant kitchen outside opening hours, with a service report on a tablet', alt: 'Technician treating a Dubai restaurant kitchen' },
-      signs: { brief: 'Bait station map or monitoring station in a food store room, with the service report', alt: 'Pest monitoring station in a commercial kitchen' },
+      intro: { brief: 'Technician servicing a restaurant kitchen outside opening hours, with a service report on a tablet', alt: 'Gloved hands with a service checklist tablet and torch inspecting a hotel restaurant kitchen after closing', src: '/assets/img/jobs/commercial-pest-control-dubai-intro.webp' },
+      signs: { brief: 'Bait station map or monitoring station in a food store room, with the service report', alt: 'Rodent bait station and insect monitor in a hotel kitchen dry store', src: '/assets/img/jobs/commercial-pest-control-dubai-signs.webp' },
     },
     answer:
       'Commercial pest control in Dubai is a scheduled programme, usually monthly for restaurants and food businesses and quarterly for offices and buildings, with service reports you can show to inspectors and clients. We survey the site first and quote a fixed contract.',
@@ -478,8 +478,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Villa Pest Control',
     title: 'Villa Pest Control in Dubai',
     photos: {
-      intro: { brief: 'Technician treating the garden perimeter of a Dubai villa, villa facade and planting visible', alt: 'Technician treating a Dubai villa garden perimeter' },
-      signs: { brief: 'Walk-round of a villa: technician checking a door frame, garden irrigation line and boundary wall', alt: 'Technician inspecting a Dubai villa for pests' },
+      intro: { brief: 'Technician treating the garden perimeter of a Dubai villa, villa facade and planting visible', alt: 'Gloved hands spraying a perimeter band along a modern villa wall by the garden and pool', src: '/assets/img/jobs/villa-pest-control-dubai-intro.webp' },
+      signs: { brief: 'Walk-round of a villa: technician checking a door frame, garden irrigation line and boundary wall', alt: 'Drip irrigation against a villa wall with a damp patch and an open pipe gap', src: '/assets/img/jobs/villa-pest-control-dubai-signs.webp' },
     },
     answer:
       'A villa in Dubai needs more than an indoor spray: the garden, irrigation, drains, roof and boundary walls are where most pests start. A full villa treatment covers inside, the perimeter and the garden, and many owners choose an annual contract with quarterly visits.',
@@ -528,8 +528,8 @@ export const SERVICE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Apartment Pest Control',
     title: 'Apartment Pest Control in Dubai',
     photos: {
-      intro: { brief: 'Technician treating under the kitchen sink of a Dubai apartment, tower view through the window', alt: 'Technician treating a Dubai apartment kitchen' },
-      signs: { brief: 'Small German cockroaches in a kitchen drawer or around a floor drain in an apartment', alt: 'Cockroaches in a Dubai apartment kitchen' },
+      intro: { brief: 'Technician treating under the kitchen sink of a Dubai apartment, tower view through the window', alt: 'Gloved hands with a torch and gel applicator under the sink of a modern apartment kitchen with a tower view', src: '/assets/img/jobs/apartment-pest-control-dubai-intro.webp' },
+      signs: { brief: 'Small German cockroaches in a kitchen drawer or around a floor drain in an apartment', alt: 'German cockroaches around a floor drain in a modern apartment bathroom', src: '/assets/img/jobs/apartment-pest-control-dubai-signs.webp' },
     },
     answer:
       `In Dubai apartments the usual problems are cockroaches, bed bugs and ants, and they often come from shared drains, risers and neighbouring flats. Treatment for a studio or 1-bedroom starts from about ${aed('general-apartment')} and is done in one visit with gel baits and targeted treatment. You do not need to leave the flat for the day.`,

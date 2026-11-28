@@ -5313,6 +5313,17 @@ button:active {
   aspect-ratio: 4 / 3;
 }
 
+.photo-credit {
+  margin: 0;
+}
+
+.photo-credit__text {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6b7280;
+  text-align: right;
+}
+
 .photo-slot {
   display: flex;
   flex-direction: column;

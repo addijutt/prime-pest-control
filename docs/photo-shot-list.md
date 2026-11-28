@@ -11,6 +11,10 @@ to that brief in the config file.
 **Every photo:** real job photo (no stock), landscape 4:3, at least 1200 × 900 px, technician in Prime uniform where
 possible, customers' faces and flat numbers not visible, good light. Export as WebP under 250 KB.
 
+**Until then:** each slot gets an honest stand-in (real free area photo, pest close-up, or hands-only work photo).
+Keys, sources and ChatGPT prompts: `docs/photo-prompts.md`. A real job photo later replaces the stand-in with the
+same key.
+
 | # | Page | Where | What the photo should show |
 |---|---|---|---|
 | 1 | `/` | Next to the answer (top) | Technician in uniform at the door of a Dubai apartment with a treatment kit, greeting a resident |

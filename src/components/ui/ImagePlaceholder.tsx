@@ -7,6 +7,8 @@ export type PhotoBrief = {
   alt: string;
   /** Real photo path, once it exists in /public. Until then the placeholder / fallback is shown. */
   src?: string;
+  /** Credit line when the photo's licence asks for one (Wikimedia CC BY), e.g. "Photo: Jane Doe, CC BY 4.0" */
+  credit?: string;
 };
 
 // Team photos already on the site, used on the live site until the real photo is added
@@ -25,13 +27,20 @@ const IS_DEV = process.env.NODE_ENV !== 'production';
  */
 const ImagePlaceholder: React.FC<{ photo: PhotoBrief; fallbackIndex?: number }> = ({ photo, fallbackIndex = 0 }) => {
   if (photo.src) {
-    return <img src={photo.src} alt={photo.alt} className="theme-rounded-image photo-slot__img" loading="lazy" />;
+    const img = <img src={photo.src} alt={photo.alt} className="theme-rounded-image photo-slot__img" loading="lazy" />;
+    if (!photo.credit) return img;
+    return (
+      <figure className="photo-credit">
+        {img}
+        <figcaption className="photo-credit__text">{photo.credit}</figcaption>
+      </figure>
+    );
   }
   if (!IS_DEV) {
     return (
       <img
         src={FALLBACKS[fallbackIndex % FALLBACKS.length]}
-        alt="Prime Pest Control technician in Dubai"
+        alt="Pest control technicians"
         className="theme-rounded-image photo-slot__img"
         loading="lazy"
       />
@@ -46,7 +55,7 @@ const ImagePlaceholder: React.FC<{ photo: PhotoBrief; fallbackIndex?: number }> 
       <figcaption>
         <strong>Photo needed (preview only)</strong>
         <span>{photo.brief}</span>
-        <small>Landscape 4:3, at least 1200 × 900 px, real job photo, no stock images</small>
+        <small>Landscape 4:3, at least 1200 × 900 px, key and prompt in docs/photo-prompts.md</small>
       </figcaption>
     </figure>
   );

@@ -114,7 +114,7 @@ export default async function SlugPage({
           title={`Pest Control in ${community.name}`}
           answer={community.answer}
           body={community.body}
-          photo={{ ...community.photos.intro, alt: `Prime Pest Control in ${community.name}, Dubai` }}
+          photo={community.photos.intro}
         />
         <CommunityPestsSection community={community} />
         <PriceBandSection title={`Pest Control Prices in ${community.name}`} keys={community.priceKeys} />

@@ -44,7 +44,7 @@ export const CommunityTipsSection: React.FC<{ community: Community }> = ({ commu
         eyebrow="Local Tips"
         title={`Keeping Pests Out of ${community.name} Homes`}
         body={<CheckmarkList items={community.tips} />}
-        media={<ImagePlaceholder photo={{ ...community.photos.tips, alt: `Pest control technician in ${community.name}` }} fallbackIndex={1} />}
+        media={<ImagePlaceholder photo={community.photos.tips} fallbackIndex={1} />}
       />
       {others.length ? (
         <SectionContainer className="community-others-section">

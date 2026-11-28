@@ -20,8 +20,8 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Bird Control',
     title: 'Bird Control and Bird Proofing in Dubai',
     photos: {
-      intro: { brief: 'Technician installing stainless steel bird spikes on a villa parapet, with netting visible on a balcony behind', alt: 'Bird spikes and netting installed in Dubai' },
-      signs: { brief: 'Collage or one shot of the methods: balcony net, ledge spikes, railing wire and a solar panel mesh skirt', alt: 'Bird proofing methods used in Dubai' },
+      intro: { brief: 'Technician installing stainless steel bird spikes on a villa parapet, with netting visible on a balcony behind', alt: 'Stainless steel bird spikes along a villa parapet wall and a netted balcony behind', src: '/assets/img/jobs/bird-control-dubai-intro.webp' },
+      signs: { brief: 'Collage or one shot of the methods: balcony net, ledge spikes, railing wire and a solar panel mesh skirt', alt: 'Stainless steel bird spikes on a window ledge and bird wire along a balcony railing', src: '/assets/img/jobs/bird-control-dubai-signs.webp' },
     },
     priceKeys: ['pigeon', 'bird-net', 'bird-spikes', 'bird-other'],
     answer:
@@ -146,8 +146,8 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Ant Control',
     title: 'Ant Control in Dubai',
     photos: {
-      intro: { brief: 'Technician placing ant bait gel along a kitchen counter edge or skirting in a Dubai home', alt: 'Technician placing ant bait in a Dubai kitchen' },
-      signs: { brief: 'Trail of small ants along a kitchen counter towards a sugar spill', alt: 'Trail of ants in a Dubai kitchen' },
+      intro: { brief: 'Technician placing ant bait gel along a kitchen counter edge or skirting in a Dubai home', alt: 'Gloved hand placing drops of ant gel bait along the skirting of a villa living room', src: '/assets/img/jobs/ant-control-dubai-intro.webp' },
+      signs: { brief: 'Trail of small ants along a kitchen counter towards a sugar spill', alt: 'Trail of small ants from a gap at the wall tiles to spilled sugar on a white kitchen countertop', src: '/assets/img/jobs/ant-control-dubai-signs.webp' },
     },
     priceKeys: ['ant'],
     answer:
@@ -189,8 +189,8 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Mosquito Control',
     title: 'Mosquito Control in Dubai',
     photos: {
-      intro: { brief: 'Technician treating a villa garden water feature or planter for mosquito larvae', alt: 'Technician treating mosquito breeding sites in a Dubai garden' },
-      signs: { brief: 'Standing water in a plant saucer, bucket or pool cover with mosquito larvae', alt: 'Mosquito breeding in standing water' },
+      intro: { brief: 'Technician treating a villa garden water feature or planter for mosquito larvae', alt: 'Gloved hands adding larvicide granules to a villa garden water feature', src: '/assets/img/jobs/mosquito-control-dubai-intro.webp' },
+      signs: { brief: 'Standing water in a plant saucer, bucket or pool cover with mosquito larvae', alt: 'Mosquito larvae and pupae in standing water in a plant saucer', src: '/assets/img/jobs/mosquito-control-dubai-signs.webp' },
     },
     priceKeys: ['mosquito'],
     answer:
@@ -274,8 +274,8 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Wasp & Hornet Removal',
     title: 'Wasp, Hornet and Bee Removal in Dubai',
     photos: {
-      intro: { brief: 'Technician in a bee suit removing a hornet or wasp nest from a villa wall or garden', alt: 'Technician removing a hornet nest in Dubai' },
-      signs: { brief: 'Oriental hornets going in and out of a hole in the ground or a wall gap', alt: 'Oriental hornets at a nest entrance' },
+      intro: { brief: 'Technician in a bee suit removing a hornet or wasp nest from a villa wall or garden', alt: 'Hands in bee suit gloves treating a hornet ground nest at a villa garden wall with a duster', src: '/assets/img/jobs/hornet-nest-removal-intro.webp' },
+      signs: { brief: 'Oriental hornets going in and out of a hole in the ground or a wall gap', alt: 'Oriental hornets at a ground nest entrance at the base of a villa garden wall', src: '/assets/img/jobs/hornet-nest-removal-signs.webp' },
     },
     priceKeys: ['wasp-nest', 'bee-relocation'],
     answer:
@@ -315,8 +315,8 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Scorpion Control',
     title: 'Scorpion Control in Dubai',
     photos: {
-      intro: { brief: 'Technician applying a perimeter treatment along a villa garden wall at the desert edge', alt: 'Scorpion perimeter treatment at a Dubai villa' },
-      signs: { brief: 'Gap under a villa door or garden gate where scorpions get in, with a door sweep being fitted', alt: 'Fitting a door sweep to keep scorpions out' },
+      intro: { brief: 'Technician applying a perimeter treatment along a villa garden wall at the desert edge', alt: 'Gloved hands spraying a scorpion barrier along the base of a villa garden wall at the desert edge', src: '/assets/img/jobs/scorpion-control-dubai-intro.webp' },
+      signs: { brief: 'Gap under a villa door or garden gate where scorpions get in, with a door sweep being fitted', alt: 'Gloved hands fitting a brush door sweep to a villa garden door to keep scorpions out', src: '/assets/img/jobs/scorpion-control-dubai-signs.webp' },
     },
     priceKeys: ['scorpion', 'snake'],
     answer:
@@ -399,8 +399,8 @@ export const MORE_GUIDES: Record<string, ServiceGuide> = {
     name: 'Camel Spider Control',
     title: 'Camel Spider Control in Dubai',
     photos: {
-      intro: { brief: 'Technician treating a villa garage or garden edge at the desert side of a Dubai community', alt: 'Camel spider control at a Dubai villa' },
-      signs: { brief: 'Camel spider (solifuge) on a villa floor or patio, photographed from a safe distance', alt: 'Camel spider on a villa patio in Dubai' },
+      intro: { brief: 'Technician treating a villa garage or garden edge at the desert side of a Dubai community', alt: 'Gloved hands spraying the floor edge and roller door track of a villa garage', src: '/assets/img/jobs/camel-spider-control-dubai-intro.webp' },
+      signs: { brief: 'Camel spider (solifuge) on a villa floor or patio, photographed from a safe distance', alt: 'Camel spider on villa patio tiles at night by a garden door', src: '/assets/img/jobs/camel-spider-control-dubai-signs.webp' },
     },
     priceKeys: ['camel-spider', 'scorpion'],
     answer:
